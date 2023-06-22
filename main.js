@@ -1,2 +1,11526 @@
-/*! For license information please see main.js.LICENSE.txt */
-(()=>{var e={5042:(e,t,r)=>{"use strict";function n(e){var t=Object.create(null);return function(r){return void 0===t[r]&&(t[r]=e(r)),t[r]}}r.d(t,{Z:()=>n})},3562:(e,t,r)=>{"use strict";r.d(t,{T:()=>se,w:()=>ae});var n=r(5359),o=function(){function e(e){var t=this;this._insertTag=function(e){var r;r=0===t.tags.length?t.insertionPoint?t.insertionPoint.nextSibling:t.prepend?t.container.firstChild:t.before:t.tags[t.tags.length-1].nextSibling,t.container.insertBefore(e,r),t.tags.push(e)},this.isSpeedy=void 0===e.speedy||e.speedy,this.tags=[],this.ctr=0,this.nonce=e.nonce,this.key=e.key,this.container=e.container,this.prepend=e.prepend,this.insertionPoint=e.insertionPoint,this.before=null}var t=e.prototype;return t.hydrate=function(e){e.forEach(this._insertTag)},t.insert=function(e){this.ctr%(this.isSpeedy?65e3:1)==0&&this._insertTag(function(e){var t=document.createElement("style");return t.setAttribute("data-emotion",e.key),void 0!==e.nonce&&t.setAttribute("nonce",e.nonce),t.appendChild(document.createTextNode("")),t.setAttribute("data-s",""),t}(this));var t=this.tags[this.tags.length-1];if(this.isSpeedy){var r=function(e){if(e.sheet)return e.sheet;for(var t=0;t<document.styleSheets.length;t++)if(document.styleSheets[t].ownerNode===e)return document.styleSheets[t]}(t);try{r.insertRule(e,r.cssRules.length)}catch(e){}}else t.appendChild(document.createTextNode(e));this.ctr++},t.flush=function(){this.tags.forEach((function(e){return e.parentNode&&e.parentNode.removeChild(e)})),this.tags=[],this.ctr=0},e}(),i=Math.abs,a=String.fromCharCode,s=Object.assign;function l(e){return e.trim()}function c(e,t,r){return e.replace(t,r)}function u(e,t){return e.indexOf(t)}function d(e,t){return 0|e.charCodeAt(t)}function p(e,t,r){return e.slice(t,r)}function f(e){return e.length}function h(e){return e.length}function m(e,t){return t.push(e),e}var g=1,y=1,v=0,b=0,x=0,w="";function S(e,t,r,n,o,i,a){return{value:e,root:t,parent:r,type:n,props:o,children:i,line:g,column:y,length:a,return:""}}function O(e,t){return s(S("",null,null,"",null,null,0),e,{length:-e.length},t)}function P(){return x=b>0?d(w,--b):0,y--,10===x&&(y=1,g--),x}function k(){return x=b<v?d(w,b++):0,y++,10===x&&(y=1,g++),x}function E(){return d(w,b)}function C(){return b}function j(e,t){return p(w,e,t)}function A(e){switch(e){case 0:case 9:case 10:case 13:case 32:return 5;case 33:case 43:case 44:case 47:case 62:case 64:case 126:case 59:case 123:case 125:return 4;case 58:return 3;case 34:case 39:case 40:case 91:return 2;case 41:case 93:return 1}return 0}function R(e){return g=y=1,v=f(w=e),b=0,[]}function T(e){return w="",e}function _(e){return l(j(b-1,I(91===e?e+2:40===e?e+1:e)))}function N(e){for(;(x=E())&&x<33;)k();return A(e)>2||A(x)>3?"":" "}function M(e,t){for(;--t&&k()&&!(x<48||x>102||x>57&&x<65||x>70&&x<97););return j(e,C()+(t<6&&32==E()&&32==k()))}function I(e){for(;k();)switch(x){case e:return b;case 34:case 39:34!==e&&39!==e&&I(x);break;case 40:41===e&&I(e);break;case 92:k()}return b}function Z(e,t){for(;k()&&e+x!==57&&(e+x!==84||47!==E()););return"/*"+j(t,b-1)+"*"+a(47===e?e:k())}function z(e){for(;!A(E());)k();return j(e,b)}var L="-ms-",$="-moz-",B="-webkit-",D="comm",W="rule",F="decl",U="@keyframes";function q(e,t){for(var r="",n=h(e),o=0;o<n;o++)r+=t(e[o],o,e,t)||"";return r}function G(e,t,r,n){switch(e.type){case"@layer":if(e.children.length)break;case"@import":case F:return e.return=e.return||e.value;case D:return"";case U:return e.return=e.value+"{"+q(e.children,n)+"}";case W:e.value=e.props.join(",")}return f(r=q(e.children,n))?e.return=e.value+"{"+r+"}":""}function V(e){return T(K("",null,null,null,[""],e=R(e),0,[0],e))}function K(e,t,r,n,o,i,s,l,p){for(var h=0,g=0,y=s,v=0,b=0,x=0,w=1,S=1,O=1,j=0,A="",R=o,T=i,I=n,L=A;S;)switch(x=j,j=k()){case 40:if(108!=x&&58==d(L,y-1)){-1!=u(L+=c(_(j),"&","&\f"),"&\f")&&(O=-1);break}case 34:case 39:case 91:L+=_(j);break;case 9:case 10:case 13:case 32:L+=N(x);break;case 92:L+=M(C()-1,7);continue;case 47:switch(E()){case 42:case 47:m(X(Z(k(),C()),t,r),p);break;default:L+="/"}break;case 123*w:l[h++]=f(L)*O;case 125*w:case 59:case 0:switch(j){case 0:case 125:S=0;case 59+g:-1==O&&(L=c(L,/\f/g,"")),b>0&&f(L)-y&&m(b>32?Y(L+";",n,r,y-1):Y(c(L," ","")+";",n,r,y-2),p);break;case 59:L+=";";default:if(m(I=H(L,t,r,h,g,o,l,A,R=[],T=[],y),i),123===j)if(0===g)K(L,t,I,I,R,i,y,l,T);else switch(99===v&&110===d(L,3)?100:v){case 100:case 108:case 109:case 115:K(e,I,I,n&&m(H(e,I,I,0,0,o,l,A,o,R=[],y),T),o,T,y,l,n?R:T);break;default:K(L,I,I,I,[""],T,0,l,T)}}h=g=b=0,w=O=1,A=L="",y=s;break;case 58:y=1+f(L),b=x;default:if(w<1)if(123==j)--w;else if(125==j&&0==w++&&125==P())continue;switch(L+=a(j),j*w){case 38:O=g>0?1:(L+="\f",-1);break;case 44:l[h++]=(f(L)-1)*O,O=1;break;case 64:45===E()&&(L+=_(k())),v=E(),g=y=f(A=L+=z(C())),j++;break;case 45:45===x&&2==f(L)&&(w=0)}}return i}function H(e,t,r,n,o,a,s,u,d,f,m){for(var g=o-1,y=0===o?a:[""],v=h(y),b=0,x=0,w=0;b<n;++b)for(var O=0,P=p(e,g+1,g=i(x=s[b])),k=e;O<v;++O)(k=l(x>0?y[O]+" "+P:c(P,/&\f/g,y[O])))&&(d[w++]=k);return S(e,t,r,0===o?W:u,d,f,m)}function X(e,t,r){return S(e,t,r,D,a(x),p(e,2,-2),0)}function Y(e,t,r,n){return S(e,t,r,F,p(e,0,n),p(e,n+1,-1),n)}var J=function(e,t,r){for(var n=0,o=0;n=o,o=E(),38===n&&12===o&&(t[r]=1),!A(o);)k();return j(e,b)},Q=new WeakMap,ee=function(e){if("rule"===e.type&&e.parent&&!(e.length<1)){for(var t=e.value,r=e.parent,n=e.column===r.column&&e.line===r.line;"rule"!==r.type;)if(!(r=r.parent))return;if((1!==e.props.length||58===t.charCodeAt(0)||Q.get(r))&&!n){Q.set(e,!0);for(var o=[],i=function(e,t){return T(function(e,t){var r=-1,n=44;do{switch(A(n)){case 0:38===n&&12===E()&&(t[r]=1),e[r]+=J(b-1,t,r);break;case 2:e[r]+=_(n);break;case 4:if(44===n){e[++r]=58===E()?"&\f":"",t[r]=e[r].length;break}default:e[r]+=a(n)}}while(n=k());return e}(R(e),t))}(t,o),s=r.props,l=0,c=0;l<i.length;l++)for(var u=0;u<s.length;u++,c++)e.props[c]=o[l]?i[l].replace(/&\f/g,s[u]):s[u]+" "+i[l]}}},te=function(e){if("decl"===e.type){var t=e.value;108===t.charCodeAt(0)&&98===t.charCodeAt(2)&&(e.return="",e.value="")}};function re(e,t){switch(function(e,t){return 45^d(e,0)?(((t<<2^d(e,0))<<2^d(e,1))<<2^d(e,2))<<2^d(e,3):0}(e,t)){case 5103:return B+"print-"+e+e;case 5737:case 4201:case 3177:case 3433:case 1641:case 4457:case 2921:case 5572:case 6356:case 5844:case 3191:case 6645:case 3005:case 6391:case 5879:case 5623:case 6135:case 4599:case 4855:case 4215:case 6389:case 5109:case 5365:case 5621:case 3829:return B+e+e;case 5349:case 4246:case 4810:case 6968:case 2756:return B+e+$+e+L+e+e;case 6828:case 4268:return B+e+L+e+e;case 6165:return B+e+L+"flex-"+e+e;case 5187:return B+e+c(e,/(\w+).+(:[^]+)/,B+"box-$1$2"+L+"flex-$1$2")+e;case 5443:return B+e+L+"flex-item-"+c(e,/flex-|-self/,"")+e;case 4675:return B+e+L+"flex-line-pack"+c(e,/align-content|flex-|-self/,"")+e;case 5548:return B+e+L+c(e,"shrink","negative")+e;case 5292:return B+e+L+c(e,"basis","preferred-size")+e;case 6060:return B+"box-"+c(e,"-grow","")+B+e+L+c(e,"grow","positive")+e;case 4554:return B+c(e,/([^-])(transform)/g,"$1"+B+"$2")+e;case 6187:return c(c(c(e,/(zoom-|grab)/,B+"$1"),/(image-set)/,B+"$1"),e,"")+e;case 5495:case 3959:return c(e,/(image-set\([^]*)/,B+"$1$`$1");case 4968:return c(c(e,/(.+:)(flex-)?(.*)/,B+"box-pack:$3"+L+"flex-pack:$3"),/s.+-b[^;]+/,"justify")+B+e+e;case 4095:case 3583:case 4068:case 2532:return c(e,/(.+)-inline(.+)/,B+"$1$2")+e;case 8116:case 7059:case 5753:case 5535:case 5445:case 5701:case 4933:case 4677:case 5533:case 5789:case 5021:case 4765:if(f(e)-1-t>6)switch(d(e,t+1)){case 109:if(45!==d(e,t+4))break;case 102:return c(e,/(.+:)(.+)-([^]+)/,"$1"+B+"$2-$3$1"+$+(108==d(e,t+3)?"$3":"$2-$3"))+e;case 115:return~u(e,"stretch")?re(c(e,"stretch","fill-available"),t)+e:e}break;case 4949:if(115!==d(e,t+1))break;case 6444:switch(d(e,f(e)-3-(~u(e,"!important")&&10))){case 107:return c(e,":",":"+B)+e;case 101:return c(e,/(.+:)([^;!]+)(;|!.+)?/,"$1"+B+(45===d(e,14)?"inline-":"")+"box$3$1"+B+"$2$3$1"+L+"$2box$3")+e}break;case 5936:switch(d(e,t+11)){case 114:return B+e+L+c(e,/[svh]\w+-[tblr]{2}/,"tb")+e;case 108:return B+e+L+c(e,/[svh]\w+-[tblr]{2}/,"tb-rl")+e;case 45:return B+e+L+c(e,/[svh]\w+-[tblr]{2}/,"lr")+e}return B+e+L+e+e}return e}var ne=[function(e,t,r,n){if(e.length>-1&&!e.return)switch(e.type){case F:e.return=re(e.value,e.length);break;case U:return q([O(e,{value:c(e.value,"@","@"+B)})],n);case W:if(e.length)return function(e,t){return e.map(t).join("")}(e.props,(function(t){switch(function(e,t){return(e=/(::plac\w+|:read-\w+)/.exec(e))?e[0]:e}(t)){case":read-only":case":read-write":return q([O(e,{props:[c(t,/:(read-\w+)/,":-moz-$1")]})],n);case"::placeholder":return q([O(e,{props:[c(t,/:(plac\w+)/,":"+B+"input-$1")]}),O(e,{props:[c(t,/:(plac\w+)/,":-moz-$1")]}),O(e,{props:[c(t,/:(plac\w+)/,L+"input-$1")]})],n)}return""}))}}],oe=function(e){var t=e.key;if("css"===t){var r=document.querySelectorAll("style[data-emotion]:not([data-s])");Array.prototype.forEach.call(r,(function(e){-1!==e.getAttribute("data-emotion").indexOf(" ")&&(document.head.appendChild(e),e.setAttribute("data-s",""))}))}var n,i,a=e.stylisPlugins||ne,s={},l=[];n=e.container||document.head,Array.prototype.forEach.call(document.querySelectorAll('style[data-emotion^="'+t+' "]'),(function(e){for(var t=e.getAttribute("data-emotion").split(" "),r=1;r<t.length;r++)s[t[r]]=!0;l.push(e)}));var c,u,d,p,f=[G,(p=function(e){c.insert(e)},function(e){e.root||(e=e.return)&&p(e)})],m=(u=[ee,te].concat(a,f),d=h(u),function(e,t,r,n){for(var o="",i=0;i<d;i++)o+=u[i](e,t,r,n)||"";return o});i=function(e,t,r,n){c=r,q(V(e?e+"{"+t.styles+"}":t.styles),m),n&&(g.inserted[t.name]=!0)};var g={key:t,sheet:new o({key:t,container:n,nonce:e.nonce,speedy:e.speedy,prepend:e.prepend,insertionPoint:e.insertionPoint}),nonce:e.nonce,inserted:s,registered:{},insert:i};return g.sheet.hydrate(l),g},ie=(r(6797),r(7278),n.createContext("undefined"!=typeof HTMLElement?oe({key:"css"}):null));ie.Provider;var ae=function(e){return(0,n.forwardRef)((function(t,r){var o=(0,n.useContext)(ie);return e(t,o,r)}))},se=n.createContext({})},6797:(e,t,r)=>{"use strict";r.d(t,{O:()=>h});var n={animationIterationCount:1,aspectRatio:1,borderImageOutset:1,borderImageSlice:1,borderImageWidth:1,boxFlex:1,boxFlexGroup:1,boxOrdinalGroup:1,columnCount:1,columns:1,flex:1,flexGrow:1,flexPositive:1,flexShrink:1,flexNegative:1,flexOrder:1,gridRow:1,gridRowEnd:1,gridRowSpan:1,gridRowStart:1,gridColumn:1,gridColumnEnd:1,gridColumnSpan:1,gridColumnStart:1,msGridRow:1,msGridRowSpan:1,msGridColumn:1,msGridColumnSpan:1,fontWeight:1,lineHeight:1,opacity:1,order:1,orphans:1,tabSize:1,widows:1,zIndex:1,zoom:1,WebkitLineClamp:1,fillOpacity:1,floodOpacity:1,stopOpacity:1,strokeDasharray:1,strokeDashoffset:1,strokeMiterlimit:1,strokeOpacity:1,strokeWidth:1},o=r(5042),i=/[A-Z]|^ms/g,a=/_EMO_([^_]+?)_([^]*?)_EMO_/g,s=function(e){return 45===e.charCodeAt(1)},l=function(e){return null!=e&&"boolean"!=typeof e},c=(0,o.Z)((function(e){return s(e)?e:e.replace(i,"-$&").toLowerCase()})),u=function(e,t){switch(e){case"animation":case"animationName":if("string"==typeof t)return t.replace(a,(function(e,t,r){return p={name:t,styles:r,next:p},t}))}return 1===n[e]||s(e)||"number"!=typeof t||0===t?t:t+"px"};function d(e,t,r){if(null==r)return"";if(void 0!==r.__emotion_styles)return r;switch(typeof r){case"boolean":return"";case"object":if(1===r.anim)return p={name:r.name,styles:r.styles,next:p},r.name;if(void 0!==r.styles){var n=r.next;if(void 0!==n)for(;void 0!==n;)p={name:n.name,styles:n.styles,next:p},n=n.next;return r.styles+";"}return function(e,t,r){var n="";if(Array.isArray(r))for(var o=0;o<r.length;o++)n+=d(e,t,r[o])+";";else for(var i in r){var a=r[i];if("object"!=typeof a)null!=t&&void 0!==t[a]?n+=i+"{"+t[a]+"}":l(a)&&(n+=c(i)+":"+u(i,a)+";");else if(!Array.isArray(a)||"string"!=typeof a[0]||null!=t&&void 0!==t[a[0]]){var s=d(e,t,a);switch(i){case"animation":case"animationName":n+=c(i)+":"+s+";";break;default:n+=i+"{"+s+"}"}}else for(var p=0;p<a.length;p++)l(a[p])&&(n+=c(i)+":"+u(i,a[p])+";")}return n}(e,t,r);case"function":if(void 0!==e){var o=p,i=r(e);return p=o,d(e,t,i)}}if(null==t)return r;var a=t[r];return void 0!==a?a:r}var p,f=/label:\s*([^\s;\n{]+)\s*(;|$)/g,h=function(e,t,r){if(1===e.length&&"object"==typeof e[0]&&null!==e[0]&&void 0!==e[0].styles)return e[0];var n=!0,o="";p=void 0;var i=e[0];null==i||void 0===i.raw?(n=!1,o+=d(r,t,i)):o+=i[0];for(var a=1;a<e.length;a++)o+=d(r,t,e[a]),n&&(o+=i[a]);f.lastIndex=0;for(var s,l="";null!==(s=f.exec(o));)l+="-"+s[1];var c=function(e){for(var t,r=0,n=0,o=e.length;o>=4;++n,o-=4)t=1540483477*(65535&(t=255&e.charCodeAt(n)|(255&e.charCodeAt(++n))<<8|(255&e.charCodeAt(++n))<<16|(255&e.charCodeAt(++n))<<24))+(59797*(t>>>16)<<16),r=1540483477*(65535&(t^=t>>>24))+(59797*(t>>>16)<<16)^1540483477*(65535&r)+(59797*(r>>>16)<<16);switch(o){case 3:r^=(255&e.charCodeAt(n+2))<<16;case 2:r^=(255&e.charCodeAt(n+1))<<8;case 1:r=1540483477*(65535&(r^=255&e.charCodeAt(n)))+(59797*(r>>>16)<<16)}return(((r=1540483477*(65535&(r^=r>>>13))+(59797*(r>>>16)<<16))^r>>>15)>>>0).toString(36)}(o)+l;return{name:c,styles:o,next:p}}},7278:(e,t,r)=>{"use strict";r.d(t,{L:()=>i});var n=r(5359),o=!!n.useInsertionEffect&&n.useInsertionEffect,i=o||function(e){return e()};o||n.useLayoutEffect},8904:(e,t,r)=>{"use strict";var n=r(4836);t.Z=void 0;var o=n(r(4938)),i=r(5893),a=(0,o.default)((0,i.jsx)("path",{d:"M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-5h2v5zm4 0h-2v-3h2v3zm0-5h-2v-2h2v2zm4 5h-2V7h2v10z"}),"Analytics");t.Z=a},8162:(e,t,r)=>{"use strict";var n=r(4836);t.Z=void 0;var o=n(r(4938)),i=r(5893),a=(0,o.default)((0,i.jsx)("path",{d:"M4.25 5.61C6.27 8.2 10 13 10 13v6c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-6s3.72-4.8 5.74-7.39c.51-.66.04-1.61-.79-1.61H5.04c-.83 0-1.3.95-.79 1.61z"}),"FilterAlt");t.Z=a},5449:(e,t,r)=>{"use strict";var n=r(4836);t.Z=void 0,function(e,t){if(e&&e.__esModule)return e;if(null===e||"object"!=typeof e&&"function"!=typeof e)return{default:e};var r=a(t);if(r&&r.has(e))return r.get(e);var n={},o=Object.defineProperty&&Object.getOwnPropertyDescriptor;for(var i in e)if("default"!==i&&Object.prototype.hasOwnProperty.call(e,i)){var s=o?Object.getOwnPropertyDescriptor(e,i):null;s&&(s.get||s.set)?Object.defineProperty(n,i,s):n[i]=e[i]}n.default=e,r&&r.set(e,n)}(r(5359));var o=n(r(4938)),i=r(5893);function a(e){if("function"!=typeof WeakMap)return null;var t=new WeakMap,r=new WeakMap;return(a=function(e){return e?r:t})(e)}var s=(0,o.default)((0,i.jsx)("path",{d:"M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"}),"GitHub");t.Z=s},7608:(e,t,r)=>{"use strict";var n=r(4836);t.Z=void 0;var o=n(r(4938)),i=r(5893),a=(0,o.default)((0,i.jsx)("path",{d:"M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"}),"HelpOutline");t.Z=a},2761:(e,t,r)=>{"use strict";var n=r(4836);t.Z=void 0;var o=n(r(4938)),i=r(5893),a=(0,o.default)((0,i.jsx)("path",{d:"M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"}),"Search");t.Z=a},4938:(e,t,r)=>{"use strict";Object.defineProperty(t,"__esModule",{value:!0}),Object.defineProperty(t,"default",{enumerable:!0,get:function(){return n.createSvgIcon}});var n=r(6426)},8824:(e,t,r)=>{"use strict";r.d(t,{Z:()=>B});var n=r(7462),o=r(3366),i=r(1387),a=r(9766),s=r(6268),l=r(8010),c=r(6523);function u(e,t=0,r=1){return Math.min(Math.max(t,e),r)}function d(e){if(e.type)return e;if("#"===e.charAt(0))return d(function(e){e=e.slice(1);const t=new RegExp(`.{1,${e.length>=6?2:1}}`,"g");let r=e.match(t);return r&&1===r[0].length&&(r=r.map((e=>e+e))),r?`rgb${4===r.length?"a":""}(${r.map(((e,t)=>t<3?parseInt(e,16):Math.round(parseInt(e,16)/255*1e3)/1e3)).join(", ")})`:""}(e));const t=e.indexOf("("),r=e.substring(0,t);if(-1===["rgb","rgba","hsl","hsla","color"].indexOf(r))throw new Error((0,i.Z)(9,e));let n,o=e.substring(t+1,e.length-1);if("color"===r){if(o=o.split(" "),n=o.shift(),4===o.length&&"/"===o[3].charAt(0)&&(o[3]=o[3].slice(1)),-1===["srgb","display-p3","a98-rgb","prophoto-rgb","rec-2020"].indexOf(n))throw new Error((0,i.Z)(10,n))}else o=o.split(",");return o=o.map((e=>parseFloat(e))),{type:r,values:o,colorSpace:n}}function p(e){const{type:t,colorSpace:r}=e;let{values:n}=e;return-1!==t.indexOf("rgb")?n=n.map(((e,t)=>t<3?parseInt(e,10):e)):-1!==t.indexOf("hsl")&&(n[1]=`${n[1]}%`,n[2]=`${n[2]}%`),n=-1!==t.indexOf("color")?`${r} ${n.join(" ")}`:`${n.join(", ")}`,`${t}(${n})`}function f(e){let t="hsl"===(e=d(e)).type||"hsla"===e.type?d(function(e){e=d(e);const{values:t}=e,r=t[0],n=t[1]/100,o=t[2]/100,i=n*Math.min(o,1-o),a=(e,t=(e+r/30)%12)=>o-i*Math.max(Math.min(t-3,9-t,1),-1);let s="rgb";const l=[Math.round(255*a(0)),Math.round(255*a(8)),Math.round(255*a(4))];return"hsla"===e.type&&(s+="a",l.push(t[3])),p({type:s,values:l})}(e)).values:e.values;return t=t.map((t=>("color"!==e.type&&(t/=255),t<=.03928?t/12.92:((t+.055)/1.055)**2.4))),Number((.2126*t[0]+.7152*t[1]+.0722*t[2]).toFixed(3))}const h={black:"#000",white:"#fff"},m={50:"#fafafa",100:"#f5f5f5",200:"#eeeeee",300:"#e0e0e0",400:"#bdbdbd",500:"#9e9e9e",600:"#757575",700:"#616161",800:"#424242",900:"#212121",A100:"#f5f5f5",A200:"#eeeeee",A400:"#bdbdbd",A700:"#616161"},g={50:"#f3e5f5",100:"#e1bee7",200:"#ce93d8",300:"#ba68c8",400:"#ab47bc",500:"#9c27b0",600:"#8e24aa",700:"#7b1fa2",800:"#6a1b9a",900:"#4a148c",A100:"#ea80fc",A200:"#e040fb",A400:"#d500f9",A700:"#aa00ff"},y={50:"#ffebee",100:"#ffcdd2",200:"#ef9a9a",300:"#e57373",400:"#ef5350",500:"#f44336",600:"#e53935",700:"#d32f2f",800:"#c62828",900:"#b71c1c",A100:"#ff8a80",A200:"#ff5252",A400:"#ff1744",A700:"#d50000"},v={50:"#fff3e0",100:"#ffe0b2",200:"#ffcc80",300:"#ffb74d",400:"#ffa726",500:"#ff9800",600:"#fb8c00",700:"#f57c00",800:"#ef6c00",900:"#e65100",A100:"#ffd180",A200:"#ffab40",A400:"#ff9100",A700:"#ff6d00"},b={50:"#e3f2fd",100:"#bbdefb",200:"#90caf9",300:"#64b5f6",400:"#42a5f5",500:"#2196f3",600:"#1e88e5",700:"#1976d2",800:"#1565c0",900:"#0d47a1",A100:"#82b1ff",A200:"#448aff",A400:"#2979ff",A700:"#2962ff"},x={50:"#e1f5fe",100:"#b3e5fc",200:"#81d4fa",300:"#4fc3f7",400:"#29b6f6",500:"#03a9f4",600:"#039be5",700:"#0288d1",800:"#0277bd",900:"#01579b",A100:"#80d8ff",A200:"#40c4ff",A400:"#00b0ff",A700:"#0091ea"},w={50:"#e8f5e9",100:"#c8e6c9",200:"#a5d6a7",300:"#81c784",400:"#66bb6a",500:"#4caf50",600:"#43a047",700:"#388e3c",800:"#2e7d32",900:"#1b5e20",A100:"#b9f6ca",A200:"#69f0ae",A400:"#00e676",A700:"#00c853"},S=["mode","contrastThreshold","tonalOffset"],O={text:{primary:"rgba(0, 0, 0, 0.87)",secondary:"rgba(0, 0, 0, 0.6)",disabled:"rgba(0, 0, 0, 0.38)"},divider:"rgba(0, 0, 0, 0.12)",background:{paper:h.white,default:h.white},action:{active:"rgba(0, 0, 0, 0.54)",hover:"rgba(0, 0, 0, 0.04)",hoverOpacity:.04,selected:"rgba(0, 0, 0, 0.08)",selectedOpacity:.08,disabled:"rgba(0, 0, 0, 0.26)",disabledBackground:"rgba(0, 0, 0, 0.12)",disabledOpacity:.38,focus:"rgba(0, 0, 0, 0.12)",focusOpacity:.12,activatedOpacity:.12}},P={text:{primary:h.white,secondary:"rgba(255, 255, 255, 0.7)",disabled:"rgba(255, 255, 255, 0.5)",icon:"rgba(255, 255, 255, 0.5)"},divider:"rgba(255, 255, 255, 0.12)",background:{paper:"#121212",default:"#121212"},action:{active:h.white,hover:"rgba(255, 255, 255, 0.08)",hoverOpacity:.08,selected:"rgba(255, 255, 255, 0.16)",selectedOpacity:.16,disabled:"rgba(255, 255, 255, 0.3)",disabledBackground:"rgba(255, 255, 255, 0.12)",disabledOpacity:.38,focus:"rgba(255, 255, 255, 0.12)",focusOpacity:.12,activatedOpacity:.24}};function k(e,t,r,n){const o=n.light||n,i=n.dark||1.5*n;e[t]||(e.hasOwnProperty(r)?e[t]=e[r]:"light"===t?e.light=function(e,t){if(e=d(e),t=u(t),-1!==e.type.indexOf("hsl"))e.values[2]+=(100-e.values[2])*t;else if(-1!==e.type.indexOf("rgb"))for(let r=0;r<3;r+=1)e.values[r]+=(255-e.values[r])*t;else if(-1!==e.type.indexOf("color"))for(let r=0;r<3;r+=1)e.values[r]+=(1-e.values[r])*t;return p(e)}(e.main,o):"dark"===t&&(e.dark=function(e,t){if(e=d(e),t=u(t),-1!==e.type.indexOf("hsl"))e.values[2]*=1-t;else if(-1!==e.type.indexOf("rgb")||-1!==e.type.indexOf("color"))for(let r=0;r<3;r+=1)e.values[r]*=1-t;return p(e)}(e.main,i)))}const E=["fontFamily","fontSize","fontWeightLight","fontWeightRegular","fontWeightMedium","fontWeightBold","htmlFontSize","allVariants","pxToRem"],C={textTransform:"uppercase"},j='"Roboto", "Helvetica", "Arial", sans-serif';function A(e,t){const r="function"==typeof t?t(e):t,{fontFamily:i=j,fontSize:s=14,fontWeightLight:l=300,fontWeightRegular:c=400,fontWeightMedium:u=500,fontWeightBold:d=700,htmlFontSize:p=16,allVariants:f,pxToRem:h}=r,m=(0,o.Z)(r,E),g=s/14,y=h||(e=>e/p*g+"rem"),v=(e,t,r,o,a)=>{return(0,n.Z)({fontFamily:i,fontWeight:e,fontSize:y(t),lineHeight:r},i===j?{letterSpacing:(s=o/t,Math.round(1e5*s)/1e5+"em")}:{},a,f);var s},b={h1:v(l,96,1.167,-1.5),h2:v(l,60,1.2,-.5),h3:v(c,48,1.167,0),h4:v(c,34,1.235,.25),h5:v(c,24,1.334,0),h6:v(u,20,1.6,.15),subtitle1:v(c,16,1.75,.15),subtitle2:v(u,14,1.57,.1),body1:v(c,16,1.5,.15),body2:v(c,14,1.43,.15),button:v(u,14,1.75,.4,C),caption:v(c,12,1.66,.4),overline:v(c,12,2.66,1,C),inherit:{fontFamily:"inherit",fontWeight:"inherit",fontSize:"inherit",lineHeight:"inherit",letterSpacing:"inherit"}};return(0,a.Z)((0,n.Z)({htmlFontSize:p,pxToRem:y,fontFamily:i,fontSize:s,fontWeightLight:l,fontWeightRegular:c,fontWeightMedium:u,fontWeightBold:d},b),m,{clone:!1})}function R(...e){return[`${e[0]}px ${e[1]}px ${e[2]}px ${e[3]}px rgba(0,0,0,0.2)`,`${e[4]}px ${e[5]}px ${e[6]}px ${e[7]}px rgba(0,0,0,0.14)`,`${e[8]}px ${e[9]}px ${e[10]}px ${e[11]}px rgba(0,0,0,0.12)`].join(",")}const T=["none",R(0,2,1,-1,0,1,1,0,0,1,3,0),R(0,3,1,-2,0,2,2,0,0,1,5,0),R(0,3,3,-2,0,3,4,0,0,1,8,0),R(0,2,4,-1,0,4,5,0,0,1,10,0),R(0,3,5,-1,0,5,8,0,0,1,14,0),R(0,3,5,-1,0,6,10,0,0,1,18,0),R(0,4,5,-2,0,7,10,1,0,2,16,1),R(0,5,5,-3,0,8,10,1,0,3,14,2),R(0,5,6,-3,0,9,12,1,0,3,16,2),R(0,6,6,-3,0,10,14,1,0,4,18,3),R(0,6,7,-4,0,11,15,1,0,4,20,3),R(0,7,8,-4,0,12,17,2,0,5,22,4),R(0,7,8,-4,0,13,19,2,0,5,24,4),R(0,7,9,-4,0,14,21,2,0,5,26,4),R(0,8,9,-5,0,15,22,2,0,6,28,5),R(0,8,10,-5,0,16,24,2,0,6,30,5),R(0,8,11,-5,0,17,26,2,0,6,32,5),R(0,9,11,-5,0,18,28,2,0,7,34,6),R(0,9,12,-6,0,19,29,2,0,7,36,6),R(0,10,13,-6,0,20,31,3,0,8,38,7),R(0,10,13,-6,0,21,33,3,0,8,40,7),R(0,10,14,-6,0,22,35,3,0,8,42,7),R(0,11,14,-7,0,23,36,3,0,9,44,8),R(0,11,15,-7,0,24,38,3,0,9,46,8)],_=["duration","easing","delay"],N={easeInOut:"cubic-bezier(0.4, 0, 0.2, 1)",easeOut:"cubic-bezier(0.0, 0, 0.2, 1)",easeIn:"cubic-bezier(0.4, 0, 1, 1)",sharp:"cubic-bezier(0.4, 0, 0.6, 1)"},M={shortest:150,shorter:200,short:250,standard:300,complex:375,enteringScreen:225,leavingScreen:195};function I(e){return`${Math.round(e)}ms`}function Z(e){if(!e)return 0;const t=e/36;return Math.round(10*(4+15*t**.25+t/5))}function z(e){const t=(0,n.Z)({},N,e.easing),r=(0,n.Z)({},M,e.duration);return(0,n.Z)({getAutoHeightDuration:Z,create:(e=["all"],n={})=>{const{duration:i=r.standard,easing:a=t.easeInOut,delay:s=0}=n;return(0,o.Z)(n,_),(Array.isArray(e)?e:[e]).map((e=>`${e} ${"string"==typeof i?i:I(i)} ${a} ${"string"==typeof s?s:I(s)}`)).join(",")}},e,{easing:t,duration:r})}const L={mobileStepper:1e3,fab:1050,speedDial:1050,appBar:1100,drawer:1200,modal:1300,snackbar:1400,tooltip:1500},$=["breakpoints","mixins","spacing","palette","transitions","typography","shape"];const B=function(e={},...t){const{mixins:r={},palette:u={},transitions:d={},typography:p={}}=e,E=(0,o.Z)(e,$);if(e.vars)throw new Error((0,i.Z)(18));const C=function(e){const{mode:t="light",contrastThreshold:r=3,tonalOffset:s=.2}=e,l=(0,o.Z)(e,S),c=e.primary||function(e="light"){return"dark"===e?{main:b[200],light:b[50],dark:b[400]}:{main:b[700],light:b[400],dark:b[800]}}(t),u=e.secondary||function(e="light"){return"dark"===e?{main:g[200],light:g[50],dark:g[400]}:{main:g[500],light:g[300],dark:g[700]}}(t),d=e.error||function(e="light"){return"dark"===e?{main:y[500],light:y[300],dark:y[700]}:{main:y[700],light:y[400],dark:y[800]}}(t),p=e.info||function(e="light"){return"dark"===e?{main:x[400],light:x[300],dark:x[700]}:{main:x[700],light:x[500],dark:x[900]}}(t),E=e.success||function(e="light"){return"dark"===e?{main:w[400],light:w[300],dark:w[700]}:{main:w[800],light:w[500],dark:w[900]}}(t),C=e.warning||function(e="light"){return"dark"===e?{main:v[400],light:v[300],dark:v[700]}:{main:"#ed6c02",light:v[500],dark:v[900]}}(t);function j(e){const t=function(e,t){const r=f(e),n=f(t);return(Math.max(r,n)+.05)/(Math.min(r,n)+.05)}(e,P.text.primary)>=r?P.text.primary:O.text.primary;return t}const A=({color:e,name:t,mainShade:r=500,lightShade:o=300,darkShade:a=700})=>{if(!(e=(0,n.Z)({},e)).main&&e[r]&&(e.main=e[r]),!e.hasOwnProperty("main"))throw new Error((0,i.Z)(11,t?` (${t})`:"",r));if("string"!=typeof e.main)throw new Error((0,i.Z)(12,t?` (${t})`:"",JSON.stringify(e.main)));return k(e,"light",o,s),k(e,"dark",a,s),e.contrastText||(e.contrastText=j(e.main)),e},R={dark:P,light:O};return(0,a.Z)((0,n.Z)({common:(0,n.Z)({},h),mode:t,primary:A({color:c,name:"primary"}),secondary:A({color:u,name:"secondary",mainShade:"A400",lightShade:"A200",darkShade:"A700"}),error:A({color:d,name:"error"}),warning:A({color:C,name:"warning"}),info:A({color:p,name:"info"}),success:A({color:E,name:"success"}),grey:m,contrastThreshold:r,getContrastText:j,augmentColor:A,tonalOffset:s},R[t]),l)}(u),j=(0,s.Z)(e);let R=(0,a.Z)(j,{mixins:(_=j.breakpoints,N=r,(0,n.Z)({toolbar:{minHeight:56,[_.up("xs")]:{"@media (orientation: landscape)":{minHeight:48}},[_.up("sm")]:{minHeight:64}}},N)),palette:C,shadows:T.slice(),typography:A(C,p),transitions:z(d),zIndex:(0,n.Z)({},L)});var _,N;return R=(0,a.Z)(R,E),R=t.reduce(((e,t)=>(0,a.Z)(e,t)),R),R.unstable_sxConfig=(0,n.Z)({},l.Z,null==E?void 0:E.unstable_sxConfig),R.unstable_sx=function(e){return(0,c.Z)({sx:e,theme:this})},R}()},606:(e,t,r)=>{"use strict";r.d(t,{Z:()=>n});const n="$$material"},4445:(e,t,r)=>{"use strict";r.d(t,{ZP:()=>T});var n=r(3366),o=r(7462),i=r(5359),a=r(5042),s=/^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|defaultChecked|innerHTML|suppressContentEditableWarning|suppressHydrationWarning|valueLink|abbr|accept|acceptCharset|accessKey|action|allow|allowUserMedia|allowPaymentRequest|allowFullScreen|allowTransparency|alt|async|autoComplete|autoPlay|capture|cellPadding|cellSpacing|challenge|charSet|checked|cite|classID|className|cols|colSpan|content|contentEditable|contextMenu|controls|controlsList|coords|crossOrigin|data|dateTime|decoding|default|defer|dir|disabled|disablePictureInPicture|download|draggable|encType|enterKeyHint|form|formAction|formEncType|formMethod|formNoValidate|formTarget|frameBorder|headers|height|hidden|high|href|hrefLang|htmlFor|httpEquiv|id|inputMode|integrity|is|keyParams|keyType|kind|label|lang|list|loading|loop|low|marginHeight|marginWidth|max|maxLength|media|mediaGroup|method|min|minLength|multiple|muted|name|nonce|noValidate|open|optimum|pattern|placeholder|playsInline|poster|preload|profile|radioGroup|readOnly|referrerPolicy|rel|required|reversed|role|rows|rowSpan|sandbox|scope|scoped|scrolling|seamless|selected|shape|size|sizes|slot|span|spellCheck|src|srcDoc|srcLang|srcSet|start|step|style|summary|tabIndex|target|title|translate|type|useMap|value|width|wmode|wrap|about|datatype|inlist|prefix|property|resource|typeof|vocab|autoCapitalize|autoCorrect|autoSave|color|incremental|fallback|inert|itemProp|itemScope|itemType|itemID|itemRef|on|option|results|security|unselectable|accentHeight|accumulate|additive|alignmentBaseline|allowReorder|alphabetic|amplitude|arabicForm|ascent|attributeName|attributeType|autoReverse|azimuth|baseFrequency|baselineShift|baseProfile|bbox|begin|bias|by|calcMode|capHeight|clip|clipPathUnits|clipPath|clipRule|colorInterpolation|colorInterpolationFilters|colorProfile|colorRendering|contentScriptType|contentStyleType|cursor|cx|cy|d|decelerate|descent|diffuseConstant|direction|display|divisor|dominantBaseline|dur|dx|dy|edgeMode|elevation|enableBackground|end|exponent|externalResourcesRequired|fill|fillOpacity|fillRule|filter|filterRes|filterUnits|floodColor|floodOpacity|focusable|fontFamily|fontSize|fontSizeAdjust|fontStretch|fontStyle|fontVariant|fontWeight|format|from|fr|fx|fy|g1|g2|glyphName|glyphOrientationHorizontal|glyphOrientationVertical|glyphRef|gradientTransform|gradientUnits|hanging|horizAdvX|horizOriginX|ideographic|imageRendering|in|in2|intercept|k|k1|k2|k3|k4|kernelMatrix|kernelUnitLength|kerning|keyPoints|keySplines|keyTimes|lengthAdjust|letterSpacing|lightingColor|limitingConeAngle|local|markerEnd|markerMid|markerStart|markerHeight|markerUnits|markerWidth|mask|maskContentUnits|maskUnits|mathematical|mode|numOctaves|offset|opacity|operator|order|orient|orientation|origin|overflow|overlinePosition|overlineThickness|panose1|paintOrder|pathLength|patternContentUnits|patternTransform|patternUnits|pointerEvents|points|pointsAtX|pointsAtY|pointsAtZ|preserveAlpha|preserveAspectRatio|primitiveUnits|r|radius|refX|refY|renderingIntent|repeatCount|repeatDur|requiredExtensions|requiredFeatures|restart|result|rotate|rx|ry|scale|seed|shapeRendering|slope|spacing|specularConstant|specularExponent|speed|spreadMethod|startOffset|stdDeviation|stemh|stemv|stitchTiles|stopColor|stopOpacity|strikethroughPosition|strikethroughThickness|string|stroke|strokeDasharray|strokeDashoffset|strokeLinecap|strokeLinejoin|strokeMiterlimit|strokeOpacity|strokeWidth|surfaceScale|systemLanguage|tableValues|targetX|targetY|textAnchor|textDecoration|textRendering|textLength|to|transform|u1|u2|underlinePosition|underlineThickness|unicode|unicodeBidi|unicodeRange|unitsPerEm|vAlphabetic|vHanging|vIdeographic|vMathematical|values|vectorEffect|version|vertAdvY|vertOriginX|vertOriginY|viewBox|viewTarget|visibility|widths|wordSpacing|writingMode|x|xHeight|x1|x2|xChannelSelector|xlinkActuate|xlinkArcrole|xlinkHref|xlinkRole|xlinkShow|xlinkTitle|xlinkType|xmlBase|xmlns|xmlnsXlink|xmlLang|xmlSpace|y|y1|y2|yChannelSelector|z|zoomAndPan|for|class|autofocus)|(([Dd][Aa][Tt][Aa]|[Aa][Rr][Ii][Aa]|x)-.*))$/,l=(0,a.Z)((function(e){return s.test(e)||111===e.charCodeAt(0)&&110===e.charCodeAt(1)&&e.charCodeAt(2)<91})),c=r(3562),u=function(e,t,r){var n=e.key+"-"+t.name;!1===r&&void 0===e.registered[n]&&(e.registered[n]=t.styles)},d=r(6797),p=r(7278),f=l,h=function(e){return"theme"!==e},m=function(e){return"string"==typeof e&&e.charCodeAt(0)>96?f:h},g=function(e,t,r){var n;if(t){var o=t.shouldForwardProp;n=e.__emotion_forwardProp&&o?function(t){return e.__emotion_forwardProp(t)&&o(t)}:o}return"function"!=typeof n&&r&&(n=e.__emotion_forwardProp),n},y=function(e){var t=e.cache,r=e.serialized,n=e.isStringTag;return u(t,r,n),(0,p.L)((function(){return function(e,t,r){u(e,t,r);var n=e.key+"-"+t.name;if(void 0===e.inserted[t.name]){var o=t;do{e.insert(t===o?"."+n:"",o,e.sheet,!0),o=o.next}while(void 0!==o)}}(t,r,n)})),null},v=function e(t,r){var n,a,s=t.__emotion_real===t,l=s&&t.__emotion_base||t;void 0!==r&&(n=r.label,a=r.target);var u=g(t,r,s),p=u||m(l),f=!p("as");return function(){var h=arguments,v=s&&void 0!==t.__emotion_styles?t.__emotion_styles.slice(0):[];if(void 0!==n&&v.push("label:"+n+";"),null==h[0]||void 0===h[0].raw)v.push.apply(v,h);else{v.push(h[0][0]);for(var b=h.length,x=1;x<b;x++)v.push(h[x],h[0][x])}var w=(0,c.w)((function(e,t,r){var n,o,s,h,g=f&&e.as||l,b="",x=[],w=e;if(null==e.theme){for(var S in w={},e)w[S]=e[S];w.theme=i.useContext(c.T)}"string"==typeof e.className?(n=t.registered,o=x,s=e.className,h="",s.split(" ").forEach((function(e){void 0!==n[e]?o.push(n[e]+";"):h+=e+" "})),b=h):null!=e.className&&(b=e.className+" ");var O=(0,d.O)(v.concat(x),t.registered,w);b+=t.key+"-"+O.name,void 0!==a&&(b+=" "+a);var P=f&&void 0===u?m(g):p,k={};for(var E in e)f&&"as"===E||P(E)&&(k[E]=e[E]);return k.className=b,k.ref=r,i.createElement(i.Fragment,null,i.createElement(y,{cache:t,serialized:O,isStringTag:"string"==typeof g}),i.createElement(g,k))}));return w.displayName=void 0!==n?n:"Styled("+("string"==typeof l?l:l.displayName||l.name||"Component")+")",w.defaultProps=t.defaultProps,w.__emotion_real=w,w.__emotion_base=l,w.__emotion_styles=v,w.__emotion_forwardProp=u,Object.defineProperty(w,"toString",{value:function(){return"."+a}}),w.withComponent=function(t,n){return e(t,(0,o.Z)({},r,n,{shouldForwardProp:g(w,n,!0)})).apply(void 0,v)},w}}.bind();["a","abbr","address","area","article","aside","audio","b","base","bdi","bdo","big","blockquote","body","br","button","canvas","caption","cite","code","col","colgroup","data","datalist","dd","del","details","dfn","dialog","div","dl","dt","em","embed","fieldset","figcaption","figure","footer","form","h1","h2","h3","h4","h5","h6","head","header","hgroup","hr","html","i","iframe","img","input","ins","kbd","keygen","label","legend","li","link","main","map","mark","marquee","menu","menuitem","meta","meter","nav","noscript","object","ol","optgroup","option","output","p","param","picture","pre","progress","q","rp","rt","ruby","s","samp","script","section","select","small","source","span","strong","style","sub","summary","sup","table","tbody","td","textarea","tfoot","th","thead","time","title","tr","track","u","ul","var","video","wbr","circle","clipPath","defs","ellipse","foreignObject","g","image","line","linearGradient","mask","path","pattern","polygon","polyline","radialGradient","rect","stop","svg","text","tspan"].forEach((function(e){v[e]=v(e)}));var b=r(6268),x=r(8320);const w=["variant"];function S(e){return 0===e.length}function O(e){const{variant:t}=e,r=(0,n.Z)(e,w);let o=t||"";return Object.keys(r).sort().forEach((t=>{o+="color"===t?S(o)?e[t]:(0,x.Z)(e[t]):`${S(o)?t:(0,x.Z)(t)}${(0,x.Z)(e[t].toString())}`})),o}var P=r(6523);const k=["name","slot","skipVariantsResolver","skipSx","overridesResolver"];function E(e){return"ownerState"!==e&&"theme"!==e&&"sx"!==e&&"as"!==e}const C=(0,b.Z)();function j({defaultTheme:e,theme:t,themeId:r}){return n=t,0===Object.keys(n).length?e:t[r]||t;var n}var A=r(8824);const R=function(e={}){const{themeId:t,defaultTheme:r=C,rootShouldForwardProp:i=E,slotShouldForwardProp:a=E}=e,s=e=>(0,P.Z)((0,o.Z)({},e,{theme:j((0,o.Z)({},e,{defaultTheme:r,themeId:t}))}));return s.__mui_systemSx=!0,(e,l={})=>{((e,t)=>{Array.isArray(e.__emotion_styles)&&(e.__emotion_styles=e.__emotion_styles.filter((e=>!(null!=e&&e.__mui_systemSx))))})(e);const{name:c,slot:u,skipVariantsResolver:d,skipSx:p,overridesResolver:f}=l,h=(0,n.Z)(l,k),m=void 0!==d?d:u&&"Root"!==u||!1,g=p||!1;let y=E;"Root"===u?y=i:u?y=a:function(e){return"string"==typeof e&&e.charCodeAt(0)>96}(e)&&(y=void 0);const b=function(e,t){return v(e,t)}(e,(0,o.Z)({shouldForwardProp:y,label:void 0},h)),x=(n,...i)=>{const a=i?i.map((e=>"function"==typeof e&&e.__emotion_real!==e?n=>e((0,o.Z)({},n,{theme:j((0,o.Z)({},n,{defaultTheme:r,themeId:t}))})):e)):[];let l=n;c&&f&&a.push((e=>{const n=j((0,o.Z)({},e,{defaultTheme:r,themeId:t})),i=((e,t)=>t.components&&t.components[e]&&t.components[e].styleOverrides?t.components[e].styleOverrides:null)(c,n);if(i){const t={};return Object.entries(i).forEach((([r,i])=>{t[r]="function"==typeof i?i((0,o.Z)({},e,{theme:n})):i})),f(e,t)}return null})),c&&!m&&a.push((e=>{const n=j((0,o.Z)({},e,{defaultTheme:r,themeId:t}));return((e,t,r,n)=>{var o,i;const{ownerState:a={}}=e,s=[],l=null==r||null==(o=r.components)||null==(i=o[n])?void 0:i.variants;return l&&l.forEach((r=>{let n=!0;Object.keys(r.props).forEach((t=>{a[t]!==r.props[t]&&e[t]!==r.props[t]&&(n=!1)})),n&&s.push(t[O(r.props)])})),s})(e,((e,t)=>{let r=[];t&&t.components&&t.components[e]&&t.components[e].variants&&(r=t.components[e].variants);const n={};return r.forEach((e=>{const t=O(e.props);n[t]=e.style})),n})(c,n),n,c)})),g||a.push(s);const u=a.length-i.length;if(Array.isArray(n)&&u>0){const e=new Array(u).fill("");l=[...n,...e],l.raw=[...n.raw,...e]}else"function"==typeof n&&n.__emotion_real!==n&&(l=e=>n((0,o.Z)({},e,{theme:j((0,o.Z)({},e,{defaultTheme:r,themeId:t}))})));const d=b(l,...a);return e.muiName&&(d.muiName=e.muiName),d};return b.withConfig&&(x.withConfig=b.withConfig),x}}({themeId:r(606).Z,defaultTheme:A.Z,rootShouldForwardProp:e=>E(e)&&"classes"!==e}),T=R},694:(e,t,r)=>{"use strict";function n(e,t){const r={...t};return Object.keys(e).forEach((o=>{if(o.toString().match(/^(components|slots)$/))r[o]={...e[o],...r[o]};else if(o.toString().match(/^(componentsProps|slotProps)$/)){const i=e[o]||{},a=t[o];r[o]={},a&&Object.keys(a)?i&&Object.keys(i)?(r[o]={...a},Object.keys(i).forEach((e=>{r[o][e]=n(i[e],a[e])}))):r[o]=a:r[o]=i}else void 0===r[o]&&(r[o]=e[o])})),r}function o(e){const{theme:t,name:r,props:o}=e;return t&&t.components&&t.components[r]&&t.components[r].defaultProps?n(t.components[r].defaultProps,o):o}r.d(t,{Z:()=>p});var i=r(6268),a=r(5359),s=r(3562);const l=(0,i.Z)(),c=function(e=l){return function(e=null){const t=a.useContext(s.T);return t&&(r=t,0!==Object.keys(r).length)?t:e;var r}(e)};var u=r(8824),d=r(606);function p({props:e,name:t}){return function({props:e,name:t,defaultTheme:r,themeId:n}){let i=c(r);return n&&(i=i[n]||i),o({theme:i,name:t,props:e})}({props:e,name:t,defaultTheme:u.Z,themeId:d.Z})}},8216:(e,t,r)=>{"use strict";r.d(t,{Z:()=>n});const n=r(8320).Z},6426:(e,t,r)=>{"use strict";r.r(t),r.d(t,{capitalize:()=>o.Z,createChainedFunction:()=>i,createSvgIcon:()=>w,debounce:()=>S,deprecatedPropType:()=>O,isMuiElement:()=>P,ownerDocument:()=>E,ownerWindow:()=>C,requirePropFactory:()=>j,setRef:()=>R,unstable_ClassNameGenerator:()=>K,unstable_useEnhancedEffect:()=>_,unstable_useId:()=>I,unsupportedProp:()=>Z,useControlled:()=>z,useEventCallback:()=>L,useForkRef:()=>$,useIsFocusVisible:()=>V});var n=r(7078),o=r(8216);const i=function(...e){return e.reduce(((e,t)=>null==t?e:function(...r){e.apply(this,r),t.apply(this,r)}),(()=>{}))};var a=r(7462),s=r(5359),l=r(3366),c=r(6010),u=r(4780),d=r(694),p=r(4445),f=r(1588),h=r(4867);function m(e){return(0,h.Z)("MuiSvgIcon",e)}(0,f.Z)("MuiSvgIcon",["root","colorPrimary","colorSecondary","colorAction","colorError","colorDisabled","fontSizeInherit","fontSizeSmall","fontSizeMedium","fontSizeLarge"]);var g=r(5893);const y=["children","className","color","component","fontSize","htmlColor","inheritViewBox","titleAccess","viewBox"],v=(0,p.ZP)("svg",{name:"MuiSvgIcon",slot:"Root",overridesResolver:(e,t)=>{const{ownerState:r}=e;return[t.root,"inherit"!==r.color&&t[`color${(0,o.Z)(r.color)}`],t[`fontSize${(0,o.Z)(r.fontSize)}`]]}})((({theme:e,ownerState:t})=>{var r,n,o,i,a,s,l,c,u,d,p,f,h,m,g,y,v;return{userSelect:"none",width:"1em",height:"1em",display:"inline-block",fill:"currentColor",flexShrink:0,transition:null==(r=e.transitions)||null==(n=r.create)?void 0:n.call(r,"fill",{duration:null==(o=e.transitions)||null==(i=o.duration)?void 0:i.shorter}),fontSize:{inherit:"inherit",small:(null==(a=e.typography)||null==(s=a.pxToRem)?void 0:s.call(a,20))||"1.25rem",medium:(null==(l=e.typography)||null==(c=l.pxToRem)?void 0:c.call(l,24))||"1.5rem",large:(null==(u=e.typography)||null==(d=u.pxToRem)?void 0:d.call(u,35))||"2.1875rem"}[t.fontSize],color:null!=(p=null==(f=(e.vars||e).palette)||null==(h=f[t.color])?void 0:h.main)?p:{action:null==(m=(e.vars||e).palette)||null==(g=m.action)?void 0:g.active,disabled:null==(y=(e.vars||e).palette)||null==(v=y.action)?void 0:v.disabled,inherit:void 0}[t.color]}})),b=s.forwardRef((function(e,t){const r=(0,d.Z)({props:e,name:"MuiSvgIcon"}),{children:n,className:i,color:s="inherit",component:p="svg",fontSize:f="medium",htmlColor:h,inheritViewBox:b=!1,titleAccess:x,viewBox:w="0 0 24 24"}=r,S=(0,l.Z)(r,y),O=(0,a.Z)({},r,{color:s,component:p,fontSize:f,instanceFontSize:e.fontSize,inheritViewBox:b,viewBox:w}),P={};b||(P.viewBox=w);const k=(e=>{const{color:t,fontSize:r,classes:n}=e,i={root:["root","inherit"!==t&&`color${(0,o.Z)(t)}`,`fontSize${(0,o.Z)(r)}`]};return(0,u.Z)(i,m,n)})(O);return(0,g.jsxs)(v,(0,a.Z)({as:p,className:(0,c.Z)(k.root,i),focusable:"false",color:h,"aria-hidden":!x||void 0,role:x?"img":void 0,ref:t},P,S,{ownerState:O,children:[n,x?(0,g.jsx)("title",{children:x}):null]}))}));b.muiName="SvgIcon";const x=b;function w(e,t){function r(r,n){return(0,g.jsx)(x,(0,a.Z)({"data-testid":`${t}Icon`,ref:n},r,{children:e}))}return r.muiName=x.muiName,s.memo(s.forwardRef(r))}const S=function(e,t=166){let r;function n(...n){clearTimeout(r),r=setTimeout((()=>{e.apply(this,n)}),t)}return n.clear=()=>{clearTimeout(r)},n},O=function(e,t){return()=>null},P=function(e,t){return s.isValidElement(e)&&-1!==t.indexOf(e.type.muiName)};function k(e){return e&&e.ownerDocument||document}const E=k,C=function(e){return k(e).defaultView||window},j=function(e,t){return()=>null};function A(e,t){"function"==typeof e?e(t):e&&(e.current=t)}const R=A,T="undefined"!=typeof window?s.useLayoutEffect:s.useEffect,_=T;let N=0;const M=s["useId".toString()],I=function(e){if(void 0!==M){const t=M();return null!=e?e:t}return function(e){const[t,r]=s.useState(e),n=e||t;return s.useEffect((()=>{null==t&&(N+=1,r(`mui-${N}`))}),[t]),n}(e)},Z=function(e,t,r,n,o){return null},z=function({controlled:e,default:t,name:r,state:n="value"}){const{current:o}=s.useRef(void 0!==e),[i,a]=s.useState(t);return[o?e:i,s.useCallback((e=>{o||a(e)}),[])]},L=function(e){const t=s.useRef(e);return T((()=>{t.current=e})),s.useCallback(((...e)=>(0,t.current)(...e)),[])},$=function(...e){return s.useMemo((()=>e.every((e=>null==e))?null:t=>{e.forEach((e=>{A(e,t)}))}),e)};let B,D=!0,W=!1;const F={text:!0,search:!0,url:!0,tel:!0,email:!0,password:!0,number:!0,date:!0,month:!0,week:!0,time:!0,datetime:!0,"datetime-local":!0};function U(e){e.metaKey||e.altKey||e.ctrlKey||(D=!0)}function q(){D=!1}function G(){"hidden"===this.visibilityState&&W&&(D=!0)}const V=function(){const e=s.useCallback((e=>{var t;null!=e&&((t=e.ownerDocument).addEventListener("keydown",U,!0),t.addEventListener("mousedown",q,!0),t.addEventListener("pointerdown",q,!0),t.addEventListener("touchstart",q,!0),t.addEventListener("visibilitychange",G,!0))}),[]),t=s.useRef(!1);return{isFocusVisibleRef:t,onFocus:function(e){return!!function(e){const{target:t}=e;try{return t.matches(":focus-visible")}catch(e){}return D||function(e){const{type:t,tagName:r}=e;return!("INPUT"!==r||!F[t]||e.readOnly)||"TEXTAREA"===r&&!e.readOnly||!!e.isContentEditable}(t)}(e)&&(t.current=!0,!0)},onBlur:function(){return!!t.current&&(W=!0,window.clearTimeout(B),B=window.setTimeout((()=>{W=!1}),100),t.current=!1,!0)},ref:e}},K={configure:e=>{n.Z.configure(e)}}},5408:(e,t,r)=>{"use strict";r.d(t,{L7:()=>s,VO:()=>n,W8:()=>a,k9:()=>i});const n={xs:0,sm:600,md:900,lg:1200,xl:1536},o={keys:["xs","sm","md","lg","xl"],up:e=>`@media (min-width:${n[e]}px)`};function i(e,t,r){const i=e.theme||{};if(Array.isArray(t)){const e=i.breakpoints||o;return t.reduce(((n,o,i)=>(n[e.up(e.keys[i])]=r(t[i]),n)),{})}if("object"==typeof t){const e=i.breakpoints||o;return Object.keys(t).reduce(((o,i)=>{if(-1!==Object.keys(e.values||n).indexOf(i))o[e.up(i)]=r(t[i],i);else{const e=i;o[e]=t[e]}return o}),{})}return r(t)}function a(e={}){var t;return(null==(t=e.keys)?void 0:t.reduce(((t,r)=>(t[e.up(r)]={},t)),{}))||{}}function s(e,t){return e.reduce(((e,t)=>{const r=e[t];return(!r||0===Object.keys(r).length)&&delete e[t],e}),t)}},6268:(e,t,r)=>{"use strict";r.d(t,{Z:()=>p});var n=r(7462),o=r(3366),i=r(9766);const a=["values","unit","step"],s={borderRadius:4};var l=r(2605),c=r(6523),u=r(8010);const d=["breakpoints","palette","spacing","shape"],p=function(e={},...t){const{breakpoints:r={},palette:p={},spacing:f,shape:h={}}=e,m=(0,o.Z)(e,d),g=function(e){const{values:t={xs:0,sm:600,md:900,lg:1200,xl:1536},unit:r="px",step:i=5}=e,s=(0,o.Z)(e,a),l=(e=>{const t=Object.keys(e).map((t=>({key:t,val:e[t]})))||[];return t.sort(((e,t)=>e.val-t.val)),t.reduce(((e,t)=>(0,n.Z)({},e,{[t.key]:t.val})),{})})(t),c=Object.keys(l);function u(e){return`@media (min-width:${"number"==typeof t[e]?t[e]:e}${r})`}function d(e){return`@media (max-width:${("number"==typeof t[e]?t[e]:e)-i/100}${r})`}function p(e,n){const o=c.indexOf(n);return`@media (min-width:${"number"==typeof t[e]?t[e]:e}${r}) and (max-width:${(-1!==o&&"number"==typeof t[c[o]]?t[c[o]]:n)-i/100}${r})`}return(0,n.Z)({keys:c,values:l,up:u,down:d,between:p,only:function(e){return c.indexOf(e)+1<c.length?p(e,c[c.indexOf(e)+1]):u(e)},not:function(e){const t=c.indexOf(e);return 0===t?u(c[1]):t===c.length-1?d(c[t]):p(e,c[c.indexOf(e)+1]).replace("@media","@media not all and")},unit:r},s)}(r),y=function(e=8){if(e.mui)return e;const t=(0,l.hB)({spacing:e}),r=(...e)=>(0===e.length?[1]:e).map((e=>{const r=t(e);return"number"==typeof r?`${r}px`:r})).join(" ");return r.mui=!0,r}(f);let v=(0,i.Z)({breakpoints:g,direction:"ltr",components:{},palette:(0,n.Z)({mode:"light"},p),spacing:y,shape:(0,n.Z)({},s,h)},m);return v=t.reduce(((e,t)=>(0,i.Z)(e,t)),v),v.unstable_sxConfig=(0,n.Z)({},u.Z,null==m?void 0:m.unstable_sxConfig),v.unstable_sx=function(e){return(0,c.Z)({sx:e,theme:this})},v}},7730:(e,t,r)=>{"use strict";r.d(t,{Z:()=>o});var n=r(9766);const o=function(e,t){return t?(0,n.Z)(e,t,{clone:!1}):e}},2605:(e,t,r)=>{"use strict";r.d(t,{hB:()=>h,eI:()=>f,NA:()=>m,e6:()=>y,o3:()=>v});var n=r(5408),o=r(4844),i=r(7730);const a={m:"margin",p:"padding"},s={t:"Top",r:"Right",b:"Bottom",l:"Left",x:["Left","Right"],y:["Top","Bottom"]},l={marginX:"mx",marginY:"my",paddingX:"px",paddingY:"py"},c=function(e){const t={};return e=>(void 0===t[e]&&(t[e]=(e=>{if(e.length>2){if(!l[e])return[e];e=l[e]}const[t,r]=e.split(""),n=a[t],o=s[r]||"";return Array.isArray(o)?o.map((e=>n+e)):[n+o]})(e)),t[e])}(),u=["m","mt","mr","mb","ml","mx","my","margin","marginTop","marginRight","marginBottom","marginLeft","marginX","marginY","marginInline","marginInlineStart","marginInlineEnd","marginBlock","marginBlockStart","marginBlockEnd"],d=["p","pt","pr","pb","pl","px","py","padding","paddingTop","paddingRight","paddingBottom","paddingLeft","paddingX","paddingY","paddingInline","paddingInlineStart","paddingInlineEnd","paddingBlock","paddingBlockStart","paddingBlockEnd"],p=[...u,...d];function f(e,t,r,n){var i;const a=null!=(i=(0,o.DW)(e,t,!1))?i:r;return"number"==typeof a?e=>"string"==typeof e?e:a*e:Array.isArray(a)?e=>"string"==typeof e?e:a[e]:"function"==typeof a?a:()=>{}}function h(e){return f(e,"spacing",8)}function m(e,t){if("string"==typeof t||null==t)return t;const r=e(Math.abs(t));return t>=0?r:"number"==typeof r?-r:`-${r}`}function g(e,t){const r=h(e.theme);return Object.keys(e).map((o=>function(e,t,r,o){if(-1===t.indexOf(r))return null;const i=function(e,t){return r=>e.reduce(((e,n)=>(e[n]=m(t,r),e)),{})}(c(r),o),a=e[r];return(0,n.k9)(e,a,i)}(e,t,o,r))).reduce(i.Z,{})}function y(e){return g(e,u)}function v(e){return g(e,d)}function b(e){return g(e,p)}y.propTypes={},y.filterProps=u,v.propTypes={},v.filterProps=d,b.propTypes={},b.filterProps=p},4844:(e,t,r)=>{"use strict";r.d(t,{DW:()=>i,Jq:()=>a,ZP:()=>s});var n=r(8320),o=r(5408);function i(e,t,r=!0){if(!t||"string"!=typeof t)return null;if(e&&e.vars&&r){const r=`vars.${t}`.split(".").reduce(((e,t)=>e&&e[t]?e[t]:null),e);if(null!=r)return r}return t.split(".").reduce(((e,t)=>e&&null!=e[t]?e[t]:null),e)}function a(e,t,r,n=r){let o;return o="function"==typeof e?e(r):Array.isArray(e)?e[r]||n:i(e,r)||n,t&&(o=t(o,n,e)),o}const s=function(e){const{prop:t,cssProperty:r=e.prop,themeKey:s,transform:l}=e,c=e=>{if(null==e[t])return null;const c=e[t],u=i(e.theme,s)||{};return(0,o.k9)(e,c,(e=>{let o=a(u,l,e);return e===o&&"string"==typeof e&&(o=a(u,l,`${t}${"default"===e?"":(0,n.Z)(e)}`,e)),!1===r?o:{[r]:o}}))};return c.propTypes={},c.filterProps=[t],c}},8010:(e,t,r)=>{"use strict";r.d(t,{Z:()=>T});var n=r(2605),o=r(4844),i=r(7730);const a=function(...e){const t=e.reduce(((e,t)=>(t.filterProps.forEach((r=>{e[r]=t})),e)),{}),r=e=>Object.keys(e).reduce(((r,n)=>t[n]?(0,i.Z)(r,t[n](e)):r),{});return r.propTypes={},r.filterProps=e.reduce(((e,t)=>e.concat(t.filterProps)),[]),r};var s=r(5408);function l(e){return"number"!=typeof e?e:`${e}px solid`}const c=(0,o.ZP)({prop:"border",themeKey:"borders",transform:l}),u=(0,o.ZP)({prop:"borderTop",themeKey:"borders",transform:l}),d=(0,o.ZP)({prop:"borderRight",themeKey:"borders",transform:l}),p=(0,o.ZP)({prop:"borderBottom",themeKey:"borders",transform:l}),f=(0,o.ZP)({prop:"borderLeft",themeKey:"borders",transform:l}),h=(0,o.ZP)({prop:"borderColor",themeKey:"palette"}),m=(0,o.ZP)({prop:"borderTopColor",themeKey:"palette"}),g=(0,o.ZP)({prop:"borderRightColor",themeKey:"palette"}),y=(0,o.ZP)({prop:"borderBottomColor",themeKey:"palette"}),v=(0,o.ZP)({prop:"borderLeftColor",themeKey:"palette"}),b=e=>{if(void 0!==e.borderRadius&&null!==e.borderRadius){const t=(0,n.eI)(e.theme,"shape.borderRadius",4,"borderRadius"),r=e=>({borderRadius:(0,n.NA)(t,e)});return(0,s.k9)(e,e.borderRadius,r)}return null};b.propTypes={},b.filterProps=["borderRadius"],a(c,u,d,p,f,h,m,g,y,v,b);const x=e=>{if(void 0!==e.gap&&null!==e.gap){const t=(0,n.eI)(e.theme,"spacing",8,"gap"),r=e=>({gap:(0,n.NA)(t,e)});return(0,s.k9)(e,e.gap,r)}return null};x.propTypes={},x.filterProps=["gap"];const w=e=>{if(void 0!==e.columnGap&&null!==e.columnGap){const t=(0,n.eI)(e.theme,"spacing",8,"columnGap"),r=e=>({columnGap:(0,n.NA)(t,e)});return(0,s.k9)(e,e.columnGap,r)}return null};w.propTypes={},w.filterProps=["columnGap"];const S=e=>{if(void 0!==e.rowGap&&null!==e.rowGap){const t=(0,n.eI)(e.theme,"spacing",8,"rowGap"),r=e=>({rowGap:(0,n.NA)(t,e)});return(0,s.k9)(e,e.rowGap,r)}return null};function O(e,t){return"grey"===t?t:e}function P(e){return e<=1&&0!==e?100*e+"%":e}S.propTypes={},S.filterProps=["rowGap"],a(x,w,S,(0,o.ZP)({prop:"gridColumn"}),(0,o.ZP)({prop:"gridRow"}),(0,o.ZP)({prop:"gridAutoFlow"}),(0,o.ZP)({prop:"gridAutoColumns"}),(0,o.ZP)({prop:"gridAutoRows"}),(0,o.ZP)({prop:"gridTemplateColumns"}),(0,o.ZP)({prop:"gridTemplateRows"}),(0,o.ZP)({prop:"gridTemplateAreas"}),(0,o.ZP)({prop:"gridArea"})),a((0,o.ZP)({prop:"color",themeKey:"palette",transform:O}),(0,o.ZP)({prop:"bgcolor",cssProperty:"backgroundColor",themeKey:"palette",transform:O}),(0,o.ZP)({prop:"backgroundColor",themeKey:"palette",transform:O}));const k=(0,o.ZP)({prop:"width",transform:P}),E=e=>{if(void 0!==e.maxWidth&&null!==e.maxWidth){const t=t=>{var r,n,o;return{maxWidth:(null==(r=e.theme)||null==(n=r.breakpoints)||null==(o=n.values)?void 0:o[t])||s.VO[t]||P(t)}};return(0,s.k9)(e,e.maxWidth,t)}return null};E.filterProps=["maxWidth"];const C=(0,o.ZP)({prop:"minWidth",transform:P}),j=(0,o.ZP)({prop:"height",transform:P}),A=(0,o.ZP)({prop:"maxHeight",transform:P}),R=(0,o.ZP)({prop:"minHeight",transform:P}),T=((0,o.ZP)({prop:"size",cssProperty:"width",transform:P}),(0,o.ZP)({prop:"size",cssProperty:"height",transform:P}),a(k,E,C,j,A,R,(0,o.ZP)({prop:"boxSizing"})),{border:{themeKey:"borders",transform:l},borderTop:{themeKey:"borders",transform:l},borderRight:{themeKey:"borders",transform:l},borderBottom:{themeKey:"borders",transform:l},borderLeft:{themeKey:"borders",transform:l},borderColor:{themeKey:"palette"},borderTopColor:{themeKey:"palette"},borderRightColor:{themeKey:"palette"},borderBottomColor:{themeKey:"palette"},borderLeftColor:{themeKey:"palette"},borderRadius:{themeKey:"shape.borderRadius",style:b},color:{themeKey:"palette",transform:O},bgcolor:{themeKey:"palette",cssProperty:"backgroundColor",transform:O},backgroundColor:{themeKey:"palette",transform:O},p:{style:n.o3},pt:{style:n.o3},pr:{style:n.o3},pb:{style:n.o3},pl:{style:n.o3},px:{style:n.o3},py:{style:n.o3},padding:{style:n.o3},paddingTop:{style:n.o3},paddingRight:{style:n.o3},paddingBottom:{style:n.o3},paddingLeft:{style:n.o3},paddingX:{style:n.o3},paddingY:{style:n.o3},paddingInline:{style:n.o3},paddingInlineStart:{style:n.o3},paddingInlineEnd:{style:n.o3},paddingBlock:{style:n.o3},paddingBlockStart:{style:n.o3},paddingBlockEnd:{style:n.o3},m:{style:n.e6},mt:{style:n.e6},mr:{style:n.e6},mb:{style:n.e6},ml:{style:n.e6},mx:{style:n.e6},my:{style:n.e6},margin:{style:n.e6},marginTop:{style:n.e6},marginRight:{style:n.e6},marginBottom:{style:n.e6},marginLeft:{style:n.e6},marginX:{style:n.e6},marginY:{style:n.e6},marginInline:{style:n.e6},marginInlineStart:{style:n.e6},marginInlineEnd:{style:n.e6},marginBlock:{style:n.e6},marginBlockStart:{style:n.e6},marginBlockEnd:{style:n.e6},displayPrint:{cssProperty:!1,transform:e=>({"@media print":{display:e}})},display:{},overflow:{},textOverflow:{},visibility:{},whiteSpace:{},flexBasis:{},flexDirection:{},flexWrap:{},justifyContent:{},alignItems:{},alignContent:{},order:{},flex:{},flexGrow:{},flexShrink:{},alignSelf:{},justifyItems:{},justifySelf:{},gap:{style:x},rowGap:{style:S},columnGap:{style:w},gridColumn:{},gridRow:{},gridAutoFlow:{},gridAutoColumns:{},gridAutoRows:{},gridTemplateColumns:{},gridTemplateRows:{},gridTemplateAreas:{},gridArea:{},position:{},zIndex:{themeKey:"zIndex"},top:{},right:{},bottom:{},left:{},boxShadow:{themeKey:"shadows"},width:{transform:P},maxWidth:{style:E},minWidth:{transform:P},height:{transform:P},maxHeight:{transform:P},minHeight:{transform:P},boxSizing:{},fontFamily:{themeKey:"typography"},fontSize:{themeKey:"typography"},fontStyle:{themeKey:"typography"},fontWeight:{themeKey:"typography"},letterSpacing:{},textTransform:{},lineHeight:{},textAlign:{},typography:{cssProperty:!1,themeKey:"typography"}})},6523:(e,t,r)=>{"use strict";r.d(t,{Z:()=>c});var n=r(8320),o=r(7730),i=r(4844),a=r(5408),s=r(8010);const l=function(){function e(e,t,r,o){const s={[e]:t,theme:r},l=o[e];if(!l)return{[e]:t};const{cssProperty:c=e,themeKey:u,transform:d,style:p}=l;if(null==t)return null;if("typography"===u&&"inherit"===t)return{[e]:t};const f=(0,i.DW)(r,u)||{};return p?p(s):(0,a.k9)(s,t,(t=>{let r=(0,i.Jq)(f,d,t);return t===r&&"string"==typeof t&&(r=(0,i.Jq)(f,d,`${e}${"default"===t?"":(0,n.Z)(t)}`,t)),!1===c?r:{[c]:r}}))}return function t(r){var n;const{sx:i,theme:l={}}=r||{};if(!i)return null;const c=null!=(n=l.unstable_sxConfig)?n:s.Z;function u(r){let n=r;if("function"==typeof r)n=r(l);else if("object"!=typeof r)return r;if(!n)return null;const i=(0,a.W8)(l.breakpoints),s=Object.keys(i);let u=i;return Object.keys(n).forEach((r=>{const i="function"==typeof(s=n[r])?s(l):s;var s;if(null!=i)if("object"==typeof i)if(c[r])u=(0,o.Z)(u,e(r,i,l,c));else{const e=(0,a.k9)({theme:l},i,(e=>({[r]:e})));!function(...e){const t=e.reduce(((e,t)=>e.concat(Object.keys(t))),[]),r=new Set(t);return e.every((e=>r.size===Object.keys(e).length))}(e,i)?u=(0,o.Z)(u,e):u[r]=t({sx:i,theme:l})}else u=(0,o.Z)(u,e(r,i,l,c))})),(0,a.L7)(s,u)}return Array.isArray(i)?i.map(u):u(i)}}();l.filterProps=["sx"];const c=l},7078:(e,t,r)=>{"use strict";r.d(t,{Z:()=>o});const n=e=>e,o=(()=>{let e=n;return{configure(t){e=t},generate:t=>e(t),reset(){e=n}}})()},8320:(e,t,r)=>{"use strict";r.d(t,{Z:()=>o});var n=r(1387);function o(e){if("string"!=typeof e)throw new Error((0,n.Z)(7));return e.charAt(0).toUpperCase()+e.slice(1)}},4780:(e,t,r)=>{"use strict";function n(e,t,r=void 0){const n={};return Object.keys(e).forEach((o=>{n[o]=e[o].reduce(((e,n)=>{if(n){const o=t(n);""!==o&&e.push(o),r&&r[n]&&e.push(r[n])}return e}),[]).join(" ")})),n}r.d(t,{Z:()=>n})},9766:(e,t,r)=>{"use strict";function n(e){return null!==e&&"object"==typeof e&&e.constructor===Object}function o(e){if(!n(e))return e;const t={};return Object.keys(e).forEach((r=>{t[r]=o(e[r])})),t}function i(e,t,r={clone:!0}){const a=r.clone?{...e}:e;return n(e)&&n(t)&&Object.keys(t).forEach((s=>{"__proto__"!==s&&(n(t[s])&&s in e&&n(e[s])?a[s]=i(e[s],t[s],r):r.clone?a[s]=n(t[s])?o(t[s]):t[s]:a[s]=t[s])})),a}r.d(t,{P:()=>n,Z:()=>i})},1387:(e,t,r)=>{"use strict";function n(e){let t="https://mui.com/production-error/?code="+e;for(let e=1;e<arguments.length;e+=1)t+="&args[]="+encodeURIComponent(arguments[e]);return"Minified MUI error #"+e+"; visit "+t+" for the full message."}r.d(t,{Z:()=>n})},4867:(e,t,r)=>{"use strict";r.d(t,{Z:()=>i});var n=r(7078);const o={active:"active",checked:"checked",completed:"completed",disabled:"disabled",readOnly:"readOnly",error:"error",expanded:"expanded",focused:"focused",focusVisible:"focusVisible",required:"required",selected:"selected"};function i(e,t,r="Mui"){const i=o[t];return i?`${r}-${i}`:`${n.Z.generate(e)}-${t}`}},1588:(e,t,r)=>{"use strict";r.d(t,{Z:()=>o});var n=r(4867);function o(e,t,r="Mui"){const o={};return t.forEach((t=>{o[t]=(0,n.Z)(e,t,r)})),o}},4184:(e,t)=>{var r;!function(){"use strict";var n={}.hasOwnProperty;function o(){for(var e=[],t=0;t<arguments.length;t++){var r=arguments[t];if(r){var i=typeof r;if("string"===i||"number"===i)e.push(r);else if(Array.isArray(r)){if(r.length){var a=o.apply(null,r);a&&e.push(a)}}else if("object"===i){if(r.toString!==Object.prototype.toString&&!r.toString.toString().includes("[native code]")){e.push(r.toString());continue}for(var s in r)n.call(r,s)&&r[s]&&e.push(s)}}}return e.join(" ")}e.exports?(o.default=o,e.exports=o):void 0===(r=function(){return o}.apply(t,[]))||(e.exports=r)}()},6010:(e,t,r)=>{"use strict";function n(e){var t,r,o="";if("string"==typeof e||"number"==typeof e)o+=e;else if("object"==typeof e)if(Array.isArray(e))for(t=0;t<e.length;t++)e[t]&&(r=n(e[t]))&&(o&&(o+=" "),o+=r);else for(t in e)e[t]&&(o&&(o+=" "),o+=t);return o}r.d(t,{Z:()=>o});const o=function(){for(var e,t,r=0,o="";r<arguments.length;)(e=arguments[r++])&&(t=n(e))&&(o&&(o+=" "),o+=t);return o}},6522:(e,t,r)=>{"use strict";r.d(t,{Z:()=>s});var n=r(8081),o=r.n(n),i=r(3645),a=r.n(i)()(o());a.push([e.id,'html{font-family:"Open Sans",sans-serif}body{margin:0}body.modal-open .cgp-appbar.leaflet-control{z-index:1000}.mapPage{height:100vh;padding-top:90px}.mapPage #rvMap{display:flex;width:100%;height:calc(100vh - 90px)}.mapContainer{width:100%;height:calc(100vh - 90px);display:flex}.leaflet-container{width:100%;height:100%;margin:0;display:flex}.leaflet-control-scale{z-index:30;position:absolute;width:120px;height:20px;padding-left:2px;font-size:11px;font-weight:500;background-color:rgba(255,255,255,.8);right:0px;bottom:0px;margin-bottom:0px !important;margin-right:0px !important}.leaflet-control-scale-line{background-color:rgba(255,255,255,.8);border:1px solid #000 !important;border-left:none !important;border-right:none !important;border-top:none !important;margin:auto !important}.leaflet-control-attribution{font-size:11px;font-weight:500;background-color:rgba(255,255,255,.8) !important;min-height:20px !important}.leaflet-control-mouseposition{position:absolute !important;right:120px !important;z-index:800;text-align:center;bottom:0px;margin-bottom:0px !important;padding:2px;display:flex !important;flex-direction:column;font-size:11px;font-weight:500;background-color:rgba(255,255,255,.8)}.leaflet-control-spatial-opt{position:absolute !important;right:45px !important;z-index:800;text-align:center;bottom:40px;padding:2px;display:flex !important;flex-direction:column;font-size:11px;font-weight:500;background-color:rgba(255,255,255,.8)}input{width:90%;height:30px;box-sizing:border-box;padding:0 5px;margin:5px 0}button:focus,button:active{outline:none !important;box-shadow:none !important}.btn-button{color:#fff;background-color:#0074d9;display:inline-block;font-weight:400;text-align:center;white-space:nowrap;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:1px solid rgba(0,0,0,0);padding:.125rem .75rem;font-size:14px;line-height:1.5;border-radius:.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;margin:5px 5px 5px 0}.btn-button>span>svg{vertical-align:middle}.icon-button{width:30px;height:30px;box-sizing:border-box;color:#fff;background-color:#515aa9;display:inline-flex;align-items:center;justify-content:center;font-weight:400;text-align:center;white-space:nowrap;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:1px solid rgba(0,0,0,0);padding:0;border-radius:.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;margin:0}.icon-button:disabled{color:#fff;background-color:#72777b !important;border-color:#72777b !important;cursor:text}.btn-button:hover,.btn-button:focus,.icon-button:hover,.icon-button:focus{color:#fff;background-color:#72777b !important;border-color:#54595f !important}.link-button{background:rgba(0,0,0,0);border:none;display:inline-block;text-align:center;white-space:nowrap;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;margin:5px 5px 5px 0;padding:0;font-family:inherit;font-weight:400;font-size:14px;line-height:1.2;color:inherit;text-decoration:underline;cursor:pointer}.searchButton{background-color:#fff;color:#515aa9;margin-top:.5em;transition-duration:.4s;text-transform:uppercase;letter-spacing:.1em;border-radius:25px;border:1px solid #515aa9}.searchButton:hover,.searchButton:focus{background-color:#515aa9;color:#fff}.disabled .searchButton{cursor:default !important}.disabled .searchButton:hover{background-color:#fff;color:#515aa9;border-color:#515aa9}.modal{font-size:.75rem}.container{font-size:.75rem;padding:10px 0;color:#000}.container small,.container .card{cursor:pointer}.container .css-0{margin:auto}.searchInput{width:100%;display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;margin:auto}.searchInput>input{display:inline-block;font-size:15px;line-height:1em;background:none;border-radius:75px;border:1px solid rgba(0,0,0,.12);border-top-right-radius:0;border-bottom-right-radius:0;margin:0;padding:0 10px;width:calc(100% - 55px);transition:color .2s}.searchInput>input::placeholder{opacity:.6}.searchInput>input:focus{outline:0}.searchInput>input:focus::placeholder{opacity:1}.searchInput .icon-button{color:#fff;background-color:#515aa9;border:none;border-top-right-radius:75px;border-bottom-right-radius:75px;height:30px;width:33px}.searchFilters{margin:10px auto}.searchFilters>h2{font-size:.85rem;padding:0 5px;margin:5px 0 0;width:100%;display:flex;align-items:center}.searchFilters>h2>svg{margin-right:5px}.searchFilters>.filterAction .searchButton{font-size:.65rem;margin:5px 10px 5px 0}.searchFilters>.filterAction .searchButton.disabled{opacity:.6}.searchResult{box-sizing:border-box;border:2px solid rgba(0,0,0,0)}.searchResult:nth-of-type(even){background-color:#f2f2f2}.searchResult .searchTitle{font-size:1.75em;font-weight:600;font-family:"Open Sans",sans-serif;text-transform:uppercase;margin:0 0 .6em 0;color:#515aa9}.searchResult .searchFields{font-size:.85em;line-height:1.2;margin-bottom:10px}.searchResult .searchFields:first-child{margin-top:1em}.searchResult .searchDesc{margin-bottom:.6em;margin-block-start:.5em;font-family:"Open Sans",sans-serif;font-size:1.25em;padding-bottom:.3em}.searchResult .searchResultButtons{width:100%;display:flex;flex-wrap:wrap;justify-content:flex-end}.searchResult .searchResultButtons .searchButton{float:none}.searchResult .searchResultButtons .searchButton:not(:last-child){margin-right:1em}.searchResult .searchButton{float:right;border-radius:25px;margin-bottom:.1em !important}.searchResult .broWhy{border:5px orange solid;background-color:teal}.searchResult .searchButtonGroup{font-size:.9em;color:#515aa9;margin-bottom:.5em;margin-top:.6em}.searchResult .searchButtonGroup.less .searchButtonGroupBtn.more{display:none}.searchResult .searchButtonGroup .searchButtonGroupBtn>button{border:1px solid #e6a44e;background-color:rgba(0,0,0,0);transition-duration:.4s;text-transform:uppercase;letter-spacing:.075em;margin-top:5px;margin-right:5px !important;color:#515aa9;font-size:.8em}.searchResult .searchButtonGroup .searchButtonGroupBtn>button:hover{color:#e6a44e;border:1px solid #515aa9;background-color:#515aa9}.searchResult .searchButtonGroup .searchButtonGroupBtn.searchButtonGroupBtnMore>button{border:1px solid #e6a44e;background-color:#515aa9;color:#e6a44e}.searchResult .searchButtonGroup .searchButtonGroupBtn.searchButtonGroupBtnMore>button:hover{border:1px solid #515aa9;background-color:#e6a44e;color:#515aa9}.searchResult .searchImage{border:1px solid #169548;height:300px;margin-top:1em;text-align:center;overflow:hidden}.searchResult .searchImage .leaflet-container{height:300px}.rowDivider{border:1px solid #f2f2f2}.rowDivider>.searchResult{padding:1.25em}.rowDividerMd{border:1px solid #f2f2f2;padding-bottom:2.5em;padding-top:2em}.rowDividerMd .resultRow{width:100%}.btn:not(:disabled):not(.disabled){cursor:pointer}.btn.btn-hidden{width:0;height:0;padding:0;margin:0;overflow:hidden}.pageContainer{width:100%;height:100%;margin:0 auto;padding-top:90px;font-family:"Open Sans";font-size:14px;color:#54595f}.pageContainer.resultPage .resultContainer{padding:0}.pageContainer.resultPage .resultContainer h1{margin:20px auto;text-align:center}.pageContainer.resultPage .resultContainer .status-indicator{padding:20px 0}.pageContainer .searchInput{max-width:1000px;padding:0 20px}.pageContainer .searchListFilters{max-width:1000px;margin:10px auto;padding:0 20px}.pageContainer .searchFilters{max-width:100%;padding:0 5px 0 30px}.pageContainer .resultContainer{padding:25px 0}div.disabled{opacity:.6;pointer-events:none}',""]);const s=a},7717:(e,t,r)=>{"use strict";r.d(t,{Z:()=>p});var n=r(8081),o=r.n(n),i=r(3645),a=r.n(i),s=r(1667),l=r.n(s),c=new URL(r(8686),r.b),u=a()(o()),d=l()(c);u.push([e.id,`.header{position:fixed;top:0px;background:#fff;border-bottom:1px solid #dcdcdc;box-shadow:0px 2px 5px 3px rgba(0,0,0,.27);height:90px;width:100%;margin:0;padding:0;z-index:9999}.header>div:first-child{padding:0}.header>div:first-child,.header .row{height:100%}.header img{max-height:62px;cursor:pointer}.header h1{font-size:2rem;font-weight:600}.header .header-nav{background-color:#fff;font-family:"Noto Sans",Noto Sans;font-size:.875em;text-transform:uppercase}.header .header-nav .nav-item{border:none;color:#3d3d3d;text-decoration:none}.header .header-nav .nav-item button{border:none;color:#3d3d3d;background-color:rgba(0,0,0,0);text-decoration:none;transition:background-color 150ms linear,color 150ms linear;cursor:pointer}.header .header-nav .nav-item button:hover,.header .header-nav .nav-item button:focus{color:#05b3aa}.header .header-nav .nav-item button:focus{color:#05b3aa}.header .header-nav .nav-item button#myMapBtn{padding-right:.1em}.header .header-nav .nav-item button#mcntBtn{width:24px;height:24px;box-sizing:border-box;padding:0;font-size:.85em;line-height:24px;text-align:center;background-color:#dc3545;color:#fff;font-weight:600;border-radius:50%;vertical-align:super}.header .header-nav .nav-item button#mcntBtn.hidden{visibility:hidden}@media(max-width: 992px){.header .header-nav .navbar-wrap{position:absolute;top:83px;left:0;background-color:#fff;border-top:1px solid #dcdcdc;font-size:1.25rem;height:100vh;width:100%;padding:.5em 1em 1em 1em}.header .header-nav .navbar-toggler{border:none}.header .header-nav .navbar-toggler:hover{background-color:rgba(0,0,0,0)}.header .header-nav .navbar-toggler:focus{outline:#dcdcdc solid 1px !important}.header .header-nav .navbar-toggler-icon.nav-bar-open{background-image:url(${d})}.header .header-nav .nav-item{border-bottom:1px solid #dcdcdc}.header .header-nav .nav-item button{width:100%;padding:1em;text-align:left}}@media(min-width: 993px){.header .header-nav .nav-item button{padding:.85em 1.85em}}`,""]);const p=u},3645:e=>{"use strict";e.exports=function(e){var t=[];return t.toString=function(){return this.map((function(t){var r="",n=void 0!==t[5];return t[4]&&(r+="@supports (".concat(t[4],") {")),t[2]&&(r+="@media ".concat(t[2]," {")),n&&(r+="@layer".concat(t[5].length>0?" ".concat(t[5]):""," {")),r+=e(t),n&&(r+="}"),t[2]&&(r+="}"),t[4]&&(r+="}"),r})).join("")},t.i=function(e,r,n,o,i){"string"==typeof e&&(e=[[null,e,void 0]]);var a={};if(n)for(var s=0;s<this.length;s++){var l=this[s][0];null!=l&&(a[l]=!0)}for(var c=0;c<e.length;c++){var u=[].concat(e[c]);n&&a[u[0]]||(void 0!==i&&(void 0===u[5]||(u[1]="@layer".concat(u[5].length>0?" ".concat(u[5]):""," {").concat(u[1],"}")),u[5]=i),r&&(u[2]?(u[1]="@media ".concat(u[2]," {").concat(u[1],"}"),u[2]=r):u[2]=r),o&&(u[4]?(u[1]="@supports (".concat(u[4],") {").concat(u[1],"}"),u[4]=o):u[4]="".concat(o)),t.push(u))}},t}},1667:e=>{"use strict";e.exports=function(e,t){return t||(t={}),e?(e=String(e.__esModule?e.default:e),/^['"].*['"]$/.test(e)&&(e=e.slice(1,-1)),t.hash&&(e+=t.hash),/["'() \t\n]|(%20)/.test(e)||t.needQuotes?'"'.concat(e.replace(/"/g,'\\"').replace(/\n/g,"\\n"),'"'):e):e}},8081:e=>{"use strict";e.exports=function(e){return e[1]}},8679:(e,t,r)=>{"use strict";var n=r(1296),o={childContextTypes:!0,contextType:!0,contextTypes:!0,defaultProps:!0,displayName:!0,getDefaultProps:!0,getDerivedStateFromError:!0,getDerivedStateFromProps:!0,mixins:!0,propTypes:!0,type:!0},i={name:!0,length:!0,prototype:!0,caller:!0,callee:!0,arguments:!0,arity:!0},a={$$typeof:!0,compare:!0,defaultProps:!0,displayName:!0,propTypes:!0,type:!0},s={};function l(e){return n.isMemo(e)?a:s[e.$$typeof]||o}s[n.ForwardRef]={$$typeof:!0,render:!0,defaultProps:!0,displayName:!0,propTypes:!0},s[n.Memo]=a;var c=Object.defineProperty,u=Object.getOwnPropertyNames,d=Object.getOwnPropertySymbols,p=Object.getOwnPropertyDescriptor,f=Object.getPrototypeOf,h=Object.prototype;e.exports=function e(t,r,n){if("string"!=typeof r){if(h){var o=f(r);o&&o!==h&&e(t,o,n)}var a=u(r);d&&(a=a.concat(d(r)));for(var s=l(t),m=l(r),g=0;g<a.length;++g){var y=a[g];if(!(i[y]||n&&n[y]||m&&m[y]||s&&s[y])){var v=p(r,y);try{c(t,y,v)}catch(e){}}}}return t}},6103:(e,t)=>{"use strict";var r="function"==typeof Symbol&&Symbol.for,n=r?Symbol.for("react.element"):60103,o=r?Symbol.for("react.portal"):60106,i=r?Symbol.for("react.fragment"):60107,a=r?Symbol.for("react.strict_mode"):60108,s=r?Symbol.for("react.profiler"):60114,l=r?Symbol.for("react.provider"):60109,c=r?Symbol.for("react.context"):60110,u=r?Symbol.for("react.async_mode"):60111,d=r?Symbol.for("react.concurrent_mode"):60111,p=r?Symbol.for("react.forward_ref"):60112,f=r?Symbol.for("react.suspense"):60113,h=r?Symbol.for("react.suspense_list"):60120,m=r?Symbol.for("react.memo"):60115,g=r?Symbol.for("react.lazy"):60116,y=r?Symbol.for("react.block"):60121,v=r?Symbol.for("react.fundamental"):60117,b=r?Symbol.for("react.responder"):60118,x=r?Symbol.for("react.scope"):60119;function w(e){if("object"==typeof e&&null!==e){var t=e.$$typeof;switch(t){case n:switch(e=e.type){case u:case d:case i:case s:case a:case f:return e;default:switch(e=e&&e.$$typeof){case c:case p:case g:case m:case l:return e;default:return t}}case o:return t}}}function S(e){return w(e)===d}t.AsyncMode=u,t.ConcurrentMode=d,t.ContextConsumer=c,t.ContextProvider=l,t.Element=n,t.ForwardRef=p,t.Fragment=i,t.Lazy=g,t.Memo=m,t.Portal=o,t.Profiler=s,t.StrictMode=a,t.Suspense=f,t.isAsyncMode=function(e){return S(e)||w(e)===u},t.isConcurrentMode=S,t.isContextConsumer=function(e){return w(e)===c},t.isContextProvider=function(e){return w(e)===l},t.isElement=function(e){return"object"==typeof e&&null!==e&&e.$$typeof===n},t.isForwardRef=function(e){return w(e)===p},t.isFragment=function(e){return w(e)===i},t.isLazy=function(e){return w(e)===g},t.isMemo=function(e){return w(e)===m},t.isPortal=function(e){return w(e)===o},t.isProfiler=function(e){return w(e)===s},t.isStrictMode=function(e){return w(e)===a},t.isSuspense=function(e){return w(e)===f},t.isValidElementType=function(e){return"string"==typeof e||"function"==typeof e||e===i||e===d||e===s||e===a||e===f||e===h||"object"==typeof e&&null!==e&&(e.$$typeof===g||e.$$typeof===m||e.$$typeof===l||e.$$typeof===c||e.$$typeof===p||e.$$typeof===v||e.$$typeof===b||e.$$typeof===x||e.$$typeof===y)},t.typeOf=w},1296:(e,t,r)=>{"use strict";e.exports=r(6103)},7418:e=>{"use strict";var t=Object.getOwnPropertySymbols,r=Object.prototype.hasOwnProperty,n=Object.prototype.propertyIsEnumerable;e.exports=function(){try{if(!Object.assign)return!1;var e=new String("abc");if(e[5]="de","5"===Object.getOwnPropertyNames(e)[0])return!1;for(var t={},r=0;r<10;r++)t["_"+String.fromCharCode(r)]=r;if("0123456789"!==Object.getOwnPropertyNames(t).map((function(e){return t[e]})).join(""))return!1;var n={};return"abcdefghijklmnopqrst".split("").forEach((function(e){n[e]=e})),"abcdefghijklmnopqrst"===Object.keys(Object.assign({},n)).join("")}catch(e){return!1}}()?Object.assign:function(e,o){for(var i,a,s=function(e){if(null==e)throw new TypeError("Object.assign cannot be called with null or undefined");return Object(e)}(e),l=1;l<arguments.length;l++){for(var c in i=Object(arguments[l]))r.call(i,c)&&(s[c]=i[c]);if(t){a=t(i);for(var u=0;u<a.length;u++)n.call(i,a[u])&&(s[a[u]]=i[a[u]])}}return s}},2703:(e,t,r)=>{"use strict";var n=r(414);function o(){}function i(){}i.resetWarningCache=o,e.exports=function(){function e(e,t,r,o,i,a){if(a!==n){var s=new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");throw s.name="Invariant Violation",s}}function t(){return e}e.isRequired=e;var r={array:e,bigint:e,bool:e,func:e,number:e,object:e,string:e,symbol:e,any:e,arrayOf:t,element:e,elementType:e,instanceOf:t,node:e,objectOf:t,oneOf:t,oneOfType:t,shape:t,exact:t,checkPropTypes:i,resetWarningCache:o};return r.PropTypes=r,r}},5697:(e,t,r)=>{e.exports=r(2703)()},414:e=>{"use strict";e.exports="SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED"},9921:(e,t)=>{"use strict";Symbol.for("react.element"),Symbol.for("react.portal"),Symbol.for("react.fragment"),Symbol.for("react.strict_mode"),Symbol.for("react.profiler"),Symbol.for("react.provider"),Symbol.for("react.context"),Symbol.for("react.server_context"),Symbol.for("react.forward_ref"),Symbol.for("react.suspense"),Symbol.for("react.suspense_list"),Symbol.for("react.memo"),Symbol.for("react.lazy"),Symbol.for("react.offscreen");Symbol.for("react.module.reference")},9864:(e,t,r)=>{"use strict";r(9921)},5251:(e,t,r)=>{"use strict";r(7418);var n=r(5359),o=60103;if(t.Fragment=60107,"function"==typeof Symbol&&Symbol.for){var i=Symbol.for;o=i("react.element"),t.Fragment=i("react.fragment")}var a=n.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,s=Object.prototype.hasOwnProperty,l={key:!0,ref:!0,__self:!0,__source:!0};function c(e,t,r){var n,i={},c=null,u=null;for(n in void 0!==r&&(c=""+r),void 0!==t.key&&(c=""+t.key),void 0!==t.ref&&(u=t.ref),t)s.call(t,n)&&!l.hasOwnProperty(n)&&(i[n]=t[n]);if(e&&e.defaultProps)for(n in t=e.defaultProps)void 0===i[n]&&(i[n]=t[n]);return{$$typeof:o,type:e,key:c,ref:u,props:i,_owner:a.current}}t.jsx=c,t.jsxs=c},5893:(e,t,r)=>{"use strict";e.exports=r(5251)},3379:e=>{"use strict";var t=[];function r(e){for(var r=-1,n=0;n<t.length;n++)if(t[n].identifier===e){r=n;break}return r}function n(e,n){for(var i={},a=[],s=0;s<e.length;s++){var l=e[s],c=n.base?l[0]+n.base:l[0],u=i[c]||0,d="".concat(c," ").concat(u);i[c]=u+1;var p=r(d),f={css:l[1],media:l[2],sourceMap:l[3],supports:l[4],layer:l[5]};if(-1!==p)t[p].references++,t[p].updater(f);else{var h=o(f,n);n.byIndex=s,t.splice(s,0,{identifier:d,updater:h,references:1})}a.push(d)}return a}function o(e,t){var r=t.domAPI(t);return r.update(e),function(t){if(t){if(t.css===e.css&&t.media===e.media&&t.sourceMap===e.sourceMap&&t.supports===e.supports&&t.layer===e.layer)return;r.update(e=t)}else r.remove()}}e.exports=function(e,o){var i=n(e=e||[],o=o||{});return function(e){e=e||[];for(var a=0;a<i.length;a++){var s=r(i[a]);t[s].references--}for(var l=n(e,o),c=0;c<i.length;c++){var u=r(i[c]);0===t[u].references&&(t[u].updater(),t.splice(u,1))}i=l}}},569:e=>{"use strict";var t={};e.exports=function(e,r){var n=function(e){if(void 0===t[e]){var r=document.querySelector(e);if(window.HTMLIFrameElement&&r instanceof window.HTMLIFrameElement)try{r=r.contentDocument.head}catch(e){r=null}t[e]=r}return t[e]}(e);if(!n)throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");n.appendChild(r)}},9216:e=>{"use strict";e.exports=function(e){var t=document.createElement("style");return e.setAttributes(t,e.attributes),e.insert(t,e.options),t}},3565:(e,t,r)=>{"use strict";e.exports=function(e){var t=r.nc;t&&e.setAttribute("nonce",t)}},7795:e=>{"use strict";e.exports=function(e){if("undefined"==typeof document)return{update:function(){},remove:function(){}};var t=e.insertStyleElement(e);return{update:function(r){!function(e,t,r){var n="";r.supports&&(n+="@supports (".concat(r.supports,") {")),r.media&&(n+="@media ".concat(r.media," {"));var o=void 0!==r.layer;o&&(n+="@layer".concat(r.layer.length>0?" ".concat(r.layer):""," {")),n+=r.css,o&&(n+="}"),r.media&&(n+="}"),r.supports&&(n+="}");var i=r.sourceMap;i&&"undefined"!=typeof btoa&&(n+="\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(i))))," */")),t.styleTagTransform(n,e,t.options)}(t,e,r)},remove:function(){!function(e){if(null===e.parentNode)return!1;e.parentNode.removeChild(e)}(t)}}}},4589:e=>{"use strict";e.exports=function(e,t){if(t.styleSheet)t.styleSheet.cssText=e;else{for(;t.firstChild;)t.removeChild(t.firstChild);t.appendChild(document.createTextNode(e))}}},3250:(e,t,r)=>{"use strict";var n=r(5359),o="function"==typeof Object.is?Object.is:function(e,t){return e===t&&(0!==e||1/e==1/t)||e!=e&&t!=t},i=n.useState,a=n.useEffect,s=n.useLayoutEffect,l=n.useDebugValue;function c(e){var t=e.getSnapshot;e=e.value;try{var r=t();return!o(e,r)}catch(e){return!0}}var u="undefined"==typeof window||void 0===window.document||void 0===window.document.createElement?function(e,t){return t()}:function(e,t){var r=t(),n=i({inst:{value:r,getSnapshot:t}}),o=n[0].inst,u=n[1];return s((function(){o.value=r,o.getSnapshot=t,c(o)&&u({inst:o})}),[e,r,t]),a((function(){return c(o)&&u({inst:o}),e((function(){c(o)&&u({inst:o})}))}),[e]),l(r),r};t.useSyncExternalStore=void 0!==n.useSyncExternalStore?n.useSyncExternalStore:u},139:(e,t,r)=>{"use strict";var n=r(5359),o=r(1688),i="function"==typeof Object.is?Object.is:function(e,t){return e===t&&(0!==e||1/e==1/t)||e!=e&&t!=t},a=o.useSyncExternalStore,s=n.useRef,l=n.useEffect,c=n.useMemo,u=n.useDebugValue;t.useSyncExternalStoreWithSelector=function(e,t,r,n,o){var d=s(null);if(null===d.current){var p={hasValue:!1,value:null};d.current=p}else p=d.current;d=c((function(){function e(e){if(!l){if(l=!0,a=e,e=n(e),void 0!==o&&p.hasValue){var t=p.value;if(o(t,e))return s=t}return s=e}if(t=s,i(a,e))return t;var r=n(e);return void 0!==o&&o(t,r)?t:(a=e,s=r)}var a,s,l=!1,c=void 0===r?null:r;return[function(){return e(t())},null===c?void 0:function(){return e(c())}]}),[t,r,n,o]);var f=a(e,d[0],d[1]);return l((function(){p.hasValue=!0,p.value=f}),[f]),u(f),f}},1688:(e,t,r)=>{"use strict";e.exports=r(3250)},2798:(e,t,r)=>{"use strict";e.exports=r(139)},8686:e=>{"use strict";e.exports="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27currentColor%27 class=%27bi bi-x%27 viewBox=%270 0 16 16%27 id=%27x%27%3E%3Cpath d=%27M4.646 4.646a.5.5 0 01.708 0L8 7.293l2.646-2.647a.5.5 0 01.708.708L8.707 8l2.647 2.646a.5.5 0 01-.708.708L8 8.707l-2.646 2.647a.5.5 0 01-.708-.708L7.293 8 4.646 5.354a.5.5 0 010-.708z%27%3E%3C/path%3E%3C/svg%3E"},5359:e=>{"use strict";e.exports=cgpv.react},4836:e=>{e.exports=function(e){return e&&e.__esModule?e:{default:e}},e.exports.__esModule=!0,e.exports.default=e.exports},7462:(e,t,r)=>{"use strict";function n(){return n=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e},n.apply(this,arguments)}r.d(t,{Z:()=>n})},3366:(e,t,r)=>{"use strict";function n(e,t){if(null==e)return{};var r,n,o={},i=Object.keys(e);for(n=0;n<i.length;n++)r=i[n],t.indexOf(r)>=0||(o[r]=e[r]);return o}r.d(t,{Z:()=>n})}},t={};function r(n){var o=t[n];if(void 0!==o)return o.exports;var i=t[n]={id:n,exports:{}};return e[n](i,i.exports,r),i.exports}r.m=e,r.n=e=>{var t=e&&e.__esModule?()=>e.default:()=>e;return r.d(t,{a:t}),t},r.d=(e,t)=>{for(var n in t)r.o(t,n)&&!r.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:t[n]})},r.g=function(){if("object"==typeof globalThis)return globalThis;try{return this||new Function("return this")()}catch(e){if("object"==typeof window)return window}}(),r.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),r.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.b=document.baseURI||self.location.href,r.nc=void 0,(()=>{"use strict";const e=cgpv.reactDOM;var t,n=r.n(e),o=r(5359),i=r.n(o);function a(){return a=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e},a.apply(this,arguments)}!function(e){e.Pop="POP",e.Push="PUSH",e.Replace="REPLACE"}(t||(t={}));const s="popstate";function l(e,t){if(!1===e||null==e)throw new Error(t)}function c(e,t){if(!e){"undefined"!=typeof console&&console.warn(t);try{throw new Error(t)}catch(e){}}}function u(e,t){return{usr:e.state,key:e.key,idx:t}}function d(e,t,r,n){return void 0===r&&(r=null),a({pathname:"string"==typeof e?e:e.pathname,search:"",hash:""},"string"==typeof t?f(t):t,{state:r,key:t&&t.key||n||Math.random().toString(36).substr(2,8)})}function p(e){let{pathname:t="/",search:r="",hash:n=""}=e;return r&&"?"!==r&&(t+="?"===r.charAt(0)?r:"?"+r),n&&"#"!==n&&(t+="#"===n.charAt(0)?n:"#"+n),t}function f(e){let t={};if(e){let r=e.indexOf("#");r>=0&&(t.hash=e.substr(r),e=e.substr(0,r));let n=e.indexOf("?");n>=0&&(t.search=e.substr(n),e=e.substr(0,n)),e&&(t.pathname=e)}return t}var h;function m(e,t,r){void 0===r&&(r="/");let n=A(("string"==typeof t?f(t):t).pathname||"/",r);if(null==n)return null;let o=g(e);!function(e){e.sort(((e,t)=>e.score!==t.score?t.score-e.score:function(e,t){let r=e.length===t.length&&e.slice(0,-1).every(((e,r)=>e===t[r]));return r?e[e.length-1]-t[t.length-1]:0}(e.routesMeta.map((e=>e.childrenIndex)),t.routesMeta.map((e=>e.childrenIndex)))))}(o);let i=null;for(let e=0;null==i&&e<o.length;++e)i=E(o[e],j(n));return i}function g(e,t,r,n){void 0===t&&(t=[]),void 0===r&&(r=[]),void 0===n&&(n="");let o=(e,o,i)=>{let a={relativePath:void 0===i?e.path||"":i,caseSensitive:!0===e.caseSensitive,childrenIndex:o,route:e};a.relativePath.startsWith("/")&&(l(a.relativePath.startsWith(n),'Absolute route path "'+a.relativePath+'" nested under path "'+n+'" is not valid. An absolute child route path must start with the combined path of all its parent routes.'),a.relativePath=a.relativePath.slice(n.length));let s=R([n,a.relativePath]),c=r.concat(a);e.children&&e.children.length>0&&(l(!0!==e.index,'Index routes must not have child routes. Please remove all child routes from route path "'+s+'".'),g(e.children,t,c,s)),(null!=e.path||e.index)&&t.push({path:s,score:k(s,e.index),routesMeta:c})};return e.forEach(((e,t)=>{var r;if(""!==e.path&&null!=(r=e.path)&&r.includes("?"))for(let r of y(e.path))o(e,t,r);else o(e,t)})),t}function y(e){let t=e.split("/");if(0===t.length)return[];let[r,...n]=t,o=r.endsWith("?"),i=r.replace(/\?$/,"");if(0===n.length)return o?[i,""]:[i];let a=y(n.join("/")),s=[];return s.push(...a.map((e=>""===e?i:[i,e].join("/")))),o&&s.push(...a),s.map((t=>e.startsWith("/")&&""===t?"/":t))}!function(e){e.data="data",e.deferred="deferred",e.redirect="redirect",e.error="error"}(h||(h={})),new Set(["lazy","caseSensitive","path","id","index","children"]);const v=/^:\w+$/,b=3,x=2,w=1,S=10,O=-2,P=e=>"*"===e;function k(e,t){let r=e.split("/"),n=r.length;return r.some(P)&&(n+=O),t&&(n+=x),r.filter((e=>!P(e))).reduce(((e,t)=>e+(v.test(t)?b:""===t?w:S)),n)}function E(e,t){let{routesMeta:r}=e,n={},o="/",i=[];for(let e=0;e<r.length;++e){let a=r[e],s=e===r.length-1,l="/"===o?t:t.slice(o.length)||"/",c=C({path:a.relativePath,caseSensitive:a.caseSensitive,end:s},l);if(!c)return null;Object.assign(n,c.params);let u=a.route;i.push({params:n,pathname:R([o,c.pathname]),pathnameBase:T(R([o,c.pathnameBase])),route:u}),"/"!==c.pathnameBase&&(o=R([o,c.pathnameBase]))}return i}function C(e,t){"string"==typeof e&&(e={path:e,caseSensitive:!1,end:!0});let[r,n]=function(e,t,r){void 0===t&&(t=!1),void 0===r&&(r=!0),c("*"===e||!e.endsWith("*")||e.endsWith("/*"),'Route path "'+e+'" will be treated as if it were "'+e.replace(/\*$/,"/*")+'" because the `*` character must always follow a `/` in the pattern. To get rid of this warning, please change the route path to "'+e.replace(/\*$/,"/*")+'".');let n=[],o="^"+e.replace(/\/*\*?$/,"").replace(/^\/*/,"/").replace(/[\\.*+^$?{}|()[\]]/g,"\\$&").replace(/\/:(\w+)/g,((e,t)=>(n.push(t),"/([^\\/]+)")));return e.endsWith("*")?(n.push("*"),o+="*"===e||"/*"===e?"(.*)$":"(?:\\/(.+)|\\/*)$"):r?o+="\\/*$":""!==e&&"/"!==e&&(o+="(?:(?=\\/|$))"),[new RegExp(o,t?void 0:"i"),n]}(e.path,e.caseSensitive,e.end),o=t.match(r);if(!o)return null;let i=o[0],a=i.replace(/(.)\/+$/,"$1"),s=o.slice(1);return{params:n.reduce(((e,t,r)=>{if("*"===t){let e=s[r]||"";a=i.slice(0,i.length-e.length).replace(/(.)\/+$/,"$1")}return e[t]=function(e,t){try{return decodeURIComponent(e)}catch(r){return c(!1,'The value for the URL param "'+t+'" will not be decoded because the string "'+e+'" is a malformed URL segment. This is probably due to a bad percent encoding ('+r+")."),e}}(s[r]||"",t),e}),{}),pathname:i,pathnameBase:a,pattern:e}}function j(e){try{return decodeURI(e)}catch(t){return c(!1,'The URL path "'+e+'" could not be decoded because it is is a malformed URL segment. This is probably due to a bad percent encoding ('+t+")."),e}}function A(e,t){if("/"===t)return e;if(!e.toLowerCase().startsWith(t.toLowerCase()))return null;let r=t.endsWith("/")?t.length-1:t.length,n=e.charAt(r);return n&&"/"!==n?null:e.slice(r)||"/"}const R=e=>e.join("/").replace(/\/\/+/g,"/"),T=e=>e.replace(/\/+$/,"").replace(/^\/*/,"/");Error;const _=["post","put","patch","delete"],N=(new Set(_),["get",..._]);function M(){return M=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e},M.apply(this,arguments)}new Set(N),new Set([301,302,303,307,308]),new Set([307,308]),"undefined"!=typeof window&&void 0!==window.document&&window.document.createElement,Symbol("deferred");const I=o.createContext(null),Z=o.createContext(null),z=o.createContext(null),L=o.createContext(null),$=o.createContext({outlet:null,matches:[],isDataRoute:!1}),B=o.createContext(null);function D(){return null!=o.useContext(L)}function W(e,r,n){D()||l(!1);let{navigator:i}=o.useContext(z),{matches:a}=o.useContext($),s=a[a.length-1],c=s?s.params:{},u=(s&&s.pathname,s?s.pathnameBase:"/");s&&s.route;let d,p=(D()||l(!1),o.useContext(L).location);if(r){var h;let e="string"==typeof r?f(r):r;"/"===u||(null==(h=e.pathname)?void 0:h.startsWith(u))||l(!1),d=e}else d=p;let g=d.pathname||"/",y=m(e,{pathname:"/"===u?g:g.slice(u.length)||"/"}),v=function(e,t,r){var n;if(void 0===t&&(t=[]),void 0===r&&(r=null),null==e){var i;if(null==(i=r)||!i.errors)return null;e=r.matches}let a=e,s=null==(n=r)?void 0:n.errors;if(null!=s){let e=a.findIndex((e=>e.route.id&&(null==s?void 0:s[e.route.id])));e>=0||l(!1),a=a.slice(0,Math.min(a.length,e+1))}return a.reduceRight(((e,n,i)=>{let l=n.route.id?null==s?void 0:s[n.route.id]:null,c=null;r&&(c=n.route.errorElement||U);let u=t.concat(a.slice(0,i+1)),d=()=>{let t;return t=l?c:n.route.Component?o.createElement(n.route.Component,null):n.route.element?n.route.element:e,o.createElement(G,{match:n,routeContext:{outlet:e,matches:u,isDataRoute:null!=r},children:t})};return r&&(n.route.ErrorBoundary||n.route.errorElement||0===i)?o.createElement(q,{location:r.location,revalidation:r.revalidation,component:c,error:l,children:d(),routeContext:{outlet:null,matches:u,isDataRoute:!0}}):d()}),null)}(y&&y.map((e=>Object.assign({},e,{params:Object.assign({},c,e.params),pathname:R([u,i.encodeLocation?i.encodeLocation(e.pathname).pathname:e.pathname]),pathnameBase:"/"===e.pathnameBase?u:R([u,i.encodeLocation?i.encodeLocation(e.pathnameBase).pathname:e.pathnameBase])}))),a,n);return r&&v?o.createElement(L.Provider,{value:{location:M({pathname:"/",search:"",hash:"",state:null,key:"default"},d),navigationType:t.Pop}},v):v}function F(){let e=function(){var e;let t=o.useContext(B),r=function(e){let t=o.useContext(Z);return t||l(!1),t}(K.UseRouteError),n=function(e){let t=function(e){let t=o.useContext($);return t||l(!1),t}(),r=t.matches[t.matches.length-1];return r.route.id||l(!1),r.route.id}(K.UseRouteError);return t||(null==(e=r.errors)?void 0:e[n])}(),t=function(e){return null!=e&&"number"==typeof e.status&&"string"==typeof e.statusText&&"boolean"==typeof e.internal&&"data"in e}(e)?e.status+" "+e.statusText:e instanceof Error?e.message:JSON.stringify(e),r=e instanceof Error?e.stack:null,n={padding:"0.5rem",backgroundColor:"rgba(200,200,200, 0.5)"};return o.createElement(o.Fragment,null,o.createElement("h2",null,"Unexpected Application Error!"),o.createElement("h3",{style:{fontStyle:"italic"}},t),r?o.createElement("pre",{style:n},r):null,null)}const U=o.createElement(F,null);class q extends o.Component{constructor(e){super(e),this.state={location:e.location,revalidation:e.revalidation,error:e.error}}static getDerivedStateFromError(e){return{error:e}}static getDerivedStateFromProps(e,t){return t.location!==e.location||"idle"!==t.revalidation&&"idle"===e.revalidation?{error:e.error,location:e.location,revalidation:e.revalidation}:{error:e.error||t.error,location:t.location,revalidation:e.revalidation||t.revalidation}}componentDidCatch(e,t){console.error("React Router caught the following error during render",e,t)}render(){return this.state.error?o.createElement($.Provider,{value:this.props.routeContext},o.createElement(B.Provider,{value:this.state.error,children:this.props.component})):this.props.children}}function G(e){let{routeContext:t,match:r,children:n}=e,i=o.useContext(I);return i&&i.static&&i.staticContext&&(r.route.errorElement||r.route.ErrorBoundary)&&(i.staticContext._deepestRenderedBoundaryId=r.route.id),o.createElement($.Provider,{value:t},n)}var V,K,H,X,Y;function J(e){l(!1)}function Q(e){let{basename:r="/",children:n=null,location:i,navigationType:a=t.Pop,navigator:s,static:c=!1}=e;D()&&l(!1);let u=r.replace(/^\/*/,"/"),d=o.useMemo((()=>({basename:u,navigator:s,static:c})),[u,s,c]);"string"==typeof i&&(i=f(i));let{pathname:p="/",search:h="",hash:m="",state:g=null,key:y="default"}=i,v=o.useMemo((()=>{let e=A(p,u);return null==e?null:{location:{pathname:e,search:h,hash:m,state:g,key:y},navigationType:a}}),[u,p,h,m,g,y,a]);return null==v?null:o.createElement(z.Provider,{value:d},o.createElement(L.Provider,{children:n,value:v}))}function ee(e){let{children:t,location:r}=e;return W(te(t),r)}function te(e,t){void 0===t&&(t=[]);let r=[];return o.Children.forEach(e,((e,n)=>{if(!o.isValidElement(e))return;let i=[...t,n];if(e.type===o.Fragment)return void r.push.apply(r,te(e.props.children,i));e.type!==J&&l(!1),e.props.index&&e.props.children&&l(!1);let a={id:e.props.id||i.join("-"),caseSensitive:e.props.caseSensitive,element:e.props.element,Component:e.props.Component,index:e.props.index,path:e.props.path,loader:e.props.loader,action:e.props.action,errorElement:e.props.errorElement,ErrorBoundary:e.props.ErrorBoundary,hasErrorBoundary:null!=e.props.ErrorBoundary||null!=e.props.errorElement,shouldRevalidate:e.props.shouldRevalidate,handle:e.props.handle,lazy:e.props.lazy};e.props.children&&(a.children=te(e.props.children,i)),r.push(a)})),r}function re(e){let{basename:r,children:n,window:i}=e,c=o.useRef();null==c.current&&(c.current=function(e){return void 0===e&&(e={}),function(e,r,n,o){void 0===o&&(o={});let{window:i=document.defaultView,v5Compat:c=!1}=o,f=i.history,h=t.Pop,m=null,g=y();function y(){return(f.state||{idx:null}).idx}function v(){h=t.Pop;let e=y(),r=null==e?null:e-g;g=e,m&&m({action:h,location:x.location,delta:r})}function b(e){let t="null"!==i.location.origin?i.location.origin:i.location.href,r="string"==typeof e?e:p(e);return l(t,"No window.location.(origin|href) available to create URL for href: "+r),new URL(r,t)}null==g&&(g=0,f.replaceState(a({},f.state,{idx:g}),""));let x={get action(){return h},get location(){return e(i,f)},listen(e){if(m)throw new Error("A history only accepts one active listener");return i.addEventListener(s,v),m=e,()=>{i.removeEventListener(s,v),m=null}},createHref:e=>r(i,e),createURL:b,encodeLocation(e){let t=b(e);return{pathname:t.pathname,search:t.search,hash:t.hash}},push:function(e,r){h=t.Push;let o=d(x.location,e,r);n&&n(o,e),g=y()+1;let a=u(o,g),s=x.createHref(o);try{f.pushState(a,"",s)}catch(e){i.location.assign(s)}c&&m&&m({action:h,location:x.location,delta:1})},replace:function(e,r){h=t.Replace;let o=d(x.location,e,r);n&&n(o,e),g=y();let i=u(o,g),a=x.createHref(o);f.replaceState(i,"",a),c&&m&&m({action:h,location:x.location,delta:0})},go:e=>f.go(e)};return x}((function(e,t){let{pathname:r,search:n,hash:o}=e.location;return d("",{pathname:r,search:n,hash:o},t.state&&t.state.usr||null,t.state&&t.state.key||"default")}),(function(e,t){return"string"==typeof t?t:p(t)}),null,e)}({window:i,v5Compat:!0}));let f=c.current,[h,m]=o.useState({action:f.action,location:f.location});return o.useLayoutEffect((()=>f.listen(m)),[f]),o.createElement(Q,{basename:r,children:n,location:h.location,navigationType:h.action,navigator:f})}!function(e){e.UseBlocker="useBlocker",e.UseRevalidator="useRevalidator",e.UseNavigateStable="useNavigate"}(V||(V={})),function(e){e.UseBlocker="useBlocker",e.UseLoaderData="useLoaderData",e.UseActionData="useActionData",e.UseRouteError="useRouteError",e.UseNavigation="useNavigation",e.UseRouteLoaderData="useRouteLoaderData",e.UseMatches="useMatches",e.UseRevalidator="useRevalidator",e.UseNavigateStable="useNavigate",e.UseRouteId="useRouteId"}(K||(K={})),function(e){e[e.pending=0]="pending",e[e.success=1]="success",e[e.error=2]="error"}(H||(H={})),new Promise((()=>{})),o.Component,"undefined"!=typeof window&&void 0!==window.document&&window.document.createElement,function(e){e.UseScrollRestoration="useScrollRestoration",e.UseSubmitImpl="useSubmitImpl",e.UseFetcher="useFetcher"}(X||(X={})),function(e){e.UseFetchers="useFetchers",e.UseScrollRestoration="useScrollRestoration"}(Y||(Y={}));const ne=JSON.parse('{"app":{"language":"en"},"nav":{"home":"Home","search":"Search","mymap":"MyMap","language":{"htmllangcode":"fr","key":"fr-CA","name":"Français"},"nomap":"Your map is empty, please add data to map","logotext":"logo for the GEO.CA","logoLinktext":"GEO.CA homepage"},"mapnav":{"ariaNavbar":"vertical button group for map navigation","fullscreen":"Full Screen","home":"Home","zoomIn":"Zoom in","zoomOut":"Zoom out"},"mapctrl":{"mouseposition":{"east":"E","west":"W","north":"N","south":"S"},"lccurl":"https://maps-cartes.services.geo.ca/server2_serveur2/rest/services/BaseMaps/CBMT_TXT_3978/MapServer/WMTS/tile/1.0.0/CBMT_TXT_3978/default/default028mm/{z}/{y}/{x}.jpg","wburl":"https://maps-cartes.services.geo.ca/server2_serveur2/rest/services/BaseMaps/CBMT_TXT_3857/MapServer/WMTS/tile/1.0.0/BaseMaps_CBMT_TXT_3857/default/default028mm/{z}/{y}/{x}.png","attribution":"&copy His Majesty the King in Right of Canada, as represented by the Minister of Natural Resources Canada, 2023"},"appbar":{"drawer":"Drawer","close":"Close","export":"Export","fullscreen":"Full Screen","help":"Help","layers":"Layers","search":"Search","keywordsearch":"Keyword Search","keywordonly":"Keyword only","filters":"Filters","analytics":"Analytics","account":"Account","howto":"How To","share":"Share","version":"Access GitHub repo","opendrawer":"Open search toolbox","searchoperators":"Search Operators","sortby":{"label":"Sort by","select":"Select","relevance":"Relevance","date":{"desc":"Date","asc":"Date"},"popularity":{"desc":"Popularity","asc":"Popularity"},"title":"Title"}},"filter":{"filterby":"Filter by","organisations":"Organizations","types":"Types","themes":"Themes","foundational":"Foundation Data","spatial":"Viewable on a Map","stac":"Metadata Standard","spatemp":{"title":"SPATIAL-TEMPORAL","temporal":"All times in Coordinated Universal Time (UTC).","startdate":"Start Date","enddate":"End Date"},"otherfilters":"Other Filters","applyfilters":"Apply Filters","clearall":"Clear All","label":{"spatial":{"viewable-on-map":"Viewable({{param}})","not-viewable-on-map":"Non-viewable({{param}})","opt":"Freeze spatial filtering","opt-tooltip":"placeholder for tooltip"},"stac":{"HNAP":"Harmonized North American Profile (HNAP) ({{param}} records)","STAC":"Spatio Temporal Asset Catalog (STAC) ({{param}} records)"},"spatemp":{"SPATIALEXTENT":"Spatial Extent","TEMPORALEXTENT":"Temporal Extent","selectprovince":"Search provinces or territories","or":"or","search-extent":"Search extents...","select-extent":"Alternative search extents"}}},"analytic":{"title":"Analytics","summary":"Summary","searchthismonth":"Number of searches this month","searchlastmonth":"Number of searches last month","accessthismonth":"Number of accesses this month","accesslastmonth":"Number of accesses last month","topsearcheslastmonth":"Top 10 Searches in the Last 30 Days","topaccesslastmonth":"Top 10 Accessed Content in the Last 30 Days","topaccessalltime":"Top 10 Accessed Content all time","topaccessbyorg":"Top 10 Accessed Content by Contributor","loadingfailed":"Loading number failed","norecord":"No record","tryagain":"try again","selectorg":"Please select contributor","submit":"Submit","headerrank":"Rank","headertitle":"Title","headertotal":"Total Access"},"howto":{"geosearchdescription":"The search application uses a map to search data over the area shown. Pan and zoom the map to filter the content based on your area of interest. The results will refresh based on the area of the map. If you are not interested in a given geographic area. Click on the Keyword Only toggle, enter a keyword, and filter the results based on our advanced filters.","keywordsearchdescription":"The keyword search page can be used if you are not interested in a given geographic area. Enter a keyword, and filter the results based on our advanced filters.","filtersdescription":"The advanced filters can filter data based on organization, type, theme, and foundational layers. You can add as many filters as you need and remove them if they are not given you the result you need.","searchoperators":"GEO.ca supports a series of search operators which can help you find the data you need faster. If you are looking for an exact match to your search term, enclose it in quotation marks. This will return only the results that exactly match your term . E.g. -’ \\"My Search Term\\"’. If you require the record to contain multiple search terms, include AND within the search box. E.g. - ‘My Search AND Term’. Finally, if you want to include multiple search terms such as ‘Search OR Term’, include a space between the terms and our system will automatically include records with one or the other search term."},"page":{"ctrl":{"total":"{{index}} of {{total}} records","currentpage":"Current Page","previouspage":"Previous Page","previouspages":"Previous page group","nextpage":"Next Page","nextpages":"Next page group","paginationlabel":"Search results pagination"},"changesearch":"Change the input to search ...","noresult":"No result.","organisation":"Organization","published":"Published","viewmore":"View More","viewmorenotice":"New filters will be placed before this button","showless":"Show Less","showlessnotice":"Some filters appearing before this button will be removed","search":"Search ...","advancedsearchfilters":"Advanced Search Filters","gotogeosearchpage":"Back to search","backtorelated":"Back to related","viewrecord":"View Record","viewfootprint":"View Footprint","removefootprint":"Remove Footprint","aboutthisdataset":"About this dataset","relatedproducts":"Related Products","dataresources":"Data Resources","contactdata":"Contact Data","advancedmetadata":"Advanced metadata","parent":"Parent","member":"Member","keywords":"Keywords","metadata":"Metadata","datecreated":"Date Created","datepublished":"Date Published","temporalcoverage":"Temporal Coverage","source":"Source(s)","uselimits":"Use Limitations","disclaimer":"Disclaimer","dcheader":"Made available by the Government of ","dcp1":"These resources are not under the control of the Government of Canada and the link is provided solely for the convenience of our website visitors. We are not responsible for the accuracy, currency or reliability of the content of this website. The Government of Canada does not offer any guarantee in that regard and is not responsible for the information found through this link.","dcp2":{"text1":"Visitors should also be aware that information offered by this non-Government of Canada site is not subject to the ","link1":{"url":"http://laws-lois.justice.gc.ca/eng/acts/P-21/index.html","text":"Privacy Act"},"text2":" or the ","link2":{"url":"http://laws-lois.justice.gc.ca/eng/acts/O-3.01/","text":"Official Languages Act"},"text3":" and may not be accessible to persons with disabilities. The information offered may be available only in the language used by the site. With respect to privacy, visitors should research the privacy policies of this non-government website before providing personal information."},"dwhheader":"Made available by the Canadian Geospatial Data Infrastructure Web Harvester ","dwh0":"This web service is generated from a geospatial web services harvester developed for the Canadian Geospatial Data Infrastructure. It is in continual development and updated weekly. These records are subject to change based on the availability of the service endpoint maintained by external parties.","dwh1":"These resources are not under the control of the Government of Canada and the link is provided solely for the convenience of our website visitors. We are not responsible for the accuracy, currency or reliability of the content of this website. The Government of Canada does not offer any guarantee in that regard and is not responsible for the information found through this link.","dwh2":{"text1":"Visitors should also be aware that information offered by this non-Government of Canada site is not subject to the ","link1":{"url":"http://laws-lois.justice.gc.ca/eng/acts/P-21/index.html","text":"Privacy Act"},"text2":" or the ","link2":{"url":"http://laws-lois.justice.gc.ca/eng/acts/O-3.01/","text":"Official Languages Act"},"text3":" and may not be accessible to persons with disabilities. The information offered may be available only in the language used by the site. With respect to privacy, visitors should research the privacy policies of this non-government website before providing personal information."},"name":"Name","type":"Type","format":"Format","languages":"Languages","language":"English","eng":"English","fra":"French","engfra":"English and French","unk":"Unknown","zxx":"\'No linguistic content","organization":"Organization","address":"Address","individualname":"Individual Name","role":"Role","telephone":"Telephone","fax":"Fax","email":"Email","web":"Web","description":"Description","status":"Status","maintenance":"Maintenance","topiccategory":"Topic Category","north":"North","east":"East","west":"West","south":"South","spatialrepresentation":"Spatial Representation","addtomap":"Add to Map","viewthedata":"View the data in depth by adding it to a map.","viewonmap":"View on Map","addedtomymap":"Added to MyMap","addtomymap":"Add to MyMap","ourmetadatais":"Our metadata is stored in the geoCore format. A geojson containing all the metadata you see here.","downloadgeocore":"Download geoCore","viewhnaprecord":"View HNAP Record","numberofacesses":"Number of Accesses","last30":"Last 30 days","alltime":"All time","share":"Share","id":"ID","greymaptitle":"No viewable content","greymapinfo":"This record has no viewable component."},"modal":{"buttonlabel":"Close","home":{"title":"About the search application","description":"The search application uses a map to search data over the area shown. Pan and zoom the map to filter the content based on your area of interest. The results will refresh based on the area of the map."},"mapping":{"title":"Added to MyMap","noadded":"No result added","gotomymap":"Go To MyMap","cancel":"Cancel"}},"province":{"AB":"Alberta","BC":"British Columbia","ON":"Ontario","QC":"Quebec","MB":"Manitoba","PEI":"Prince Edward Island","SK":"Saskatchewan","NL":"Newfoundland and Labrador","NS":"Nova Scotia","NB":"New Brunswick","NU":"Nunavut","NT":"Northwest Territories","YT":"Yukon"}}'),oe=JSON.parse('{"app":{"language":"fr"},"nav":{"home":"Accueil","search":"Recherche","mymap":"MaCarte","language":{"htmllangcode":"en","key":"en-CA","name":"English"},"nomap":"Votre carte est vide, veuillez ajouter des données à la carte","logotext":"logo de la Plateforme géospatiale fédérale","logoLinktext":"Page d\'accueil de la Plateforme géospatiale fédérale"},"mapnav":{"ariaNavbar":"groupe de buttons vertical pour navigation sur la carte","fullscreen":"Plein Écran","home":"Maison","zoomIn":"Zoom avant","zoomOut":"Zoom arrière"},"mapctrl":{"mouseposition":{"east":"E","west":"O","north":"N","south":"S"},"lccurl":"https://maps-cartes.services.geo.ca/server2_serveur2/rest/services/BaseMaps/CBCT_TXT_3978/MapServer/WMTS/tile/1.0.0/CBCT_TXT_3978/default/default028mm/{z}/{y}/{x}.jpg","wburl":"https://maps-cartes.services.geo.ca/server2_serveur2/rest/services/BaseMaps/CBCT_TXT_3857/MapServer/WMTS/tile/1.0.0/BaseMaps_CBCT_TXT_3857/default/default028mm/{z}/{y}/{x}.png","attribution":"&copy Sa Majesté le Roi du chef du Canada, représenté par le ministre de Ressources naturelles Canada, 2023"},"appbar":{"drawer":"Tiroir","close":"Fermer","export":"Exporter","fullscreen":"Plein écran","help":"Comment utiliser","layers":"Couches","search":"Recherche","keywordsearch":"Recherche par mot clé","keywordonly":"Mot clé uniquement","filters":"Filtres","analytics":"Analytique","account":"Compte","howto":"Comment","share":"Partager","version":"Accéder au repo sur GitHub","opendrawer":"Ouvrir la boîte à outils de recherche","searchoperators":"Opérateurs de recherche","sortby":{"label":"Trier par","select":"sélectionner","relevance":"Pertinence","date":{"desc":"Date","asc":"Date"},"popularity":{"desc":"Popularité","asc":"Popularité"},"title":"Titre"}},"filter":{"filterby":"Filtrer par","organisations":"Organisations","types":"Les Thèmes","themes":"Thèmes","foundational":"Données de base du Canada","spatial":"Viewable on a Map","stac":"Metadata Standard","spatemp":{"title":"SPATIAL-TEMPORAL","temporal":"All times in Coordinated Universal Time (UTC).","startdate":"Start Date","enddate":"End Date"},"otherfilters":"Autres Filtres","applyfilters":"Appliquer des Filtres","clearall":"Tout Effacer","label":{"spatial":{"viewable-on-map":"Viewable({{param}})","not-viewable-on-map":"Non-viewable({{param}})","opt":"Freeze spatial filtering","opt-tooltip":"placeholder for tooltip"},"stac":{"HNAP":"Harmonized North American Profile (HNAP) ({{param}} records)","STAC":"Spatio Temporal Asset Catalog (STAC) ({{param}} records)"},"spatemp":{"SPATIALEXTENT":"Spatial Extent","TEMPORALEXTENT":"Temporal Extent","selectprovince":"Search provinces or territories","or":"or","search-extent":"Search extents...","select-extent":"Alternative search extents"}}},"analytic":{"title":"Analytique","summary":"Sommaire","searchthismonth":"Nombre de recherches ce mois-ci","searchlastmonth":"Nombre de recherches le mois dernier","accessthismonth":"Nombre d\'accès ce mois-ci","accesslastmonth":"Nombre d\'accès le mois dernier","topsearcheslastmonth":"Top 10 des recherches au cours des 30 derniers jours","topaccesslastmonth":"Top 10 du contenu consulté au cours des 30 derniers jours","topaccessalltime":"Top 10 du contenu consulté de tous les temps","topaccessbyorg":"Top 10 des contenus consultés par contributeur","loadingfailed":"Échec du chargement du numéro","norecord":"Aucun enregistrement","tryagain":"réessayer","selectorg":"Veuillez sélectionner un contributeur","submit":"Soumettre","headerrank":"Rang","headertitle":"Titre","headertotal":"Accès total"},"howto":{"geosearchdescription":"L\'application recherche utilise une carte pour rechercher des données dans la zone indiquée. Effectuez un panoramique et un zoom sur la carte pour filtrer le contenu en fonction de la zone qui vous intéresse. Les résultats seront rafraîchis en fonction de la zone de la carte. Si vous n\'êtes pas intéressé par une zone géographique donnée. Cliquez sur le bouton Mot-clé uniquement, saisissez un mot-clé et filtrez les résultats à l\'aide de nos filtres avancés.","keywordsearchdescription":"La page de recherche par mot-clé peut être utilisée si vous n\'êtes pas intéressé par une zone géographique donnée. Saisissez un mot-clé et filtrez les résultats en fonction de nos filtres avancés.","filtersdescription":"Les filtres avancés peuvent filtrer les données en fonction de l\'organisation, du type, du thème et des couches fondamentales. Vous pouvez ajouter autant de filtres que nécessaire et les supprimer s\'ils ne vous donnent pas le résultat dont vous avez besoin.","searchoperators":"GEO.ca prend en charge une série d\'opérateurs de recherche qui peuvent vous aider à trouver plus rapidement les données dont vous avez besoin. Si vous recherchez une correspondance exacte avec votre terme de recherche, placez-le entre guillemets. Cela renverra uniquement les résultats qui correspondent exactement à votre terme . Par exemple. -\'\\"Mon terme de recherche\\"\'. Si vous souhaitez que l\'enregistrement contienne plusieurs termes de recherche, incluez ET dans la zone de recherche. Par exemple. - \'\\"Ma recherche ET Terme\\"\'. Enfin, si vous souhaitez inclure plusieurs termes de recherche tels que \'\\"Recherche OU Terme\\"\', incluez un espace entre les termes et notre système inclura automatiquement les enregistrements avec l\'un ou l\'autre terme de recherche."},"page":{"ctrl":{"total":"{{index}} de {{total}} dossiers","currentpage":"Page actuelle","previouspage":"Page précédente","previouspages":"Pages précédentes","nextpage":"Page suivante","nextpages":"Pages suivantes","paginationlabel":"Pagination de les résultats de recherche"},"changesearch":"Changer l\'entrée à rechercher ... ","noresult":"Aucun résultat.","organisation":"Organisation","published":"Publié","viewmore":"Voir Plus","viewmorenotice":"Les nouveaux filtres seront placés ci-dessus","showless":"Montrer Moins","showlessnotice":"Certains filtres apparaissant ci-dessus seront supprimé","search":"Recherche ...","advancedsearchfilters":"Filtres de recherche avancée","gotogeosearchpage":"Retour à la recherche","backtorelated":"Retour à lié","viewrecord":"Afficher L\'enregistrement","viewfootprint":"Afficher L\'empreinte","removefootprint":"Supprimer L\'empreinte","aboutthisdataset":"À propos de cet ensemble de données","relatedproducts":"Ressources connexes","parent":"Parent","member":"Membre","dataresources":"Ressources de Données","contactdata":"Données de Contact","advancedmetadata":"Métadonnées avancées","keywords":"Mots clés","metadata":"Métadonnées","datecreated":"Date Créée","datepublished":"Date Publiée","temporalcoverage":"Couverture Temporelle","source":"Source(s)","uselimits":"Limites d\'utilisation","disclaimer":"Avis de non-responsabilité","dcheader":"Rendus disponibles par l\'entremise du Gouvernement du ","dcp1":"Ces ressources ne sont pas contrôlées par le gouvernement du Canada, et l\'hyperlien est fourni uniquement pour la facilité d\'utilisation des visiteurs de notre site Web. Nous ne sommes pas responsables de l\'exactitude, l\'actualité et la fiabilité du contenu. Le gouvernement du Canada n\'offre aucune garantie à cet égard et n\'est pas responsable des renseignements trouvés par l\'entremise de ce lien.","dcp2":{"text1":"Les visiteurs devraient également savoir que les renseignements offerts par l\'entremise de ce site Web ne sont pas gérés par le gouvernement du Canada et ne relèvent pas de la ","link1":{"url":"http://laws-lois.justice.gc.ca/fra/lois/P-21/index.html","text":"Loi sur la protection des renseignements personnels"},"text2":" ni de la ","link2":{"url":"http://laws-lois.justice.gc.ca/fra/lois/O-3.01/","text":"Loi sur les langues officielles"},"text3":", et qu\'ils pourraient ne pas être accessibles aux personnes handicapées. Les renseignements offerts pourraient être uniquement disponibles dans la langue utilisée dans le site en question. En ce qui concerne la protection des renseignements personnels, les visiteurs devraient vérifier les politiques de confidentialité de ce site Web non gouvernemental avant de fournir leurs renseignements personnels."},"dwhheader":"Mis à disposition par le Moissonneur web de l\'Infrastructure canadienne de données géospatiales","dwh0":"Ce service Web est généré à partir d\'un moissonneur de services Web géospatiaux développé pour l\'Infrastructure canadienne de données géospatiales. Il est en développement continu et mis à jour chaque semaine. Ces enregistrements sont susceptibles d\'être modifiés en fonction de la disponibilité du point de terminaison de service géré par des parties externes.","dwh1":"Ces ressources ne sont pas contrôlées par le gouvernement du Canada, et l\'hyperlien est fourni uniquement pour la facilité d\'utilisation des visiteurs de notre site Web. Nous ne sommes pas responsables de l\'exactitude, l\'actualité et la fiabilité du contenu. Le gouvernement du Canada n\'offre aucune garantie à cet égard et n\'est pas responsable des renseignements trouvés par l\'entremise de ce lien.","dwh2":{"text1":"Les visiteurs devraient également savoir que les renseignements offerts par l\'entremise de ce site Web ne sont pas gérés par le gouvernement du Canada et ne relèvent pas de la ","link1":{"url":"http://laws-lois.justice.gc.ca/fra/lois/P-21/index.html","text":"Loi sur la protection des renseignements personnels"},"text2":" ni de la ","link2":{"url":"http://laws-lois.justice.gc.ca/fra/lois/O-3.01/","text":"Loi sur les langues officielles"},"text3":", et qu\'ils pourraient ne pas être accessibles aux personnes handicapées. Les renseignements offerts pourraient être uniquement disponibles dans la langue utilisée dans le site en question. En ce qui concerne la protection des renseignements personnels, les visiteurs devraient vérifier les politiques de confidentialité de ce site Web non gouvernemental avant de fournir leurs renseignements personnels."},"name":"Nom","type":"Type","format":"Format","languages":"Langues","language":"Français","eng":"Anglais","fra":"Français","engfra":"Français et Anglais","unk":"inconnu","zxx":"Pas de contenu linguistique","organization":"Organisation","address":"Adresse","individualname":"Nom de la personne","role":"Rôle","telephone":"Téléphone","fax":"Télécopieur","email":"Courriel","web":"Web","description":"Description","status":"État","maintenance":"Fréquence de mise à jour","topiccategory":"Catégorie thématique","north":"Nord","east":"Est","west":"Ouest","south":"Sud","spatialrepresentation":"Représentation Spatiale","addtomap":"Ajouter à la carte","viewthedata":"Affichez les données en profondeur en les ajoutant à une carte.","viewonmap":"Voir sur la carte","addedtomymap":"Ajouté à MaCarte","addtomymap":"Ajouter à MaCarte","ourmetadatais":"Nos métadonnées sont stockées au format geoCore. Un geojson contenant toutes les métadonnées que vous voyez ici.","downloadgeocore":"Télécharger geoCore","viewhnaprecord":"Enregistrement HNAP","numberofacesses":"Nombre d\'accès","last30":"Les 30 derniers jours","alltime":"Tout le temps","share":"Partager","id":"Identifiant","greymaptitle":"Pas de contenu visible","greymapinfo":"Cet enregistrement n\'a pas d\'élément visible."},"modal":{"buttonlabel":"Fermer","home":{"title":"Au sujet de l\'application recherche","description":"L\'application recherche utilise une carte pour rechercher des données sur la zone affichée. Effectuez un panoramique et un zoom sur la carte pour filtrer le contenu en fonction de votre zone d\'intérêt. Les résultats seront actualisés en fonction de la zone de la carte."},"mapping":{"title":"Ajouté à MaCarte","noadded":"Pas de résultat","gotomymap":"Aller à MaCarte","cancel":"Annuler"}},"province":{"AB":"l\'Alberta","BC":"la Colombie-Britannique","ON":"l\'Ontario","QC":"le Québec","MB":"le Manitoba","PEI":"l\'île-du-Prince-Édouard","SK":"la Saskatchewan","NL":"la Terre-Neuve-et-Labrador","NS":"la Nouvelle-Écosse","NB":"le Nouveau-Brunswick","NU":"le Nunavut","NT":"les Territoires du Nord-Ouest","YT":"Le Yukon / le territoire du Yukon"}}');var ie=r(2761),ae=r(8162),se=r(8904),le=r(7608),ce=r(3366),ue=r(7462),de=r(6010),pe=r(9766),fe=r(8010);const he=["sx"];var me=r(4780),ge=r(4445),ye=r(694),ve=r(8216),be=r(1588),xe=r(4867);function we(e){return(0,xe.Z)("MuiTypography",e)}(0,be.Z)("MuiTypography",["root","h1","h2","h3","h4","h5","h6","subtitle1","subtitle2","body1","body2","inherit","button","caption","overline","alignLeft","alignRight","alignCenter","alignJustify","noWrap","gutterBottom","paragraph"]);var Se=r(5893);const Oe=["align","className","component","gutterBottom","noWrap","paragraph","variant","variantMapping"],Pe=(0,ge.ZP)("span",{name:"MuiTypography",slot:"Root",overridesResolver:(e,t)=>{const{ownerState:r}=e;return[t.root,r.variant&&t[r.variant],"inherit"!==r.align&&t[`align${(0,ve.Z)(r.align)}`],r.noWrap&&t.noWrap,r.gutterBottom&&t.gutterBottom,r.paragraph&&t.paragraph]}})((({theme:e,ownerState:t})=>(0,ue.Z)({margin:0},t.variant&&e.typography[t.variant],"inherit"!==t.align&&{textAlign:t.align},t.noWrap&&{overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"},t.gutterBottom&&{marginBottom:"0.35em"},t.paragraph&&{marginBottom:16}))),ke={h1:"h1",h2:"h2",h3:"h3",h4:"h4",h5:"h5",h6:"h6",subtitle1:"h6",subtitle2:"h6",body1:"p",body2:"p",inherit:"p"},Ee={primary:"primary.main",textPrimary:"text.primary",secondary:"secondary.main",textSecondary:"text.secondary",error:"error.main"},Ce=o.forwardRef((function(e,t){const r=(0,ye.Z)({props:e,name:"MuiTypography"}),n=(e=>Ee[e]||e)(r.color),o=function(e){const{sx:t}=e,r=(0,ce.Z)(e,he),{systemProps:n,otherProps:o}=(e=>{var t,r;const n={systemProps:{},otherProps:{}},o=null!=(t=null==e||null==(r=e.theme)?void 0:r.unstable_sxConfig)?t:fe.Z;return Object.keys(e).forEach((t=>{o[t]?n.systemProps[t]=e[t]:n.otherProps[t]=e[t]})),n})(r);let i;return i=Array.isArray(t)?[n,...t]:"function"==typeof t?(...e)=>{const r=t(...e);return(0,pe.P)(r)?(0,ue.Z)({},n,r):n}:(0,ue.Z)({},n,t),(0,ue.Z)({},o,{sx:i})}((0,ue.Z)({},r,{color:n})),{align:i="inherit",className:a,component:s,gutterBottom:l=!1,noWrap:c=!1,paragraph:u=!1,variant:d="body1",variantMapping:p=ke}=o,f=(0,ce.Z)(o,Oe),h=(0,ue.Z)({},o,{align:i,color:n,className:a,component:s,gutterBottom:l,noWrap:c,paragraph:u,variant:d,variantMapping:p}),m=s||(u?"p":p[d]||ke[d])||"span",g=(e=>{const{align:t,gutterBottom:r,noWrap:n,paragraph:o,variant:i,classes:a}=e,s={root:["root",i,"inherit"!==e.align&&`align${(0,ve.Z)(t)}`,r&&"gutterBottom",n&&"noWrap",o&&"paragraph"]};return(0,me.Z)(s,we,a)})(h);return(0,Se.jsx)(Pe,(0,ue.Z)({as:m,ref:t,ownerState:h,className:(0,de.Z)(g.root,a)},f))}));function je(){var e=(0,Jo.useTranslation)().t;return(0,Se.jsx)("div",{style:{backgroundColor:"white"},children:(0,Se.jsxs)(Ce,{variant:"body2",color:"textSecondary",component:"div",children:[(0,Se.jsxs)("h3",{className:"section-title",children:[(0,Se.jsx)(ie.Z,{})," ",e("appbar.search")," "]}),(0,Se.jsx)("p",{children:e("howto.geosearchdescription")}),(0,Se.jsxs)("h3",{className:"section-title",children:[(0,Se.jsx)(ae.Z,{})," ",e("appbar.filters")," "]}),(0,Se.jsx)("p",{children:e("howto.filtersdescription")}),(0,Se.jsx)("h3",{className:"section-title",children:e("appbar.searchoperators")}),(0,Se.jsx)("p",{children:e("howto.searchoperators")})]})})}var Ae=r(5449),Re="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};const Te="object"===("undefined"==typeof window?"undefined":Re(window))&&"object"===("undefined"==typeof document?"undefined":Re(document))&&9===document.nodeType;function _e(e){return _e="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},_e(e)}function Ne(e){var t=function(e,t){if("object"!==_e(e)||null===e)return e;var r=e[Symbol.toPrimitive];if(void 0!==r){var n=r.call(e,"string");if("object"!==_e(n))return n;throw new TypeError("@@toPrimitive must return a primitive value.")}return String(e)}(e);return"symbol"===_e(t)?t:String(t)}function Me(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,Ne(n.key),n)}}function Ie(e,t,r){return t&&Me(e.prototype,t),r&&Me(e,r),Object.defineProperty(e,"prototype",{writable:!1}),e}function Ze(e,t){return Ze=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(e,t){return e.__proto__=t,e},Ze(e,t)}function ze(e,t){e.prototype=Object.create(t.prototype),e.prototype.constructor=e,Ze(e,t)}function Le(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}var $e={}.constructor;function Be(e){if(null==e||"object"!=typeof e)return e;if(Array.isArray(e))return e.map(Be);if(e.constructor!==$e)return e;var t={};for(var r in e)t[r]=Be(e[r]);return t}function De(e,t,r){void 0===e&&(e="unnamed");var n=r.jss,o=Be(t);return n.plugins.onCreateRule(e,o,r)||(e[0],null)}var We=function(e,t){for(var r="",n=0;n<e.length&&"!important"!==e[n];n++)r&&(r+=t),r+=e[n];return r},Fe=function(e){if(!Array.isArray(e))return e;var t="";if(Array.isArray(e[0]))for(var r=0;r<e.length&&"!important"!==e[r];r++)t&&(t+=", "),t+=We(e[r]," ");else t=We(e,", ");return"!important"===e[e.length-1]&&(t+=" !important"),t};function Ue(e){return e&&!1===e.format?{linebreak:"",space:""}:{linebreak:"\n",space:" "}}function qe(e,t){for(var r="",n=0;n<t;n++)r+="  ";return r+e}function Ge(e,t,r){void 0===r&&(r={});var n="";if(!t)return n;var o=r.indent,i=void 0===o?0:o,a=t.fallbacks;!1===r.format&&(i=-1/0);var s=Ue(r),l=s.linebreak,c=s.space;if(e&&i++,a)if(Array.isArray(a))for(var u=0;u<a.length;u++){var d=a[u];for(var p in d){var f=d[p];null!=f&&(n&&(n+=l),n+=qe(p+":"+c+Fe(f)+";",i))}}else for(var h in a){var m=a[h];null!=m&&(n&&(n+=l),n+=qe(h+":"+c+Fe(m)+";",i))}for(var g in t){var y=t[g];null!=y&&"fallbacks"!==g&&(n&&(n+=l),n+=qe(g+":"+c+Fe(y)+";",i))}return(n||r.allowEmpty)&&e?(n&&(n=""+l+n+l),qe(""+e+c+"{"+n,--i)+qe("}",i)):n}var Ve=/([[\].#*$><+~=|^:(),"'`\s])/g,Ke="undefined"!=typeof CSS&&CSS.escape,He=function(e){return Ke?Ke(e):e.replace(Ve,"\\$1")},Xe=function(){function e(e,t,r){this.type="style",this.isProcessed=!1;var n=r.sheet,o=r.Renderer;this.key=e,this.options=r,this.style=t,n?this.renderer=n.renderer:o&&(this.renderer=new o)}return e.prototype.prop=function(e,t,r){if(void 0===t)return this.style[e];var n=!!r&&r.force;if(!n&&this.style[e]===t)return this;var o=t;r&&!1===r.process||(o=this.options.jss.plugins.onChangeValue(t,e,this));var i=null==o||!1===o,a=e in this.style;if(i&&!a&&!n)return this;var s=i&&a;if(s?delete this.style[e]:this.style[e]=o,this.renderable&&this.renderer)return s?this.renderer.removeProperty(this.renderable,e):this.renderer.setProperty(this.renderable,e,o),this;var l=this.options.sheet;return l&&l.attached,this},e}(),Ye=function(e){function t(t,r,n){var o;o=e.call(this,t,r,n)||this;var i=n.selector,a=n.scoped,s=n.sheet,l=n.generateId;return i?o.selectorText=i:!1!==a&&(o.id=l(Le(Le(o)),s),o.selectorText="."+He(o.id)),o}ze(t,e);var r=t.prototype;return r.applyTo=function(e){var t=this.renderer;if(t){var r=this.toJSON();for(var n in r)t.setProperty(e,n,r[n])}return this},r.toJSON=function(){var e={};for(var t in this.style){var r=this.style[t];"object"!=typeof r?e[t]=r:Array.isArray(r)&&(e[t]=Fe(r))}return e},r.toString=function(e){var t=this.options.sheet,r=t&&t.options.link?(0,ue.Z)({},e,{allowEmpty:!0}):e;return Ge(this.selectorText,this.style,r)},Ie(t,[{key:"selector",set:function(e){if(e!==this.selectorText){this.selectorText=e;var t=this.renderer,r=this.renderable;r&&t&&(t.setSelector(r,e)||t.replaceRule(r,this))}},get:function(){return this.selectorText}}]),t}(Xe),Je={onCreateRule:function(e,t,r){return"@"===e[0]||r.parent&&"keyframes"===r.parent.type?null:new Ye(e,t,r)}},Qe={indent:1,children:!0},et=/@([\w-]+)/,tt=function(){function e(e,t,r){this.type="conditional",this.isProcessed=!1,this.key=e;var n=e.match(et);for(var o in this.at=n?n[1]:"unknown",this.query=r.name||"@"+this.at,this.options=r,this.rules=new kt((0,ue.Z)({},r,{parent:this})),t)this.rules.add(o,t[o]);this.rules.process()}var t=e.prototype;return t.getRule=function(e){return this.rules.get(e)},t.indexOf=function(e){return this.rules.indexOf(e)},t.addRule=function(e,t,r){var n=this.rules.add(e,t,r);return n?(this.options.jss.plugins.onProcessRule(n),n):null},t.replaceRule=function(e,t,r){var n=this.rules.replace(e,t,r);return n&&this.options.jss.plugins.onProcessRule(n),n},t.toString=function(e){void 0===e&&(e=Qe);var t=Ue(e).linebreak;if(null==e.indent&&(e.indent=Qe.indent),null==e.children&&(e.children=Qe.children),!1===e.children)return this.query+" {}";var r=this.rules.toString(e);return r?this.query+" {"+t+r+t+"}":""},e}(),rt=/@container|@media|@supports\s+/,nt={onCreateRule:function(e,t,r){return rt.test(e)?new tt(e,t,r):null}},ot={indent:1,children:!0},it=/@keyframes\s+([\w-]+)/,at=function(){function e(e,t,r){this.type="keyframes",this.at="@keyframes",this.isProcessed=!1;var n=e.match(it);n&&n[1]?this.name=n[1]:this.name="noname",this.key=this.type+"-"+this.name,this.options=r;var o=r.scoped,i=r.sheet,a=r.generateId;for(var s in this.id=!1===o?this.name:He(a(this,i)),this.rules=new kt((0,ue.Z)({},r,{parent:this})),t)this.rules.add(s,t[s],(0,ue.Z)({},r,{parent:this}));this.rules.process()}return e.prototype.toString=function(e){void 0===e&&(e=ot);var t=Ue(e).linebreak;if(null==e.indent&&(e.indent=ot.indent),null==e.children&&(e.children=ot.children),!1===e.children)return this.at+" "+this.id+" {}";var r=this.rules.toString(e);return r&&(r=""+t+r+t),this.at+" "+this.id+" {"+r+"}"},e}(),st=/@keyframes\s+/,lt=/\$([\w-]+)/g,ct=function(e,t){return"string"==typeof e?e.replace(lt,(function(e,r){return r in t?t[r]:e})):e},ut=function(e,t,r){var n=e[t],o=ct(n,r);o!==n&&(e[t]=o)},dt={onCreateRule:function(e,t,r){return"string"==typeof e&&st.test(e)?new at(e,t,r):null},onProcessStyle:function(e,t,r){return"style"===t.type&&r?("animation-name"in e&&ut(e,"animation-name",r.keyframes),"animation"in e&&ut(e,"animation",r.keyframes),e):e},onChangeValue:function(e,t,r){var n=r.options.sheet;if(!n)return e;switch(t){case"animation":case"animation-name":return ct(e,n.keyframes);default:return e}}},pt=function(e){function t(){return e.apply(this,arguments)||this}return ze(t,e),t.prototype.toString=function(e){var t=this.options.sheet,r=t&&t.options.link?(0,ue.Z)({},e,{allowEmpty:!0}):e;return Ge(this.key,this.style,r)},t}(Xe),ft={onCreateRule:function(e,t,r){return r.parent&&"keyframes"===r.parent.type?new pt(e,t,r):null}},ht=function(){function e(e,t,r){this.type="font-face",this.at="@font-face",this.isProcessed=!1,this.key=e,this.style=t,this.options=r}return e.prototype.toString=function(e){var t=Ue(e).linebreak;if(Array.isArray(this.style)){for(var r="",n=0;n<this.style.length;n++)r+=Ge(this.at,this.style[n]),this.style[n+1]&&(r+=t);return r}return Ge(this.at,this.style,e)},e}(),mt=/@font-face/,gt={onCreateRule:function(e,t,r){return mt.test(e)?new ht(e,t,r):null}},yt=function(){function e(e,t,r){this.type="viewport",this.at="@viewport",this.isProcessed=!1,this.key=e,this.style=t,this.options=r}return e.prototype.toString=function(e){return Ge(this.key,this.style,e)},e}(),vt={onCreateRule:function(e,t,r){return"@viewport"===e||"@-ms-viewport"===e?new yt(e,t,r):null}},bt=function(){function e(e,t,r){this.type="simple",this.isProcessed=!1,this.key=e,this.value=t,this.options=r}return e.prototype.toString=function(e){if(Array.isArray(this.value)){for(var t="",r=0;r<this.value.length;r++)t+=this.key+" "+this.value[r]+";",this.value[r+1]&&(t+="\n");return t}return this.key+" "+this.value+";"},e}(),xt={"@charset":!0,"@import":!0,"@namespace":!0},wt={onCreateRule:function(e,t,r){return e in xt?new bt(e,t,r):null}},St=[Je,nt,dt,ft,gt,vt,wt],Ot={process:!0},Pt={force:!0,process:!0},kt=function(){function e(e){this.map={},this.raw={},this.index=[],this.counter=0,this.options=e,this.classes=e.classes,this.keyframes=e.keyframes}var t=e.prototype;return t.add=function(e,t,r){var n=this.options,o=n.parent,i=n.sheet,a=n.jss,s=n.Renderer,l=n.generateId,c=n.scoped,u=(0,ue.Z)({classes:this.classes,parent:o,sheet:i,jss:a,Renderer:s,generateId:l,scoped:c,name:e,keyframes:this.keyframes,selector:void 0},r),d=e;e in this.raw&&(d=e+"-d"+this.counter++),this.raw[d]=t,d in this.classes&&(u.selector="."+He(this.classes[d]));var p=De(d,t,u);if(!p)return null;this.register(p);var f=void 0===u.index?this.index.length:u.index;return this.index.splice(f,0,p),p},t.replace=function(e,t,r){var n=this.get(e),o=this.index.indexOf(n);n&&this.remove(n);var i=r;return-1!==o&&(i=(0,ue.Z)({},r,{index:o})),this.add(e,t,i)},t.get=function(e){return this.map[e]},t.remove=function(e){this.unregister(e),delete this.raw[e.key],this.index.splice(this.index.indexOf(e),1)},t.indexOf=function(e){return this.index.indexOf(e)},t.process=function(){var e=this.options.jss.plugins;this.index.slice(0).forEach(e.onProcessRule,e)},t.register=function(e){this.map[e.key]=e,e instanceof Ye?(this.map[e.selector]=e,e.id&&(this.classes[e.key]=e.id)):e instanceof at&&this.keyframes&&(this.keyframes[e.name]=e.id)},t.unregister=function(e){delete this.map[e.key],e instanceof Ye?(delete this.map[e.selector],delete this.classes[e.key]):e instanceof at&&delete this.keyframes[e.name]},t.update=function(){var e,t,r;if("string"==typeof(arguments.length<=0?void 0:arguments[0])?(e=arguments.length<=0?void 0:arguments[0],t=arguments.length<=1?void 0:arguments[1],r=arguments.length<=2?void 0:arguments[2]):(t=arguments.length<=0?void 0:arguments[0],r=arguments.length<=1?void 0:arguments[1],e=null),e)this.updateOne(this.get(e),t,r);else for(var n=0;n<this.index.length;n++)this.updateOne(this.index[n],t,r)},t.updateOne=function(t,r,n){void 0===n&&(n=Ot);var o=this.options,i=o.jss.plugins,a=o.sheet;if(t.rules instanceof e)t.rules.update(r,n);else{var s=t.style;if(i.onUpdate(r,t,a,n),n.process&&s&&s!==t.style){for(var l in i.onProcessStyle(t.style,t,a),t.style){var c=t.style[l];c!==s[l]&&t.prop(l,c,Pt)}for(var u in s){var d=t.style[u],p=s[u];null==d&&d!==p&&t.prop(u,null,Pt)}}}},t.toString=function(e){for(var t="",r=this.options.sheet,n=!!r&&r.options.link,o=Ue(e).linebreak,i=0;i<this.index.length;i++){var a=this.index[i].toString(e);(a||n)&&(t&&(t+=o),t+=a)}return t},e}(),Et=function(){function e(e,t){for(var r in this.attached=!1,this.deployed=!1,this.classes={},this.keyframes={},this.options=(0,ue.Z)({},t,{sheet:this,parent:this,classes:this.classes,keyframes:this.keyframes}),t.Renderer&&(this.renderer=new t.Renderer(this)),this.rules=new kt(this.options),e)this.rules.add(r,e[r]);this.rules.process()}var t=e.prototype;return t.attach=function(){return this.attached||(this.renderer&&this.renderer.attach(),this.attached=!0,this.deployed||this.deploy()),this},t.detach=function(){return this.attached?(this.renderer&&this.renderer.detach(),this.attached=!1,this):this},t.addRule=function(e,t,r){var n=this.queue;this.attached&&!n&&(this.queue=[]);var o=this.rules.add(e,t,r);return o?(this.options.jss.plugins.onProcessRule(o),this.attached?this.deployed?(n?n.push(o):(this.insertRule(o),this.queue&&(this.queue.forEach(this.insertRule,this),this.queue=void 0)),o):o:(this.deployed=!1,o)):null},t.replaceRule=function(e,t,r){var n=this.rules.get(e);if(!n)return this.addRule(e,t,r);var o=this.rules.replace(e,t,r);return o&&this.options.jss.plugins.onProcessRule(o),this.attached?this.deployed?(this.renderer&&(o?n.renderable&&this.renderer.replaceRule(n.renderable,o):this.renderer.deleteRule(n)),o):o:(this.deployed=!1,o)},t.insertRule=function(e){this.renderer&&this.renderer.insertRule(e)},t.addRules=function(e,t){var r=[];for(var n in e){var o=this.addRule(n,e[n],t);o&&r.push(o)}return r},t.getRule=function(e){return this.rules.get(e)},t.deleteRule=function(e){var t="object"==typeof e?e:this.rules.get(e);return!(!t||this.attached&&!t.renderable)&&(this.rules.remove(t),!(this.attached&&t.renderable&&this.renderer)||this.renderer.deleteRule(t.renderable))},t.indexOf=function(e){return this.rules.indexOf(e)},t.deploy=function(){return this.renderer&&this.renderer.deploy(),this.deployed=!0,this},t.update=function(){var e;return(e=this.rules).update.apply(e,arguments),this},t.updateOne=function(e,t,r){return this.rules.updateOne(e,t,r),this},t.toString=function(e){return this.rules.toString(e)},e}(),Ct=function(){function e(){this.plugins={internal:[],external:[]},this.registry={}}var t=e.prototype;return t.onCreateRule=function(e,t,r){for(var n=0;n<this.registry.onCreateRule.length;n++){var o=this.registry.onCreateRule[n](e,t,r);if(o)return o}return null},t.onProcessRule=function(e){if(!e.isProcessed){for(var t=e.options.sheet,r=0;r<this.registry.onProcessRule.length;r++)this.registry.onProcessRule[r](e,t);e.style&&this.onProcessStyle(e.style,e,t),e.isProcessed=!0}},t.onProcessStyle=function(e,t,r){for(var n=0;n<this.registry.onProcessStyle.length;n++)t.style=this.registry.onProcessStyle[n](t.style,t,r)},t.onProcessSheet=function(e){for(var t=0;t<this.registry.onProcessSheet.length;t++)this.registry.onProcessSheet[t](e)},t.onUpdate=function(e,t,r,n){for(var o=0;o<this.registry.onUpdate.length;o++)this.registry.onUpdate[o](e,t,r,n)},t.onChangeValue=function(e,t,r){for(var n=e,o=0;o<this.registry.onChangeValue.length;o++)n=this.registry.onChangeValue[o](n,t,r);return n},t.use=function(e,t){void 0===t&&(t={queue:"external"});var r=this.plugins[t.queue];-1===r.indexOf(e)&&(r.push(e),this.registry=[].concat(this.plugins.external,this.plugins.internal).reduce((function(e,t){for(var r in t)r in e&&e[r].push(t[r]);return e}),{onCreateRule:[],onProcessRule:[],onProcessStyle:[],onProcessSheet:[],onChangeValue:[],onUpdate:[]}))},e}(),jt=function(){function e(){this.registry=[]}var t=e.prototype;return t.add=function(e){var t=this.registry,r=e.options.index;if(-1===t.indexOf(e))if(0===t.length||r>=this.index)t.push(e);else for(var n=0;n<t.length;n++)if(t[n].options.index>r)return void t.splice(n,0,e)},t.reset=function(){this.registry=[]},t.remove=function(e){var t=this.registry.indexOf(e);this.registry.splice(t,1)},t.toString=function(e){for(var t=void 0===e?{}:e,r=t.attached,n=(0,ce.Z)(t,["attached"]),o=Ue(n).linebreak,i="",a=0;a<this.registry.length;a++){var s=this.registry[a];null!=r&&s.attached!==r||(i&&(i+=o),i+=s.toString(n))}return i},Ie(e,[{key:"index",get:function(){return 0===this.registry.length?0:this.registry[this.registry.length-1].options.index}}]),e}(),At=new jt,Rt="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window&&window.Math===Math?window:"undefined"!=typeof self&&self.Math===Math?self:Function("return this")(),Tt="2f1acc6c3a606b082e5eef5e54414ffb";null==Rt[Tt]&&(Rt[Tt]=0);var _t=Rt[Tt]++,Nt=function(e){void 0===e&&(e={});var t=0;return function(r,n){t+=1;var o="",i="";return n&&(n.options.classNamePrefix&&(i=n.options.classNamePrefix),null!=n.options.jss.id&&(o=String(n.options.jss.id))),e.minify?""+(i||"c")+_t+o+t:i+r.key+"-"+_t+(o?"-"+o:"")+"-"+t}},Mt=function(e){var t;return function(){return t||(t=e()),t}},It=function(e,t){try{return e.attributeStyleMap?e.attributeStyleMap.get(t):e.style.getPropertyValue(t)}catch(e){return""}},Zt=function(e,t,r){try{var n=r;if(Array.isArray(r)&&(n=Fe(r)),e.attributeStyleMap)e.attributeStyleMap.set(t,n);else{var o=n?n.indexOf("!important"):-1,i=o>-1?n.substr(0,o-1):n;e.style.setProperty(t,i,o>-1?"important":"")}}catch(e){return!1}return!0},zt=function(e,t){try{e.attributeStyleMap?e.attributeStyleMap.delete(t):e.style.removeProperty(t)}catch(e){}},Lt=function(e,t){return e.selectorText=t,e.selectorText===t},$t=Mt((function(){return document.querySelector("head")}));var Bt=Mt((function(){var e=document.querySelector('meta[property="csp-nonce"]');return e?e.getAttribute("content"):null})),Dt=function(e,t,r){try{"insertRule"in e?e.insertRule(t,r):"appendRule"in e&&e.appendRule(t)}catch(e){return!1}return e.cssRules[r]},Wt=function(e,t){var r=e.cssRules.length;return void 0===t||t>r?r:t},Ft=function(){function e(e){this.getPropertyValue=It,this.setProperty=Zt,this.removeProperty=zt,this.setSelector=Lt,this.hasInsertedRules=!1,this.cssRules=[],e&&At.add(e),this.sheet=e;var t=this.sheet?this.sheet.options:{},r=t.media,n=t.meta,o=t.element;this.element=o||function(){var e=document.createElement("style");return e.textContent="\n",e}(),this.element.setAttribute("data-jss",""),r&&this.element.setAttribute("media",r),n&&this.element.setAttribute("data-meta",n);var i=Bt();i&&this.element.setAttribute("nonce",i)}var t=e.prototype;return t.attach=function(){if(!this.element.parentNode&&this.sheet){!function(e,t){var r=t.insertionPoint,n=function(e){var t=At.registry;if(t.length>0){var r=function(e,t){for(var r=0;r<e.length;r++){var n=e[r];if(n.attached&&n.options.index>t.index&&n.options.insertionPoint===t.insertionPoint)return n}return null}(t,e);if(r&&r.renderer)return{parent:r.renderer.element.parentNode,node:r.renderer.element};if(r=function(e,t){for(var r=e.length-1;r>=0;r--){var n=e[r];if(n.attached&&n.options.insertionPoint===t.insertionPoint)return n}return null}(t,e),r&&r.renderer)return{parent:r.renderer.element.parentNode,node:r.renderer.element.nextSibling}}var n=e.insertionPoint;if(n&&"string"==typeof n){var o=function(e){for(var t=$t(),r=0;r<t.childNodes.length;r++){var n=t.childNodes[r];if(8===n.nodeType&&n.nodeValue.trim()===e)return n}return null}(n);if(o)return{parent:o.parentNode,node:o.nextSibling}}return!1}(t);if(!1!==n&&n.parent)n.parent.insertBefore(e,n.node);else if(r&&"number"==typeof r.nodeType){var o=r,i=o.parentNode;i&&i.insertBefore(e,o.nextSibling)}else $t().appendChild(e)}(this.element,this.sheet.options);var e=Boolean(this.sheet&&this.sheet.deployed);this.hasInsertedRules&&e&&(this.hasInsertedRules=!1,this.deploy())}},t.detach=function(){if(this.sheet){var e=this.element.parentNode;e&&e.removeChild(this.element),this.sheet.options.link&&(this.cssRules=[],this.element.textContent="\n")}},t.deploy=function(){var e=this.sheet;e&&(e.options.link?this.insertRules(e.rules):this.element.textContent="\n"+e.toString()+"\n")},t.insertRules=function(e,t){for(var r=0;r<e.index.length;r++)this.insertRule(e.index[r],r,t)},t.insertRule=function(e,t,r){if(void 0===r&&(r=this.element.sheet),e.rules){var n=e,o=r;if("conditional"===e.type||"keyframes"===e.type){var i=Wt(r,t);if(!1===(o=Dt(r,n.toString({children:!1}),i)))return!1;this.refCssRule(e,i,o)}return this.insertRules(n.rules,o),o}var a=e.toString();if(!a)return!1;var s=Wt(r,t),l=Dt(r,a,s);return!1!==l&&(this.hasInsertedRules=!0,this.refCssRule(e,s,l),l)},t.refCssRule=function(e,t,r){e.renderable=r,e.options.parent instanceof Et&&this.cssRules.splice(t,0,r)},t.deleteRule=function(e){var t=this.element.sheet,r=this.indexOf(e);return-1!==r&&(t.deleteRule(r),this.cssRules.splice(r,1),!0)},t.indexOf=function(e){return this.cssRules.indexOf(e)},t.replaceRule=function(e,t){var r=this.indexOf(e);return-1!==r&&(this.element.sheet.deleteRule(r),this.cssRules.splice(r,1),this.insertRule(t,r))},t.getRules=function(){return this.element.sheet.cssRules},e}(),Ut=0,qt=function(){function e(e){this.id=Ut++,this.version="10.10.0",this.plugins=new Ct,this.options={id:{minify:!1},createGenerateId:Nt,Renderer:Te?Ft:null,plugins:[]},this.generateId=Nt({minify:!1});for(var t=0;t<St.length;t++)this.plugins.use(St[t],{queue:"internal"});this.setup(e)}var t=e.prototype;return t.setup=function(e){return void 0===e&&(e={}),e.createGenerateId&&(this.options.createGenerateId=e.createGenerateId),e.id&&(this.options.id=(0,ue.Z)({},this.options.id,e.id)),(e.createGenerateId||e.id)&&(this.generateId=this.options.createGenerateId(this.options.id)),null!=e.insertionPoint&&(this.options.insertionPoint=e.insertionPoint),"Renderer"in e&&(this.options.Renderer=e.Renderer),e.plugins&&this.use.apply(this,e.plugins),this},t.createStyleSheet=function(e,t){void 0===t&&(t={});var r=t.index;"number"!=typeof r&&(r=0===At.index?0:At.index+1);var n=new Et(e,(0,ue.Z)({},t,{jss:this,generateId:t.generateId||this.generateId,insertionPoint:this.options.insertionPoint,Renderer:this.options.Renderer,index:r}));return this.plugins.onProcessSheet(n),n},t.removeStyleSheet=function(e){return e.detach(),At.remove(e),this},t.createRule=function(e,t,r){if(void 0===t&&(t={}),void 0===r&&(r={}),"object"==typeof e)return this.createRule(void 0,e,t);var n=(0,ue.Z)({},r,{name:e,jss:this,Renderer:this.options.Renderer});n.generateId||(n.generateId=this.generateId),n.classes||(n.classes={}),n.keyframes||(n.keyframes={});var o=De(e,t,n);return o&&this.plugins.onProcessRule(o),o},t.use=function(){for(var e=this,t=arguments.length,r=new Array(t),n=0;n<t;n++)r[n]=arguments[n];return r.forEach((function(t){e.plugins.use(t)})),this},e}(),Gt=function(e){return new qt(e)},Vt="object"==typeof CSS&&null!=CSS&&"number"in CSS;function Kt(e){var t=null;for(var r in e){var n=e[r],o=typeof n;if("function"===o)t||(t={}),t[r]=n;else if("object"===o&&null!==n&&!Array.isArray(n)){var i=Kt(n);i&&(t||(t={}),t[r]=i)}}return t}function Ht(e={}){const{baseClasses:t,newClasses:r,Component:n}=e;if(!r)return t;const o=(0,ue.Z)({},t);return Object.keys(r).forEach((e=>{r[e]&&(o[e]=`${t[e]} ${r[e]}`)})),o}Gt();const Xt={set:(e,t,r,n)=>{let o=e.get(t);o||(o=new Map,e.set(t,o)),o.set(r,n)},get:(e,t,r)=>{const n=e.get(t);return n?n.get(r):void 0},delete:(e,t,r)=>{e.get(t).delete(r)}},Yt=Xt,Jt=o.createContext(null);const Qt="function"==typeof Symbol&&Symbol.for?Symbol.for("mui.nested"):"__THEME_NESTED__",er=["checked","disabled","error","focused","focusVisible","required","expanded","selected"];var tr=Date.now(),rr="fnValues"+tr,nr="fnStyle"+ ++tr;var or="@global",ir=function(){function e(e,t,r){for(var n in this.type="global",this.at=or,this.isProcessed=!1,this.key=e,this.options=r,this.rules=new kt((0,ue.Z)({},r,{parent:this})),t)this.rules.add(n,t[n]);this.rules.process()}var t=e.prototype;return t.getRule=function(e){return this.rules.get(e)},t.addRule=function(e,t,r){var n=this.rules.add(e,t,r);return n&&this.options.jss.plugins.onProcessRule(n),n},t.replaceRule=function(e,t,r){var n=this.rules.replace(e,t,r);return n&&this.options.jss.plugins.onProcessRule(n),n},t.indexOf=function(e){return this.rules.indexOf(e)},t.toString=function(e){return this.rules.toString(e)},e}(),ar=function(){function e(e,t,r){this.type="global",this.at=or,this.isProcessed=!1,this.key=e,this.options=r;var n=e.substr(8);this.rule=r.jss.createRule(n,t,(0,ue.Z)({},r,{parent:this}))}return e.prototype.toString=function(e){return this.rule?this.rule.toString(e):""},e}(),sr=/\s*,\s*/g;function lr(e,t){for(var r=e.split(sr),n="",o=0;o<r.length;o++)n+=t+" "+r[o].trim(),r[o+1]&&(n+=", ");return n}var cr=/\s*,\s*/g,ur=/&/g,dr=/\$([\w-]+)/g;var pr=/[A-Z]/g,fr=/^ms-/,hr={};function mr(e){return"-"+e.toLowerCase()}const gr=function(e){if(hr.hasOwnProperty(e))return hr[e];var t=e.replace(pr,mr);return hr[e]=fr.test(t)?"-"+t:t};function yr(e){var t={};for(var r in e)t[0===r.indexOf("--")?r:gr(r)]=e[r];return e.fallbacks&&(Array.isArray(e.fallbacks)?t.fallbacks=e.fallbacks.map(yr):t.fallbacks=yr(e.fallbacks)),t}var vr=Vt&&CSS?CSS.px:"px",br=Vt&&CSS?CSS.ms:"ms",xr=Vt&&CSS?CSS.percent:"%";function wr(e){var t=/(-[a-z])/g,r=function(e){return e[1].toUpperCase()},n={};for(var o in e)n[o]=e[o],n[o.replace(t,r)]=e[o];return n}var Sr=wr({"animation-delay":br,"animation-duration":br,"background-position":vr,"background-position-x":vr,"background-position-y":vr,"background-size":vr,border:vr,"border-bottom":vr,"border-bottom-left-radius":vr,"border-bottom-right-radius":vr,"border-bottom-width":vr,"border-left":vr,"border-left-width":vr,"border-radius":vr,"border-right":vr,"border-right-width":vr,"border-top":vr,"border-top-left-radius":vr,"border-top-right-radius":vr,"border-top-width":vr,"border-width":vr,"border-block":vr,"border-block-end":vr,"border-block-end-width":vr,"border-block-start":vr,"border-block-start-width":vr,"border-block-width":vr,"border-inline":vr,"border-inline-end":vr,"border-inline-end-width":vr,"border-inline-start":vr,"border-inline-start-width":vr,"border-inline-width":vr,"border-start-start-radius":vr,"border-start-end-radius":vr,"border-end-start-radius":vr,"border-end-end-radius":vr,margin:vr,"margin-bottom":vr,"margin-left":vr,"margin-right":vr,"margin-top":vr,"margin-block":vr,"margin-block-end":vr,"margin-block-start":vr,"margin-inline":vr,"margin-inline-end":vr,"margin-inline-start":vr,padding:vr,"padding-bottom":vr,"padding-left":vr,"padding-right":vr,"padding-top":vr,"padding-block":vr,"padding-block-end":vr,"padding-block-start":vr,"padding-inline":vr,"padding-inline-end":vr,"padding-inline-start":vr,"mask-position-x":vr,"mask-position-y":vr,"mask-size":vr,height:vr,width:vr,"min-height":vr,"max-height":vr,"min-width":vr,"max-width":vr,bottom:vr,left:vr,top:vr,right:vr,inset:vr,"inset-block":vr,"inset-block-end":vr,"inset-block-start":vr,"inset-inline":vr,"inset-inline-end":vr,"inset-inline-start":vr,"box-shadow":vr,"text-shadow":vr,"column-gap":vr,"column-rule":vr,"column-rule-width":vr,"column-width":vr,"font-size":vr,"font-size-delta":vr,"letter-spacing":vr,"text-decoration-thickness":vr,"text-indent":vr,"text-stroke":vr,"text-stroke-width":vr,"word-spacing":vr,motion:vr,"motion-offset":vr,outline:vr,"outline-offset":vr,"outline-width":vr,perspective:vr,"perspective-origin-x":xr,"perspective-origin-y":xr,"transform-origin":xr,"transform-origin-x":xr,"transform-origin-y":xr,"transform-origin-z":xr,"transition-delay":br,"transition-duration":br,"vertical-align":vr,"flex-basis":vr,"shape-margin":vr,size:vr,gap:vr,grid:vr,"grid-gap":vr,"row-gap":vr,"grid-row-gap":vr,"grid-column-gap":vr,"grid-template-rows":vr,"grid-template-columns":vr,"grid-auto-rows":vr,"grid-auto-columns":vr,"box-shadow-x":vr,"box-shadow-y":vr,"box-shadow-blur":vr,"box-shadow-spread":vr,"font-line-height":vr,"text-shadow-x":vr,"text-shadow-y":vr,"text-shadow-blur":vr});function Or(e,t,r){if(null==t)return t;if(Array.isArray(t))for(var n=0;n<t.length;n++)t[n]=Or(e,t[n],r);else if("object"==typeof t)if("fallbacks"===e)for(var o in t)t[o]=Or(o,t[o],r);else for(var i in t)t[i]=Or(e+"-"+i,t[i],r);else if("number"==typeof t&&!1===isNaN(t)){var a=r[e]||Sr[e];return!a||0===t&&a===vr?t.toString():"function"==typeof a?a(t).toString():""+t+a}return t}function Pr(e,t){(null==t||t>e.length)&&(t=e.length);for(var r=0,n=new Array(t);r<t;r++)n[r]=e[r];return n}var kr="",Er="",Cr="",jr="",Ar=Te&&"ontouchstart"in document.documentElement;if(Te){var Rr={Moz:"-moz-",ms:"-ms-",O:"-o-",Webkit:"-webkit-"},Tr=document.createElement("p").style;for(var _r in Rr)if(_r+"Transform"in Tr){kr=_r,Er=Rr[_r];break}"Webkit"===kr&&"msHyphens"in Tr&&(kr="ms",Er=Rr.ms,jr="edge"),"Webkit"===kr&&"-apple-trailing-word"in Tr&&(Cr="apple")}var Nr=kr,Mr=Er,Ir=Cr,Zr=jr,zr=Ar,Lr={noPrefill:["appearance"],supportedProperty:function(e){return"appearance"===e&&("ms"===Nr?"-webkit-"+e:Mr+e)}},$r={noPrefill:["color-adjust"],supportedProperty:function(e){return"color-adjust"===e&&("Webkit"===Nr?Mr+"print-"+e:e)}},Br=/[-\s]+(.)?/g;function Dr(e,t){return t?t.toUpperCase():""}function Wr(e){return e.replace(Br,Dr)}function Fr(e){return Wr("-"+e)}var Ur,qr={noPrefill:["mask"],supportedProperty:function(e,t){if(!/^mask/.test(e))return!1;if("Webkit"===Nr){var r="mask-image";if(Wr(r)in t)return e;if(Nr+Fr(r)in t)return Mr+e}return e}},Gr={noPrefill:["text-orientation"],supportedProperty:function(e){return"text-orientation"===e&&("apple"!==Ir||zr?e:Mr+e)}},Vr={noPrefill:["transform"],supportedProperty:function(e,t,r){return"transform"===e&&(r.transform?e:Mr+e)}},Kr={noPrefill:["transition"],supportedProperty:function(e,t,r){return"transition"===e&&(r.transition?e:Mr+e)}},Hr={noPrefill:["writing-mode"],supportedProperty:function(e){return"writing-mode"===e&&("Webkit"===Nr||"ms"===Nr&&"edge"!==Zr?Mr+e:e)}},Xr={noPrefill:["user-select"],supportedProperty:function(e){return"user-select"===e&&("Moz"===Nr||"ms"===Nr||"apple"===Ir?Mr+e:e)}},Yr={supportedProperty:function(e,t){return!!/^break-/.test(e)&&("Webkit"===Nr?"WebkitColumn"+Fr(e)in t&&Mr+"column-"+e:"Moz"===Nr&&"page"+Fr(e)in t&&"page-"+e)}},Jr={supportedProperty:function(e,t){if(!/^(border|margin|padding)-inline/.test(e))return!1;if("Moz"===Nr)return e;var r=e.replace("-inline","");return Nr+Fr(r)in t&&Mr+r}},Qr={supportedProperty:function(e,t){return Wr(e)in t&&e}},en={supportedProperty:function(e,t){var r=Fr(e);return"-"===e[0]||"-"===e[0]&&"-"===e[1]?e:Nr+r in t?Mr+e:"Webkit"!==Nr&&"Webkit"+r in t&&"-webkit-"+e}},tn={supportedProperty:function(e){return"scroll-snap"===e.substring(0,11)&&("ms"===Nr?""+Mr+e:e)}},rn={supportedProperty:function(e){return"overscroll-behavior"===e&&("ms"===Nr?Mr+"scroll-chaining":e)}},nn={"flex-grow":"flex-positive","flex-shrink":"flex-negative","flex-basis":"flex-preferred-size","justify-content":"flex-pack",order:"flex-order","align-items":"flex-align","align-content":"flex-line-pack"},on={supportedProperty:function(e,t){var r=nn[e];return!!r&&Nr+Fr(r)in t&&Mr+r}},an={flex:"box-flex","flex-grow":"box-flex","flex-direction":["box-orient","box-direction"],order:"box-ordinal-group","align-items":"box-align","flex-flow":["box-orient","box-direction"],"justify-content":"box-pack"},sn=Object.keys(an),ln=function(e){return Mr+e},cn={supportedProperty:function(e,t,r){var n=r.multiple;if(sn.indexOf(e)>-1){var o=an[e];if(!Array.isArray(o))return Nr+Fr(o)in t&&Mr+o;if(!n)return!1;for(var i=0;i<o.length;i++)if(!(Nr+Fr(o[0])in t))return!1;return o.map(ln)}return!1}},un=[Lr,$r,qr,Gr,Vr,Kr,Hr,Xr,Yr,Jr,Qr,en,tn,rn,on,cn],dn=un.filter((function(e){return e.supportedProperty})).map((function(e){return e.supportedProperty})),pn=un.filter((function(e){return e.noPrefill})).reduce((function(e,t){return e.push.apply(e,function(e){if(Array.isArray(e))return Pr(e)}(r=t.noPrefill)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(r)||function(e,t){if(e){if("string"==typeof e)return Pr(e,t);var r=Object.prototype.toString.call(e).slice(8,-1);return"Object"===r&&e.constructor&&(r=e.constructor.name),"Map"===r||"Set"===r?Array.from(e):"Arguments"===r||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r)?Pr(e,t):void 0}}(r)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()),e;var r}),[]),fn={};if(Te){Ur=document.createElement("p");var hn=window.getComputedStyle(document.documentElement,"");for(var mn in hn)isNaN(mn)||(fn[hn[mn]]=hn[mn]);pn.forEach((function(e){return delete fn[e]}))}function gn(e,t){if(void 0===t&&(t={}),!Ur)return e;if(null!=fn[e])return fn[e];"transition"!==e&&"transform"!==e||(t[e]=e in Ur.style);for(var r=0;r<dn.length&&(fn[e]=dn[r](e,Ur.style,t),!fn[e]);r++);try{Ur.style[e]=""}catch(e){return!1}return fn[e]}var yn,vn={},bn={transition:1,"transition-property":1,"-webkit-transition":1,"-webkit-transition-property":1},xn=/(^\s*[\w-]+)|, (\s*[\w-]+)(?![^()]*\))/g;function wn(e,t,r){return"var"===t?"var":"all"===t?"all":"all"===r?", all":(t?gn(t):", "+gn(r))||t||r}function Sn(e,t){var r=t;if(!yn||"content"===e)return t;if("string"!=typeof r||!isNaN(parseInt(r,10)))return r;var n=e+r;if(null!=vn[n])return vn[n];try{yn.style[e]=r}catch(e){return vn[n]=!1,!1}if(bn[e])r=r.replace(xn,wn);else if(""===yn.style[e]&&("-ms-flex"===(r=Mr+r)&&(yn.style[e]="-ms-flexbox"),yn.style[e]=r,""===yn.style[e]))return vn[n]=!1,!1;return yn.style[e]="",vn[n]=r,vn[n]}Te&&(yn=document.createElement("p"));const On=Gt({plugins:[{onCreateRule:function(e,t,r){if("function"!=typeof t)return null;var n=De(e,{},r);return n[nr]=t,n},onProcessStyle:function(e,t){if(rr in t||nr in t)return e;var r={};for(var n in e){var o=e[n];"function"==typeof o&&(delete e[n],r[n]=o)}return t[rr]=r,e},onUpdate:function(e,t,r,n){var o=t,i=o[nr];i&&(o.style=i(e)||{});var a=o[rr];if(a)for(var s in a)o.prop(s,a[s](e),n)}},{onCreateRule:function(e,t,r){if(!e)return null;if(e===or)return new ir(e,t,r);if("@"===e[0]&&"@global "===e.substr(0,8))return new ar(e,t,r);var n=r.parent;return n&&("global"===n.type||n.options.parent&&"global"===n.options.parent.type)&&(r.scoped=!1),r.selector||!1!==r.scoped||(r.selector=e),null},onProcessRule:function(e,t){"style"===e.type&&t&&(function(e,t){var r=e.options,n=e.style,o=n?n[or]:null;if(o){for(var i in o)t.addRule(i,o[i],(0,ue.Z)({},r,{selector:lr(i,e.selector)}));delete n[or]}}(e,t),function(e,t){var r=e.options,n=e.style;for(var o in n)if("@"===o[0]&&o.substr(0,7)===or){var i=lr(o.substr(7),e.selector);t.addRule(i,n[o],(0,ue.Z)({},r,{selector:i})),delete n[o]}}(e,t))}},function(){function e(e,t){return function(r,n){var o=e.getRule(n)||t&&t.getRule(n);return o?o.selector:n}}function t(e,t){for(var r=t.split(cr),n=e.split(cr),o="",i=0;i<r.length;i++)for(var a=r[i],s=0;s<n.length;s++){var l=n[s];o&&(o+=", "),o+=-1!==l.indexOf("&")?l.replace(ur,a):a+" "+l}return o}function r(e,t,r){if(r)return(0,ue.Z)({},r,{index:r.index+1});var n=e.options.nestingLevel;n=void 0===n?1:n+1;var o=(0,ue.Z)({},e.options,{nestingLevel:n,index:t.indexOf(e)+1});return delete o.name,o}return{onProcessStyle:function(n,o,i){if("style"!==o.type)return n;var a,s,l=o,c=l.options.parent;for(var u in n){var d=-1!==u.indexOf("&"),p="@"===u[0];if(d||p){if(a=r(l,c,a),d){var f=t(u,l.selector);s||(s=e(c,i)),f=f.replace(dr,s);var h=l.key+"-"+u;"replaceRule"in c?c.replaceRule(h,n[u],(0,ue.Z)({},a,{selector:f})):c.addRule(h,n[u],(0,ue.Z)({},a,{selector:f}))}else p&&c.addRule(u,{},a).addRule(l.key,n[u],{selector:l.selector});delete n[u]}}return n}}}(),{onProcessStyle:function(e){if(Array.isArray(e)){for(var t=0;t<e.length;t++)e[t]=yr(e[t]);return e}return yr(e)},onChangeValue:function(e,t,r){if(0===t.indexOf("--"))return e;var n=gr(t);return t===n?e:(r.prop(n,e),null)}},function(e){void 0===e&&(e={});var t=wr(e);return{onProcessStyle:function(e,r){if("style"!==r.type)return e;for(var n in e)e[n]=Or(n,e[n],t);return e},onChangeValue:function(e,r){return Or(r,e,t)}}}(),"undefined"==typeof window?null:function(){function e(t){for(var r in t){var n=t[r];if("fallbacks"===r&&Array.isArray(n))t[r]=n.map(e);else{var o=!1,i=gn(r);i&&i!==r&&(o=!0);var a=!1,s=Sn(i,Fe(n));s&&s!==n&&(a=!0),(o||a)&&(o&&delete t[r],t[i||r]=s||n)}}return t}return{onProcessRule:function(e){if("keyframes"===e.type){var t=e;t.at=function(e){return"-"===e[1]||"ms"===Nr?e:"@"+Mr+"keyframes"+e.substr(10)}(t.at)}},onProcessStyle:function(t,r){return"style"!==r.type?t:e(t)},onChangeValue:function(e,t){return Sn(t,Fe(e))||e}}}(),(Cn=function(e,t){return e.length===t.length?e>t?1:-1:e.length-t.length},{onProcessStyle:function(e,t){if("style"!==t.type)return e;for(var r={},n=Object.keys(e).sort(Cn),o=0;o<n.length;o++)r[n[o]]=e[n[o]];return r}})]}),Pn=function(e={}){const{disableGlobal:t=!1,productionPrefix:r="jss",seed:n=""}=e,o=""===n?"":`${n}-`;let i=0;const a=()=>(i+=1,i);return(e,i)=>{const s=i.options.name;if(s&&0===s.indexOf("Mui")&&!i.options.link&&!t){if(-1!==er.indexOf(e.key))return`Mui-${e.key}`;const t=`${o}${s}-${e.key}`;return i.options.theme[Qt]&&""===n?`${t}-${a()}`:t}return`${o}${r}${a()}`}}(),kn={disableGeneration:!1,generateClassName:Pn,jss:On,sheetsCache:null,sheetsManager:new Map,sheetsRegistry:null},En=o.createContext(kn);var Cn;let jn=-1e9;var An=r(8320);const Rn=["variant"];function Tn(e){return 0===e.length}const _n={},Nn=["name","classNamePrefix","Component","defaultTheme"];function Mn({state:e,theme:t,stylesOptions:r,stylesCreator:n,name:o},i){if(r.disableGeneration)return;let a=Yt.get(r.sheetsManager,n,t);a||(a={refs:0,staticSheet:null,dynamicStyles:null},Yt.set(r.sheetsManager,n,t,a));const s=(0,ue.Z)({},n.options,r,{theme:t,flip:"boolean"==typeof r.flip?r.flip:"rtl"===t.direction});s.generateId=s.serverGenerateClassName||s.generateClassName;const l=r.sheetsRegistry;if(0===a.refs){let e;r.sheetsCache&&(e=Yt.get(r.sheetsCache,n,t));const i=n.create(t,o);e||(e=r.jss.createStyleSheet(i,(0,ue.Z)({link:!1},s)),e.attach(),r.sheetsCache&&Yt.set(r.sheetsCache,n,t,e)),l&&l.add(e),a.staticSheet=e,a.dynamicStyles=Kt(i)}if(a.dynamicStyles){const t=r.jss.createStyleSheet(a.dynamicStyles,(0,ue.Z)({link:!0},s));t.update(i),t.attach(),e.dynamicSheet=t,e.classes=Ht({baseClasses:a.staticSheet.classes,newClasses:t.classes}),l&&l.add(t)}else e.classes=a.staticSheet.classes;a.refs+=1}var In="https://github.com/Canadian-Geospatial-Platform/GeoView",Zn=function(e,t={}){const{name:r,classNamePrefix:n,Component:i,defaultTheme:a=_n}=t,s=(0,ce.Z)(t,Nn),l=function(e){const t="function"==typeof e;return{create:(r,n)=>{let o;try{o=t?e(r):e}catch(e){throw e}if(!n||!r.components||!r.components[n]||!r.components[n].styleOverrides&&!r.components[n].variants)return o;const i=r.components[n].styleOverrides||{},a=r.components[n].variants||[],s=(0,ue.Z)({},o);return Object.keys(i).forEach((e=>{s[e]=(0,pe.Z)(s[e]||{},i[e])})),a.forEach((e=>{const t=function(e){const{variant:t}=e,r=(0,ce.Z)(e,Rn);let n=t||"";return Object.keys(r).sort().forEach((t=>{n+="color"===t?Tn(n)?e[t]:(0,An.Z)(e[t]):`${Tn(n)?t:(0,An.Z)(t)}${(0,An.Z)(e[t].toString())}`})),n}(e.props);s[t]=(0,pe.Z)(s[t]||{},e.style)})),s},options:{}}}(e),c=r||n||"makeStyles";return l.options={index:(jn+=1,jn),name:r,meta:c,classNamePrefix:c},(e={})=>{const t=function(){var e;const t=o.useContext(Jt);return null!=(e=null==t?void 0:t.$$material)?e:t}()||a,n=(0,ue.Z)({},o.useContext(En),s),c=o.useRef(),u=o.useRef();!function(i,a){const s=o.useRef([]);let d;const p=o.useMemo((()=>({})),a);s.current!==p&&(s.current=p,d=(()=>{const o={name:r,state:{},stylesCreator:l,stylesOptions:n,theme:t};return Mn(o,e),u.current=!1,c.current=o,()=>{!function({state:e,theme:t,stylesOptions:r,stylesCreator:n}){if(r.disableGeneration)return;const o=Yt.get(r.sheetsManager,n,t);o.refs-=1;const i=r.sheetsRegistry;0===o.refs&&(Yt.delete(r.sheetsManager,n,t),r.jss.removeStyleSheet(o.staticSheet),i&&i.remove(o.staticSheet)),e.dynamicSheet&&(r.jss.removeStyleSheet(e.dynamicSheet),i&&i.remove(e.dynamicSheet))}(o)}})()),o.useEffect((()=>()=>{d&&d()}),[p])}(0,[t,l]),o.useEffect((()=>{u.current&&function({state:e},t){e.dynamicSheet&&e.dynamicSheet.update(t)}(c.current,e),u.current=!0}));const d=function({state:e,stylesOptions:t},r,n){if(t.disableGeneration)return r||{};e.cacheClasses||(e.cacheClasses={value:null,lastProp:null,lastJSS:{}});let o=!1;return e.classes!==e.cacheClasses.lastJSS&&(e.cacheClasses.lastJSS=e.classes,o=!0),r!==e.cacheClasses.lastProp&&(e.cacheClasses.lastProp=r,o=!0),o&&(e.cacheClasses.value=Ht({baseClasses:e.cacheClasses.lastJSS,newClasses:r,Component:n})),e.cacheClasses.value}(c.current,e.classes,i);return d}}((function(){return{github:{textAlign:"center",margin:"5px","& .cgp-version":{fontWeight:"bold",display:"block",fontSize:"0.8rem","& .cgp-hash":{display:"inline",fontWeight:"normal",fontSize:"0.7rem"}},"& .cgp-timestamp":{fontWeight:"normal",fontSize:"0.7rem"}}}}));function zn(){var e=Zn();return(0,Se.jsxs)("div",{className:e.github,children:[(0,Se.jsx)("span",{className:"cgp-version",children:"v.".concat(1,".").concat(0,".").concat(0)}),(0,Se.jsx)("span",{className:"cgp-timestamp",children:new Date(1687393146635).toLocaleDateString()})]})}function Ln(){var e=(0,Jo.useTranslation)().t;function t(){window.open(In,"_blank")}return(0,o.useEffect)((function(){Jo.init((function(){var r,n,o={en:ne,fr:oe},i=Jo.api.map("mapWM");i.i18nInstance.addResourceBundle("en","translation",o.en,!0,!1),i.i18nInstance.addResourceBundle("fr","translation",o.fr,!0,!1);var a={tooltip:e("appbar.search"),tooltipPlacement:"right",children:(0,Se.jsx)(ie.Z,{}),visible:!0},s={title:e("appbar.search"),icon:(0,Se.jsx)(ie.Z,{}),width:500},l=(Jo.api.map("mapWM").appBarButtons.createAppbarPanel(a,s,null),{tooltip:"filters",tooltipPlacement:"right",children:(0,Se.jsx)(ae.Z,{}),visible:!0}),c={title:"Filters",icon:(0,Se.jsx)(ae.Z,{}),width:500},u=(Jo.api.map("mapWM").appBarButtons.createAppbarPanel(l,c,null),{tooltip:"analytics",tooltipPlacement:"right",children:(0,Se.jsx)(se.Z,{}),visible:!0}),d={title:"Analytics",icon:(0,Se.jsx)(se.Z,{}),width:500},p=(Jo.api.map("mapWM").appBarButtons.createAppbarPanel(u,d,null),{tooltip:e("appbar.howto"),tooltipPlacement:"right",children:(0,Se.jsx)(le.Z,{}),visible:!0}),f={title:e("appbar.howto"),icon:(0,Se.jsx)(le.Z,{}),width:500},h=Jo.api.map("mapWM").appBarButtons.createAppbarPanel(p,f,null);null==h||null===(r=h.panel)||void 0===r||r.changeContent((0,Se.jsx)(je,{}));var m={tooltip:e("appbar.version"),tooltipPlacement:"right",children:(0,Se.jsx)(Ae.Z,{}),visible:!0};m.onClick=t;var g={title:e("appbar.version"),icon:(0,Se.jsx)(Ae.Z,{}),width:500},y=Jo.api.map("mapWM").appBarButtons.createAppbarPanel(m,g,null);null==y||null===(n=y.panel)||void 0===n||n.changeContent((0,Se.jsx)(zn,{}))})),console.log("map inited")}),[]),(0,Se.jsx)(Se.Fragment,{children:(0,Se.jsx)("div",{id:"mapWM",className:"llwp-map",style:{height:"calc(100vh - 90px)",width:"100%"},"data-lang":"en","data-config":"{\r 'map': {\r 'interaction': 'dynamic',\r 'viewSettings': {\r 'zoom': 4,\r 'center': [-100, 60],\r 'projection': 3857\r },\r 'basemapOptions': {\r 'basemapId': 'transport',\r 'shaded': false,\r 'labeled': true\r }\r },\r 'theme': 'dark',\r 'components': ['app-bar','nav-bar','overview-map'],\r 'suportedLanguages': ['en', 'fr']\r }"})})}function $n(){return(0,Se.jsx)("div",{className:"mapPage",children:(0,Se.jsx)("div",{className:"mapContainer",children:(0,Se.jsx)(Ln,{})})})}var Bn,Dn=r(5697),Wn=r.n(Dn),Fn=r(4184),Un=r.n(Fn);function qn(e){return qn="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},qn(e)}function Gn(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:Bn;return t?e.split(" ").map((function(e){return t[e]||e})).join(" "):e}var Vn="object"===("undefined"==typeof window?"undefined":qn(window))&&window.Element||function(){};Wn().oneOfType([Wn().string,Wn().func,function(e,t,r){if(!(e[t]instanceof Vn))return new Error("Invalid prop `"+t+"` supplied to `"+r+"`. Expected prop to be an instance of Element. Validation failed.")},Wn().shape({current:Wn().any})]);var Kn=Wn().oneOfType([Wn().func,Wn().string,Wn().shape({$$typeof:Wn().symbol,render:Wn().func}),Wn().arrayOf(Wn().oneOfType([Wn().func,Wn().string,Wn().shape({$$typeof:Wn().symbol,render:Wn().func})]))]),Hn=["in","mountOnEnter","unmountOnExit","appear","enter","exit","timeout","onEnter","onEntering","onEntered","onExit","onExiting","onExited"];"undefined"==typeof window||!window.document||window.document.createElement;var Xn=["className","cssModule","variant","innerRef"];function Yn(){return Yn=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e},Yn.apply(this,arguments)}function Jn(e,t){var r=Object.keys(e);if(Object.getOwnPropertySymbols){var n=Object.getOwnPropertySymbols(e);t&&(n=n.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),r.push.apply(r,n)}return r}function Qn(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}var eo={active:Wn().bool,"aria-label":Wn().string,onClick:Wn().func,variant:Wn().oneOf(["white"]),className:Wn().string,cssModule:Wn().object,innerRef:Wn().oneOfType([Wn().object,Wn().string,Wn().func])};function to(e){var t=e.className,r=(e.cssModule,e.variant),n=e.innerRef,o=function(e,t){if(null==e)return{};var r,n,o=function(e,t){if(null==e)return{};var r,n,o={},i=Object.keys(e);for(n=0;n<i.length;n++)r=i[n],t.indexOf(r)>=0||(o[r]=e[r]);return o}(e,t);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);for(n=0;n<i.length;n++)r=i[n],t.indexOf(r)>=0||Object.prototype.propertyIsEnumerable.call(e,r)&&(o[r]=e[r])}return o}(e,Xn),a=Gn(Un()(t,"btn-close",r&&"btn-close-".concat(r)));return i().createElement("button",Yn({ref:n,type:"button",className:a},function(e){for(var t=1;t<arguments.length;t++){var r=null!=arguments[t]?arguments[t]:{};t%2?Jn(Object(r),!0).forEach((function(t){Qn(e,t,r[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(r)):Jn(Object(r)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(r,t))}))}return e}({"aria-label":"close"},o)))}to.propTypes=eo;const ro=to;var no=["active","aria-label","block","className","close","cssModule","color","outline","size","tag","innerRef"];function oo(){return oo=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e},oo.apply(this,arguments)}var io={active:Wn().bool,"aria-label":Wn().string,block:Wn().bool,children:Wn().node,className:Wn().string,cssModule:Wn().object,close:Wn().bool,color:Wn().string,disabled:Wn().bool,innerRef:Wn().oneOfType([Wn().object,Wn().func,Wn().string]),onClick:Wn().func,outline:Wn().bool,size:Wn().string,tag:Kn};function ao(e){var t=(0,o.useCallback)((function(t){if(!e.disabled)return e.onClick?e.onClick(t):void 0;t.preventDefault()}),[e.onClick,e.disabled]),r=e.active,n=e["aria-label"],a=e.block,s=e.className,l=e.close,c=e.cssModule,u=e.color,d=void 0===u?"secondary":u,p=e.outline,f=e.size,h=e.tag,m=void 0===h?"button":h,g=e.innerRef,y=function(e,t){if(null==e)return{};var r,n,o=function(e,t){if(null==e)return{};var r,n,o={},i=Object.keys(e);for(n=0;n<i.length;n++)r=i[n],t.indexOf(r)>=0||(o[r]=e[r]);return o}(e,t);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);for(n=0;n<i.length;n++)r=i[n],t.indexOf(r)>=0||Object.prototype.propertyIsEnumerable.call(e,r)&&(o[r]=e[r])}return o}(e,no);if(l)return i().createElement(ro,y);var v="btn".concat(p?"-outline":"","-").concat(d),b=Gn(Un()(s,"btn",v,!!f&&"btn-".concat(f),!!a&&"d-block w-100",{active:r,disabled:e.disabled}),c);return y.href&&"button"===m&&(m="a"),i().createElement(m,oo({type:"button"===m&&y.onClick?"button":void 0},y,{className:b,ref:g,onClick:t,"aria-label":n}))}ao.propTypes=io;const so=ao,lo=i().createContext(null);var co="unmounted",uo="exited",po="entering",fo="entered",ho="exiting",mo=function(e){function t(t,r){var n;n=e.call(this,t,r)||this;var o,i=r&&!r.isMounting?t.enter:t.appear;return n.appearStatus=null,t.in?i?(o=uo,n.appearStatus=po):o=fo:o=t.unmountOnExit||t.mountOnEnter?co:uo,n.state={status:o},n.nextCallback=null,n}ze(t,e),t.getDerivedStateFromProps=function(e,t){return e.in&&t.status===co?{status:uo}:null};var r=t.prototype;return r.componentDidMount=function(){this.updateStatus(!0,this.appearStatus)},r.componentDidUpdate=function(e){var t=null;if(e!==this.props){var r=this.state.status;this.props.in?r!==po&&r!==fo&&(t=po):r!==po&&r!==fo||(t=ho)}this.updateStatus(!1,t)},r.componentWillUnmount=function(){this.cancelNextCallback()},r.getTimeouts=function(){var e,t,r,n=this.props.timeout;return e=t=r=n,null!=n&&"number"!=typeof n&&(e=n.exit,t=n.enter,r=void 0!==n.appear?n.appear:t),{exit:e,enter:t,appear:r}},r.updateStatus=function(e,t){if(void 0===e&&(e=!1),null!==t)if(this.cancelNextCallback(),t===po){if(this.props.unmountOnExit||this.props.mountOnEnter){var r=this.props.nodeRef?this.props.nodeRef.current:n().findDOMNode(this);r&&function(e){e.scrollTop}(r)}this.performEnter(e)}else this.performExit();else this.props.unmountOnExit&&this.state.status===uo&&this.setState({status:co})},r.performEnter=function(e){var t=this,r=this.props.enter,o=this.context?this.context.isMounting:e,i=this.props.nodeRef?[o]:[n().findDOMNode(this),o],a=i[0],s=i[1],l=this.getTimeouts(),c=o?l.appear:l.enter;e||r?(this.props.onEnter(a,s),this.safeSetState({status:po},(function(){t.props.onEntering(a,s),t.onTransitionEnd(c,(function(){t.safeSetState({status:fo},(function(){t.props.onEntered(a,s)}))}))}))):this.safeSetState({status:fo},(function(){t.props.onEntered(a)}))},r.performExit=function(){var e=this,t=this.props.exit,r=this.getTimeouts(),o=this.props.nodeRef?void 0:n().findDOMNode(this);t?(this.props.onExit(o),this.safeSetState({status:ho},(function(){e.props.onExiting(o),e.onTransitionEnd(r.exit,(function(){e.safeSetState({status:uo},(function(){e.props.onExited(o)}))}))}))):this.safeSetState({status:uo},(function(){e.props.onExited(o)}))},r.cancelNextCallback=function(){null!==this.nextCallback&&(this.nextCallback.cancel(),this.nextCallback=null)},r.safeSetState=function(e,t){t=this.setNextCallback(t),this.setState(e,t)},r.setNextCallback=function(e){var t=this,r=!0;return this.nextCallback=function(n){r&&(r=!1,t.nextCallback=null,e(n))},this.nextCallback.cancel=function(){r=!1},this.nextCallback},r.onTransitionEnd=function(e,t){this.setNextCallback(t);var r=this.props.nodeRef?this.props.nodeRef.current:n().findDOMNode(this),o=null==e&&!this.props.addEndListener;if(r&&!o){if(this.props.addEndListener){var i=this.props.nodeRef?[this.nextCallback]:[r,this.nextCallback],a=i[0],s=i[1];this.props.addEndListener(a,s)}null!=e&&setTimeout(this.nextCallback,e)}else setTimeout(this.nextCallback,0)},r.render=function(){var e=this.state.status;if(e===co)return null;var t=this.props,r=t.children,n=(t.in,t.mountOnEnter,t.unmountOnExit,t.appear,t.enter,t.exit,t.timeout,t.addEndListener,t.onEnter,t.onEntering,t.onEntered,t.onExit,t.onExiting,t.onExited,t.nodeRef,(0,ce.Z)(t,["children","in","mountOnEnter","unmountOnExit","appear","enter","exit","timeout","addEndListener","onEnter","onEntering","onEntered","onExit","onExiting","onExited","nodeRef"]));return i().createElement(lo.Provider,{value:null},"function"==typeof r?r(e,n):i().cloneElement(i().Children.only(r),n))},t}(i().Component);function go(){}mo.contextType=lo,mo.propTypes={},mo.defaultProps={in:!1,mountOnEnter:!1,unmountOnExit:!1,appear:!1,enter:!0,exit:!0,onEnter:go,onEntering:go,onEntered:go,onExit:go,onExiting:go,onExited:go},mo.UNMOUNTED=co,mo.EXITED=uo,mo.ENTERING=po,mo.ENTERED=fo,mo.EXITING=ho;const yo=mo;function vo(e){return vo="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},vo(e)}var bo,xo=["tag","horizontal","isOpen","className","navbar","cssModule","children","innerRef"];function wo(){return wo=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e},wo.apply(this,arguments)}function So(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function Oo(e,t){return Oo=Object.setPrototypeOf?Object.setPrototypeOf.bind():function(e,t){return e.__proto__=t,e},Oo(e,t)}function Po(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}function ko(e){return ko=Object.setPrototypeOf?Object.getPrototypeOf.bind():function(e){return e.__proto__||Object.getPrototypeOf(e)},ko(e)}function Eo(e,t){var r=Object.keys(e);if(Object.getOwnPropertySymbols){var n=Object.getOwnPropertySymbols(e);t&&(n=n.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),r.push.apply(r,n)}return r}function Co(e){for(var t=1;t<arguments.length;t++){var r=null!=arguments[t]?arguments[t]:{};t%2?Eo(Object(r),!0).forEach((function(t){jo(e,t,r[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(r)):Eo(Object(r)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(r,t))}))}return e}function jo(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}var Ao=Co(Co({},yo.propTypes),{},{horizontal:Wn().bool,isOpen:Wn().bool,children:Wn().oneOfType([Wn().arrayOf(Wn().node),Wn().node]),tag:Kn,className:Wn().node,navbar:Wn().bool,cssModule:Wn().object,innerRef:Wn().shape({current:Wn().object})}),Ro=Co(Co({},yo.defaultProps),{},{horizontal:!1,isOpen:!1,appear:!1,enter:!0,exit:!0,tag:"div",timeout:350}),To=(jo(bo={},"entering","collapsing"),jo(bo,"entered","collapse show"),jo(bo,"exiting","collapsing"),jo(bo,"exited","collapse"),bo),_o=function(e){!function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),Object.defineProperty(e,"prototype",{writable:!1}),t&&Oo(e,t)}(s,e);var t,r,n,o,a=(n=s,o=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(e){return!1}}(),function(){var e,t=ko(n);if(o){var r=ko(this).constructor;e=Reflect.construct(t,arguments,r)}else e=t.apply(this,arguments);return function(e,t){if(t&&("object"===vo(t)||"function"==typeof t))return t;if(void 0!==t)throw new TypeError("Derived constructors may only return object or undefined");return Po(e)}(this,e)});function s(e){var t;return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,s),(t=a.call(this,e)).state={dimension:null},t.nodeRef=e.innerRef||i().createRef(),["onEntering","onEntered","onExit","onExiting","onExited"].forEach((function(e){t[e]=t[e].bind(Po(t))})),t}return t=s,r=[{key:"onEntering",value:function(e,t){var r=this.getNode();this.setState({dimension:this.getDimension(r)}),this.props.onEntering(r,t)}},{key:"onEntered",value:function(e,t){var r=this.getNode();this.setState({dimension:null}),this.props.onEntered(r,t)}},{key:"onExit",value:function(){var e=this.getNode();this.setState({dimension:this.getDimension(e)}),this.props.onExit(e)}},{key:"onExiting",value:function(){var e=this.getNode();this.getDimension(e),this.setState({dimension:0}),this.props.onExiting(e)}},{key:"onExited",value:function(){var e=this.getNode();this.setState({dimension:null}),this.props.onExited(e)}},{key:"getNode",value:function(){return this.nodeRef.current}},{key:"getDimension",value:function(e){return this.props.horizontal?e.scrollWidth:e.scrollHeight}},{key:"render",value:function(){var e,t,r,n=this,o=this.props,a=o.tag,s=o.horizontal,l=o.isOpen,c=o.className,u=o.navbar,d=o.cssModule,p=o.children,f=(o.innerRef,function(e,t){if(null==e)return{};var r,n,o=function(e,t){if(null==e)return{};var r,n,o={},i=Object.keys(e);for(n=0;n<i.length;n++)r=i[n],t.indexOf(r)>=0||(o[r]=e[r]);return o}(e,t);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);for(n=0;n<i.length;n++)r=i[n],t.indexOf(r)>=0||Object.prototype.propertyIsEnumerable.call(e,r)&&(o[r]=e[r])}return o}(o,xo)),h=this.state.dimension,m=function(e,t){for(var r,n=Array.isArray(t)?t:[t],o=n.length,i={};o>0;)i[r=n[o-=1]]=e[r];return i}(f,Hn),g=(e=f,t=Hn,r={},Object.keys(e).forEach((function(n){-1===t.indexOf(n)&&(r[n]=e[n])})),r);return i().createElement(yo,wo({},m,{in:l,nodeRef:this.nodeRef,onEntering:this.onEntering,onEntered:this.onEntered,onExit:this.onExit,onExiting:this.onExiting,onExited:this.onExited}),(function(e){var t=function(e){return To[e]||"collapse"}(e),r=Gn(Un()(c,s&&"collapse-horizontal",t,u&&"navbar-collapse"),d),o=null===h?null:jo({},s?"width":"height",h);return i().createElement(a,wo({},g,{style:Co(Co({},g.style),o),className:r,ref:n.nodeRef}),p)}))}}],r&&So(t.prototype,r),Object.defineProperty(t,"prototype",{writable:!1}),s}(o.Component);_o.propTypes=Ao,_o.defaultProps=Ro;const No=_o;var Mo=r(3379),Io=r.n(Mo),Zo=r(7795),zo=r.n(Zo),Lo=r(569),$o=r.n(Lo),Bo=r(3565),Do=r.n(Bo),Wo=r(9216),Fo=r.n(Wo),Uo=r(4589),qo=r.n(Uo),Go=r(7717),Vo={};function Ko(e,t){if(e){if("string"==typeof e)return Ho(e,t);var r=Object.prototype.toString.call(e).slice(8,-1);return"Object"===r&&e.constructor&&(r=e.constructor.name),"Map"===r||"Set"===r?Array.from(e):"Arguments"===r||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r)?Ho(e,t):void 0}}function Ho(e,t){(null==t||t>e.length)&&(t=e.length);for(var r=0,n=new Array(t);r<t;r++)n[r]=e[r];return n}Vo.styleTagTransform=qo(),Vo.setAttributes=Do(),Vo.insert=$o().bind(null,"head"),Vo.domAPI=zo(),Vo.insertStyleElement=Fo(),Io()(Go.Z,Vo),Go.Z&&Go.Z.locals&&Go.Z.locals;var Xo=function(){var e={SEARCH:"/geo",METADATA:"/id",COLLECTIONS:"/collections",ANALYTIC:"/analytics",SORTBY:"/sorting"};switch(window.location.hostname){case"localhost":return{LOGO_SITE_LINK_URL:{en:"http://wp-01-1130072660.ca-central-1.elb.amazonaws.com/home/",fr:"http://wp-01-1130072660.ca-central-1.elb.amazonaws.com/fr/accueil/"},APP_API_DOMAIN_URL:"https://0mgqjkl9t0.execute-api.ca-central-1.amazonaws.com/dev",APP_API_ENDPOINTS:e,APP_GEOCORE_URL:"https://geocore-dev.metadata.geo.ca",SITE_NAME:"localhost",JSON_SERVER_URL:"http://localhost:3000",APP_GEOLOCATOR_URL:"https://tkyuwlg5f7.execute-api.ca-central-1.amazonaws.com/live/"};case"app-dev.geo.ca":return{LOGO_SITE_LINK_URL:{en:"https://dev.geo.ca/home/index.html",fr:"https://dev.geo.ca/fr/accueil/index.html"},APP_API_DOMAIN_URL:"https://geocore-dev.api.geo.ca",APP_API_ENDPOINTS:e,APP_GEOCORE_URL:"https://geocore-dev.metadata.geo.ca",SITE_NAME:"dev.geo.ca",APP_GEOLOCATOR_URL:"https://geolocator-dev.api.geo.ca/"};case"app-stage.geo.ca":return{LOGO_SITE_LINK_URL:{en:"https://stage.geo.ca/home/index.html",fr:"https://stage.geo.ca/fr/accueil/index.html"},APP_API_DOMAIN_URL:"https://geocore-stage.api.geo.ca",APP_API_ENDPOINTS:e,APP_GEOCORE_URL:"https://geocore-stage.metadata.geo.ca",SITE_NAME:"stage.geo.ca",APP_GEOLOCATOR_URL:"https://geolocator-stage.api.geo.ca/"};case"app.geo.ca":return{LOGO_SITE_LINK_URL:{en:"https://geo.ca/home/index.html",fr:"https://geo.ca/fr/accueil/index.html"},APP_API_DOMAIN_URL:"https://geocore.api.geo.ca",APP_API_ENDPOINTS:e,APP_GEOCORE_URL:"https://geocore.metadata.geo.ca",SITE_NAME:"geo.ca",APP_GEOLOCATOR_URL:"https://geolocator.api.geo.ca/"};default:return{LOGO_SITE_LINK_URL:{en:"http://wp-01-1130072660.ca-central-1.elb.amazonaws.com/home/",fr:"http://wp-01-1130072660.ca-central-1.elb.amazonaws.com/fr/accueil/"},APP_API_DOMAIN_URL:"https://hqdatl0f6d.execute-api.ca-central-1.amazonaws.com/dev",APP_API_ENDPOINTS:e,APP_GEOCORE_URL:"https://geocore-dev.metadata.geo.ca",SITE_NAME:"dev.geo.ca",APP_GEOLOCATOR_URL:"https://geolocator-dev.api.geo.ca/"}}}();function Yo(){var e=(0,Jo.useTranslation)().t,t=function(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var r=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null!=r){var n,o,i,a,s=[],l=!0,c=!1;try{if(i=(r=r.call(e)).next,0===t){if(Object(r)!==r)return;l=!1}else for(;!(l=(n=i.call(r)).done)&&(s.push(n.value),s.length!==t);l=!0);}catch(e){c=!0,o=e}finally{try{if(!l&&null!=r.return&&(a=r.return(),Object(a)!==a))return}finally{if(c)throw o}}return s}}(e,t)||Ko(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}((0,o.useState)(!1),2),r=t[0],n=t[1],i=e("app.language"),a=document.getElementById("rvJS");a&&a.remove();var s=document.getElementById("rvApi");s&&s.remove();var l=document.getElementsByTagName("svg");if(l.length>0){var c,u=function(e,t){var r="undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(!r){if(Array.isArray(e)||(r=Ko(e))){r&&(e=r);var n=0,o=function(){};return{s:o,n:function(){return n>=e.length?{done:!0}:{done:!1,value:e[n++]}},e:function(e){throw e},f:o}}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}var i,a=!0,s=!1;return{s:function(){r=r.call(e)},n:function(){var e=r.next();return a=e.done,e},e:function(e){s=!0,i=e},f:function(){try{a||null==r.return||r.return()}finally{if(s)throw i}}}}(l);try{for(u.s();!(c=u.n()).done;){var d=c.value;d.id&&0===d.id.indexOf("SvgjsSvg")&&d.remove()}}catch(e){u.e(e)}finally{u.f()}}return(0,Se.jsx)("header",{className:"header",children:(0,Se.jsx)("div",{className:"container-fluid",children:(0,Se.jsx)("div",{className:"row align-items-center",children:(0,Se.jsx)("div",{className:"col-12 header-nav-col",children:(0,Se.jsxs)("nav",{className:"navbar navbar-light navbar-expand-lg header-nav",children:[(0,Se.jsx)("a",{href:"".concat(Xo.LOGO_SITE_LINK_URL[i]),target:"_blank","aria-label":e("nav.logoLinktext"),children:(0,Se.jsx)("img",{src:"assets/img/GeoDotCaBanner.jpg",alt:e("nav.logotext")})}),(0,Se.jsx)(so,{onClick:function(){return n(!r)},id:"toggler",className:"navbar-toggler",type:"button","data-toggle":"collapse","aria-controls":"navbar-menu","aria-expanded":r,"aria-label":"Toggle navigation",children:(0,Se.jsx)("span",{className:r?"navbar-toggler-icon nav-bar-open":"navbar-toggler-icon nav-bar-closed"})}),(0,Se.jsx)(No,{isOpen:r,className:"navbar-collapse navbar-wrap",children:(0,Se.jsxs)("ul",{className:"navbar-nav ml-auto",children:[(0,Se.jsx)("li",{className:"nav-item",children:(0,Se.jsx)("button",{type:"button",onClick:function(){n(!1),"/"!==location.pathname||location.search?history.push({pathname:"/",search:""}):"en"===i?history.go(0):window.location.href="/?lang=".concat(i)},children:e("nav.search")})}),(0,Se.jsx)("li",{className:"nav-item",children:(0,Se.jsx)("button",{id:"myMapBtn",type:"button",children:e("nav.mymap")})}),(0,Se.jsx)("li",{className:"nav-item",children:(0,Se.jsx)("button",{type:"button",lang:e("nav.language.htmllangcode"),children:e("nav.language.name")})})]})})]})})})})})}var Jo=window.cgpv,Qo=function(){return(0,Se.jsx)(Se.Fragment,{children:(0,Se.jsxs)(re,{children:[(0,Se.jsx)(Yo,{}),(0,Se.jsx)(ee,{children:(0,Se.jsx)(J,{path:"/",element:(0,Se.jsx)($n,{})})})]})})},ei=r(1688),ti=r(2798);let ri=function(e){e()};const ni=()=>ri,oi=(0,o.createContext)(null);let ii=null;r(8679),r(9864);const ai={notify(){},get:()=>[]};const si="undefined"!=typeof window&&void 0!==window.document&&void 0!==window.document.createElement?o.useLayoutEffect:o.useEffect;let li=null;const ci=function({store:e,context:t,children:r,serverState:n}){const a=(0,o.useMemo)((()=>{const t=function(e,t){let r,n=ai;function o(){a.onStateChange&&a.onStateChange()}function i(){r||(r=t?t.addNestedSub(o):e.subscribe(o),n=function(){const e=ni();let t=null,r=null;return{clear(){t=null,r=null},notify(){e((()=>{let e=t;for(;e;)e.callback(),e=e.next}))},get(){let e=[],r=t;for(;r;)e.push(r),r=r.next;return e},subscribe(e){let n=!0,o=r={callback:e,next:null,prev:r};return o.prev?o.prev.next=o:t=o,function(){n&&null!==t&&(n=!1,o.next?o.next.prev=o.prev:r=o.prev,o.prev?o.prev.next=o.next:t=o.next)}}}}())}const a={addNestedSub:function(e){return i(),n.subscribe(e)},notifyNestedSubs:function(){n.notify()},handleChangeWrapper:o,isSubscribed:function(){return Boolean(r)},trySubscribe:i,tryUnsubscribe:function(){r&&(r(),r=void 0,n.clear(),n=ai)},getListeners:()=>n};return a}(e);return{store:e,subscription:t,getServerState:n?()=>n:void 0}}),[e,n]),s=(0,o.useMemo)((()=>e.getState()),[e]);si((()=>{const{subscription:t}=a;return t.onStateChange=t.notifyNestedSubs,t.trySubscribe(),s!==e.getState()&&t.notifyNestedSubs(),()=>{t.tryUnsubscribe(),t.onStateChange=void 0}}),[a,s]);const l=t||oi;return i().createElement(l.Provider,{value:a},r)};var ui;function di(e){for(var t=arguments.length,r=Array(t>1?t-1:0),n=1;n<t;n++)r[n-1]=arguments[n];throw Error("[Immer] minified error nr: "+e+(r.length?" "+r.map((function(e){return"'"+e+"'"})).join(","):"")+". Find the full error at: https://bit.ly/3cXEKWf")}function pi(e){return!!e&&!!e[Ji]}function fi(e){var t;return!!e&&(function(e){if(!e||"object"!=typeof e)return!1;var t=Object.getPrototypeOf(e);if(null===t)return!0;var r=Object.hasOwnProperty.call(t,"constructor")&&t.constructor;return r===Object||"function"==typeof r&&Function.toString.call(r)===Qi}(e)||Array.isArray(e)||!!e[Yi]||!!(null===(t=e.constructor)||void 0===t?void 0:t[Yi])||bi(e)||xi(e))}function hi(e,t,r){void 0===r&&(r=!1),0===mi(e)?(r?Object.keys:ea)(e).forEach((function(n){r&&"symbol"==typeof n||t(n,e[n],e)})):e.forEach((function(r,n){return t(n,r,e)}))}function mi(e){var t=e[Ji];return t?t.i>3?t.i-4:t.i:Array.isArray(e)?1:bi(e)?2:xi(e)?3:0}function gi(e,t){return 2===mi(e)?e.has(t):Object.prototype.hasOwnProperty.call(e,t)}function yi(e,t,r){var n=mi(e);2===n?e.set(t,r):3===n?e.add(r):e[t]=r}function vi(e,t){return e===t?0!==e||1/e==1/t:e!=e&&t!=t}function bi(e){return Vi&&e instanceof Map}function xi(e){return Ki&&e instanceof Set}function wi(e){return e.o||e.t}function Si(e){if(Array.isArray(e))return Array.prototype.slice.call(e);var t=ta(e);delete t[Ji];for(var r=ea(t),n=0;n<r.length;n++){var o=r[n],i=t[o];!1===i.writable&&(i.writable=!0,i.configurable=!0),(i.get||i.set)&&(t[o]={configurable:!0,writable:!0,enumerable:i.enumerable,value:e[o]})}return Object.create(Object.getPrototypeOf(e),t)}function Oi(e,t){return void 0===t&&(t=!1),ki(e)||pi(e)||!fi(e)||(mi(e)>1&&(e.set=e.add=e.clear=e.delete=Pi),Object.freeze(e),t&&hi(e,(function(e,t){return Oi(t,!0)}),!0)),e}function Pi(){di(2)}function ki(e){return null==e||"object"!=typeof e||Object.isFrozen(e)}function Ei(e){var t=ra[e];return t||di(18,e),t}function Ci(){return qi}function ji(e,t){t&&(Ei("Patches"),e.u=[],e.s=[],e.v=t)}function Ai(e){Ri(e),e.p.forEach(_i),e.p=null}function Ri(e){e===qi&&(qi=e.l)}function Ti(e){return qi={p:[],l:qi,h:e,m:!0,_:0}}function _i(e){var t=e[Ji];0===t.i||1===t.i?t.j():t.g=!0}function Ni(e,t){t._=t.p.length;var r=t.p[0],n=void 0!==e&&e!==r;return t.h.O||Ei("ES5").S(t,e,n),n?(r[Ji].P&&(Ai(t),di(4)),fi(e)&&(e=Mi(t,e),t.l||Zi(t,e)),t.u&&Ei("Patches").M(r[Ji].t,e,t.u,t.s)):e=Mi(t,r,[]),Ai(t),t.u&&t.v(t.u,t.s),e!==Xi?e:void 0}function Mi(e,t,r){if(ki(t))return t;var n=t[Ji];if(!n)return hi(t,(function(o,i){return Ii(e,n,t,o,i,r)}),!0),t;if(n.A!==e)return t;if(!n.P)return Zi(e,n.t,!0),n.t;if(!n.I){n.I=!0,n.A._--;var o=4===n.i||5===n.i?n.o=Si(n.k):n.o,i=o,a=!1;3===n.i&&(i=new Set(o),o.clear(),a=!0),hi(i,(function(t,i){return Ii(e,n,o,t,i,r,a)})),Zi(e,o,!1),r&&e.u&&Ei("Patches").N(n,r,e.u,e.s)}return n.o}function Ii(e,t,r,n,o,i,a){if(pi(o)){var s=Mi(e,o,i&&t&&3!==t.i&&!gi(t.R,n)?i.concat(n):void 0);if(yi(r,n,s),!pi(s))return;e.m=!1}else a&&r.add(o);if(fi(o)&&!ki(o)){if(!e.h.D&&e._<1)return;Mi(e,o),t&&t.A.l||Zi(e,o)}}function Zi(e,t,r){void 0===r&&(r=!1),!e.l&&e.h.D&&e.m&&Oi(t,r)}function zi(e,t){var r=e[Ji];return(r?wi(r):e)[t]}function Li(e,t){if(t in e)for(var r=Object.getPrototypeOf(e);r;){var n=Object.getOwnPropertyDescriptor(r,t);if(n)return n;r=Object.getPrototypeOf(r)}}function $i(e){e.P||(e.P=!0,e.l&&$i(e.l))}function Bi(e){e.o||(e.o=Si(e.t))}function Di(e,t,r){var n=bi(t)?Ei("MapSet").F(t,r):xi(t)?Ei("MapSet").T(t,r):e.O?function(e,t){var r=Array.isArray(e),n={i:r?1:0,A:t?t.A:Ci(),P:!1,I:!1,R:{},l:t,t:e,k:null,o:null,j:null,C:!1},o=n,i=na;r&&(o=[n],i=oa);var a=Proxy.revocable(o,i),s=a.revoke,l=a.proxy;return n.k=l,n.j=s,l}(t,r):Ei("ES5").J(t,r);return(r?r.A:Ci()).p.push(n),n}function Wi(e){return pi(e)||di(22,e),function e(t){if(!fi(t))return t;var r,n=t[Ji],o=mi(t);if(n){if(!n.P&&(n.i<4||!Ei("ES5").K(n)))return n.t;n.I=!0,r=Fi(t,o),n.I=!1}else r=Fi(t,o);return hi(r,(function(t,o){n&&function(e,t){return 2===mi(e)?e.get(t):e[t]}(n.t,t)===o||yi(r,t,e(o))})),3===o?new Set(r):r}(e)}function Fi(e,t){switch(t){case 2:return new Map(e);case 3:return Array.from(e)}return Si(e)}(e=>{ii=e})(ti.useSyncExternalStoreWithSelector),(e=>{li=e})(ei.useSyncExternalStore),ui=e.unstable_batchedUpdates,ri=ui;var Ui,qi,Gi="undefined"!=typeof Symbol&&"symbol"==typeof Symbol("x"),Vi="undefined"!=typeof Map,Ki="undefined"!=typeof Set,Hi="undefined"!=typeof Proxy&&void 0!==Proxy.revocable&&"undefined"!=typeof Reflect,Xi=Gi?Symbol.for("immer-nothing"):((Ui={})["immer-nothing"]=!0,Ui),Yi=Gi?Symbol.for("immer-draftable"):"__$immer_draftable",Ji=Gi?Symbol.for("immer-state"):"__$immer_state",Qi=("undefined"!=typeof Symbol&&Symbol.iterator,""+Object.prototype.constructor),ea="undefined"!=typeof Reflect&&Reflect.ownKeys?Reflect.ownKeys:void 0!==Object.getOwnPropertySymbols?function(e){return Object.getOwnPropertyNames(e).concat(Object.getOwnPropertySymbols(e))}:Object.getOwnPropertyNames,ta=Object.getOwnPropertyDescriptors||function(e){var t={};return ea(e).forEach((function(r){t[r]=Object.getOwnPropertyDescriptor(e,r)})),t},ra={},na={get:function(e,t){if(t===Ji)return e;var r=wi(e);if(!gi(r,t))return function(e,t,r){var n,o=Li(t,r);return o?"value"in o?o.value:null===(n=o.get)||void 0===n?void 0:n.call(e.k):void 0}(e,r,t);var n=r[t];return e.I||!fi(n)?n:n===zi(e.t,t)?(Bi(e),e.o[t]=Di(e.A.h,n,e)):n},has:function(e,t){return t in wi(e)},ownKeys:function(e){return Reflect.ownKeys(wi(e))},set:function(e,t,r){var n=Li(wi(e),t);if(null==n?void 0:n.set)return n.set.call(e.k,r),!0;if(!e.P){var o=zi(wi(e),t),i=null==o?void 0:o[Ji];if(i&&i.t===r)return e.o[t]=r,e.R[t]=!1,!0;if(vi(r,o)&&(void 0!==r||gi(e.t,t)))return!0;Bi(e),$i(e)}return e.o[t]===r&&(void 0!==r||t in e.o)||Number.isNaN(r)&&Number.isNaN(e.o[t])||(e.o[t]=r,e.R[t]=!0),!0},deleteProperty:function(e,t){return void 0!==zi(e.t,t)||t in e.t?(e.R[t]=!1,Bi(e),$i(e)):delete e.R[t],e.o&&delete e.o[t],!0},getOwnPropertyDescriptor:function(e,t){var r=wi(e),n=Reflect.getOwnPropertyDescriptor(r,t);return n?{writable:!0,configurable:1!==e.i||"length"!==t,enumerable:n.enumerable,value:r[t]}:n},defineProperty:function(){di(11)},getPrototypeOf:function(e){return Object.getPrototypeOf(e.t)},setPrototypeOf:function(){di(12)}},oa={};hi(na,(function(e,t){oa[e]=function(){return arguments[0]=arguments[0][0],t.apply(this,arguments)}})),oa.deleteProperty=function(e,t){return oa.set.call(this,e,t,void 0)},oa.set=function(e,t,r){return na.set.call(this,e[0],t,r,e[0])};var ia=function(){function e(e){var t=this;this.O=Hi,this.D=!0,this.produce=function(e,r,n){if("function"==typeof e&&"function"!=typeof r){var o=r;r=e;var i=t;return function(e){var t=this;void 0===e&&(e=o);for(var n=arguments.length,a=Array(n>1?n-1:0),s=1;s<n;s++)a[s-1]=arguments[s];return i.produce(e,(function(e){var n;return(n=r).call.apply(n,[t,e].concat(a))}))}}var a;if("function"!=typeof r&&di(6),void 0!==n&&"function"!=typeof n&&di(7),fi(e)){var s=Ti(t),l=Di(t,e,void 0),c=!0;try{a=r(l),c=!1}finally{c?Ai(s):Ri(s)}return"undefined"!=typeof Promise&&a instanceof Promise?a.then((function(e){return ji(s,n),Ni(e,s)}),(function(e){throw Ai(s),e})):(ji(s,n),Ni(a,s))}if(!e||"object"!=typeof e){if(void 0===(a=r(e))&&(a=e),a===Xi&&(a=void 0),t.D&&Oi(a,!0),n){var u=[],d=[];Ei("Patches").M(e,a,u,d),n(u,d)}return a}di(21,e)},this.produceWithPatches=function(e,r){if("function"==typeof e)return function(r){for(var n=arguments.length,o=Array(n>1?n-1:0),i=1;i<n;i++)o[i-1]=arguments[i];return t.produceWithPatches(r,(function(t){return e.apply(void 0,[t].concat(o))}))};var n,o,i=t.produce(e,r,(function(e,t){n=e,o=t}));return"undefined"!=typeof Promise&&i instanceof Promise?i.then((function(e){return[e,n,o]})):[i,n,o]},"boolean"==typeof(null==e?void 0:e.useProxies)&&this.setUseProxies(e.useProxies),"boolean"==typeof(null==e?void 0:e.autoFreeze)&&this.setAutoFreeze(e.autoFreeze)}var t=e.prototype;return t.createDraft=function(e){fi(e)||di(8),pi(e)&&(e=Wi(e));var t=Ti(this),r=Di(this,e,void 0);return r[Ji].C=!0,Ri(t),r},t.finishDraft=function(e,t){var r=(e&&e[Ji]).A;return ji(r,t),Ni(void 0,r)},t.setAutoFreeze=function(e){this.D=e},t.setUseProxies=function(e){e&&!Hi&&di(20),this.O=e},t.applyPatches=function(e,t){var r;for(r=t.length-1;r>=0;r--){var n=t[r];if(0===n.path.length&&"replace"===n.op){e=n.value;break}}r>-1&&(t=t.slice(r+1));var o=Ei("Patches").$;return pi(e)?o(e,t):this.produce(e,(function(e){return o(e,t)}))},e}(),aa=new ia,sa=aa.produce;aa.produceWithPatches.bind(aa),aa.setAutoFreeze.bind(aa),aa.setUseProxies.bind(aa),aa.applyPatches.bind(aa),aa.createDraft.bind(aa),aa.finishDraft.bind(aa);const la=sa;function ca(e,t,r){return(t=Ne(t))in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}function ua(e,t){var r=Object.keys(e);if(Object.getOwnPropertySymbols){var n=Object.getOwnPropertySymbols(e);t&&(n=n.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),r.push.apply(r,n)}return r}function da(e){for(var t=1;t<arguments.length;t++){var r=null!=arguments[t]?arguments[t]:{};t%2?ua(Object(r),!0).forEach((function(t){ca(e,t,r[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(r)):ua(Object(r)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(r,t))}))}return e}function pa(e){return"Minified Redux error #"+e+"; visit https://redux.js.org/Errors?code="+e+" for the full message or use the non-minified dev environment for full errors. "}var fa="function"==typeof Symbol&&Symbol.observable||"@@observable",ha=function(){return Math.random().toString(36).substring(7).split("").join(".")},ma={INIT:"@@redux/INIT"+ha(),REPLACE:"@@redux/REPLACE"+ha(),PROBE_UNKNOWN_ACTION:function(){return"@@redux/PROBE_UNKNOWN_ACTION"+ha()}};function ga(e,t,r){var n;if("function"==typeof t&&"function"==typeof r||"function"==typeof r&&"function"==typeof arguments[3])throw new Error(pa(0));if("function"==typeof t&&void 0===r&&(r=t,t=void 0),void 0!==r){if("function"!=typeof r)throw new Error(pa(1));return r(ga)(e,t)}if("function"!=typeof e)throw new Error(pa(2));var o=e,i=t,a=[],s=a,l=!1;function c(){s===a&&(s=a.slice())}function u(){if(l)throw new Error(pa(3));return i}function d(e){if("function"!=typeof e)throw new Error(pa(4));if(l)throw new Error(pa(5));var t=!0;return c(),s.push(e),function(){if(t){if(l)throw new Error(pa(6));t=!1,c();var r=s.indexOf(e);s.splice(r,1),a=null}}}function p(e){if(!function(e){if("object"!=typeof e||null===e)return!1;for(var t=e;null!==Object.getPrototypeOf(t);)t=Object.getPrototypeOf(t);return Object.getPrototypeOf(e)===t}(e))throw new Error(pa(7));if(void 0===e.type)throw new Error(pa(8));if(l)throw new Error(pa(9));try{l=!0,i=o(i,e)}finally{l=!1}for(var t=a=s,r=0;r<t.length;r++)(0,t[r])();return e}return p({type:ma.INIT}),(n={dispatch:p,subscribe:d,getState:u,replaceReducer:function(e){if("function"!=typeof e)throw new Error(pa(10));o=e,p({type:ma.REPLACE})}})[fa]=function(){var e,t=d;return(e={subscribe:function(e){if("object"!=typeof e||null===e)throw new Error(pa(11));function r(){e.next&&e.next(u())}return r(),{unsubscribe:t(r)}}})[fa]=function(){return this},e},n}function ya(){for(var e=arguments.length,t=new Array(e),r=0;r<e;r++)t[r]=arguments[r];return 0===t.length?function(e){return e}:1===t.length?t[0]:t.reduce((function(e,t){return function(){return e(t.apply(void 0,arguments))}}))}function va(){for(var e=arguments.length,t=new Array(e),r=0;r<e;r++)t[r]=arguments[r];return function(e){return function(){var r=e.apply(void 0,arguments),n=function(){throw new Error(pa(15))},o={getState:r.getState,dispatch:function(){return n.apply(void 0,arguments)}},i=t.map((function(e){return e(o)}));return n=ya.apply(void 0,i)(r.dispatch),da(da({},r),{},{dispatch:n})}}}function ba(e){return function(t){var r=t.dispatch,n=t.getState;return function(t){return function(o){return"function"==typeof o?o(r,n,e):t(o)}}}}var xa=ba();xa.withExtraArgument=ba;const wa=xa;var Sa,Oa=(Sa=function(e,t){return Sa=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(e,t){e.__proto__=t}||function(e,t){for(var r in t)Object.prototype.hasOwnProperty.call(t,r)&&(e[r]=t[r])},Sa(e,t)},function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Class extends value "+String(t)+" is not a constructor or null");function r(){this.constructor=e}Sa(e,t),e.prototype=null===t?Object.create(t):(r.prototype=t.prototype,new r)}),Pa=function(e,t){for(var r=0,n=t.length,o=e.length;r<n;r++,o++)e[o]=t[r];return e},ka=Object.defineProperty,Ea=Object.defineProperties,Ca=Object.getOwnPropertyDescriptors,ja=Object.getOwnPropertySymbols,Aa=Object.prototype.hasOwnProperty,Ra=Object.prototype.propertyIsEnumerable,Ta=function(e,t,r){return t in e?ka(e,t,{enumerable:!0,configurable:!0,writable:!0,value:r}):e[t]=r},_a=function(e,t){for(var r in t||(t={}))Aa.call(t,r)&&Ta(e,r,t[r]);if(ja)for(var n=0,o=ja(t);n<o.length;n++)r=o[n],Ra.call(t,r)&&Ta(e,r,t[r]);return e},Na=function(e,t){return Ea(e,Ca(t))},Ma="undefined"!=typeof window&&window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__?window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__:function(){if(0!==arguments.length)return"object"==typeof arguments[0]?ya:ya.apply(null,arguments)};"undefined"!=typeof window&&window.__REDUX_DEVTOOLS_EXTENSION__&&window.__REDUX_DEVTOOLS_EXTENSION__;var Ia=function(e){function t(){for(var r=[],n=0;n<arguments.length;n++)r[n]=arguments[n];var o=e.apply(this,r)||this;return Object.setPrototypeOf(o,t.prototype),o}return Oa(t,e),Object.defineProperty(t,Symbol.species,{get:function(){return t},enumerable:!1,configurable:!0}),t.prototype.concat=function(){for(var t=[],r=0;r<arguments.length;r++)t[r]=arguments[r];return e.prototype.concat.apply(this,t)},t.prototype.prepend=function(){for(var e=[],r=0;r<arguments.length;r++)e[r]=arguments[r];return 1===e.length&&Array.isArray(e[0])?new(t.bind.apply(t,Pa([void 0],e[0].concat(this)))):new(t.bind.apply(t,Pa([void 0],e.concat(this))))},t}(Array),Za=function(e){function t(){for(var r=[],n=0;n<arguments.length;n++)r[n]=arguments[n];var o=e.apply(this,r)||this;return Object.setPrototypeOf(o,t.prototype),o}return Oa(t,e),Object.defineProperty(t,Symbol.species,{get:function(){return t},enumerable:!1,configurable:!0}),t.prototype.concat=function(){for(var t=[],r=0;r<arguments.length;r++)t[r]=arguments[r];return e.prototype.concat.apply(this,t)},t.prototype.prepend=function(){for(var e=[],r=0;r<arguments.length;r++)e[r]=arguments[r];return 1===e.length&&Array.isArray(e[0])?new(t.bind.apply(t,Pa([void 0],e[0].concat(this)))):new(t.bind.apply(t,Pa([void 0],e.concat(this))))},t}(Array);function za(e){return fi(e)?la(e,(function(){})):e}function La(e,t){function r(){for(var r=[],n=0;n<arguments.length;n++)r[n]=arguments[n];if(t){var o=t.apply(void 0,r);if(!o)throw new Error("prepareAction did not return an object");return _a(_a({type:e,payload:o.payload},"meta"in o&&{meta:o.meta}),"error"in o&&{error:o.error})}return{type:e,payload:r[0]}}return r.toString=function(){return""+e},r.type=e,r.match=function(t){return t.type===e},r}function $a(e){var t,r={},n=[],o={addCase:function(e,t){var n="string"==typeof e?e:e.type;if(n in r)throw new Error("addCase cannot be called with two reducers for the same action type");return r[n]=t,o},addMatcher:function(e,t){return n.push({matcher:e,reducer:t}),o},addDefaultCase:function(e){return t=e,o}};return e(o),[r,n,t]}var Ba=["name","message","stack","code"],Da=function(e,t){this.payload=e,this.meta=t},Wa=function(e,t){this.payload=e,this.meta=t},Fa=function(e){if("object"==typeof e&&null!==e){for(var t={},r=0,n=Ba;r<n.length;r++){var o=n[r];"string"==typeof e[o]&&(t[o]=e[o])}return t}return{message:String(e)}};function Ua(e){if(e.meta&&e.meta.rejectedWithValue)throw e.payload;if(e.error)throw e.error;return e.payload}!function(){function e(e,t,r){var n=La(e+"/fulfilled",(function(e,t,r,n){return{payload:e,meta:Na(_a({},n||{}),{arg:r,requestId:t,requestStatus:"fulfilled"})}})),o=La(e+"/pending",(function(e,t,r){return{payload:void 0,meta:Na(_a({},r||{}),{arg:t,requestId:e,requestStatus:"pending"})}})),i=La(e+"/rejected",(function(e,t,n,o,i){return{payload:o,error:(r&&r.serializeError||Fa)(e||"Rejected"),meta:Na(_a({},i||{}),{arg:n,requestId:t,rejectedWithValue:!!o,requestStatus:"rejected",aborted:"AbortError"===(null==e?void 0:e.name),condition:"ConditionError"===(null==e?void 0:e.name)})}})),a="undefined"!=typeof AbortController?AbortController:function(){function e(){this.signal={aborted:!1,addEventListener:function(){},dispatchEvent:function(){return!1},onabort:function(){},removeEventListener:function(){},reason:void 0,throwIfAborted:function(){}}}return e.prototype.abort=function(){},e}();return Object.assign((function(e){return function(s,l,c){var u,d=(null==r?void 0:r.idGenerator)?r.idGenerator(e):function(e){void 0===e&&(e=21);for(var t="",r=e;r--;)t+="ModuleSymbhasOwnPr-0123456789ABCDEFGHNRVfgctiUvz_KqYTJkLxpZXIjQW"[64*Math.random()|0];return t}(),p=new a;function f(e){u=e,p.abort()}var h=function(){return a=this,h=null,m=function(){var a,h,m,g,y,v;return function(e,t){var r,n,o,i,a={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return i={next:s(0),throw:s(1),return:s(2)},"function"==typeof Symbol&&(i[Symbol.iterator]=function(){return this}),i;function s(i){return function(s){return function(i){if(r)throw new TypeError("Generator is already executing.");for(;a;)try{if(r=1,n&&(o=2&i[0]?n.return:i[0]?n.throw||((o=n.return)&&o.call(n),0):n.next)&&!(o=o.call(n,i[1])).done)return o;switch(n=0,o&&(i=[2&i[0],o.value]),i[0]){case 0:case 1:o=i;break;case 4:return a.label++,{value:i[1],done:!1};case 5:a.label++,n=i[1],i=[0];continue;case 7:i=a.ops.pop(),a.trys.pop();continue;default:if(!((o=(o=a.trys).length>0&&o[o.length-1])||6!==i[0]&&2!==i[0])){a=0;continue}if(3===i[0]&&(!o||i[1]>o[0]&&i[1]<o[3])){a.label=i[1];break}if(6===i[0]&&a.label<o[1]){a.label=o[1],o=i;break}if(o&&a.label<o[2]){a.label=o[2],a.ops.push(i);break}o[2]&&a.ops.pop(),a.trys.pop();continue}i=t.call(e,a)}catch(e){i=[6,e],n=0}finally{r=o=0}if(5&i[0])throw i[1];return{value:i[0]?i[1]:void 0,done:!0}}([i,s])}}}(this,(function(b){switch(b.label){case 0:return b.trys.push([0,4,,5]),null===(x=g=null==(a=null==r?void 0:r.condition)?void 0:a.call(r,e,{getState:l,extra:c}))||"object"!=typeof x||"function"!=typeof x.then?[3,2]:[4,g];case 1:g=b.sent(),b.label=2;case 2:if(!1===g||p.signal.aborted)throw{name:"ConditionError",message:"Aborted due to condition callback returning false."};return y=new Promise((function(e,t){return p.signal.addEventListener("abort",(function(){return t({name:"AbortError",message:u||"Aborted"})}))})),s(o(d,e,null==(h=null==r?void 0:r.getPendingMeta)?void 0:h.call(r,{requestId:d,arg:e},{getState:l,extra:c}))),[4,Promise.race([y,Promise.resolve(t(e,{dispatch:s,getState:l,extra:c,requestId:d,signal:p.signal,abort:f,rejectWithValue:function(e,t){return new Da(e,t)},fulfillWithValue:function(e,t){return new Wa(e,t)}})).then((function(t){if(t instanceof Da)throw t;return t instanceof Wa?n(t.payload,d,e,t.meta):n(t,d,e)}))])];case 3:return m=b.sent(),[3,5];case 4:return v=b.sent(),m=v instanceof Da?i(null,d,e,v.payload,v.meta):i(v,d,e),[3,5];case 5:return r&&!r.dispatchConditionRejection&&i.match(m)&&m.meta.condition||s(m),[2,m]}var x}))},new Promise((function(e,t){var r=function(e){try{o(m.next(e))}catch(e){t(e)}},n=function(e){try{o(m.throw(e))}catch(e){t(e)}},o=function(t){return t.done?e(t.value):Promise.resolve(t.value).then(r,n)};o((m=m.apply(a,h)).next())}));var a,h,m}();return Object.assign(h,{abort:f,requestId:d,arg:e,unwrap:function(){return h.then(Ua)}})}}),{pending:o,rejected:i,fulfilled:n,typePrefix:e})}e.withTypes=function(){return e}}(),Object.assign;var qa="listenerMiddleware";La(qa+"/add"),La(qa+"/removeAll"),La(qa+"/remove"),"function"==typeof queueMicrotask&&queueMicrotask.bind("undefined"!=typeof window?window:void 0!==r.g?r.g:globalThis);"undefined"!=typeof window&&window.requestAnimationFrame&&window.requestAnimationFrame,function(){function e(e,t){var r=o[e];return r?r.enumerable=t:o[e]=r={configurable:!0,enumerable:t,get:function(){var t=this[Ji];return na.get(t,e)},set:function(t){var r=this[Ji];na.set(r,e,t)}},r}function t(e){for(var t=e.length-1;t>=0;t--){var o=e[t][Ji];if(!o.P)switch(o.i){case 5:n(o)&&$i(o);break;case 4:r(o)&&$i(o)}}}function r(e){for(var t=e.t,r=e.k,n=ea(r),o=n.length-1;o>=0;o--){var i=n[o];if(i!==Ji){var a=t[i];if(void 0===a&&!gi(t,i))return!0;var s=r[i],l=s&&s[Ji];if(l?l.t!==a:!vi(s,a))return!0}}var c=!!t[Ji];return n.length!==ea(t).length+(c?0:1)}function n(e){var t=e.k;if(t.length!==e.t.length)return!0;var r=Object.getOwnPropertyDescriptor(t,t.length-1);if(r&&!r.get)return!0;for(var n=0;n<t.length;n++)if(!t.hasOwnProperty(n))return!0;return!1}var o={};!function(e,t){ra[e]||(ra[e]=t)}("ES5",{J:function(t,r){var n=Array.isArray(t),o=function(t,r){if(t){for(var n=Array(r.length),o=0;o<r.length;o++)Object.defineProperty(n,""+o,e(o,!0));return n}var i=ta(r);delete i[Ji];for(var a=ea(i),s=0;s<a.length;s++){var l=a[s];i[l]=e(l,t||!!i[l].enumerable)}return Object.create(Object.getPrototypeOf(r),i)}(n,t),i={i:n?5:4,A:r?r.A:Ci(),P:!1,I:!1,R:{},l:r,t,k:o,o:null,g:!1,C:!1};return Object.defineProperty(o,Ji,{value:i,writable:!0}),o},S:function(e,r,o){o?pi(r)&&r[Ji].A===e&&t(e.p):(e.u&&function e(t){if(t&&"object"==typeof t){var r=t[Ji];if(r){var o=r.t,i=r.k,a=r.R,s=r.i;if(4===s)hi(i,(function(t){t!==Ji&&(void 0!==o[t]||gi(o,t)?a[t]||e(i[t]):(a[t]=!0,$i(r)))})),hi(o,(function(e){void 0!==i[e]||gi(i,e)||(a[e]=!1,$i(r))}));else if(5===s){if(n(r)&&($i(r),a.length=!0),i.length<o.length)for(var l=i.length;l<o.length;l++)a[l]=!1;else for(var c=o.length;c<i.length;c++)a[c]=!0;for(var u=Math.min(i.length,o.length),d=0;d<u;d++)i.hasOwnProperty(d)||(a[d]=!0),void 0===a[d]&&e(i[d])}}}}(e.p[0]),t(e.p))},K:function(e){return 4===e.i?r(e):n(e)}})}();var Ga=function(e){var t=e.name;if(!t)throw new Error("`name` is a required option for createSlice");var r,n="function"==typeof e.initialState?e.initialState:za(e.initialState),o=e.reducers||{},i=Object.keys(o),a={},s={},l={};function c(){var t="function"==typeof e.extraReducers?$a(e.extraReducers):[e.extraReducers],r=t[0],o=void 0===r?{}:r,i=t[1],a=void 0===i?[]:i,l=t[2],c=void 0===l?void 0:l,u=_a(_a({},o),s);return function(e,t,r,n){void 0===r&&(r=[]);var o,i=$a(t),a=i[0],s=i[1],l=i[2];if(function(e){return"function"==typeof e}(e))o=function(){return za(e())};else{var c=za(e);o=function(){return c}}function u(e,t){void 0===e&&(e=o());var r=Pa([a[t.type]],s.filter((function(e){return(0,e.matcher)(t)})).map((function(e){return e.reducer})));return 0===r.filter((function(e){return!!e})).length&&(r=[l]),r.reduce((function(e,r){if(r){var n;if(pi(e))return void 0===(n=r(e,t))?e:n;if(fi(e))return la(e,(function(e){return r(e,t)}));if(void 0===(n=r(e,t))){if(null===e)return e;throw Error("A case reducer on a non-draftable value must not return undefined")}return n}return e}),e)}return u.getInitialState=o,u}(n,(function(e){for(var t in u)e.addCase(t,u[t]);for(var r=0,n=a;r<n.length;r++){var o=n[r];e.addMatcher(o.matcher,o.reducer)}c&&e.addDefaultCase(c)}))}return i.forEach((function(e){var r,n,i=o[e],c=t+"/"+e;"reducer"in i?(r=i.reducer,n=i.prepare):r=i,a[e]=r,s[c]=r,l[e]=n?La(c,n):La(c)})),{name:t,reducer:function(e,t){return r||(r=c()),r(e,t)},actions:l,caseReducers:a,getInitialState:function(){return r||(r=c()),r.getInitialState()}}}({name:"counter",initialState:{value:0},reducers:{increment:function(e){e.value+=1},decrement:function(e){e.value-=1},incrementByAmount:function(e,t){e.value+=t.payload}}}),Va=Ga.actions;Va.increment,Va.decrement,Va.incrementByAmount;const Ka=function(e){var t,r=function(e){return function(e){void 0===e&&(e={});var t=e.thunk,r=void 0===t||t,n=(e.immutableCheck,e.serializableCheck,new Ia);return r&&(function(e){return"boolean"==typeof e}(r)?n.push(wa):n.push(wa.withExtraArgument(r.extraArgument))),n}(e)},n=e||{},o=n.reducer,i=void 0===o?void 0:o,a=n.middleware,s=void 0===a?r():a,l=n.devTools,c=void 0===l||l,u=n.preloadedState,d=void 0===u?void 0:u,p=n.enhancers,f=void 0===p?void 0:p;if("function"==typeof i)t=i;else{if(!function(e){if("object"!=typeof e||null===e)return!1;var t=Object.getPrototypeOf(e);if(null===t)return!0;for(var r=t;null!==Object.getPrototypeOf(r);)r=Object.getPrototypeOf(r);return t===r}(i))throw new Error('"reducer" is a required argument, and must be a function or an object of functions that can be passed to combineReducers');t=function(e){for(var t=Object.keys(e),r={},n=0;n<t.length;n++){var o=t[n];"function"==typeof e[o]&&(r[o]=e[o])}var i,a=Object.keys(r);try{!function(e){Object.keys(e).forEach((function(t){var r=e[t];if(void 0===r(void 0,{type:ma.INIT}))throw new Error(pa(12));if(void 0===r(void 0,{type:ma.PROBE_UNKNOWN_ACTION()}))throw new Error(pa(13))}))}(r)}catch(e){i=e}return function(e,t){if(void 0===e&&(e={}),i)throw i;for(var n=!1,o={},s=0;s<a.length;s++){var l=a[s],c=r[l],u=e[l],d=c(u,t);if(void 0===d)throw t&&t.type,new Error(pa(14));o[l]=d,n=n||d!==u}return(n=n||a.length!==Object.keys(e).length)?o:e}}(i)}var h=s;"function"==typeof h&&(h=h(r));var m=va.apply(void 0,h),g=ya;c&&(g=Ma(_a({trace:!1},"object"==typeof c&&c)));var y=new Za(m),v=y;return Array.isArray(f)?v=Pa([m],f):"function"==typeof f&&(v=f(y)),ga(t,d,g.apply(void 0,v))}({reducer:{counter:Ga.reducer}});var Ha=r(6522),Xa={};Xa.styleTagTransform=qo(),Xa.setAttributes=Do(),Xa.insert=$o().bind(null,"head"),Xa.domAPI=zo(),Xa.insertStyleElement=Fo(),Io()(Ha.Z,Xa),Ha.Z&&Ha.Z.locals&&Ha.Z.locals,n().render((0,Se.jsx)(ci,{store:Ka,children:(0,Se.jsx)(Qo,{})}),document.getElementById("root"))})()})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ 418:
+/***/ ((module) => {
+
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+
+/* eslint-disable no-unused-vars */
+var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+
+function toObject(val) {
+	if (val === null || val === undefined) {
+		throw new TypeError('Object.assign cannot be called with null or undefined');
+	}
+
+	return Object(val);
+}
+
+function shouldUseNative() {
+	try {
+		if (!Object.assign) {
+			return false;
+		}
+
+		// Detect buggy property enumeration order in older V8 versions.
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+		var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
+		test1[5] = 'de';
+		if (Object.getOwnPropertyNames(test1)[0] === '5') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test2 = {};
+		for (var i = 0; i < 10; i++) {
+			test2['_' + String.fromCharCode(i)] = i;
+		}
+		var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
+			return test2[n];
+		});
+		if (order2.join('') !== '0123456789') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test3 = {};
+		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
+			test3[letter] = letter;
+		});
+		if (Object.keys(Object.assign({}, test3)).join('') !==
+				'abcdefghijklmnopqrst') {
+			return false;
+		}
+
+		return true;
+	} catch (err) {
+		// We don't expect any of the above to throw, but better to be safe.
+		return false;
+	}
+}
+
+module.exports = shouldUseNative() ? Object.assign : function (target, source) {
+	var from;
+	var to = toObject(target);
+	var symbols;
+
+	for (var s = 1; s < arguments.length; s++) {
+		from = Object(arguments[s]);
+
+		for (var key in from) {
+			if (hasOwnProperty.call(from, key)) {
+				to[key] = from[key];
+			}
+		}
+
+		if (getOwnPropertySymbols) {
+			symbols = getOwnPropertySymbols(from);
+			for (var i = 0; i < symbols.length; i++) {
+				if (propIsEnumerable.call(from, symbols[i])) {
+					to[symbols[i]] = from[symbols[i]];
+				}
+			}
+		}
+	}
+
+	return to;
+};
+
+
+/***/ }),
+
+/***/ 251:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+/** @license React v17.0.2
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+__webpack_require__(418);var f=__webpack_require__(359),g=60103;exports.Fragment=60107;if("function"===typeof Symbol&&Symbol.for){var h=Symbol.for;g=h("react.element");exports.Fragment=h("react.fragment")}var m=f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,n=Object.prototype.hasOwnProperty,p={key:!0,ref:!0,__self:!0,__source:!0};
+function q(c,a,k){var b,d={},e=null,l=null;void 0!==k&&(e=""+k);void 0!==a.key&&(e=""+a.key);void 0!==a.ref&&(l=a.ref);for(b in a)n.call(a,b)&&!p.hasOwnProperty(b)&&(d[b]=a[b]);if(c&&c.defaultProps)for(b in a=c.defaultProps,a)void 0===d[b]&&(d[b]=a[b]);return{$$typeof:g,type:c,key:e,ref:l,props:d,_owner:m.current}}exports.jsx=q;exports.jsxs=q;
+
+
+/***/ }),
+
+/***/ 893:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+
+
+if (true) {
+  module.exports = __webpack_require__(251);
+} else {}
+
+
+/***/ }),
+
+/***/ 359:
+/***/ ((module) => {
+
+module.exports = cgpv.react;
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(893);
+;// CONCATENATED MODULE: external "cgpv.reactDOM"
+const external_cgpv_reactDOM_namespaceObject = cgpv.reactDOM;
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+function objectWithoutPropertiesLoose_objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+  return target;
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
+function extends_extends() {
+  extends_extends = Object.assign ? Object.assign.bind() : function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return extends_extends.apply(this, arguments);
+}
+// EXTERNAL MODULE: external "cgpv.react"
+var external_cgpv_react_ = __webpack_require__(359);
+;// CONCATENATED MODULE: ./node_modules/is-in-browser/dist/module.js
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var isBrowser = (typeof window === "undefined" ? "undefined" : _typeof(window)) === "object" && (typeof document === "undefined" ? "undefined" : _typeof(document)) === 'object' && document.nodeType === 9;
+
+/* harmony default export */ const dist_module = (isBrowser);
+
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/typeof.js
+function typeof_typeof(obj) {
+  "@babel/helpers - typeof";
+
+  return typeof_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  }, typeof_typeof(obj);
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/toPrimitive.js
+
+function _toPrimitive(input, hint) {
+  if (typeof_typeof(input) !== "object" || input === null) return input;
+  var prim = input[Symbol.toPrimitive];
+  if (prim !== undefined) {
+    var res = prim.call(input, hint || "default");
+    if (typeof_typeof(res) !== "object") return res;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return (hint === "string" ? String : Number)(input);
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/toPropertyKey.js
+
+
+function _toPropertyKey(arg) {
+  var key = _toPrimitive(arg, "string");
+  return typeof_typeof(key) === "symbol" ? key : String(key);
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/createClass.js
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor);
+  }
+}
+function createClass_createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  Object.defineProperty(Constructor, "prototype", {
+    writable: false
+  });
+  return Constructor;
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+  return _setPrototypeOf(o, p);
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js
+
+function _inheritsLoose(subClass, superClass) {
+  subClass.prototype = Object.create(superClass.prototype);
+  subClass.prototype.constructor = subClass;
+  _setPrototypeOf(subClass, superClass);
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+  return self;
+}
+;// CONCATENATED MODULE: ./node_modules/jss/dist/jss.esm.js
+
+
+
+
+
+
+
+
+var plainObjectConstrurctor = {}.constructor;
+function cloneStyle(style) {
+  if (style == null || typeof style !== 'object') return style;
+  if (Array.isArray(style)) return style.map(cloneStyle);
+  if (style.constructor !== plainObjectConstrurctor) return style;
+  var newStyle = {};
+
+  for (var name in style) {
+    newStyle[name] = cloneStyle(style[name]);
+  }
+
+  return newStyle;
+}
+
+/**
+ * Create a rule instance.
+ */
+
+function createRule(name, decl, options) {
+  if (name === void 0) {
+    name = 'unnamed';
+  }
+
+  var jss = options.jss;
+  var declCopy = cloneStyle(decl);
+  var rule = jss.plugins.onCreateRule(name, declCopy, options);
+  if (rule) return rule; // It is an at-rule and it has no instance.
+
+  if (name[0] === '@') {
+     false ? 0 : void 0;
+  }
+
+  return null;
+}
+
+var join = function join(value, by) {
+  var result = '';
+
+  for (var i = 0; i < value.length; i++) {
+    // Remove !important from the value, it will be readded later.
+    if (value[i] === '!important') break;
+    if (result) result += by;
+    result += value[i];
+  }
+
+  return result;
+};
+/**
+ * Converts JSS array value to a CSS string.
+ *
+ * `margin: [['5px', '10px']]` > `margin: 5px 10px;`
+ * `border: ['1px', '2px']` > `border: 1px, 2px;`
+ * `margin: [['5px', '10px'], '!important']` > `margin: 5px 10px !important;`
+ * `color: ['red', !important]` > `color: red !important;`
+ */
+
+
+var toCssValue = function toCssValue(value, ignoreImportant) {
+  if (ignoreImportant === void 0) {
+    ignoreImportant = false;
+  }
+
+  if (!Array.isArray(value)) return value;
+  var cssValue = ''; // Support space separated values via `[['5px', '10px']]`.
+
+  if (Array.isArray(value[0])) {
+    for (var i = 0; i < value.length; i++) {
+      if (value[i] === '!important') break;
+      if (cssValue) cssValue += ', ';
+      cssValue += join(value[i], ' ');
+    }
+  } else cssValue = join(value, ', '); // Add !important, because it was ignored.
+
+
+  if (!ignoreImportant && value[value.length - 1] === '!important') {
+    cssValue += ' !important';
+  }
+
+  return cssValue;
+};
+
+function getWhitespaceSymbols(options) {
+  if (options && options.format === false) {
+    return {
+      linebreak: '',
+      space: ''
+    };
+  }
+
+  return {
+    linebreak: '\n',
+    space: ' '
+  };
+}
+
+/**
+ * Indent a string.
+ * http://jsperf.com/array-join-vs-for
+ */
+
+function indentStr(str, indent) {
+  var result = '';
+
+  for (var index = 0; index < indent; index++) {
+    result += '  ';
+  }
+
+  return result + str;
+}
+/**
+ * Converts a Rule to CSS string.
+ */
+
+
+function toCss(selector, style, options) {
+  if (options === void 0) {
+    options = {};
+  }
+
+  var result = '';
+  if (!style) return result;
+  var _options = options,
+      _options$indent = _options.indent,
+      indent = _options$indent === void 0 ? 0 : _options$indent;
+  var fallbacks = style.fallbacks;
+
+  if (options.format === false) {
+    indent = -Infinity;
+  }
+
+  var _getWhitespaceSymbols = getWhitespaceSymbols(options),
+      linebreak = _getWhitespaceSymbols.linebreak,
+      space = _getWhitespaceSymbols.space;
+
+  if (selector) indent++; // Apply fallbacks first.
+
+  if (fallbacks) {
+    // Array syntax {fallbacks: [{prop: value}]}
+    if (Array.isArray(fallbacks)) {
+      for (var index = 0; index < fallbacks.length; index++) {
+        var fallback = fallbacks[index];
+
+        for (var prop in fallback) {
+          var value = fallback[prop];
+
+          if (value != null) {
+            if (result) result += linebreak;
+            result += indentStr(prop + ":" + space + toCssValue(value) + ";", indent);
+          }
+        }
+      }
+    } else {
+      // Object syntax {fallbacks: {prop: value}}
+      for (var _prop in fallbacks) {
+        var _value = fallbacks[_prop];
+
+        if (_value != null) {
+          if (result) result += linebreak;
+          result += indentStr(_prop + ":" + space + toCssValue(_value) + ";", indent);
+        }
+      }
+    }
+  }
+
+  for (var _prop2 in style) {
+    var _value2 = style[_prop2];
+
+    if (_value2 != null && _prop2 !== 'fallbacks') {
+      if (result) result += linebreak;
+      result += indentStr(_prop2 + ":" + space + toCssValue(_value2) + ";", indent);
+    }
+  } // Allow empty style in this case, because properties will be added dynamically.
+
+
+  if (!result && !options.allowEmpty) return result; // When rule is being stringified before selector was defined.
+
+  if (!selector) return result;
+  indent--;
+  if (result) result = "" + linebreak + result + linebreak;
+  return indentStr("" + selector + space + "{" + result, indent) + indentStr('}', indent);
+}
+
+var escapeRegex = /([[\].#*$><+~=|^:(),"'`\s])/g;
+var nativeEscape = typeof CSS !== 'undefined' && CSS.escape;
+var jss_esm_escape = (function (str) {
+  return nativeEscape ? nativeEscape(str) : str.replace(escapeRegex, '\\$1');
+});
+
+var BaseStyleRule =
+/*#__PURE__*/
+function () {
+  function BaseStyleRule(key, style, options) {
+    this.type = 'style';
+    this.isProcessed = false;
+    var sheet = options.sheet,
+        Renderer = options.Renderer;
+    this.key = key;
+    this.options = options;
+    this.style = style;
+    if (sheet) this.renderer = sheet.renderer;else if (Renderer) this.renderer = new Renderer();
+  }
+  /**
+   * Get or set a style property.
+   */
+
+
+  var _proto = BaseStyleRule.prototype;
+
+  _proto.prop = function prop(name, value, options) {
+    // It's a getter.
+    if (value === undefined) return this.style[name]; // Don't do anything if the value has not changed.
+
+    var force = options ? options.force : false;
+    if (!force && this.style[name] === value) return this;
+    var newValue = value;
+
+    if (!options || options.process !== false) {
+      newValue = this.options.jss.plugins.onChangeValue(value, name, this);
+    }
+
+    var isEmpty = newValue == null || newValue === false;
+    var isDefined = name in this.style; // Value is empty and wasn't defined before.
+
+    if (isEmpty && !isDefined && !force) return this; // We are going to remove this value.
+
+    var remove = isEmpty && isDefined;
+    if (remove) delete this.style[name];else this.style[name] = newValue; // Renderable is defined if StyleSheet option `link` is true.
+
+    if (this.renderable && this.renderer) {
+      if (remove) this.renderer.removeProperty(this.renderable, name);else this.renderer.setProperty(this.renderable, name, newValue);
+      return this;
+    }
+
+    var sheet = this.options.sheet;
+
+    if (sheet && sheet.attached) {
+       false ? 0 : void 0;
+    }
+
+    return this;
+  };
+
+  return BaseStyleRule;
+}();
+var StyleRule =
+/*#__PURE__*/
+function (_BaseStyleRule) {
+  _inheritsLoose(StyleRule, _BaseStyleRule);
+
+  function StyleRule(key, style, options) {
+    var _this;
+
+    _this = _BaseStyleRule.call(this, key, style, options) || this;
+    var selector = options.selector,
+        scoped = options.scoped,
+        sheet = options.sheet,
+        generateId = options.generateId;
+
+    if (selector) {
+      _this.selectorText = selector;
+    } else if (scoped !== false) {
+      _this.id = generateId(_assertThisInitialized(_assertThisInitialized(_this)), sheet);
+      _this.selectorText = "." + jss_esm_escape(_this.id);
+    }
+
+    return _this;
+  }
+  /**
+   * Set selector string.
+   * Attention: use this with caution. Most browsers didn't implement
+   * selectorText setter, so this may result in rerendering of entire Style Sheet.
+   */
+
+
+  var _proto2 = StyleRule.prototype;
+
+  /**
+   * Apply rule to an element inline.
+   */
+  _proto2.applyTo = function applyTo(renderable) {
+    var renderer = this.renderer;
+
+    if (renderer) {
+      var json = this.toJSON();
+
+      for (var prop in json) {
+        renderer.setProperty(renderable, prop, json[prop]);
+      }
+    }
+
+    return this;
+  }
+  /**
+   * Returns JSON representation of the rule.
+   * Fallbacks are not supported.
+   * Useful for inline styles.
+   */
+  ;
+
+  _proto2.toJSON = function toJSON() {
+    var json = {};
+
+    for (var prop in this.style) {
+      var value = this.style[prop];
+      if (typeof value !== 'object') json[prop] = value;else if (Array.isArray(value)) json[prop] = toCssValue(value);
+    }
+
+    return json;
+  }
+  /**
+   * Generates a CSS string.
+   */
+  ;
+
+  _proto2.toString = function toString(options) {
+    var sheet = this.options.sheet;
+    var link = sheet ? sheet.options.link : false;
+    var opts = link ? extends_extends({}, options, {
+      allowEmpty: true
+    }) : options;
+    return toCss(this.selectorText, this.style, opts);
+  };
+
+  createClass_createClass(StyleRule, [{
+    key: "selector",
+    set: function set(selector) {
+      if (selector === this.selectorText) return;
+      this.selectorText = selector;
+      var renderer = this.renderer,
+          renderable = this.renderable;
+      if (!renderable || !renderer) return;
+      var hasChanged = renderer.setSelector(renderable, selector); // If selector setter is not implemented, rerender the rule.
+
+      if (!hasChanged) {
+        renderer.replaceRule(renderable, this);
+      }
+    }
+    /**
+     * Get selector string.
+     */
+    ,
+    get: function get() {
+      return this.selectorText;
+    }
+  }]);
+
+  return StyleRule;
+}(BaseStyleRule);
+var pluginStyleRule = {
+  onCreateRule: function onCreateRule(key, style, options) {
+    if (key[0] === '@' || options.parent && options.parent.type === 'keyframes') {
+      return null;
+    }
+
+    return new StyleRule(key, style, options);
+  }
+};
+
+var defaultToStringOptions = {
+  indent: 1,
+  children: true
+};
+var atRegExp = /@([\w-]+)/;
+/**
+ * Conditional rule for @media, @supports
+ */
+
+var ConditionalRule =
+/*#__PURE__*/
+function () {
+  function ConditionalRule(key, styles, options) {
+    this.type = 'conditional';
+    this.isProcessed = false;
+    this.key = key;
+    var atMatch = key.match(atRegExp);
+    this.at = atMatch ? atMatch[1] : 'unknown'; // Key might contain a unique suffix in case the `name` passed by user was duplicate.
+
+    this.query = options.name || "@" + this.at;
+    this.options = options;
+    this.rules = new RuleList(extends_extends({}, options, {
+      parent: this
+    }));
+
+    for (var name in styles) {
+      this.rules.add(name, styles[name]);
+    }
+
+    this.rules.process();
+  }
+  /**
+   * Get a rule.
+   */
+
+
+  var _proto = ConditionalRule.prototype;
+
+  _proto.getRule = function getRule(name) {
+    return this.rules.get(name);
+  }
+  /**
+   * Get index of a rule.
+   */
+  ;
+
+  _proto.indexOf = function indexOf(rule) {
+    return this.rules.indexOf(rule);
+  }
+  /**
+   * Create and register rule, run plugins.
+   */
+  ;
+
+  _proto.addRule = function addRule(name, style, options) {
+    var rule = this.rules.add(name, style, options);
+    if (!rule) return null;
+    this.options.jss.plugins.onProcessRule(rule);
+    return rule;
+  }
+  /**
+   * Replace rule, run plugins.
+   */
+  ;
+
+  _proto.replaceRule = function replaceRule(name, style, options) {
+    var newRule = this.rules.replace(name, style, options);
+    if (newRule) this.options.jss.plugins.onProcessRule(newRule);
+    return newRule;
+  }
+  /**
+   * Generates a CSS string.
+   */
+  ;
+
+  _proto.toString = function toString(options) {
+    if (options === void 0) {
+      options = defaultToStringOptions;
+    }
+
+    var _getWhitespaceSymbols = getWhitespaceSymbols(options),
+        linebreak = _getWhitespaceSymbols.linebreak;
+
+    if (options.indent == null) options.indent = defaultToStringOptions.indent;
+    if (options.children == null) options.children = defaultToStringOptions.children;
+
+    if (options.children === false) {
+      return this.query + " {}";
+    }
+
+    var children = this.rules.toString(options);
+    return children ? this.query + " {" + linebreak + children + linebreak + "}" : '';
+  };
+
+  return ConditionalRule;
+}();
+var keyRegExp = /@media|@supports\s+/;
+var pluginConditionalRule = {
+  onCreateRule: function onCreateRule(key, styles, options) {
+    return keyRegExp.test(key) ? new ConditionalRule(key, styles, options) : null;
+  }
+};
+
+var defaultToStringOptions$1 = {
+  indent: 1,
+  children: true
+};
+var nameRegExp = /@keyframes\s+([\w-]+)/;
+/**
+ * Rule for @keyframes
+ */
+
+var KeyframesRule =
+/*#__PURE__*/
+function () {
+  function KeyframesRule(key, frames, options) {
+    this.type = 'keyframes';
+    this.at = '@keyframes';
+    this.isProcessed = false;
+    var nameMatch = key.match(nameRegExp);
+
+    if (nameMatch && nameMatch[1]) {
+      this.name = nameMatch[1];
+    } else {
+      this.name = 'noname';
+       false ? 0 : void 0;
+    }
+
+    this.key = this.type + "-" + this.name;
+    this.options = options;
+    var scoped = options.scoped,
+        sheet = options.sheet,
+        generateId = options.generateId;
+    this.id = scoped === false ? this.name : jss_esm_escape(generateId(this, sheet));
+    this.rules = new RuleList(extends_extends({}, options, {
+      parent: this
+    }));
+
+    for (var name in frames) {
+      this.rules.add(name, frames[name], extends_extends({}, options, {
+        parent: this
+      }));
+    }
+
+    this.rules.process();
+  }
+  /**
+   * Generates a CSS string.
+   */
+
+
+  var _proto = KeyframesRule.prototype;
+
+  _proto.toString = function toString(options) {
+    if (options === void 0) {
+      options = defaultToStringOptions$1;
+    }
+
+    var _getWhitespaceSymbols = getWhitespaceSymbols(options),
+        linebreak = _getWhitespaceSymbols.linebreak;
+
+    if (options.indent == null) options.indent = defaultToStringOptions$1.indent;
+    if (options.children == null) options.children = defaultToStringOptions$1.children;
+
+    if (options.children === false) {
+      return this.at + " " + this.id + " {}";
+    }
+
+    var children = this.rules.toString(options);
+    if (children) children = "" + linebreak + children + linebreak;
+    return this.at + " " + this.id + " {" + children + "}";
+  };
+
+  return KeyframesRule;
+}();
+var keyRegExp$1 = /@keyframes\s+/;
+var refRegExp = /\$([\w-]+)/g;
+
+var findReferencedKeyframe = function findReferencedKeyframe(val, keyframes) {
+  if (typeof val === 'string') {
+    return val.replace(refRegExp, function (match, name) {
+      if (name in keyframes) {
+        return keyframes[name];
+      }
+
+       false ? 0 : void 0;
+      return match;
+    });
+  }
+
+  return val;
+};
+/**
+ * Replace the reference for a animation name.
+ */
+
+
+var replaceRef = function replaceRef(style, prop, keyframes) {
+  var value = style[prop];
+  var refKeyframe = findReferencedKeyframe(value, keyframes);
+
+  if (refKeyframe !== value) {
+    style[prop] = refKeyframe;
+  }
+};
+
+var pluginKeyframesRule = {
+  onCreateRule: function onCreateRule(key, frames, options) {
+    return typeof key === 'string' && keyRegExp$1.test(key) ? new KeyframesRule(key, frames, options) : null;
+  },
+  // Animation name ref replacer.
+  onProcessStyle: function onProcessStyle(style, rule, sheet) {
+    if (rule.type !== 'style' || !sheet) return style;
+    if ('animation-name' in style) replaceRef(style, 'animation-name', sheet.keyframes);
+    if ('animation' in style) replaceRef(style, 'animation', sheet.keyframes);
+    return style;
+  },
+  onChangeValue: function onChangeValue(val, prop, rule) {
+    var sheet = rule.options.sheet;
+
+    if (!sheet) {
+      return val;
+    }
+
+    switch (prop) {
+      case 'animation':
+        return findReferencedKeyframe(val, sheet.keyframes);
+
+      case 'animation-name':
+        return findReferencedKeyframe(val, sheet.keyframes);
+
+      default:
+        return val;
+    }
+  }
+};
+
+var KeyframeRule =
+/*#__PURE__*/
+function (_BaseStyleRule) {
+  _inheritsLoose(KeyframeRule, _BaseStyleRule);
+
+  function KeyframeRule() {
+    return _BaseStyleRule.apply(this, arguments) || this;
+  }
+
+  var _proto = KeyframeRule.prototype;
+
+  /**
+   * Generates a CSS string.
+   */
+  _proto.toString = function toString(options) {
+    var sheet = this.options.sheet;
+    var link = sheet ? sheet.options.link : false;
+    var opts = link ? extends_extends({}, options, {
+      allowEmpty: true
+    }) : options;
+    return toCss(this.key, this.style, opts);
+  };
+
+  return KeyframeRule;
+}(BaseStyleRule);
+var pluginKeyframeRule = {
+  onCreateRule: function onCreateRule(key, style, options) {
+    if (options.parent && options.parent.type === 'keyframes') {
+      return new KeyframeRule(key, style, options);
+    }
+
+    return null;
+  }
+};
+
+var FontFaceRule =
+/*#__PURE__*/
+function () {
+  function FontFaceRule(key, style, options) {
+    this.type = 'font-face';
+    this.at = '@font-face';
+    this.isProcessed = false;
+    this.key = key;
+    this.style = style;
+    this.options = options;
+  }
+  /**
+   * Generates a CSS string.
+   */
+
+
+  var _proto = FontFaceRule.prototype;
+
+  _proto.toString = function toString(options) {
+    var _getWhitespaceSymbols = getWhitespaceSymbols(options),
+        linebreak = _getWhitespaceSymbols.linebreak;
+
+    if (Array.isArray(this.style)) {
+      var str = '';
+
+      for (var index = 0; index < this.style.length; index++) {
+        str += toCss(this.at, this.style[index]);
+        if (this.style[index + 1]) str += linebreak;
+      }
+
+      return str;
+    }
+
+    return toCss(this.at, this.style, options);
+  };
+
+  return FontFaceRule;
+}();
+var keyRegExp$2 = /@font-face/;
+var pluginFontFaceRule = {
+  onCreateRule: function onCreateRule(key, style, options) {
+    return keyRegExp$2.test(key) ? new FontFaceRule(key, style, options) : null;
+  }
+};
+
+var ViewportRule =
+/*#__PURE__*/
+function () {
+  function ViewportRule(key, style, options) {
+    this.type = 'viewport';
+    this.at = '@viewport';
+    this.isProcessed = false;
+    this.key = key;
+    this.style = style;
+    this.options = options;
+  }
+  /**
+   * Generates a CSS string.
+   */
+
+
+  var _proto = ViewportRule.prototype;
+
+  _proto.toString = function toString(options) {
+    return toCss(this.key, this.style, options);
+  };
+
+  return ViewportRule;
+}();
+var pluginViewportRule = {
+  onCreateRule: function onCreateRule(key, style, options) {
+    return key === '@viewport' || key === '@-ms-viewport' ? new ViewportRule(key, style, options) : null;
+  }
+};
+
+var SimpleRule =
+/*#__PURE__*/
+function () {
+  function SimpleRule(key, value, options) {
+    this.type = 'simple';
+    this.isProcessed = false;
+    this.key = key;
+    this.value = value;
+    this.options = options;
+  }
+  /**
+   * Generates a CSS string.
+   */
+  // eslint-disable-next-line no-unused-vars
+
+
+  var _proto = SimpleRule.prototype;
+
+  _proto.toString = function toString(options) {
+    if (Array.isArray(this.value)) {
+      var str = '';
+
+      for (var index = 0; index < this.value.length; index++) {
+        str += this.key + " " + this.value[index] + ";";
+        if (this.value[index + 1]) str += '\n';
+      }
+
+      return str;
+    }
+
+    return this.key + " " + this.value + ";";
+  };
+
+  return SimpleRule;
+}();
+var keysMap = {
+  '@charset': true,
+  '@import': true,
+  '@namespace': true
+};
+var pluginSimpleRule = {
+  onCreateRule: function onCreateRule(key, value, options) {
+    return key in keysMap ? new SimpleRule(key, value, options) : null;
+  }
+};
+
+var plugins = [pluginStyleRule, pluginConditionalRule, pluginKeyframesRule, pluginKeyframeRule, pluginFontFaceRule, pluginViewportRule, pluginSimpleRule];
+
+var defaultUpdateOptions = {
+  process: true
+};
+var forceUpdateOptions = {
+  force: true,
+  process: true
+  /**
+   * Contains rules objects and allows adding/removing etc.
+   * Is used for e.g. by `StyleSheet` or `ConditionalRule`.
+   */
+
+};
+
+var RuleList =
+/*#__PURE__*/
+function () {
+  // Rules registry for access by .get() method.
+  // It contains the same rule registered by name and by selector.
+  // Original styles object.
+  // Used to ensure correct rules order.
+  function RuleList(options) {
+    this.map = {};
+    this.raw = {};
+    this.index = [];
+    this.counter = 0;
+    this.options = options;
+    this.classes = options.classes;
+    this.keyframes = options.keyframes;
+  }
+  /**
+   * Create and register rule.
+   *
+   * Will not render after Style Sheet was rendered the first time.
+   */
+
+
+  var _proto = RuleList.prototype;
+
+  _proto.add = function add(name, decl, ruleOptions) {
+    var _this$options = this.options,
+        parent = _this$options.parent,
+        sheet = _this$options.sheet,
+        jss = _this$options.jss,
+        Renderer = _this$options.Renderer,
+        generateId = _this$options.generateId,
+        scoped = _this$options.scoped;
+
+    var options = extends_extends({
+      classes: this.classes,
+      parent: parent,
+      sheet: sheet,
+      jss: jss,
+      Renderer: Renderer,
+      generateId: generateId,
+      scoped: scoped,
+      name: name,
+      keyframes: this.keyframes,
+      selector: undefined
+    }, ruleOptions); // When user uses .createStyleSheet(), duplicate names are not possible, but
+    // `sheet.addRule()` opens the door for any duplicate rule name. When this happens
+    // we need to make the key unique within this RuleList instance scope.
+
+
+    var key = name;
+
+    if (name in this.raw) {
+      key = name + "-d" + this.counter++;
+    } // We need to save the original decl before creating the rule
+    // because cache plugin needs to use it as a key to return a cached rule.
+
+
+    this.raw[key] = decl;
+
+    if (key in this.classes) {
+      // E.g. rules inside of @media container
+      options.selector = "." + jss_esm_escape(this.classes[key]);
+    }
+
+    var rule = createRule(key, decl, options);
+    if (!rule) return null;
+    this.register(rule);
+    var index = options.index === undefined ? this.index.length : options.index;
+    this.index.splice(index, 0, rule);
+    return rule;
+  }
+  /**
+   * Replace rule.
+   * Create a new rule and remove old one instead of overwriting
+   * because we want to invoke onCreateRule hook to make plugins work.
+   */
+  ;
+
+  _proto.replace = function replace(name, decl, ruleOptions) {
+    var oldRule = this.get(name);
+    var oldIndex = this.index.indexOf(oldRule);
+
+    if (oldRule) {
+      this.remove(oldRule);
+    }
+
+    var options = ruleOptions;
+    if (oldIndex !== -1) options = extends_extends({}, ruleOptions, {
+      index: oldIndex
+    });
+    return this.add(name, decl, options);
+  }
+  /**
+   * Get a rule by name or selector.
+   */
+  ;
+
+  _proto.get = function get(nameOrSelector) {
+    return this.map[nameOrSelector];
+  }
+  /**
+   * Delete a rule.
+   */
+  ;
+
+  _proto.remove = function remove(rule) {
+    this.unregister(rule);
+    delete this.raw[rule.key];
+    this.index.splice(this.index.indexOf(rule), 1);
+  }
+  /**
+   * Get index of a rule.
+   */
+  ;
+
+  _proto.indexOf = function indexOf(rule) {
+    return this.index.indexOf(rule);
+  }
+  /**
+   * Run `onProcessRule()` plugins on every rule.
+   */
+  ;
+
+  _proto.process = function process() {
+    var plugins = this.options.jss.plugins; // We need to clone array because if we modify the index somewhere else during a loop
+    // we end up with very hard-to-track-down side effects.
+
+    this.index.slice(0).forEach(plugins.onProcessRule, plugins);
+  }
+  /**
+   * Register a rule in `.map`, `.classes` and `.keyframes` maps.
+   */
+  ;
+
+  _proto.register = function register(rule) {
+    this.map[rule.key] = rule;
+
+    if (rule instanceof StyleRule) {
+      this.map[rule.selector] = rule;
+      if (rule.id) this.classes[rule.key] = rule.id;
+    } else if (rule instanceof KeyframesRule && this.keyframes) {
+      this.keyframes[rule.name] = rule.id;
+    }
+  }
+  /**
+   * Unregister a rule.
+   */
+  ;
+
+  _proto.unregister = function unregister(rule) {
+    delete this.map[rule.key];
+
+    if (rule instanceof StyleRule) {
+      delete this.map[rule.selector];
+      delete this.classes[rule.key];
+    } else if (rule instanceof KeyframesRule) {
+      delete this.keyframes[rule.name];
+    }
+  }
+  /**
+   * Update the function values with a new data.
+   */
+  ;
+
+  _proto.update = function update() {
+    var name;
+    var data;
+    var options;
+
+    if (typeof (arguments.length <= 0 ? undefined : arguments[0]) === 'string') {
+      name = arguments.length <= 0 ? undefined : arguments[0];
+      data = arguments.length <= 1 ? undefined : arguments[1];
+      options = arguments.length <= 2 ? undefined : arguments[2];
+    } else {
+      data = arguments.length <= 0 ? undefined : arguments[0];
+      options = arguments.length <= 1 ? undefined : arguments[1];
+      name = null;
+    }
+
+    if (name) {
+      this.updateOne(this.get(name), data, options);
+    } else {
+      for (var index = 0; index < this.index.length; index++) {
+        this.updateOne(this.index[index], data, options);
+      }
+    }
+  }
+  /**
+   * Execute plugins, update rule props.
+   */
+  ;
+
+  _proto.updateOne = function updateOne(rule, data, options) {
+    if (options === void 0) {
+      options = defaultUpdateOptions;
+    }
+
+    var _this$options2 = this.options,
+        plugins = _this$options2.jss.plugins,
+        sheet = _this$options2.sheet; // It is a rules container like for e.g. ConditionalRule.
+
+    if (rule.rules instanceof RuleList) {
+      rule.rules.update(data, options);
+      return;
+    }
+
+    var style = rule.style;
+    plugins.onUpdate(data, rule, sheet, options); // We rely on a new `style` ref in case it was mutated during onUpdate hook.
+
+    if (options.process && style && style !== rule.style) {
+      // We need to run the plugins in case new `style` relies on syntax plugins.
+      plugins.onProcessStyle(rule.style, rule, sheet); // Update and add props.
+
+      for (var prop in rule.style) {
+        var nextValue = rule.style[prop];
+        var prevValue = style[prop]; // We need to use `force: true` because `rule.style` has been updated during onUpdate hook, so `rule.prop()` will not update the CSSOM rule.
+        // We do this comparison to avoid unneeded `rule.prop()` calls, since we have the old `style` object here.
+
+        if (nextValue !== prevValue) {
+          rule.prop(prop, nextValue, forceUpdateOptions);
+        }
+      } // Remove props.
+
+
+      for (var _prop in style) {
+        var _nextValue = rule.style[_prop];
+        var _prevValue = style[_prop]; // We need to use `force: true` because `rule.style` has been updated during onUpdate hook, so `rule.prop()` will not update the CSSOM rule.
+        // We do this comparison to avoid unneeded `rule.prop()` calls, since we have the old `style` object here.
+
+        if (_nextValue == null && _nextValue !== _prevValue) {
+          rule.prop(_prop, null, forceUpdateOptions);
+        }
+      }
+    }
+  }
+  /**
+   * Convert rules to a CSS string.
+   */
+  ;
+
+  _proto.toString = function toString(options) {
+    var str = '';
+    var sheet = this.options.sheet;
+    var link = sheet ? sheet.options.link : false;
+
+    var _getWhitespaceSymbols = getWhitespaceSymbols(options),
+        linebreak = _getWhitespaceSymbols.linebreak;
+
+    for (var index = 0; index < this.index.length; index++) {
+      var rule = this.index[index];
+      var css = rule.toString(options); // No need to render an empty rule.
+
+      if (!css && !link) continue;
+      if (str) str += linebreak;
+      str += css;
+    }
+
+    return str;
+  };
+
+  return RuleList;
+}();
+
+var StyleSheet =
+/*#__PURE__*/
+function () {
+  function StyleSheet(styles, options) {
+    this.attached = false;
+    this.deployed = false;
+    this.classes = {};
+    this.keyframes = {};
+    this.options = extends_extends({}, options, {
+      sheet: this,
+      parent: this,
+      classes: this.classes,
+      keyframes: this.keyframes
+    });
+
+    if (options.Renderer) {
+      this.renderer = new options.Renderer(this);
+    }
+
+    this.rules = new RuleList(this.options);
+
+    for (var name in styles) {
+      this.rules.add(name, styles[name]);
+    }
+
+    this.rules.process();
+  }
+  /**
+   * Attach renderable to the render tree.
+   */
+
+
+  var _proto = StyleSheet.prototype;
+
+  _proto.attach = function attach() {
+    if (this.attached) return this;
+    if (this.renderer) this.renderer.attach();
+    this.attached = true; // Order is important, because we can't use insertRule API if style element is not attached.
+
+    if (!this.deployed) this.deploy();
+    return this;
+  }
+  /**
+   * Remove renderable from render tree.
+   */
+  ;
+
+  _proto.detach = function detach() {
+    if (!this.attached) return this;
+    if (this.renderer) this.renderer.detach();
+    this.attached = false;
+    return this;
+  }
+  /**
+   * Add a rule to the current stylesheet.
+   * Will insert a rule also after the stylesheet has been rendered first time.
+   */
+  ;
+
+  _proto.addRule = function addRule(name, decl, options) {
+    var queue = this.queue; // Plugins can create rules.
+    // In order to preserve the right order, we need to queue all `.addRule` calls,
+    // which happen after the first `rules.add()` call.
+
+    if (this.attached && !queue) this.queue = [];
+    var rule = this.rules.add(name, decl, options);
+    if (!rule) return null;
+    this.options.jss.plugins.onProcessRule(rule);
+
+    if (this.attached) {
+      if (!this.deployed) return rule; // Don't insert rule directly if there is no stringified version yet.
+      // It will be inserted all together when .attach is called.
+
+      if (queue) queue.push(rule);else {
+        this.insertRule(rule);
+
+        if (this.queue) {
+          this.queue.forEach(this.insertRule, this);
+          this.queue = undefined;
+        }
+      }
+      return rule;
+    } // We can't add rules to a detached style node.
+    // We will redeploy the sheet once user will attach it.
+
+
+    this.deployed = false;
+    return rule;
+  }
+  /**
+   * Replace a rule in the current stylesheet.
+   */
+  ;
+
+  _proto.replaceRule = function replaceRule(nameOrSelector, decl, options) {
+    var oldRule = this.rules.get(nameOrSelector);
+    if (!oldRule) return this.addRule(nameOrSelector, decl, options);
+    var newRule = this.rules.replace(nameOrSelector, decl, options);
+
+    if (newRule) {
+      this.options.jss.plugins.onProcessRule(newRule);
+    }
+
+    if (this.attached) {
+      if (!this.deployed) return newRule; // Don't replace / delete rule directly if there is no stringified version yet.
+      // It will be inserted all together when .attach is called.
+
+      if (this.renderer) {
+        if (!newRule) {
+          this.renderer.deleteRule(oldRule);
+        } else if (oldRule.renderable) {
+          this.renderer.replaceRule(oldRule.renderable, newRule);
+        }
+      }
+
+      return newRule;
+    } // We can't replace rules to a detached style node.
+    // We will redeploy the sheet once user will attach it.
+
+
+    this.deployed = false;
+    return newRule;
+  }
+  /**
+   * Insert rule into the StyleSheet
+   */
+  ;
+
+  _proto.insertRule = function insertRule(rule) {
+    if (this.renderer) {
+      this.renderer.insertRule(rule);
+    }
+  }
+  /**
+   * Create and add rules.
+   * Will render also after Style Sheet was rendered the first time.
+   */
+  ;
+
+  _proto.addRules = function addRules(styles, options) {
+    var added = [];
+
+    for (var name in styles) {
+      var rule = this.addRule(name, styles[name], options);
+      if (rule) added.push(rule);
+    }
+
+    return added;
+  }
+  /**
+   * Get a rule by name or selector.
+   */
+  ;
+
+  _proto.getRule = function getRule(nameOrSelector) {
+    return this.rules.get(nameOrSelector);
+  }
+  /**
+   * Delete a rule by name.
+   * Returns `true`: if rule has been deleted from the DOM.
+   */
+  ;
+
+  _proto.deleteRule = function deleteRule(name) {
+    var rule = typeof name === 'object' ? name : this.rules.get(name);
+
+    if (!rule || // Style sheet was created without link: true and attached, in this case we
+    // won't be able to remove the CSS rule from the DOM.
+    this.attached && !rule.renderable) {
+      return false;
+    }
+
+    this.rules.remove(rule);
+
+    if (this.attached && rule.renderable && this.renderer) {
+      return this.renderer.deleteRule(rule.renderable);
+    }
+
+    return true;
+  }
+  /**
+   * Get index of a rule.
+   */
+  ;
+
+  _proto.indexOf = function indexOf(rule) {
+    return this.rules.indexOf(rule);
+  }
+  /**
+   * Deploy pure CSS string to a renderable.
+   */
+  ;
+
+  _proto.deploy = function deploy() {
+    if (this.renderer) this.renderer.deploy();
+    this.deployed = true;
+    return this;
+  }
+  /**
+   * Update the function values with a new data.
+   */
+  ;
+
+  _proto.update = function update() {
+    var _this$rules;
+
+    (_this$rules = this.rules).update.apply(_this$rules, arguments);
+
+    return this;
+  }
+  /**
+   * Updates a single rule.
+   */
+  ;
+
+  _proto.updateOne = function updateOne(rule, data, options) {
+    this.rules.updateOne(rule, data, options);
+    return this;
+  }
+  /**
+   * Convert rules to a CSS string.
+   */
+  ;
+
+  _proto.toString = function toString(options) {
+    return this.rules.toString(options);
+  };
+
+  return StyleSheet;
+}();
+
+var PluginsRegistry =
+/*#__PURE__*/
+function () {
+  function PluginsRegistry() {
+    this.plugins = {
+      internal: [],
+      external: []
+    };
+    this.registry = {};
+  }
+
+  var _proto = PluginsRegistry.prototype;
+
+  /**
+   * Call `onCreateRule` hooks and return an object if returned by a hook.
+   */
+  _proto.onCreateRule = function onCreateRule(name, decl, options) {
+    for (var i = 0; i < this.registry.onCreateRule.length; i++) {
+      var rule = this.registry.onCreateRule[i](name, decl, options);
+      if (rule) return rule;
+    }
+
+    return null;
+  }
+  /**
+   * Call `onProcessRule` hooks.
+   */
+  ;
+
+  _proto.onProcessRule = function onProcessRule(rule) {
+    if (rule.isProcessed) return;
+    var sheet = rule.options.sheet;
+
+    for (var i = 0; i < this.registry.onProcessRule.length; i++) {
+      this.registry.onProcessRule[i](rule, sheet);
+    }
+
+    if (rule.style) this.onProcessStyle(rule.style, rule, sheet);
+    rule.isProcessed = true;
+  }
+  /**
+   * Call `onProcessStyle` hooks.
+   */
+  ;
+
+  _proto.onProcessStyle = function onProcessStyle(style, rule, sheet) {
+    for (var i = 0; i < this.registry.onProcessStyle.length; i++) {
+      rule.style = this.registry.onProcessStyle[i](rule.style, rule, sheet);
+    }
+  }
+  /**
+   * Call `onProcessSheet` hooks.
+   */
+  ;
+
+  _proto.onProcessSheet = function onProcessSheet(sheet) {
+    for (var i = 0; i < this.registry.onProcessSheet.length; i++) {
+      this.registry.onProcessSheet[i](sheet);
+    }
+  }
+  /**
+   * Call `onUpdate` hooks.
+   */
+  ;
+
+  _proto.onUpdate = function onUpdate(data, rule, sheet, options) {
+    for (var i = 0; i < this.registry.onUpdate.length; i++) {
+      this.registry.onUpdate[i](data, rule, sheet, options);
+    }
+  }
+  /**
+   * Call `onChangeValue` hooks.
+   */
+  ;
+
+  _proto.onChangeValue = function onChangeValue(value, prop, rule) {
+    var processedValue = value;
+
+    for (var i = 0; i < this.registry.onChangeValue.length; i++) {
+      processedValue = this.registry.onChangeValue[i](processedValue, prop, rule);
+    }
+
+    return processedValue;
+  }
+  /**
+   * Register a plugin.
+   */
+  ;
+
+  _proto.use = function use(newPlugin, options) {
+    if (options === void 0) {
+      options = {
+        queue: 'external'
+      };
+    }
+
+    var plugins = this.plugins[options.queue]; // Avoids applying same plugin twice, at least based on ref.
+
+    if (plugins.indexOf(newPlugin) !== -1) {
+      return;
+    }
+
+    plugins.push(newPlugin);
+    this.registry = [].concat(this.plugins.external, this.plugins.internal).reduce(function (registry, plugin) {
+      for (var name in plugin) {
+        if (name in registry) {
+          registry[name].push(plugin[name]);
+        } else {
+           false ? 0 : void 0;
+        }
+      }
+
+      return registry;
+    }, {
+      onCreateRule: [],
+      onProcessRule: [],
+      onProcessStyle: [],
+      onProcessSheet: [],
+      onChangeValue: [],
+      onUpdate: []
+    });
+  };
+
+  return PluginsRegistry;
+}();
+
+/**
+ * Sheets registry to access all instances in one place.
+ */
+
+var SheetsRegistry =
+/*#__PURE__*/
+function () {
+  function SheetsRegistry() {
+    this.registry = [];
+  }
+
+  var _proto = SheetsRegistry.prototype;
+
+  /**
+   * Register a Style Sheet.
+   */
+  _proto.add = function add(sheet) {
+    var registry = this.registry;
+    var index = sheet.options.index;
+    if (registry.indexOf(sheet) !== -1) return;
+
+    if (registry.length === 0 || index >= this.index) {
+      registry.push(sheet);
+      return;
+    } // Find a position.
+
+
+    for (var i = 0; i < registry.length; i++) {
+      if (registry[i].options.index > index) {
+        registry.splice(i, 0, sheet);
+        return;
+      }
+    }
+  }
+  /**
+   * Reset the registry.
+   */
+  ;
+
+  _proto.reset = function reset() {
+    this.registry = [];
+  }
+  /**
+   * Remove a Style Sheet.
+   */
+  ;
+
+  _proto.remove = function remove(sheet) {
+    var index = this.registry.indexOf(sheet);
+    this.registry.splice(index, 1);
+  }
+  /**
+   * Convert all attached sheets to a CSS string.
+   */
+  ;
+
+  _proto.toString = function toString(_temp) {
+    var _ref = _temp === void 0 ? {} : _temp,
+        attached = _ref.attached,
+        options = objectWithoutPropertiesLoose_objectWithoutPropertiesLoose(_ref, ["attached"]);
+
+    var _getWhitespaceSymbols = getWhitespaceSymbols(options),
+        linebreak = _getWhitespaceSymbols.linebreak;
+
+    var css = '';
+
+    for (var i = 0; i < this.registry.length; i++) {
+      var sheet = this.registry[i];
+
+      if (attached != null && sheet.attached !== attached) {
+        continue;
+      }
+
+      if (css) css += linebreak;
+      css += sheet.toString(options);
+    }
+
+    return css;
+  };
+
+  createClass_createClass(SheetsRegistry, [{
+    key: "index",
+
+    /**
+     * Current highest index number.
+     */
+    get: function get() {
+      return this.registry.length === 0 ? 0 : this.registry[this.registry.length - 1].options.index;
+    }
+  }]);
+
+  return SheetsRegistry;
+}();
+
+/**
+ * This is a global sheets registry. Only DomRenderer will add sheets to it.
+ * On the server one should use an own SheetsRegistry instance and add the
+ * sheets to it, because you need to make sure to create a new registry for
+ * each request in order to not leak sheets across requests.
+ */
+
+var sheets = new SheetsRegistry();
+
+/* eslint-disable */
+
+/**
+ * Now that `globalThis` is available on most platforms
+ * (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis#browser_compatibility)
+ * we check for `globalThis` first. `globalThis` is necessary for jss
+ * to run in Agoric's secure version of JavaScript (SES). Under SES,
+ * `globalThis` exists, but `window`, `self`, and `Function('return
+ * this')()` are all undefined for security reasons.
+ *
+ * https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
+ */
+var globalThis$1 = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' && window.Math === Math ? window : typeof self !== 'undefined' && self.Math === Math ? self : Function('return this')();
+
+var ns = '2f1acc6c3a606b082e5eef5e54414ffb';
+if (globalThis$1[ns] == null) globalThis$1[ns] = 0; // Bundle may contain multiple JSS versions at the same time. In order to identify
+// the current version with just one short number and use it for classes generation
+// we use a counter. Also it is more accurate, because user can manually reevaluate
+// the module.
+
+var moduleId = globalThis$1[ns]++;
+
+var maxRules = 1e10;
+/**
+ * Returns a function which generates unique class names based on counters.
+ * When new generator function is created, rule counter is reseted.
+ * We need to reset the rule counter for SSR for each request.
+ */
+
+var createGenerateId = function createGenerateId(options) {
+  if (options === void 0) {
+    options = {};
+  }
+
+  var ruleCounter = 0;
+
+  var generateId = function generateId(rule, sheet) {
+    ruleCounter += 1;
+
+    if (ruleCounter > maxRules) {
+       false ? 0 : void 0;
+    }
+
+    var jssId = '';
+    var prefix = '';
+
+    if (sheet) {
+      if (sheet.options.classNamePrefix) {
+        prefix = sheet.options.classNamePrefix;
+      }
+
+      if (sheet.options.jss.id != null) {
+        jssId = String(sheet.options.jss.id);
+      }
+    }
+
+    if (options.minify) {
+      // Using "c" because a number can't be the first char in a class name.
+      return "" + (prefix || 'c') + moduleId + jssId + ruleCounter;
+    }
+
+    return prefix + rule.key + "-" + moduleId + (jssId ? "-" + jssId : '') + "-" + ruleCounter;
+  };
+
+  return generateId;
+};
+
+/**
+ * Cache the value from the first time a function is called.
+ */
+
+var memoize = function memoize(fn) {
+  var value;
+  return function () {
+    if (!value) value = fn();
+    return value;
+  };
+};
+/**
+ * Get a style property value.
+ */
+
+
+var getPropertyValue = function getPropertyValue(cssRule, prop) {
+  try {
+    // Support CSSTOM.
+    if (cssRule.attributeStyleMap) {
+      return cssRule.attributeStyleMap.get(prop);
+    }
+
+    return cssRule.style.getPropertyValue(prop);
+  } catch (err) {
+    // IE may throw if property is unknown.
+    return '';
+  }
+};
+/**
+ * Set a style property.
+ */
+
+
+var setProperty = function setProperty(cssRule, prop, value) {
+  try {
+    var cssValue = value;
+
+    if (Array.isArray(value)) {
+      cssValue = toCssValue(value, true);
+
+      if (value[value.length - 1] === '!important') {
+        cssRule.style.setProperty(prop, cssValue, 'important');
+        return true;
+      }
+    } // Support CSSTOM.
+
+
+    if (cssRule.attributeStyleMap) {
+      cssRule.attributeStyleMap.set(prop, cssValue);
+    } else {
+      cssRule.style.setProperty(prop, cssValue);
+    }
+  } catch (err) {
+    // IE may throw if property is unknown.
+    return false;
+  }
+
+  return true;
+};
+/**
+ * Remove a style property.
+ */
+
+
+var removeProperty = function removeProperty(cssRule, prop) {
+  try {
+    // Support CSSTOM.
+    if (cssRule.attributeStyleMap) {
+      cssRule.attributeStyleMap.delete(prop);
+    } else {
+      cssRule.style.removeProperty(prop);
+    }
+  } catch (err) {
+     false ? 0 : void 0;
+  }
+};
+/**
+ * Set the selector.
+ */
+
+
+var setSelector = function setSelector(cssRule, selectorText) {
+  cssRule.selectorText = selectorText; // Return false if setter was not successful.
+  // Currently works in chrome only.
+
+  return cssRule.selectorText === selectorText;
+};
+/**
+ * Gets the `head` element upon the first call and caches it.
+ * We assume it can't be null.
+ */
+
+
+var getHead = memoize(function () {
+  return document.querySelector('head');
+});
+/**
+ * Find attached sheet with an index higher than the passed one.
+ */
+
+function findHigherSheet(registry, options) {
+  for (var i = 0; i < registry.length; i++) {
+    var sheet = registry[i];
+
+    if (sheet.attached && sheet.options.index > options.index && sheet.options.insertionPoint === options.insertionPoint) {
+      return sheet;
+    }
+  }
+
+  return null;
+}
+/**
+ * Find attached sheet with the highest index.
+ */
+
+
+function findHighestSheet(registry, options) {
+  for (var i = registry.length - 1; i >= 0; i--) {
+    var sheet = registry[i];
+
+    if (sheet.attached && sheet.options.insertionPoint === options.insertionPoint) {
+      return sheet;
+    }
+  }
+
+  return null;
+}
+/**
+ * Find a comment with "jss" inside.
+ */
+
+
+function findCommentNode(text) {
+  var head = getHead();
+
+  for (var i = 0; i < head.childNodes.length; i++) {
+    var node = head.childNodes[i];
+
+    if (node.nodeType === 8 && node.nodeValue.trim() === text) {
+      return node;
+    }
+  }
+
+  return null;
+}
+/**
+ * Find a node before which we can insert the sheet.
+ */
+
+
+function findPrevNode(options) {
+  var registry = sheets.registry;
+
+  if (registry.length > 0) {
+    // Try to insert before the next higher sheet.
+    var sheet = findHigherSheet(registry, options);
+
+    if (sheet && sheet.renderer) {
+      return {
+        parent: sheet.renderer.element.parentNode,
+        node: sheet.renderer.element
+      };
+    } // Otherwise insert after the last attached.
+
+
+    sheet = findHighestSheet(registry, options);
+
+    if (sheet && sheet.renderer) {
+      return {
+        parent: sheet.renderer.element.parentNode,
+        node: sheet.renderer.element.nextSibling
+      };
+    }
+  } // Try to find a comment placeholder if registry is empty.
+
+
+  var insertionPoint = options.insertionPoint;
+
+  if (insertionPoint && typeof insertionPoint === 'string') {
+    var comment = findCommentNode(insertionPoint);
+
+    if (comment) {
+      return {
+        parent: comment.parentNode,
+        node: comment.nextSibling
+      };
+    } // If user specifies an insertion point and it can't be found in the document -
+    // bad specificity issues may appear.
+
+
+     false ? 0 : void 0;
+  }
+
+  return false;
+}
+/**
+ * Insert style element into the DOM.
+ */
+
+
+function insertStyle(style, options) {
+  var insertionPoint = options.insertionPoint;
+  var nextNode = findPrevNode(options);
+
+  if (nextNode !== false && nextNode.parent) {
+    nextNode.parent.insertBefore(style, nextNode.node);
+    return;
+  } // Works with iframes and any node types.
+
+
+  if (insertionPoint && typeof insertionPoint.nodeType === 'number') {
+    var insertionPointElement = insertionPoint;
+    var parentNode = insertionPointElement.parentNode;
+    if (parentNode) parentNode.insertBefore(style, insertionPointElement.nextSibling);else  false ? 0 : void 0;
+    return;
+  }
+
+  getHead().appendChild(style);
+}
+/**
+ * Read jss nonce setting from the page if the user has set it.
+ */
+
+
+var getNonce = memoize(function () {
+  var node = document.querySelector('meta[property="csp-nonce"]');
+  return node ? node.getAttribute('content') : null;
+});
+
+var _insertRule = function insertRule(container, rule, index) {
+  try {
+    if ('insertRule' in container) {
+      container.insertRule(rule, index);
+    } // Keyframes rule.
+    else if ('appendRule' in container) {
+        container.appendRule(rule);
+      }
+  } catch (err) {
+     false ? 0 : void 0;
+    return false;
+  }
+
+  return container.cssRules[index];
+};
+
+var getValidRuleInsertionIndex = function getValidRuleInsertionIndex(container, index) {
+  var maxIndex = container.cssRules.length; // In case previous insertion fails, passed index might be wrong
+
+  if (index === undefined || index > maxIndex) {
+    // eslint-disable-next-line no-param-reassign
+    return maxIndex;
+  }
+
+  return index;
+};
+
+var createStyle = function createStyle() {
+  var el = document.createElement('style'); // Without it, IE will have a broken source order specificity if we
+  // insert rules after we insert the style tag.
+  // It seems to kick-off the source order specificity algorithm.
+
+  el.textContent = '\n';
+  return el;
+};
+
+var DomRenderer =
+/*#__PURE__*/
+function () {
+  // Will be empty if link: true option is not set, because
+  // it is only for use together with insertRule API.
+  function DomRenderer(sheet) {
+    this.getPropertyValue = getPropertyValue;
+    this.setProperty = setProperty;
+    this.removeProperty = removeProperty;
+    this.setSelector = setSelector;
+    this.hasInsertedRules = false;
+    this.cssRules = [];
+    // There is no sheet when the renderer is used from a standalone StyleRule.
+    if (sheet) sheets.add(sheet);
+    this.sheet = sheet;
+
+    var _ref = this.sheet ? this.sheet.options : {},
+        media = _ref.media,
+        meta = _ref.meta,
+        element = _ref.element;
+
+    this.element = element || createStyle();
+    this.element.setAttribute('data-jss', '');
+    if (media) this.element.setAttribute('media', media);
+    if (meta) this.element.setAttribute('data-meta', meta);
+    var nonce = getNonce();
+    if (nonce) this.element.setAttribute('nonce', nonce);
+  }
+  /**
+   * Insert style element into render tree.
+   */
+
+
+  var _proto = DomRenderer.prototype;
+
+  _proto.attach = function attach() {
+    // In the case the element node is external and it is already in the DOM.
+    if (this.element.parentNode || !this.sheet) return;
+    insertStyle(this.element, this.sheet.options); // When rules are inserted using `insertRule` API, after `sheet.detach().attach()`
+    // most browsers create a new CSSStyleSheet, except of all IEs.
+
+    var deployed = Boolean(this.sheet && this.sheet.deployed);
+
+    if (this.hasInsertedRules && deployed) {
+      this.hasInsertedRules = false;
+      this.deploy();
+    }
+  }
+  /**
+   * Remove style element from render tree.
+   */
+  ;
+
+  _proto.detach = function detach() {
+    if (!this.sheet) return;
+    var parentNode = this.element.parentNode;
+    if (parentNode) parentNode.removeChild(this.element); // In the most browsers, rules inserted using insertRule() API will be lost when style element is removed.
+    // Though IE will keep them and we need a consistent behavior.
+
+    if (this.sheet.options.link) {
+      this.cssRules = [];
+      this.element.textContent = '\n';
+    }
+  }
+  /**
+   * Inject CSS string into element.
+   */
+  ;
+
+  _proto.deploy = function deploy() {
+    var sheet = this.sheet;
+    if (!sheet) return;
+
+    if (sheet.options.link) {
+      this.insertRules(sheet.rules);
+      return;
+    }
+
+    this.element.textContent = "\n" + sheet.toString() + "\n";
+  }
+  /**
+   * Insert RuleList into an element.
+   */
+  ;
+
+  _proto.insertRules = function insertRules(rules, nativeParent) {
+    for (var i = 0; i < rules.index.length; i++) {
+      this.insertRule(rules.index[i], i, nativeParent);
+    }
+  }
+  /**
+   * Insert a rule into element.
+   */
+  ;
+
+  _proto.insertRule = function insertRule(rule, index, nativeParent) {
+    if (nativeParent === void 0) {
+      nativeParent = this.element.sheet;
+    }
+
+    if (rule.rules) {
+      var parent = rule;
+      var latestNativeParent = nativeParent;
+
+      if (rule.type === 'conditional' || rule.type === 'keyframes') {
+        var _insertionIndex = getValidRuleInsertionIndex(nativeParent, index); // We need to render the container without children first.
+
+
+        latestNativeParent = _insertRule(nativeParent, parent.toString({
+          children: false
+        }), _insertionIndex);
+
+        if (latestNativeParent === false) {
+          return false;
+        }
+
+        this.refCssRule(rule, _insertionIndex, latestNativeParent);
+      }
+
+      this.insertRules(parent.rules, latestNativeParent);
+      return latestNativeParent;
+    }
+
+    var ruleStr = rule.toString();
+    if (!ruleStr) return false;
+    var insertionIndex = getValidRuleInsertionIndex(nativeParent, index);
+
+    var nativeRule = _insertRule(nativeParent, ruleStr, insertionIndex);
+
+    if (nativeRule === false) {
+      return false;
+    }
+
+    this.hasInsertedRules = true;
+    this.refCssRule(rule, insertionIndex, nativeRule);
+    return nativeRule;
+  };
+
+  _proto.refCssRule = function refCssRule(rule, index, cssRule) {
+    rule.renderable = cssRule; // We only want to reference the top level rules, deleteRule API doesn't support removing nested rules
+    // like rules inside media queries or keyframes
+
+    if (rule.options.parent instanceof StyleSheet) {
+      this.cssRules.splice(index, 0, cssRule);
+    }
+  }
+  /**
+   * Delete a rule.
+   */
+  ;
+
+  _proto.deleteRule = function deleteRule(cssRule) {
+    var sheet = this.element.sheet;
+    var index = this.indexOf(cssRule);
+    if (index === -1) return false;
+    sheet.deleteRule(index);
+    this.cssRules.splice(index, 1);
+    return true;
+  }
+  /**
+   * Get index of a CSS Rule.
+   */
+  ;
+
+  _proto.indexOf = function indexOf(cssRule) {
+    return this.cssRules.indexOf(cssRule);
+  }
+  /**
+   * Generate a new CSS rule and replace the existing one.
+   */
+  ;
+
+  _proto.replaceRule = function replaceRule(cssRule, rule) {
+    var index = this.indexOf(cssRule);
+    if (index === -1) return false;
+    this.element.sheet.deleteRule(index);
+    this.cssRules.splice(index, 1);
+    return this.insertRule(rule, index);
+  }
+  /**
+   * Get all rules elements.
+   */
+  ;
+
+  _proto.getRules = function getRules() {
+    return this.element.sheet.cssRules;
+  };
+
+  return DomRenderer;
+}();
+
+var instanceCounter = 0;
+
+var Jss =
+/*#__PURE__*/
+function () {
+  function Jss(options) {
+    this.id = instanceCounter++;
+    this.version = "10.9.0";
+    this.plugins = new PluginsRegistry();
+    this.options = {
+      id: {
+        minify: false
+      },
+      createGenerateId: createGenerateId,
+      Renderer: dist_module ? DomRenderer : null,
+      plugins: []
+    };
+    this.generateId = createGenerateId({
+      minify: false
+    });
+
+    for (var i = 0; i < plugins.length; i++) {
+      this.plugins.use(plugins[i], {
+        queue: 'internal'
+      });
+    }
+
+    this.setup(options);
+  }
+  /**
+   * Prepares various options, applies plugins.
+   * Should not be used twice on the same instance, because there is no plugins
+   * deduplication logic.
+   */
+
+
+  var _proto = Jss.prototype;
+
+  _proto.setup = function setup(options) {
+    if (options === void 0) {
+      options = {};
+    }
+
+    if (options.createGenerateId) {
+      this.options.createGenerateId = options.createGenerateId;
+    }
+
+    if (options.id) {
+      this.options.id = extends_extends({}, this.options.id, options.id);
+    }
+
+    if (options.createGenerateId || options.id) {
+      this.generateId = this.options.createGenerateId(this.options.id);
+    }
+
+    if (options.insertionPoint != null) this.options.insertionPoint = options.insertionPoint;
+
+    if ('Renderer' in options) {
+      this.options.Renderer = options.Renderer;
+    } // eslint-disable-next-line prefer-spread
+
+
+    if (options.plugins) this.use.apply(this, options.plugins);
+    return this;
+  }
+  /**
+   * Create a Style Sheet.
+   */
+  ;
+
+  _proto.createStyleSheet = function createStyleSheet(styles, options) {
+    if (options === void 0) {
+      options = {};
+    }
+
+    var _options = options,
+        index = _options.index;
+
+    if (typeof index !== 'number') {
+      index = sheets.index === 0 ? 0 : sheets.index + 1;
+    }
+
+    var sheet = new StyleSheet(styles, extends_extends({}, options, {
+      jss: this,
+      generateId: options.generateId || this.generateId,
+      insertionPoint: this.options.insertionPoint,
+      Renderer: this.options.Renderer,
+      index: index
+    }));
+    this.plugins.onProcessSheet(sheet);
+    return sheet;
+  }
+  /**
+   * Detach the Style Sheet and remove it from the registry.
+   */
+  ;
+
+  _proto.removeStyleSheet = function removeStyleSheet(sheet) {
+    sheet.detach();
+    sheets.remove(sheet);
+    return this;
+  }
+  /**
+   * Create a rule without a Style Sheet.
+   * [Deprecated] will be removed in the next major version.
+   */
+  ;
+
+  _proto.createRule = function createRule$1(name, style, options) {
+    if (style === void 0) {
+      style = {};
+    }
+
+    if (options === void 0) {
+      options = {};
+    }
+
+    // Enable rule without name for inline styles.
+    if (typeof name === 'object') {
+      return this.createRule(undefined, name, style);
+    }
+
+    var ruleOptions = extends_extends({}, options, {
+      name: name,
+      jss: this,
+      Renderer: this.options.Renderer
+    });
+
+    if (!ruleOptions.generateId) ruleOptions.generateId = this.generateId;
+    if (!ruleOptions.classes) ruleOptions.classes = {};
+    if (!ruleOptions.keyframes) ruleOptions.keyframes = {};
+
+    var rule = createRule(name, style, ruleOptions);
+
+    if (rule) this.plugins.onProcessRule(rule);
+    return rule;
+  }
+  /**
+   * Register plugin. Passed function will be invoked with a rule instance.
+   */
+  ;
+
+  _proto.use = function use() {
+    var _this = this;
+
+    for (var _len = arguments.length, plugins = new Array(_len), _key = 0; _key < _len; _key++) {
+      plugins[_key] = arguments[_key];
+    }
+
+    plugins.forEach(function (plugin) {
+      _this.plugins.use(plugin);
+    });
+    return this;
+  };
+
+  return Jss;
+}();
+
+var createJss = function createJss(options) {
+  return new Jss(options);
+};
+
+/**
+ * SheetsManager is like a WeakMap which is designed to count StyleSheet
+ * instances and attach/detach automatically.
+ * Used in react-jss.
+ */
+
+var SheetsManager =
+/*#__PURE__*/
+(/* unused pure expression or super */ null && (function () {
+  function SheetsManager() {
+    this.length = 0;
+    this.sheets = new WeakMap();
+  }
+
+  var _proto = SheetsManager.prototype;
+
+  _proto.get = function get(key) {
+    var entry = this.sheets.get(key);
+    return entry && entry.sheet;
+  };
+
+  _proto.add = function add(key, sheet) {
+    if (this.sheets.has(key)) return;
+    this.length++;
+    this.sheets.set(key, {
+      sheet: sheet,
+      refs: 0
+    });
+  };
+
+  _proto.manage = function manage(key) {
+    var entry = this.sheets.get(key);
+
+    if (entry) {
+      if (entry.refs === 0) {
+        entry.sheet.attach();
+      }
+
+      entry.refs++;
+      return entry.sheet;
+    }
+
+    warning(false, "[JSS] SheetsManager: can't find sheet to manage");
+    return undefined;
+  };
+
+  _proto.unmanage = function unmanage(key) {
+    var entry = this.sheets.get(key);
+
+    if (entry) {
+      if (entry.refs > 0) {
+        entry.refs--;
+        if (entry.refs === 0) entry.sheet.detach();
+      }
+    } else {
+      warning(false, "SheetsManager: can't find sheet to unmanage");
+    }
+  };
+
+  _createClass(SheetsManager, [{
+    key: "size",
+    get: function get() {
+      return this.length;
+    }
+  }]);
+
+  return SheetsManager;
+}()));
+
+/**
+* Export a constant indicating if this browser has CSSTOM support.
+* https://developers.google.com/web/updates/2018/03/cssom
+*/
+var hasCSSTOMSupport = typeof CSS === 'object' && CSS != null && 'number' in CSS;
+
+/**
+ * Extracts a styles object with only props that contain function values.
+ */
+function getDynamicStyles(styles) {
+  var to = null;
+
+  for (var key in styles) {
+    var value = styles[key];
+    var type = typeof value;
+
+    if (type === 'function') {
+      if (!to) to = {};
+      to[key] = value;
+    } else if (type === 'object' && value !== null && !Array.isArray(value)) {
+      var extracted = getDynamicStyles(value);
+
+      if (extracted) {
+        if (!to) to = {};
+        to[key] = extracted;
+      }
+    }
+  }
+
+  return to;
+}
+
+/**
+ * A better abstraction over CSS.
+ *
+ * @copyright Oleg Isonen (Slobodskoi) / Isonen 2014-present
+ * @website https://github.com/cssinjs/jss
+ * @license MIT
+ */
+var index = createJss();
+
+/* harmony default export */ const jss_esm = ((/* unused pure expression or super */ null && (index)));
+
+
+;// CONCATENATED MODULE: ./node_modules/@mui/styles/mergeClasses/mergeClasses.js
+
+
+function mergeClasses(options = {}) {
+  const {
+    baseClasses,
+    newClasses,
+    Component
+  } = options;
+
+  if (!newClasses) {
+    return baseClasses;
+  }
+
+  const nextClasses = extends_extends({}, baseClasses);
+
+  if (false) {}
+
+  Object.keys(newClasses).forEach(key => {
+    if (false) {}
+
+    if (newClasses[key]) {
+      nextClasses[key] = `${baseClasses[key]} ${newClasses[key]}`;
+    }
+  });
+  return nextClasses;
+}
+;// CONCATENATED MODULE: ./node_modules/@mui/styles/makeStyles/multiKeyStore.js
+// Used https://github.com/thinkloop/multi-key-cache as inspiration
+const multiKeyStore = {
+  set: (cache, key1, key2, value) => {
+    let subCache = cache.get(key1);
+
+    if (!subCache) {
+      subCache = new Map();
+      cache.set(key1, subCache);
+    }
+
+    subCache.set(key2, value);
+  },
+  get: (cache, key1, key2) => {
+    const subCache = cache.get(key1);
+    return subCache ? subCache.get(key2) : undefined;
+  },
+  delete: (cache, key1, key2) => {
+    const subCache = cache.get(key1);
+    subCache.delete(key2);
+  }
+};
+/* harmony default export */ const makeStyles_multiKeyStore = (multiKeyStore);
+;// CONCATENATED MODULE: ./node_modules/@mui/private-theming/useTheme/ThemeContext.js
+
+const ThemeContext = /*#__PURE__*/external_cgpv_react_.createContext(null);
+if (false) {}
+/* harmony default export */ const useTheme_ThemeContext = (ThemeContext);
+;// CONCATENATED MODULE: ./node_modules/@mui/private-theming/useTheme/useTheme.js
+
+
+function useTheme() {
+  const theme = external_cgpv_react_.useContext(useTheme_ThemeContext);
+  if (false) {}
+  return theme;
+}
+;// CONCATENATED MODULE: ./node_modules/@mui/private-theming/ThemeProvider/nested.js
+const hasSymbol = typeof Symbol === 'function' && Symbol.for;
+/* harmony default export */ const nested = (hasSymbol ? Symbol.for('mui.nested') : '__THEME_NESTED__');
+;// CONCATENATED MODULE: ./node_modules/@mui/styles/createGenerateClassName/createGenerateClassName.js
+
+/**
+ * This is the list of the style rule name we use as drop in replacement for the built-in
+ * pseudo classes (:checked, :disabled, :focused, etc.).
+ *
+ * Why do they exist in the first place?
+ * These classes are used at a specificity of 2.
+ * It allows them to override previously defined styles as well as
+ * being untouched by simple user overrides.
+ */
+
+const stateClasses = ['checked', 'disabled', 'error', 'focused', 'focusVisible', 'required', 'expanded', 'selected']; // Returns a function which generates unique class names based on counters.
+// When new generator function is created, rule counter is reset.
+// We need to reset the rule counter for SSR for each request.
+//
+// It's inspired by
+// https://github.com/cssinjs/jss/blob/4e6a05dd3f7b6572fdd3ab216861d9e446c20331/src/utils/createGenerateClassName.js
+
+function createGenerateClassName(options = {}) {
+  const {
+    disableGlobal = false,
+    productionPrefix = 'jss',
+    seed = ''
+  } = options;
+  const seedPrefix = seed === '' ? '' : `${seed}-`;
+  let ruleCounter = 0;
+
+  const getNextCounterId = () => {
+    ruleCounter += 1;
+
+    if (false) {}
+
+    return ruleCounter;
+  };
+
+  return (rule, styleSheet) => {
+    const name = styleSheet.options.name; // Is a global static MUI style?
+
+    if (name && name.indexOf('Mui') === 0 && !styleSheet.options.link && !disableGlobal) {
+      // We can use a shorthand class name, we never use the keys to style the components.
+      if (stateClasses.indexOf(rule.key) !== -1) {
+        return `Mui-${rule.key}`;
+      }
+
+      const prefix = `${seedPrefix}${name}-${rule.key}`;
+
+      if (!styleSheet.options.theme[nested] || seed !== '') {
+        return prefix;
+      }
+
+      return `${prefix}-${getNextCounterId()}`;
+    }
+
+    if (true) {
+      return `${seedPrefix}${productionPrefix}${getNextCounterId()}`;
+    }
+
+    const suffix = `${rule.key}-${getNextCounterId()}`; // Help with debuggability.
+
+    if (styleSheet.options.classNamePrefix) {
+      return `${seedPrefix}${styleSheet.options.classNamePrefix}-${suffix}`;
+    }
+
+    return `${seedPrefix}${suffix}`;
+  };
+}
+;// CONCATENATED MODULE: ./node_modules/jss-plugin-rule-value-function/dist/jss-plugin-rule-value-function.esm.js
+
+
+
+var now = Date.now();
+var fnValuesNs = "fnValues" + now;
+var fnRuleNs = "fnStyle" + ++now;
+
+var functionPlugin = function functionPlugin() {
+  return {
+    onCreateRule: function onCreateRule(name, decl, options) {
+      if (typeof decl !== 'function') return null;
+      var rule = createRule(name, {}, options);
+      rule[fnRuleNs] = decl;
+      return rule;
+    },
+    onProcessStyle: function onProcessStyle(style, rule) {
+      // We need to extract function values from the declaration, so that we can keep core unaware of them.
+      // We need to do that only once.
+      // We don't need to extract functions on each style update, since this can happen only once.
+      // We don't support function values inside of function rules.
+      if (fnValuesNs in rule || fnRuleNs in rule) return style;
+      var fnValues = {};
+
+      for (var prop in style) {
+        var value = style[prop];
+        if (typeof value !== 'function') continue;
+        delete style[prop];
+        fnValues[prop] = value;
+      }
+
+      rule[fnValuesNs] = fnValues;
+      return style;
+    },
+    onUpdate: function onUpdate(data, rule, sheet, options) {
+      var styleRule = rule;
+      var fnRule = styleRule[fnRuleNs]; // If we have a style function, the entire rule is dynamic and style object
+      // will be returned from that function.
+
+      if (fnRule) {
+        // Empty object will remove all currently defined props
+        // in case function rule returns a falsy value.
+        styleRule.style = fnRule(data) || {};
+
+        if (false) { var prop; }
+      }
+
+      var fnValues = styleRule[fnValuesNs]; // If we have a fn values map, it is a rule with function values.
+
+      if (fnValues) {
+        for (var _prop in fnValues) {
+          styleRule.prop(_prop, fnValues[_prop](data), options);
+        }
+      }
+    }
+  };
+};
+
+/* harmony default export */ const jss_plugin_rule_value_function_esm = (functionPlugin);
+
+;// CONCATENATED MODULE: ./node_modules/jss-plugin-global/dist/jss-plugin-global.esm.js
+
+
+
+var at = '@global';
+var atPrefix = '@global ';
+
+var GlobalContainerRule =
+/*#__PURE__*/
+function () {
+  function GlobalContainerRule(key, styles, options) {
+    this.type = 'global';
+    this.at = at;
+    this.isProcessed = false;
+    this.key = key;
+    this.options = options;
+    this.rules = new RuleList(extends_extends({}, options, {
+      parent: this
+    }));
+
+    for (var selector in styles) {
+      this.rules.add(selector, styles[selector]);
+    }
+
+    this.rules.process();
+  }
+  /**
+   * Get a rule.
+   */
+
+
+  var _proto = GlobalContainerRule.prototype;
+
+  _proto.getRule = function getRule(name) {
+    return this.rules.get(name);
+  }
+  /**
+   * Create and register rule, run plugins.
+   */
+  ;
+
+  _proto.addRule = function addRule(name, style, options) {
+    var rule = this.rules.add(name, style, options);
+    if (rule) this.options.jss.plugins.onProcessRule(rule);
+    return rule;
+  }
+  /**
+   * Replace rule, run plugins.
+   */
+  ;
+
+  _proto.replaceRule = function replaceRule(name, style, options) {
+    var newRule = this.rules.replace(name, style, options);
+    if (newRule) this.options.jss.plugins.onProcessRule(newRule);
+    return newRule;
+  }
+  /**
+   * Get index of a rule.
+   */
+  ;
+
+  _proto.indexOf = function indexOf(rule) {
+    return this.rules.indexOf(rule);
+  }
+  /**
+   * Generates a CSS string.
+   */
+  ;
+
+  _proto.toString = function toString(options) {
+    return this.rules.toString(options);
+  };
+
+  return GlobalContainerRule;
+}();
+
+var GlobalPrefixedRule =
+/*#__PURE__*/
+function () {
+  function GlobalPrefixedRule(key, style, options) {
+    this.type = 'global';
+    this.at = at;
+    this.isProcessed = false;
+    this.key = key;
+    this.options = options;
+    var selector = key.substr(atPrefix.length);
+    this.rule = options.jss.createRule(selector, style, extends_extends({}, options, {
+      parent: this
+    }));
+  }
+
+  var _proto2 = GlobalPrefixedRule.prototype;
+
+  _proto2.toString = function toString(options) {
+    return this.rule ? this.rule.toString(options) : '';
+  };
+
+  return GlobalPrefixedRule;
+}();
+
+var separatorRegExp = /\s*,\s*/g;
+
+function addScope(selector, scope) {
+  var parts = selector.split(separatorRegExp);
+  var scoped = '';
+
+  for (var i = 0; i < parts.length; i++) {
+    scoped += scope + " " + parts[i].trim();
+    if (parts[i + 1]) scoped += ', ';
+  }
+
+  return scoped;
+}
+
+function handleNestedGlobalContainerRule(rule, sheet) {
+  var options = rule.options,
+      style = rule.style;
+  var rules = style ? style[at] : null;
+  if (!rules) return;
+
+  for (var name in rules) {
+    sheet.addRule(name, rules[name], extends_extends({}, options, {
+      selector: addScope(name, rule.selector)
+    }));
+  }
+
+  delete style[at];
+}
+
+function handlePrefixedGlobalRule(rule, sheet) {
+  var options = rule.options,
+      style = rule.style;
+
+  for (var prop in style) {
+    if (prop[0] !== '@' || prop.substr(0, at.length) !== at) continue;
+    var selector = addScope(prop.substr(at.length), rule.selector);
+    sheet.addRule(selector, style[prop], extends_extends({}, options, {
+      selector: selector
+    }));
+    delete style[prop];
+  }
+}
+/**
+ * Convert nested rules to separate, remove them from original styles.
+ */
+
+
+function jssGlobal() {
+  function onCreateRule(name, styles, options) {
+    if (!name) return null;
+
+    if (name === at) {
+      return new GlobalContainerRule(name, styles, options);
+    }
+
+    if (name[0] === '@' && name.substr(0, atPrefix.length) === atPrefix) {
+      return new GlobalPrefixedRule(name, styles, options);
+    }
+
+    var parent = options.parent;
+
+    if (parent) {
+      if (parent.type === 'global' || parent.options.parent && parent.options.parent.type === 'global') {
+        options.scoped = false;
+      }
+    }
+
+    if (!options.selector && options.scoped === false) {
+      options.selector = name;
+    }
+
+    return null;
+  }
+
+  function onProcessRule(rule, sheet) {
+    if (rule.type !== 'style' || !sheet) return;
+    handleNestedGlobalContainerRule(rule, sheet);
+    handlePrefixedGlobalRule(rule, sheet);
+  }
+
+  return {
+    onCreateRule: onCreateRule,
+    onProcessRule: onProcessRule
+  };
+}
+
+/* harmony default export */ const jss_plugin_global_esm = (jssGlobal);
+
+;// CONCATENATED MODULE: ./node_modules/jss-plugin-nested/dist/jss-plugin-nested.esm.js
+
+
+
+var jss_plugin_nested_esm_separatorRegExp = /\s*,\s*/g;
+var parentRegExp = /&/g;
+var jss_plugin_nested_esm_refRegExp = /\$([\w-]+)/g;
+/**
+ * Convert nested rules to separate, remove them from original styles.
+ */
+
+function jssNested() {
+  // Get a function to be used for $ref replacement.
+  function getReplaceRef(container, sheet) {
+    return function (match, key) {
+      var rule = container.getRule(key) || sheet && sheet.getRule(key);
+
+      if (rule) {
+        return rule.selector;
+      }
+
+       false ? 0 : void 0;
+      return key;
+    };
+  }
+
+  function replaceParentRefs(nestedProp, parentProp) {
+    var parentSelectors = parentProp.split(jss_plugin_nested_esm_separatorRegExp);
+    var nestedSelectors = nestedProp.split(jss_plugin_nested_esm_separatorRegExp);
+    var result = '';
+
+    for (var i = 0; i < parentSelectors.length; i++) {
+      var parent = parentSelectors[i];
+
+      for (var j = 0; j < nestedSelectors.length; j++) {
+        var nested = nestedSelectors[j];
+        if (result) result += ', '; // Replace all & by the parent or prefix & with the parent.
+
+        result += nested.indexOf('&') !== -1 ? nested.replace(parentRegExp, parent) : parent + " " + nested;
+      }
+    }
+
+    return result;
+  }
+
+  function getOptions(rule, container, prevOptions) {
+    // Options has been already created, now we only increase index.
+    if (prevOptions) return extends_extends({}, prevOptions, {
+      index: prevOptions.index + 1
+    });
+    var nestingLevel = rule.options.nestingLevel;
+    nestingLevel = nestingLevel === undefined ? 1 : nestingLevel + 1;
+
+    var options = extends_extends({}, rule.options, {
+      nestingLevel: nestingLevel,
+      index: container.indexOf(rule) + 1 // We don't need the parent name to be set options for chlid.
+
+    });
+
+    delete options.name;
+    return options;
+  }
+
+  function onProcessStyle(style, rule, sheet) {
+    if (rule.type !== 'style') return style;
+    var styleRule = rule;
+    var container = styleRule.options.parent;
+    var options;
+    var replaceRef;
+
+    for (var prop in style) {
+      var isNested = prop.indexOf('&') !== -1;
+      var isNestedConditional = prop[0] === '@';
+      if (!isNested && !isNestedConditional) continue;
+      options = getOptions(styleRule, container, options);
+
+      if (isNested) {
+        var selector = replaceParentRefs(prop, styleRule.selector); // Lazily create the ref replacer function just once for
+        // all nested rules within the sheet.
+
+        if (!replaceRef) replaceRef = getReplaceRef(container, sheet); // Replace all $refs.
+
+        selector = selector.replace(jss_plugin_nested_esm_refRegExp, replaceRef);
+        var name = styleRule.key + "-" + prop;
+
+        if ('replaceRule' in container) {
+          // for backward compatibility
+          container.replaceRule(name, style[prop], extends_extends({}, options, {
+            selector: selector
+          }));
+        } else {
+          container.addRule(name, style[prop], extends_extends({}, options, {
+            selector: selector
+          }));
+        }
+      } else if (isNestedConditional) {
+        // Place conditional right after the parent rule to ensure right ordering.
+        container.addRule(prop, {}, options).addRule(styleRule.key, style[prop], {
+          selector: styleRule.selector
+        });
+      }
+
+      delete style[prop];
+    }
+
+    return style;
+  }
+
+  return {
+    onProcessStyle: onProcessStyle
+  };
+}
+
+/* harmony default export */ const jss_plugin_nested_esm = (jssNested);
+
+;// CONCATENATED MODULE: ./node_modules/hyphenate-style-name/index.js
+/* eslint-disable no-var, prefer-template */
+var uppercasePattern = /[A-Z]/g
+var msPattern = /^ms-/
+var cache = {}
+
+function toHyphenLower(match) {
+  return '-' + match.toLowerCase()
+}
+
+function hyphenateStyleName(name) {
+  if (cache.hasOwnProperty(name)) {
+    return cache[name]
+  }
+
+  var hName = name.replace(uppercasePattern, toHyphenLower)
+  return (cache[name] = msPattern.test(hName) ? '-' + hName : hName)
+}
+
+/* harmony default export */ const hyphenate_style_name = (hyphenateStyleName);
+
+;// CONCATENATED MODULE: ./node_modules/jss-plugin-camel-case/dist/jss-plugin-camel-case.esm.js
+
+
+/**
+ * Convert camel cased property names to dash separated.
+ */
+
+function convertCase(style) {
+  var converted = {};
+
+  for (var prop in style) {
+    var key = prop.indexOf('--') === 0 ? prop : hyphenate_style_name(prop);
+    converted[key] = style[prop];
+  }
+
+  if (style.fallbacks) {
+    if (Array.isArray(style.fallbacks)) converted.fallbacks = style.fallbacks.map(convertCase);else converted.fallbacks = convertCase(style.fallbacks);
+  }
+
+  return converted;
+}
+/**
+ * Allow camel cased property names by converting them back to dasherized.
+ */
+
+
+function camelCase() {
+  function onProcessStyle(style) {
+    if (Array.isArray(style)) {
+      // Handle rules like @font-face, which can have multiple styles in an array
+      for (var index = 0; index < style.length; index++) {
+        style[index] = convertCase(style[index]);
+      }
+
+      return style;
+    }
+
+    return convertCase(style);
+  }
+
+  function onChangeValue(value, prop, rule) {
+    if (prop.indexOf('--') === 0) {
+      return value;
+    }
+
+    var hyphenatedProp = hyphenate_style_name(prop); // There was no camel case in place
+
+    if (prop === hyphenatedProp) return value;
+    rule.prop(hyphenatedProp, value); // Core will ignore that property value we set the proper one above.
+
+    return null;
+  }
+
+  return {
+    onProcessStyle: onProcessStyle,
+    onChangeValue: onChangeValue
+  };
+}
+
+/* harmony default export */ const jss_plugin_camel_case_esm = (camelCase);
+
+;// CONCATENATED MODULE: ./node_modules/jss-plugin-default-unit/dist/jss-plugin-default-unit.esm.js
+
+
+var px = hasCSSTOMSupport && CSS ? CSS.px : 'px';
+var ms = hasCSSTOMSupport && CSS ? CSS.ms : 'ms';
+var percent = hasCSSTOMSupport && CSS ? CSS.percent : '%';
+/**
+ * Generated jss-plugin-default-unit CSS property units
+ */
+
+var defaultUnits = {
+  // Animation properties
+  'animation-delay': ms,
+  'animation-duration': ms,
+  // Background properties
+  'background-position': px,
+  'background-position-x': px,
+  'background-position-y': px,
+  'background-size': px,
+  // Border Properties
+  border: px,
+  'border-bottom': px,
+  'border-bottom-left-radius': px,
+  'border-bottom-right-radius': px,
+  'border-bottom-width': px,
+  'border-left': px,
+  'border-left-width': px,
+  'border-radius': px,
+  'border-right': px,
+  'border-right-width': px,
+  'border-top': px,
+  'border-top-left-radius': px,
+  'border-top-right-radius': px,
+  'border-top-width': px,
+  'border-width': px,
+  'border-block': px,
+  'border-block-end': px,
+  'border-block-end-width': px,
+  'border-block-start': px,
+  'border-block-start-width': px,
+  'border-block-width': px,
+  'border-inline': px,
+  'border-inline-end': px,
+  'border-inline-end-width': px,
+  'border-inline-start': px,
+  'border-inline-start-width': px,
+  'border-inline-width': px,
+  'border-start-start-radius': px,
+  'border-start-end-radius': px,
+  'border-end-start-radius': px,
+  'border-end-end-radius': px,
+  // Margin properties
+  margin: px,
+  'margin-bottom': px,
+  'margin-left': px,
+  'margin-right': px,
+  'margin-top': px,
+  'margin-block': px,
+  'margin-block-end': px,
+  'margin-block-start': px,
+  'margin-inline': px,
+  'margin-inline-end': px,
+  'margin-inline-start': px,
+  // Padding properties
+  padding: px,
+  'padding-bottom': px,
+  'padding-left': px,
+  'padding-right': px,
+  'padding-top': px,
+  'padding-block': px,
+  'padding-block-end': px,
+  'padding-block-start': px,
+  'padding-inline': px,
+  'padding-inline-end': px,
+  'padding-inline-start': px,
+  // Mask properties
+  'mask-position-x': px,
+  'mask-position-y': px,
+  'mask-size': px,
+  // Width and height properties
+  height: px,
+  width: px,
+  'min-height': px,
+  'max-height': px,
+  'min-width': px,
+  'max-width': px,
+  // Position properties
+  bottom: px,
+  left: px,
+  top: px,
+  right: px,
+  inset: px,
+  'inset-block': px,
+  'inset-block-end': px,
+  'inset-block-start': px,
+  'inset-inline': px,
+  'inset-inline-end': px,
+  'inset-inline-start': px,
+  // Shadow properties
+  'box-shadow': px,
+  'text-shadow': px,
+  // Column properties
+  'column-gap': px,
+  'column-rule': px,
+  'column-rule-width': px,
+  'column-width': px,
+  // Font and text properties
+  'font-size': px,
+  'font-size-delta': px,
+  'letter-spacing': px,
+  'text-decoration-thickness': px,
+  'text-indent': px,
+  'text-stroke': px,
+  'text-stroke-width': px,
+  'word-spacing': px,
+  // Motion properties
+  motion: px,
+  'motion-offset': px,
+  // Outline properties
+  outline: px,
+  'outline-offset': px,
+  'outline-width': px,
+  // Perspective properties
+  perspective: px,
+  'perspective-origin-x': percent,
+  'perspective-origin-y': percent,
+  // Transform properties
+  'transform-origin': percent,
+  'transform-origin-x': percent,
+  'transform-origin-y': percent,
+  'transform-origin-z': percent,
+  // Transition properties
+  'transition-delay': ms,
+  'transition-duration': ms,
+  // Alignment properties
+  'vertical-align': px,
+  'flex-basis': px,
+  // Some random properties
+  'shape-margin': px,
+  size: px,
+  gap: px,
+  // Grid properties
+  grid: px,
+  'grid-gap': px,
+  'row-gap': px,
+  'grid-row-gap': px,
+  'grid-column-gap': px,
+  'grid-template-rows': px,
+  'grid-template-columns': px,
+  'grid-auto-rows': px,
+  'grid-auto-columns': px,
+  // Not existing properties.
+  // Used to avoid issues with jss-plugin-expand integration.
+  'box-shadow-x': px,
+  'box-shadow-y': px,
+  'box-shadow-blur': px,
+  'box-shadow-spread': px,
+  'font-line-height': px,
+  'text-shadow-x': px,
+  'text-shadow-y': px,
+  'text-shadow-blur': px
+};
+
+/**
+ * Clones the object and adds a camel cased property version.
+ */
+
+function addCamelCasedVersion(obj) {
+  var regExp = /(-[a-z])/g;
+
+  var replace = function replace(str) {
+    return str[1].toUpperCase();
+  };
+
+  var newObj = {};
+
+  for (var key in obj) {
+    newObj[key] = obj[key];
+    newObj[key.replace(regExp, replace)] = obj[key];
+  }
+
+  return newObj;
+}
+
+var units = addCamelCasedVersion(defaultUnits);
+/**
+ * Recursive deep style passing function
+ */
+
+function iterate(prop, value, options) {
+  if (value == null) return value;
+
+  if (Array.isArray(value)) {
+    for (var i = 0; i < value.length; i++) {
+      value[i] = iterate(prop, value[i], options);
+    }
+  } else if (typeof value === 'object') {
+    if (prop === 'fallbacks') {
+      for (var innerProp in value) {
+        value[innerProp] = iterate(innerProp, value[innerProp], options);
+      }
+    } else {
+      for (var _innerProp in value) {
+        value[_innerProp] = iterate(prop + "-" + _innerProp, value[_innerProp], options);
+      }
+    } // eslint-disable-next-line no-restricted-globals
+
+  } else if (typeof value === 'number' && isNaN(value) === false) {
+    var unit = options[prop] || units[prop]; // Add the unit if available, except for the special case of 0px.
+
+    if (unit && !(value === 0 && unit === px)) {
+      return typeof unit === 'function' ? unit(value).toString() : "" + value + unit;
+    }
+
+    return value.toString();
+  }
+
+  return value;
+}
+/**
+ * Add unit to numeric values.
+ */
+
+
+function defaultUnit(options) {
+  if (options === void 0) {
+    options = {};
+  }
+
+  var camelCasedOptions = addCamelCasedVersion(options);
+
+  function onProcessStyle(style, rule) {
+    if (rule.type !== 'style') return style;
+
+    for (var prop in style) {
+      style[prop] = iterate(prop, style[prop], camelCasedOptions);
+    }
+
+    return style;
+  }
+
+  function onChangeValue(value, prop) {
+    return iterate(prop, value, camelCasedOptions);
+  }
+
+  return {
+    onProcessStyle: onProcessStyle,
+    onChangeValue: onChangeValue
+  };
+}
+
+/* harmony default export */ const jss_plugin_default_unit_esm = (defaultUnit);
+
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+  return arr2;
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/iterableToArray.js
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js
+
+
+
+
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+}
+;// CONCATENATED MODULE: ./node_modules/css-vendor/dist/css-vendor.esm.js
+
+
+
+// Export javascript style and css style vendor prefixes.
+var js = '';
+var css = '';
+var vendor = '';
+var browser = '';
+var isTouch = dist_module && 'ontouchstart' in document.documentElement; // We should not do anything if required serverside.
+
+if (dist_module) {
+  // Order matters. We need to check Webkit the last one because
+  // other vendors use to add Webkit prefixes to some properties
+  var jsCssMap = {
+    Moz: '-moz-',
+    ms: '-ms-',
+    O: '-o-',
+    Webkit: '-webkit-'
+  };
+
+  var _document$createEleme = document.createElement('p'),
+      style = _document$createEleme.style;
+
+  var testProp = 'Transform';
+
+  for (var key in jsCssMap) {
+    if (key + testProp in style) {
+      js = key;
+      css = jsCssMap[key];
+      break;
+    }
+  } // Correctly detect the Edge browser.
+
+
+  if (js === 'Webkit' && 'msHyphens' in style) {
+    js = 'ms';
+    css = jsCssMap.ms;
+    browser = 'edge';
+  } // Correctly detect the Safari browser.
+
+
+  if (js === 'Webkit' && '-apple-trailing-word' in style) {
+    vendor = 'apple';
+  }
+}
+/**
+ * Vendor prefix string for the current browser.
+ *
+ * @type {{js: String, css: String, vendor: String, browser: String}}
+ * @api public
+ */
+
+
+var prefix = {
+  js: js,
+  css: css,
+  vendor: vendor,
+  browser: browser,
+  isTouch: isTouch
+};
+
+/**
+ * Test if a keyframe at-rule should be prefixed or not
+ *
+ * @param {String} vendor prefix string for the current browser.
+ * @return {String}
+ * @api public
+ */
+
+function supportedKeyframes(key) {
+  // Keyframes is already prefixed. e.g. key = '@-webkit-keyframes a'
+  if (key[1] === '-') return key; // No need to prefix IE/Edge. Older browsers will ignore unsupported rules.
+  // https://caniuse.com/#search=keyframes
+
+  if (prefix.js === 'ms') return key;
+  return "@" + prefix.css + "keyframes" + key.substr(10);
+}
+
+// https://caniuse.com/#search=appearance
+
+var appearence = {
+  noPrefill: ['appearance'],
+  supportedProperty: function supportedProperty(prop) {
+    if (prop !== 'appearance') return false;
+    if (prefix.js === 'ms') return "-webkit-" + prop;
+    return prefix.css + prop;
+  }
+};
+
+// https://caniuse.com/#search=color-adjust
+
+var colorAdjust = {
+  noPrefill: ['color-adjust'],
+  supportedProperty: function supportedProperty(prop) {
+    if (prop !== 'color-adjust') return false;
+    if (prefix.js === 'Webkit') return prefix.css + "print-" + prop;
+    return prop;
+  }
+};
+
+var regExp = /[-\s]+(.)?/g;
+/**
+ * Replaces the letter with the capital letter
+ *
+ * @param {String} match
+ * @param {String} c
+ * @return {String}
+ * @api private
+ */
+
+function toUpper(match, c) {
+  return c ? c.toUpperCase() : '';
+}
+/**
+ * Convert dash separated strings to camel-cased.
+ *
+ * @param {String} str
+ * @return {String}
+ * @api private
+ */
+
+
+function camelize(str) {
+  return str.replace(regExp, toUpper);
+}
+
+/**
+ * Convert dash separated strings to pascal cased.
+ *
+ * @param {String} str
+ * @return {String}
+ * @api private
+ */
+
+function pascalize(str) {
+  return camelize("-" + str);
+}
+
+// but we can use a longhand property instead.
+// https://caniuse.com/#search=mask
+
+var mask = {
+  noPrefill: ['mask'],
+  supportedProperty: function supportedProperty(prop, style) {
+    if (!/^mask/.test(prop)) return false;
+
+    if (prefix.js === 'Webkit') {
+      var longhand = 'mask-image';
+
+      if (camelize(longhand) in style) {
+        return prop;
+      }
+
+      if (prefix.js + pascalize(longhand) in style) {
+        return prefix.css + prop;
+      }
+    }
+
+    return prop;
+  }
+};
+
+// https://caniuse.com/#search=text-orientation
+
+var textOrientation = {
+  noPrefill: ['text-orientation'],
+  supportedProperty: function supportedProperty(prop) {
+    if (prop !== 'text-orientation') return false;
+
+    if (prefix.vendor === 'apple' && !prefix.isTouch) {
+      return prefix.css + prop;
+    }
+
+    return prop;
+  }
+};
+
+// https://caniuse.com/#search=transform
+
+var transform = {
+  noPrefill: ['transform'],
+  supportedProperty: function supportedProperty(prop, style, options) {
+    if (prop !== 'transform') return false;
+
+    if (options.transform) {
+      return prop;
+    }
+
+    return prefix.css + prop;
+  }
+};
+
+// https://caniuse.com/#search=transition
+
+var transition = {
+  noPrefill: ['transition'],
+  supportedProperty: function supportedProperty(prop, style, options) {
+    if (prop !== 'transition') return false;
+
+    if (options.transition) {
+      return prop;
+    }
+
+    return prefix.css + prop;
+  }
+};
+
+// https://caniuse.com/#search=writing-mode
+
+var writingMode = {
+  noPrefill: ['writing-mode'],
+  supportedProperty: function supportedProperty(prop) {
+    if (prop !== 'writing-mode') return false;
+
+    if (prefix.js === 'Webkit' || prefix.js === 'ms' && prefix.browser !== 'edge') {
+      return prefix.css + prop;
+    }
+
+    return prop;
+  }
+};
+
+// https://caniuse.com/#search=user-select
+
+var userSelect = {
+  noPrefill: ['user-select'],
+  supportedProperty: function supportedProperty(prop) {
+    if (prop !== 'user-select') return false;
+
+    if (prefix.js === 'Moz' || prefix.js === 'ms' || prefix.vendor === 'apple') {
+      return prefix.css + prop;
+    }
+
+    return prop;
+  }
+};
+
+// https://caniuse.com/#search=multicolumn
+// https://github.com/postcss/autoprefixer/issues/491
+// https://github.com/postcss/autoprefixer/issues/177
+
+var breakPropsOld = {
+  supportedProperty: function supportedProperty(prop, style) {
+    if (!/^break-/.test(prop)) return false;
+
+    if (prefix.js === 'Webkit') {
+      var jsProp = "WebkitColumn" + pascalize(prop);
+      return jsProp in style ? prefix.css + "column-" + prop : false;
+    }
+
+    if (prefix.js === 'Moz') {
+      var _jsProp = "page" + pascalize(prop);
+
+      return _jsProp in style ? "page-" + prop : false;
+    }
+
+    return false;
+  }
+};
+
+// See https://github.com/postcss/autoprefixer/issues/324.
+
+var inlineLogicalOld = {
+  supportedProperty: function supportedProperty(prop, style) {
+    if (!/^(border|margin|padding)-inline/.test(prop)) return false;
+    if (prefix.js === 'Moz') return prop;
+    var newProp = prop.replace('-inline', '');
+    return prefix.js + pascalize(newProp) in style ? prefix.css + newProp : false;
+  }
+};
+
+// Camelization is required because we can't test using.
+// CSS syntax for e.g. in FF.
+
+var unprefixed = {
+  supportedProperty: function supportedProperty(prop, style) {
+    return camelize(prop) in style ? prop : false;
+  }
+};
+
+var prefixed = {
+  supportedProperty: function supportedProperty(prop, style) {
+    var pascalized = pascalize(prop); // Return custom CSS variable without prefixing.
+
+    if (prop[0] === '-') return prop; // Return already prefixed value without prefixing.
+
+    if (prop[0] === '-' && prop[1] === '-') return prop;
+    if (prefix.js + pascalized in style) return prefix.css + prop; // Try webkit fallback.
+
+    if (prefix.js !== 'Webkit' && "Webkit" + pascalized in style) return "-webkit-" + prop;
+    return false;
+  }
+};
+
+// https://caniuse.com/#search=scroll-snap
+
+var scrollSnap = {
+  supportedProperty: function supportedProperty(prop) {
+    if (prop.substring(0, 11) !== 'scroll-snap') return false;
+
+    if (prefix.js === 'ms') {
+      return "" + prefix.css + prop;
+    }
+
+    return prop;
+  }
+};
+
+// https://caniuse.com/#search=overscroll-behavior
+
+var overscrollBehavior = {
+  supportedProperty: function supportedProperty(prop) {
+    if (prop !== 'overscroll-behavior') return false;
+
+    if (prefix.js === 'ms') {
+      return prefix.css + "scroll-chaining";
+    }
+
+    return prop;
+  }
+};
+
+var propMap = {
+  'flex-grow': 'flex-positive',
+  'flex-shrink': 'flex-negative',
+  'flex-basis': 'flex-preferred-size',
+  'justify-content': 'flex-pack',
+  order: 'flex-order',
+  'align-items': 'flex-align',
+  'align-content': 'flex-line-pack' // 'align-self' is handled by 'align-self' plugin.
+
+}; // Support old flex spec from 2012.
+
+var flex2012 = {
+  supportedProperty: function supportedProperty(prop, style) {
+    var newProp = propMap[prop];
+    if (!newProp) return false;
+    return prefix.js + pascalize(newProp) in style ? prefix.css + newProp : false;
+  }
+};
+
+var propMap$1 = {
+  flex: 'box-flex',
+  'flex-grow': 'box-flex',
+  'flex-direction': ['box-orient', 'box-direction'],
+  order: 'box-ordinal-group',
+  'align-items': 'box-align',
+  'flex-flow': ['box-orient', 'box-direction'],
+  'justify-content': 'box-pack'
+};
+var propKeys = Object.keys(propMap$1);
+
+var prefixCss = function prefixCss(p) {
+  return prefix.css + p;
+}; // Support old flex spec from 2009.
+
+
+var flex2009 = {
+  supportedProperty: function supportedProperty(prop, style, _ref) {
+    var multiple = _ref.multiple;
+
+    if (propKeys.indexOf(prop) > -1) {
+      var newProp = propMap$1[prop];
+
+      if (!Array.isArray(newProp)) {
+        return prefix.js + pascalize(newProp) in style ? prefix.css + newProp : false;
+      }
+
+      if (!multiple) return false;
+
+      for (var i = 0; i < newProp.length; i++) {
+        if (!(prefix.js + pascalize(newProp[0]) in style)) {
+          return false;
+        }
+      }
+
+      return newProp.map(prefixCss);
+    }
+
+    return false;
+  }
+};
+
+// plugins = [
+//   ...plugins,
+//    breakPropsOld,
+//    inlineLogicalOld,
+//    unprefixed,
+//    prefixed,
+//    scrollSnap,
+//    flex2012,
+//    flex2009
+// ]
+// Plugins without 'noPrefill' value, going last.
+// 'flex-*' plugins should be at the bottom.
+// 'flex2009' going after 'flex2012'.
+// 'prefixed' going after 'unprefixed'
+
+var css_vendor_esm_plugins = [appearence, colorAdjust, mask, textOrientation, transform, transition, writingMode, userSelect, breakPropsOld, inlineLogicalOld, unprefixed, prefixed, scrollSnap, overscrollBehavior, flex2012, flex2009];
+var propertyDetectors = css_vendor_esm_plugins.filter(function (p) {
+  return p.supportedProperty;
+}).map(function (p) {
+  return p.supportedProperty;
+});
+var noPrefill = css_vendor_esm_plugins.filter(function (p) {
+  return p.noPrefill;
+}).reduce(function (a, p) {
+  a.push.apply(a, _toConsumableArray(p.noPrefill));
+  return a;
+}, []);
+
+var el;
+var css_vendor_esm_cache = {};
+
+if (dist_module) {
+  el = document.createElement('p'); // We test every property on vendor prefix requirement.
+  // Once tested, result is cached. It gives us up to 70% perf boost.
+  // http://jsperf.com/element-style-object-access-vs-plain-object
+  //
+  // Prefill cache with known css properties to reduce amount of
+  // properties we need to feature test at runtime.
+  // http://davidwalsh.name/vendor-prefix
+
+  var computed = window.getComputedStyle(document.documentElement, '');
+
+  for (var key$1 in computed) {
+    // eslint-disable-next-line no-restricted-globals
+    if (!isNaN(key$1)) css_vendor_esm_cache[computed[key$1]] = computed[key$1];
+  } // Properties that cannot be correctly detected using the
+  // cache prefill method.
+
+
+  noPrefill.forEach(function (x) {
+    return delete css_vendor_esm_cache[x];
+  });
+}
+/**
+ * Test if a property is supported, returns supported property with vendor
+ * prefix if required. Returns `false` if not supported.
+ *
+ * @param {String} prop dash separated
+ * @param {Object} [options]
+ * @return {String|Boolean}
+ * @api public
+ */
+
+
+function supportedProperty(prop, options) {
+  if (options === void 0) {
+    options = {};
+  }
+
+  // For server-side rendering.
+  if (!el) return prop; // Remove cache for benchmark tests or return property from the cache.
+
+  if ( true && css_vendor_esm_cache[prop] != null) {
+    return css_vendor_esm_cache[prop];
+  } // Check if 'transition' or 'transform' natively supported in browser.
+
+
+  if (prop === 'transition' || prop === 'transform') {
+    options[prop] = prop in el.style;
+  } // Find a plugin for current prefix property.
+
+
+  for (var i = 0; i < propertyDetectors.length; i++) {
+    css_vendor_esm_cache[prop] = propertyDetectors[i](prop, el.style, options); // Break loop, if value found.
+
+    if (css_vendor_esm_cache[prop]) break;
+  } // Reset styles for current property.
+  // Firefox can even throw an error for invalid properties, e.g., "0".
+
+
+  try {
+    el.style[prop] = '';
+  } catch (err) {
+    return false;
+  }
+
+  return css_vendor_esm_cache[prop];
+}
+
+var cache$1 = {};
+var transitionProperties = {
+  transition: 1,
+  'transition-property': 1,
+  '-webkit-transition': 1,
+  '-webkit-transition-property': 1
+};
+var transPropsRegExp = /(^\s*[\w-]+)|, (\s*[\w-]+)(?![^()]*\))/g;
+var el$1;
+/**
+ * Returns prefixed value transition/transform if needed.
+ *
+ * @param {String} match
+ * @param {String} p1
+ * @param {String} p2
+ * @return {String}
+ * @api private
+ */
+
+function prefixTransitionCallback(match, p1, p2) {
+  if (p1 === 'var') return 'var';
+  if (p1 === 'all') return 'all';
+  if (p2 === 'all') return ', all';
+  var prefixedValue = p1 ? supportedProperty(p1) : ", " + supportedProperty(p2);
+  if (!prefixedValue) return p1 || p2;
+  return prefixedValue;
+}
+
+if (dist_module) el$1 = document.createElement('p');
+/**
+ * Returns prefixed value if needed. Returns `false` if value is not supported.
+ *
+ * @param {String} property
+ * @param {String} value
+ * @return {String|Boolean}
+ * @api public
+ */
+
+function supportedValue(property, value) {
+  // For server-side rendering.
+  var prefixedValue = value;
+  if (!el$1 || property === 'content') return value; // It is a string or a number as a string like '1'.
+  // We want only prefixable values here.
+  // eslint-disable-next-line no-restricted-globals
+
+  if (typeof prefixedValue !== 'string' || !isNaN(parseInt(prefixedValue, 10))) {
+    return prefixedValue;
+  } // Create cache key for current value.
+
+
+  var cacheKey = property + prefixedValue; // Remove cache for benchmark tests or return value from cache.
+
+  if ( true && cache$1[cacheKey] != null) {
+    return cache$1[cacheKey];
+  } // IE can even throw an error in some cases, for e.g. style.content = 'bar'.
+
+
+  try {
+    // Test value as it is.
+    el$1.style[property] = prefixedValue;
+  } catch (err) {
+    // Return false if value not supported.
+    cache$1[cacheKey] = false;
+    return false;
+  } // If 'transition' or 'transition-property' property.
+
+
+  if (transitionProperties[property]) {
+    prefixedValue = prefixedValue.replace(transPropsRegExp, prefixTransitionCallback);
+  } else if (el$1.style[property] === '') {
+    // Value with a vendor prefix.
+    prefixedValue = prefix.css + prefixedValue; // Hardcode test to convert "flex" to "-ms-flexbox" for IE10.
+
+    if (prefixedValue === '-ms-flex') el$1.style[property] = '-ms-flexbox'; // Test prefixed value.
+
+    el$1.style[property] = prefixedValue; // Return false if value not supported.
+
+    if (el$1.style[property] === '') {
+      cache$1[cacheKey] = false;
+      return false;
+    }
+  } // Reset styles for current property.
+
+
+  el$1.style[property] = ''; // Write current value to cache.
+
+  cache$1[cacheKey] = prefixedValue;
+  return cache$1[cacheKey];
+}
+
+
+
+;// CONCATENATED MODULE: ./node_modules/jss-plugin-vendor-prefixer/dist/jss-plugin-vendor-prefixer.esm.js
+
+
+
+/**
+ * Add vendor prefix to a property name when needed.
+ */
+
+function jssVendorPrefixer() {
+  function onProcessRule(rule) {
+    if (rule.type === 'keyframes') {
+      var atRule = rule;
+      atRule.at = supportedKeyframes(atRule.at);
+    }
+  }
+
+  function prefixStyle(style) {
+    for (var prop in style) {
+      var value = style[prop];
+
+      if (prop === 'fallbacks' && Array.isArray(value)) {
+        style[prop] = value.map(prefixStyle);
+        continue;
+      }
+
+      var changeProp = false;
+      var supportedProp = supportedProperty(prop);
+      if (supportedProp && supportedProp !== prop) changeProp = true;
+      var changeValue = false;
+      var supportedValue$1 = supportedValue(supportedProp, toCssValue(value));
+      if (supportedValue$1 && supportedValue$1 !== value) changeValue = true;
+
+      if (changeProp || changeValue) {
+        if (changeProp) delete style[prop];
+        style[supportedProp || prop] = supportedValue$1 || value;
+      }
+    }
+
+    return style;
+  }
+
+  function onProcessStyle(style, rule) {
+    if (rule.type !== 'style') return style;
+    return prefixStyle(style);
+  }
+
+  function onChangeValue(value, prop) {
+    return supportedValue(prop, toCssValue(value)) || value;
+  }
+
+  return {
+    onProcessRule: onProcessRule,
+    onProcessStyle: onProcessStyle,
+    onChangeValue: onChangeValue
+  };
+}
+
+/* harmony default export */ const jss_plugin_vendor_prefixer_esm = (jssVendorPrefixer);
+
+;// CONCATENATED MODULE: ./node_modules/jss-plugin-props-sort/dist/jss-plugin-props-sort.esm.js
+/**
+ * Sort props by length.
+ */
+function jssPropsSort() {
+  var sort = function sort(prop0, prop1) {
+    if (prop0.length === prop1.length) {
+      return prop0 > prop1 ? 1 : -1;
+    }
+
+    return prop0.length - prop1.length;
+  };
+
+  return {
+    onProcessStyle: function onProcessStyle(style, rule) {
+      if (rule.type !== 'style') return style;
+      var newStyle = {};
+      var props = Object.keys(style).sort(sort);
+
+      for (var i = 0; i < props.length; i++) {
+        newStyle[props[i]] = style[props[i]];
+      }
+
+      return newStyle;
+    }
+  };
+}
+
+/* harmony default export */ const jss_plugin_props_sort_esm = (jssPropsSort);
+
+;// CONCATENATED MODULE: ./node_modules/@mui/styles/jssPreset/jssPreset.js
+
+
+
+
+
+
+ // Subset of jss-preset-default with only the plugins the MUI components are using.
+
+function jssPreset_jssPreset() {
+  return {
+    plugins: [jss_plugin_rule_value_function_esm(), jss_plugin_global_esm(), jss_plugin_nested_esm(), jss_plugin_camel_case_esm(), jss_plugin_default_unit_esm(), // Disable the vendor prefixer server-side, it does nothing.
+    // This way, we can get a performance boost.
+    // In the documentation, we are using `autoprefixer` to solve this problem.
+    typeof window === 'undefined' ? null : jss_plugin_vendor_prefixer_esm(), jss_plugin_props_sort_esm()]
+  };
+}
+;// CONCATENATED MODULE: ./node_modules/@mui/styles/StylesProvider/StylesProvider.js
+
+
+const _excluded = (/* unused pure expression or super */ null && (["children", "injectFirst", "disableGeneration"]));
+
+
+
+
+
+ // Default JSS instance.
+
+
+const jss = createJss(jssPreset_jssPreset()); // Use a singleton or the provided one by the context.
+//
+// The counter-based approach doesn't tolerate any mistake.
+// It's much safer to use the same counter everywhere.
+
+const generateClassName = createGenerateClassName(); // Exported for test purposes
+
+const sheetsManager = new Map();
+const defaultOptions = {
+  disableGeneration: false,
+  generateClassName,
+  jss,
+  sheetsCache: null,
+  sheetsManager,
+  sheetsRegistry: null
+};
+const StylesContext = /*#__PURE__*/external_cgpv_react_.createContext(defaultOptions);
+
+if (false) {}
+
+let injectFirstNode;
+function StylesProvider(props) {
+  const {
+    children,
+    injectFirst = false,
+    disableGeneration = false
+  } = props,
+        localOptions = _objectWithoutPropertiesLoose(props, _excluded);
+
+  const outerOptions = React.useContext(StylesContext);
+
+  const context = _extends({}, outerOptions, {
+    disableGeneration
+  }, localOptions);
+
+  if (false) {}
+
+  if (false) {}
+
+  if (false) {}
+
+  if (!context.jss.options.insertionPoint && injectFirst && typeof window !== 'undefined') {
+    if (!injectFirstNode) {
+      const head = document.head;
+      injectFirstNode = document.createComment('mui-inject-first');
+      head.insertBefore(injectFirstNode, head.firstChild);
+    }
+
+    context.jss = create({
+      plugins: jssPreset().plugins,
+      insertionPoint: injectFirstNode
+    });
+  }
+
+  return /*#__PURE__*/_jsx(StylesContext.Provider, {
+    value: context,
+    children: children
+  });
+}
+ false ? 0 : void 0;
+
+if (false) {}
+;// CONCATENATED MODULE: ./node_modules/@mui/styles/makeStyles/indexCounter.js
+/* eslint-disable import/prefer-default-export */
+// Global index counter to preserve source order.
+// We create the style sheet during the creation of the component,
+// children are handled after the parents, so the order of style elements would be parent->child.
+// It is a problem though when a parent passes a className
+// which needs to override any child's styles.
+// StyleSheet of the child has a higher specificity, because of the source order.
+// So our solution is to render sheets them in the reverse order child->sheet, so
+// that parent has a higher specificity.
+let indexCounter = -1e9;
+function increment() {
+  indexCounter += 1;
+
+  if (false) {}
+
+  return indexCounter;
+}
+;// CONCATENATED MODULE: ./node_modules/@mui/utils/esm/deepmerge.js
+function isPlainObject(item) {
+  return item !== null && typeof item === 'object' && item.constructor === Object;
+}
+function deepClone(source) {
+  if (!isPlainObject(source)) {
+    return source;
+  }
+  const output = {};
+  Object.keys(source).forEach(key => {
+    output[key] = deepClone(source[key]);
+  });
+  return output;
+}
+function deepmerge(target, source, options = {
+  clone: true
+}) {
+  const output = options.clone ? {
+    ...target
+  } : target;
+  if (isPlainObject(target) && isPlainObject(source)) {
+    Object.keys(source).forEach(key => {
+      // Avoid prototype pollution
+      if (key === '__proto__') {
+        return;
+      }
+      if (isPlainObject(source[key]) && key in target && isPlainObject(target[key])) {
+        // Since `output` is a clone of `target` and we have narrowed `target` in this block we can cast to the same type.
+        output[key] = deepmerge(target[key], source[key], options);
+      } else if (options.clone) {
+        output[key] = isPlainObject(source[key]) ? deepClone(source[key]) : source[key];
+      } else {
+        output[key] = source[key];
+      }
+    });
+  }
+  return output;
+}
+;// CONCATENATED MODULE: ./node_modules/@mui/utils/esm/formatMuiErrorMessage.js
+/**
+ * WARNING: Don't import this directly.
+ * Use `MuiError` from `@mui/utils/macros/MuiError.macro` instead.
+ * @param {number} code
+ */
+function formatMuiErrorMessage(code) {
+  // Apply babel-plugin-transform-template-literals in loose mode
+  // loose mode is safe iff we're concatenating primitives
+  // see https://babeljs.io/docs/en/babel-plugin-transform-template-literals#loose
+  /* eslint-disable prefer-template */
+  let url = 'https://mui.com/production-error/?code=' + code;
+  for (let i = 1; i < arguments.length; i += 1) {
+    // rest params over-transpile for this case
+    // eslint-disable-next-line prefer-rest-params
+    url += '&args[]=' + encodeURIComponent(arguments[i]);
+  }
+  return 'Minified MUI error #' + code + '; visit ' + url + ' for the full message.';
+  /* eslint-enable prefer-template */
+}
+;// CONCATENATED MODULE: ./node_modules/@mui/utils/esm/capitalize.js
+
+// It should to be noted that this function isn't equivalent to `text-transform: capitalize`.
+//
+// A strict capitalization should uppercase the first letter of each word in the sentence.
+// We only handle the first word.
+function capitalize(string) {
+  if (typeof string !== 'string') {
+    throw new Error( false ? 0 : formatMuiErrorMessage(7));
+  }
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+;// CONCATENATED MODULE: ./node_modules/@mui/styles/propsToClassKey/propsToClassKey.js
+
+const propsToClassKey_excluded = ["variant"];
+
+
+function isEmpty(string) {
+  return string.length === 0;
+}
+/**
+ * Generates string classKey based on the properties provided. It starts with the
+ * variant if defined, and then it appends all other properties in alphabetical order.
+ * @param {object} props - the properties for which the classKey should be created
+ */
+
+
+function propsToClassKey(props) {
+  const {
+    variant
+  } = props,
+        other = objectWithoutPropertiesLoose_objectWithoutPropertiesLoose(props, propsToClassKey_excluded);
+
+  let classKey = variant || '';
+  Object.keys(other).sort().forEach(key => {
+    if (key === 'color') {
+      classKey += isEmpty(classKey) ? props[key] : capitalize(props[key]);
+    } else {
+      classKey += `${isEmpty(classKey) ? key : capitalize(key)}${capitalize(props[key].toString())}`;
+    }
+  });
+  return classKey;
+}
+;// CONCATENATED MODULE: ./node_modules/@mui/styles/getStylesCreator/getStylesCreator.js
+
+
+
+
+function getStylesCreator(stylesOrCreator) {
+  const themingEnabled = typeof stylesOrCreator === 'function';
+
+  if (false) {}
+
+  return {
+    create: (theme, name) => {
+      let styles;
+
+      try {
+        styles = themingEnabled ? stylesOrCreator(theme) : stylesOrCreator;
+      } catch (err) {
+        if (false) {}
+
+        throw err;
+      }
+
+      if (!name || !theme.components || !theme.components[name] || !theme.components[name].styleOverrides && !theme.components[name].variants) {
+        return styles;
+      }
+
+      const overrides = theme.components[name].styleOverrides || {};
+      const variants = theme.components[name].variants || [];
+
+      const stylesWithOverrides = extends_extends({}, styles);
+
+      Object.keys(overrides).forEach(key => {
+        if (false) {}
+
+        stylesWithOverrides[key] = deepmerge(stylesWithOverrides[key] || {}, overrides[key]);
+      });
+      variants.forEach(definition => {
+        const classKey = propsToClassKey(definition.props);
+        stylesWithOverrides[classKey] = deepmerge(stylesWithOverrides[classKey] || {}, definition.style);
+      });
+      return stylesWithOverrides;
+    },
+    options: {}
+  };
+}
+;// CONCATENATED MODULE: ./node_modules/@mui/styles/getStylesCreator/noopTheme.js
+// We use the same empty object to ref count the styles that don't need a theme object.
+const noopTheme = {};
+/* harmony default export */ const getStylesCreator_noopTheme = (noopTheme);
+;// CONCATENATED MODULE: ./node_modules/@mui/styles/makeStyles/makeStyles.js
+
+
+const makeStyles_excluded = ["name", "classNamePrefix", "Component", "defaultTheme"];
+
+
+
+
+
+
+
+
+
+
+function getClasses({
+  state,
+  stylesOptions
+}, classes, Component) {
+  if (stylesOptions.disableGeneration) {
+    return classes || {};
+  }
+
+  if (!state.cacheClasses) {
+    state.cacheClasses = {
+      // Cache for the finalized classes value.
+      value: null,
+      // Cache for the last used classes prop pointer.
+      lastProp: null,
+      // Cache for the last used rendered classes pointer.
+      lastJSS: {}
+    };
+  } // Tracks if either the rendered classes or classes prop has changed,
+  // requiring the generation of a new finalized classes object.
+
+
+  let generate = false;
+
+  if (state.classes !== state.cacheClasses.lastJSS) {
+    state.cacheClasses.lastJSS = state.classes;
+    generate = true;
+  }
+
+  if (classes !== state.cacheClasses.lastProp) {
+    state.cacheClasses.lastProp = classes;
+    generate = true;
+  }
+
+  if (generate) {
+    state.cacheClasses.value = mergeClasses({
+      baseClasses: state.cacheClasses.lastJSS,
+      newClasses: classes,
+      Component
+    });
+  }
+
+  return state.cacheClasses.value;
+}
+
+function attach({
+  state,
+  theme,
+  stylesOptions,
+  stylesCreator,
+  name
+}, props) {
+  if (stylesOptions.disableGeneration) {
+    return;
+  }
+
+  let sheetManager = makeStyles_multiKeyStore.get(stylesOptions.sheetsManager, stylesCreator, theme);
+
+  if (!sheetManager) {
+    sheetManager = {
+      refs: 0,
+      staticSheet: null,
+      dynamicStyles: null
+    };
+    makeStyles_multiKeyStore.set(stylesOptions.sheetsManager, stylesCreator, theme, sheetManager);
+  }
+
+  const options = extends_extends({}, stylesCreator.options, stylesOptions, {
+    theme,
+    flip: typeof stylesOptions.flip === 'boolean' ? stylesOptions.flip : theme.direction === 'rtl'
+  });
+
+  options.generateId = options.serverGenerateClassName || options.generateClassName;
+  const sheetsRegistry = stylesOptions.sheetsRegistry;
+
+  if (sheetManager.refs === 0) {
+    let staticSheet;
+
+    if (stylesOptions.sheetsCache) {
+      staticSheet = makeStyles_multiKeyStore.get(stylesOptions.sheetsCache, stylesCreator, theme);
+    }
+
+    const styles = stylesCreator.create(theme, name);
+
+    if (!staticSheet) {
+      staticSheet = stylesOptions.jss.createStyleSheet(styles, extends_extends({
+        link: false
+      }, options));
+      staticSheet.attach();
+
+      if (stylesOptions.sheetsCache) {
+        makeStyles_multiKeyStore.set(stylesOptions.sheetsCache, stylesCreator, theme, staticSheet);
+      }
+    }
+
+    if (sheetsRegistry) {
+      sheetsRegistry.add(staticSheet);
+    }
+
+    sheetManager.staticSheet = staticSheet;
+    sheetManager.dynamicStyles = getDynamicStyles(styles);
+  }
+
+  if (sheetManager.dynamicStyles) {
+    const dynamicSheet = stylesOptions.jss.createStyleSheet(sheetManager.dynamicStyles, extends_extends({
+      link: true
+    }, options));
+    dynamicSheet.update(props);
+    dynamicSheet.attach();
+    state.dynamicSheet = dynamicSheet;
+    state.classes = mergeClasses({
+      baseClasses: sheetManager.staticSheet.classes,
+      newClasses: dynamicSheet.classes
+    });
+
+    if (sheetsRegistry) {
+      sheetsRegistry.add(dynamicSheet);
+    }
+  } else {
+    state.classes = sheetManager.staticSheet.classes;
+  }
+
+  sheetManager.refs += 1;
+}
+
+function update({
+  state
+}, props) {
+  if (state.dynamicSheet) {
+    state.dynamicSheet.update(props);
+  }
+}
+
+function detach({
+  state,
+  theme,
+  stylesOptions,
+  stylesCreator
+}) {
+  if (stylesOptions.disableGeneration) {
+    return;
+  }
+
+  const sheetManager = makeStyles_multiKeyStore.get(stylesOptions.sheetsManager, stylesCreator, theme);
+  sheetManager.refs -= 1;
+  const sheetsRegistry = stylesOptions.sheetsRegistry;
+
+  if (sheetManager.refs === 0) {
+    makeStyles_multiKeyStore["delete"](stylesOptions.sheetsManager, stylesCreator, theme);
+    stylesOptions.jss.removeStyleSheet(sheetManager.staticSheet);
+
+    if (sheetsRegistry) {
+      sheetsRegistry.remove(sheetManager.staticSheet);
+    }
+  }
+
+  if (state.dynamicSheet) {
+    stylesOptions.jss.removeStyleSheet(state.dynamicSheet);
+
+    if (sheetsRegistry) {
+      sheetsRegistry.remove(state.dynamicSheet);
+    }
+  }
+}
+
+function useSynchronousEffect(func, values) {
+  const key = external_cgpv_react_.useRef([]);
+  let output; // Store "generation" key. Just returns a new object every time
+
+  const currentKey = external_cgpv_react_.useMemo(() => ({}), values); // eslint-disable-line react-hooks/exhaustive-deps
+  // "the first render", or "memo dropped the value"
+
+  if (key.current !== currentKey) {
+    key.current = currentKey;
+    output = func();
+  }
+
+  external_cgpv_react_.useEffect(() => () => {
+    if (output) {
+      output();
+    }
+  }, [currentKey] // eslint-disable-line react-hooks/exhaustive-deps
+  );
+}
+
+function makeStyles(stylesOrCreator, options = {}) {
+  const {
+    // alias for classNamePrefix, if provided will listen to theme (required for theme.components[name].styleOverrides)
+    name,
+    // Help with debuggability.
+    classNamePrefix: classNamePrefixOption,
+    Component,
+    defaultTheme = getStylesCreator_noopTheme
+  } = options,
+        stylesOptions2 = objectWithoutPropertiesLoose_objectWithoutPropertiesLoose(options, makeStyles_excluded);
+
+  const stylesCreator = getStylesCreator(stylesOrCreator);
+  const classNamePrefix = name || classNamePrefixOption || 'makeStyles';
+  stylesCreator.options = {
+    index: increment(),
+    name,
+    meta: classNamePrefix,
+    classNamePrefix
+  };
+
+  const useStyles = (props = {}) => {
+    const theme = useTheme() || defaultTheme;
+
+    const stylesOptions = extends_extends({}, external_cgpv_react_.useContext(StylesContext), stylesOptions2);
+
+    const instance = external_cgpv_react_.useRef();
+    const shouldUpdate = external_cgpv_react_.useRef();
+    useSynchronousEffect(() => {
+      const current = {
+        name,
+        state: {},
+        stylesCreator,
+        stylesOptions,
+        theme
+      };
+      attach(current, props);
+      shouldUpdate.current = false;
+      instance.current = current;
+      return () => {
+        detach(current);
+      };
+    }, [theme, stylesCreator]);
+    external_cgpv_react_.useEffect(() => {
+      if (shouldUpdate.current) {
+        update(instance.current, props);
+      }
+
+      shouldUpdate.current = true;
+    });
+    const classes = getClasses(instance.current, props.classes, Component);
+
+    if (false) {}
+
+    if (false) {}
+
+    return classes;
+  };
+
+  return useStyles;
+}
+;// CONCATENATED MODULE: ./node_modules/@remix-run/router/dist/router.js
+/**
+ * @remix-run/router v1.6.2
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+function router_extends() {
+  router_extends = Object.assign ? Object.assign.bind() : function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+  return router_extends.apply(this, arguments);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//#region Types and Constants
+////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Actions represent the type of change to a location value.
+ */
+var router_Action;
+
+(function (Action) {
+  /**
+   * A POP indicates a change to an arbitrary index in the history stack, such
+   * as a back or forward navigation. It does not describe the direction of the
+   * navigation, only that the current index changed.
+   *
+   * Note: This is the default action for newly created history objects.
+   */
+  Action["Pop"] = "POP";
+  /**
+   * A PUSH indicates a new entry being added to the history stack, such as when
+   * a link is clicked and a new page loads. When this happens, all subsequent
+   * entries in the stack are lost.
+   */
+
+  Action["Push"] = "PUSH";
+  /**
+   * A REPLACE indicates the entry at the current index in the history stack
+   * being replaced by a new one.
+   */
+
+  Action["Replace"] = "REPLACE";
+})(router_Action || (router_Action = {}));
+
+const PopStateEventType = "popstate";
+/**
+ * Memory history stores the current location in memory. It is designed for use
+ * in stateful non-browser environments like tests and React Native.
+ */
+
+function router_createMemoryHistory(options) {
+  if (options === void 0) {
+    options = {};
+  }
+
+  let {
+    initialEntries = ["/"],
+    initialIndex,
+    v5Compat = false
+  } = options;
+  let entries; // Declare so we can access from createMemoryLocation
+
+  entries = initialEntries.map((entry, index) => createMemoryLocation(entry, typeof entry === "string" ? null : entry.state, index === 0 ? "default" : undefined));
+  let index = clampIndex(initialIndex == null ? entries.length - 1 : initialIndex);
+  let action = router_Action.Pop;
+  let listener = null;
+
+  function clampIndex(n) {
+    return Math.min(Math.max(n, 0), entries.length - 1);
+  }
+
+  function getCurrentLocation() {
+    return entries[index];
+  }
+
+  function createMemoryLocation(to, state, key) {
+    if (state === void 0) {
+      state = null;
+    }
+
+    let location = createLocation(entries ? getCurrentLocation().pathname : "/", to, state, key);
+    router_warning(location.pathname.charAt(0) === "/", "relative pathnames are not supported in memory history: " + JSON.stringify(to));
+    return location;
+  }
+
+  function createHref(to) {
+    return typeof to === "string" ? to : router_createPath(to);
+  }
+
+  let history = {
+    get index() {
+      return index;
+    },
+
+    get action() {
+      return action;
+    },
+
+    get location() {
+      return getCurrentLocation();
+    },
+
+    createHref,
+
+    createURL(to) {
+      return new URL(createHref(to), "http://localhost");
+    },
+
+    encodeLocation(to) {
+      let path = typeof to === "string" ? router_parsePath(to) : to;
+      return {
+        pathname: path.pathname || "",
+        search: path.search || "",
+        hash: path.hash || ""
+      };
+    },
+
+    push(to, state) {
+      action = router_Action.Push;
+      let nextLocation = createMemoryLocation(to, state);
+      index += 1;
+      entries.splice(index, entries.length, nextLocation);
+
+      if (v5Compat && listener) {
+        listener({
+          action,
+          location: nextLocation,
+          delta: 1
+        });
+      }
+    },
+
+    replace(to, state) {
+      action = router_Action.Replace;
+      let nextLocation = createMemoryLocation(to, state);
+      entries[index] = nextLocation;
+
+      if (v5Compat && listener) {
+        listener({
+          action,
+          location: nextLocation,
+          delta: 0
+        });
+      }
+    },
+
+    go(delta) {
+      action = router_Action.Pop;
+      let nextIndex = clampIndex(index + delta);
+      let nextLocation = entries[nextIndex];
+      index = nextIndex;
+
+      if (listener) {
+        listener({
+          action,
+          location: nextLocation,
+          delta
+        });
+      }
+    },
+
+    listen(fn) {
+      listener = fn;
+      return () => {
+        listener = null;
+      };
+    }
+
+  };
+  return history;
+}
+/**
+ * Browser history stores the location in regular URLs. This is the standard for
+ * most web apps, but it requires some configuration on the server to ensure you
+ * serve the same app at multiple URLs.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createbrowserhistory
+ */
+
+function router_createBrowserHistory(options) {
+  if (options === void 0) {
+    options = {};
+  }
+
+  function createBrowserLocation(window, globalHistory) {
+    let {
+      pathname,
+      search,
+      hash
+    } = window.location;
+    return createLocation("", {
+      pathname,
+      search,
+      hash
+    }, // state defaults to `null` because `window.history.state` does
+    globalHistory.state && globalHistory.state.usr || null, globalHistory.state && globalHistory.state.key || "default");
+  }
+
+  function createBrowserHref(window, to) {
+    return typeof to === "string" ? to : router_createPath(to);
+  }
+
+  return getUrlBasedHistory(createBrowserLocation, createBrowserHref, null, options);
+}
+/**
+ * Hash history stores the location in window.location.hash. This makes it ideal
+ * for situations where you don't want to send the location to the server for
+ * some reason, either because you do cannot configure it or the URL space is
+ * reserved for something else.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createhashhistory
+ */
+
+function router_createHashHistory(options) {
+  if (options === void 0) {
+    options = {};
+  }
+
+  function createHashLocation(window, globalHistory) {
+    let {
+      pathname = "/",
+      search = "",
+      hash = ""
+    } = router_parsePath(window.location.hash.substr(1));
+    return createLocation("", {
+      pathname,
+      search,
+      hash
+    }, // state defaults to `null` because `window.history.state` does
+    globalHistory.state && globalHistory.state.usr || null, globalHistory.state && globalHistory.state.key || "default");
+  }
+
+  function createHashHref(window, to) {
+    let base = window.document.querySelector("base");
+    let href = "";
+
+    if (base && base.getAttribute("href")) {
+      let url = window.location.href;
+      let hashIndex = url.indexOf("#");
+      href = hashIndex === -1 ? url : url.slice(0, hashIndex);
+    }
+
+    return href + "#" + (typeof to === "string" ? to : router_createPath(to));
+  }
+
+  function validateHashLocation(location, to) {
+    router_warning(location.pathname.charAt(0) === "/", "relative pathnames are not supported in hash history.push(" + JSON.stringify(to) + ")");
+  }
+
+  return getUrlBasedHistory(createHashLocation, createHashHref, validateHashLocation, options);
+}
+function invariant(value, message) {
+  if (value === false || value === null || typeof value === "undefined") {
+    throw new Error(message);
+  }
+}
+function router_warning(cond, message) {
+  if (!cond) {
+    // eslint-disable-next-line no-console
+    if (typeof console !== "undefined") console.warn(message);
+
+    try {
+      // Welcome to debugging history!
+      //
+      // This error is thrown as a convenience so you can more easily
+      // find the source for a warning that appears in the console by
+      // enabling "pause on exceptions" in your JavaScript debugger.
+      throw new Error(message); // eslint-disable-next-line no-empty
+    } catch (e) {}
+  }
+}
+
+function createKey() {
+  return Math.random().toString(36).substr(2, 8);
+}
+/**
+ * For browser-based histories, we combine the state and key into an object
+ */
+
+
+function getHistoryState(location, index) {
+  return {
+    usr: location.state,
+    key: location.key,
+    idx: index
+  };
+}
+/**
+ * Creates a Location object with a unique key from the given Path
+ */
+
+
+function createLocation(current, to, state, key) {
+  if (state === void 0) {
+    state = null;
+  }
+
+  let location = router_extends({
+    pathname: typeof current === "string" ? current : current.pathname,
+    search: "",
+    hash: ""
+  }, typeof to === "string" ? router_parsePath(to) : to, {
+    state,
+    // TODO: This could be cleaned up.  push/replace should probably just take
+    // full Locations now and avoid the need to run through this flow at all
+    // But that's a pretty big refactor to the current test suite so going to
+    // keep as is for the time being and just let any incoming keys take precedence
+    key: to && to.key || key || createKey()
+  });
+
+  return location;
+}
+/**
+ * Creates a string URL path from the given pathname, search, and hash components.
+ */
+
+function router_createPath(_ref) {
+  let {
+    pathname = "/",
+    search = "",
+    hash = ""
+  } = _ref;
+  if (search && search !== "?") pathname += search.charAt(0) === "?" ? search : "?" + search;
+  if (hash && hash !== "#") pathname += hash.charAt(0) === "#" ? hash : "#" + hash;
+  return pathname;
+}
+/**
+ * Parses a string URL path into its separate pathname, search, and hash components.
+ */
+
+function router_parsePath(path) {
+  let parsedPath = {};
+
+  if (path) {
+    let hashIndex = path.indexOf("#");
+
+    if (hashIndex >= 0) {
+      parsedPath.hash = path.substr(hashIndex);
+      path = path.substr(0, hashIndex);
+    }
+
+    let searchIndex = path.indexOf("?");
+
+    if (searchIndex >= 0) {
+      parsedPath.search = path.substr(searchIndex);
+      path = path.substr(0, searchIndex);
+    }
+
+    if (path) {
+      parsedPath.pathname = path;
+    }
+  }
+
+  return parsedPath;
+}
+
+function getUrlBasedHistory(getLocation, createHref, validateLocation, options) {
+  if (options === void 0) {
+    options = {};
+  }
+
+  let {
+    window = document.defaultView,
+    v5Compat = false
+  } = options;
+  let globalHistory = window.history;
+  let action = router_Action.Pop;
+  let listener = null;
+  let index = getIndex(); // Index should only be null when we initialize. If not, it's because the
+  // user called history.pushState or history.replaceState directly, in which
+  // case we should log a warning as it will result in bugs.
+
+  if (index == null) {
+    index = 0;
+    globalHistory.replaceState(router_extends({}, globalHistory.state, {
+      idx: index
+    }), "");
+  }
+
+  function getIndex() {
+    let state = globalHistory.state || {
+      idx: null
+    };
+    return state.idx;
+  }
+
+  function handlePop() {
+    action = router_Action.Pop;
+    let nextIndex = getIndex();
+    let delta = nextIndex == null ? null : nextIndex - index;
+    index = nextIndex;
+
+    if (listener) {
+      listener({
+        action,
+        location: history.location,
+        delta
+      });
+    }
+  }
+
+  function push(to, state) {
+    action = router_Action.Push;
+    let location = createLocation(history.location, to, state);
+    if (validateLocation) validateLocation(location, to);
+    index = getIndex() + 1;
+    let historyState = getHistoryState(location, index);
+    let url = history.createHref(location); // try...catch because iOS limits us to 100 pushState calls :/
+
+    try {
+      globalHistory.pushState(historyState, "", url);
+    } catch (error) {
+      // They are going to lose state here, but there is no real
+      // way to warn them about it since the page will refresh...
+      window.location.assign(url);
+    }
+
+    if (v5Compat && listener) {
+      listener({
+        action,
+        location: history.location,
+        delta: 1
+      });
+    }
+  }
+
+  function replace(to, state) {
+    action = router_Action.Replace;
+    let location = createLocation(history.location, to, state);
+    if (validateLocation) validateLocation(location, to);
+    index = getIndex();
+    let historyState = getHistoryState(location, index);
+    let url = history.createHref(location);
+    globalHistory.replaceState(historyState, "", url);
+
+    if (v5Compat && listener) {
+      listener({
+        action,
+        location: history.location,
+        delta: 0
+      });
+    }
+  }
+
+  function createURL(to) {
+    // window.location.origin is "null" (the literal string value) in Firefox
+    // under certain conditions, notably when serving from a local HTML file
+    // See https://bugzilla.mozilla.org/show_bug.cgi?id=878297
+    let base = window.location.origin !== "null" ? window.location.origin : window.location.href;
+    let href = typeof to === "string" ? to : router_createPath(to);
+    invariant(base, "No window.location.(origin|href) available to create URL for href: " + href);
+    return new URL(href, base);
+  }
+
+  let history = {
+    get action() {
+      return action;
+    },
+
+    get location() {
+      return getLocation(window, globalHistory);
+    },
+
+    listen(fn) {
+      if (listener) {
+        throw new Error("A history only accepts one active listener");
+      }
+
+      window.addEventListener(PopStateEventType, handlePop);
+      listener = fn;
+      return () => {
+        window.removeEventListener(PopStateEventType, handlePop);
+        listener = null;
+      };
+    },
+
+    createHref(to) {
+      return createHref(window, to);
+    },
+
+    createURL,
+
+    encodeLocation(to) {
+      // Encode a Location the same way window.location would
+      let url = createURL(to);
+      return {
+        pathname: url.pathname,
+        search: url.search,
+        hash: url.hash
+      };
+    },
+
+    push,
+    replace,
+
+    go(n) {
+      return globalHistory.go(n);
+    }
+
+  };
+  return history;
+} //#endregion
+
+var ResultType;
+
+(function (ResultType) {
+  ResultType["data"] = "data";
+  ResultType["deferred"] = "deferred";
+  ResultType["redirect"] = "redirect";
+  ResultType["error"] = "error";
+})(ResultType || (ResultType = {}));
+
+const immutableRouteKeys = new Set(["lazy", "caseSensitive", "path", "id", "index", "children"]);
+
+function isIndexRoute(route) {
+  return route.index === true;
+} // Walk the route tree generating unique IDs where necessary so we are working
+// solely with AgnosticDataRouteObject's within the Router
+
+
+function convertRoutesToDataRoutes(routes, mapRouteProperties, parentPath, manifest) {
+  if (parentPath === void 0) {
+    parentPath = [];
+  }
+
+  if (manifest === void 0) {
+    manifest = {};
+  }
+
+  return routes.map((route, index) => {
+    let treePath = [...parentPath, index];
+    let id = typeof route.id === "string" ? route.id : treePath.join("-");
+    invariant(route.index !== true || !route.children, "Cannot specify children on an index route");
+    invariant(!manifest[id], "Found a route id collision on id \"" + id + "\".  Route " + "id's must be globally unique within Data Router usages");
+
+    if (isIndexRoute(route)) {
+      let indexRoute = router_extends({}, route, mapRouteProperties(route), {
+        id
+      });
+
+      manifest[id] = indexRoute;
+      return indexRoute;
+    } else {
+      let pathOrLayoutRoute = router_extends({}, route, mapRouteProperties(route), {
+        id,
+        children: undefined
+      });
+
+      manifest[id] = pathOrLayoutRoute;
+
+      if (route.children) {
+        pathOrLayoutRoute.children = convertRoutesToDataRoutes(route.children, mapRouteProperties, treePath, manifest);
+      }
+
+      return pathOrLayoutRoute;
+    }
+  });
+}
+/**
+ * Matches the given routes to a location and returns the match data.
+ *
+ * @see https://reactrouter.com/utils/match-routes
+ */
+
+function router_matchRoutes(routes, locationArg, basename) {
+  if (basename === void 0) {
+    basename = "/";
+  }
+
+  let location = typeof locationArg === "string" ? router_parsePath(locationArg) : locationArg;
+  let pathname = router_stripBasename(location.pathname || "/", basename);
+
+  if (pathname == null) {
+    return null;
+  }
+
+  let branches = flattenRoutes(routes);
+  rankRouteBranches(branches);
+  let matches = null;
+
+  for (let i = 0; matches == null && i < branches.length; ++i) {
+    matches = matchRouteBranch(branches[i], // Incoming pathnames are generally encoded from either window.location
+    // or from router.navigate, but we want to match against the unencoded
+    // paths in the route definitions.  Memory router locations won't be
+    // encoded here but there also shouldn't be anything to decode so this
+    // should be a safe operation.  This avoids needing matchRoutes to be
+    // history-aware.
+    safelyDecodeURI(pathname));
+  }
+
+  return matches;
+}
+
+function flattenRoutes(routes, branches, parentsMeta, parentPath) {
+  if (branches === void 0) {
+    branches = [];
+  }
+
+  if (parentsMeta === void 0) {
+    parentsMeta = [];
+  }
+
+  if (parentPath === void 0) {
+    parentPath = "";
+  }
+
+  let flattenRoute = (route, index, relativePath) => {
+    let meta = {
+      relativePath: relativePath === undefined ? route.path || "" : relativePath,
+      caseSensitive: route.caseSensitive === true,
+      childrenIndex: index,
+      route
+    };
+
+    if (meta.relativePath.startsWith("/")) {
+      invariant(meta.relativePath.startsWith(parentPath), "Absolute route path \"" + meta.relativePath + "\" nested under path " + ("\"" + parentPath + "\" is not valid. An absolute child route path ") + "must start with the combined path of all its parent routes.");
+      meta.relativePath = meta.relativePath.slice(parentPath.length);
+    }
+
+    let path = router_joinPaths([parentPath, meta.relativePath]);
+    let routesMeta = parentsMeta.concat(meta); // Add the children before adding this route to the array so we traverse the
+    // route tree depth-first and child routes appear before their parents in
+    // the "flattened" version.
+
+    if (route.children && route.children.length > 0) {
+      invariant( // Our types know better, but runtime JS may not!
+      // @ts-expect-error
+      route.index !== true, "Index routes must not have child routes. Please remove " + ("all child routes from route path \"" + path + "\"."));
+      flattenRoutes(route.children, branches, routesMeta, path);
+    } // Routes without a path shouldn't ever match by themselves unless they are
+    // index routes, so don't add them to the list of possible branches.
+
+
+    if (route.path == null && !route.index) {
+      return;
+    }
+
+    branches.push({
+      path,
+      score: computeScore(path, route.index),
+      routesMeta
+    });
+  };
+
+  routes.forEach((route, index) => {
+    var _route$path;
+
+    // coarse-grain check for optional params
+    if (route.path === "" || !((_route$path = route.path) != null && _route$path.includes("?"))) {
+      flattenRoute(route, index);
+    } else {
+      for (let exploded of explodeOptionalSegments(route.path)) {
+        flattenRoute(route, index, exploded);
+      }
+    }
+  });
+  return branches;
+}
+/**
+ * Computes all combinations of optional path segments for a given path,
+ * excluding combinations that are ambiguous and of lower priority.
+ *
+ * For example, `/one/:two?/three/:four?/:five?` explodes to:
+ * - `/one/three`
+ * - `/one/:two/three`
+ * - `/one/three/:four`
+ * - `/one/three/:five`
+ * - `/one/:two/three/:four`
+ * - `/one/:two/three/:five`
+ * - `/one/three/:four/:five`
+ * - `/one/:two/three/:four/:five`
+ */
+
+
+function explodeOptionalSegments(path) {
+  let segments = path.split("/");
+  if (segments.length === 0) return [];
+  let [first, ...rest] = segments; // Optional path segments are denoted by a trailing `?`
+
+  let isOptional = first.endsWith("?"); // Compute the corresponding required segment: `foo?` -> `foo`
+
+  let required = first.replace(/\?$/, "");
+
+  if (rest.length === 0) {
+    // Intepret empty string as omitting an optional segment
+    // `["one", "", "three"]` corresponds to omitting `:two` from `/one/:two?/three` -> `/one/three`
+    return isOptional ? [required, ""] : [required];
+  }
+
+  let restExploded = explodeOptionalSegments(rest.join("/"));
+  let result = []; // All child paths with the prefix.  Do this for all children before the
+  // optional version for all children so we get consistent ordering where the
+  // parent optional aspect is preferred as required.  Otherwise, we can get
+  // child sections interspersed where deeper optional segments are higher than
+  // parent optional segments, where for example, /:two would explodes _earlier_
+  // then /:one.  By always including the parent as required _for all children_
+  // first, we avoid this issue
+
+  result.push(...restExploded.map(subpath => subpath === "" ? required : [required, subpath].join("/"))); // Then if this is an optional value, add all child versions without
+
+  if (isOptional) {
+    result.push(...restExploded);
+  } // for absolute paths, ensure `/` instead of empty segment
+
+
+  return result.map(exploded => path.startsWith("/") && exploded === "" ? "/" : exploded);
+}
+
+function rankRouteBranches(branches) {
+  branches.sort((a, b) => a.score !== b.score ? b.score - a.score // Higher score first
+  : compareIndexes(a.routesMeta.map(meta => meta.childrenIndex), b.routesMeta.map(meta => meta.childrenIndex)));
+}
+
+const paramRe = /^:\w+$/;
+const dynamicSegmentValue = 3;
+const indexRouteValue = 2;
+const emptySegmentValue = 1;
+const staticSegmentValue = 10;
+const splatPenalty = (/* unused pure expression or super */ null && (-2));
+
+const isSplat = s => s === "*";
+
+function computeScore(path, index) {
+  let segments = path.split("/");
+  let initialScore = segments.length;
+
+  if (segments.some(isSplat)) {
+    initialScore += splatPenalty;
+  }
+
+  if (index) {
+    initialScore += indexRouteValue;
+  }
+
+  return segments.filter(s => !isSplat(s)).reduce((score, segment) => score + (paramRe.test(segment) ? dynamicSegmentValue : segment === "" ? emptySegmentValue : staticSegmentValue), initialScore);
+}
+
+function compareIndexes(a, b) {
+  let siblings = a.length === b.length && a.slice(0, -1).every((n, i) => n === b[i]);
+  return siblings ? // If two routes are siblings, we should try to match the earlier sibling
+  // first. This allows people to have fine-grained control over the matching
+  // behavior by simply putting routes with identical paths in the order they
+  // want them tried.
+  a[a.length - 1] - b[b.length - 1] : // Otherwise, it doesn't really make sense to rank non-siblings by index,
+  // so they sort equally.
+  0;
+}
+
+function matchRouteBranch(branch, pathname) {
+  let {
+    routesMeta
+  } = branch;
+  let matchedParams = {};
+  let matchedPathname = "/";
+  let matches = [];
+
+  for (let i = 0; i < routesMeta.length; ++i) {
+    let meta = routesMeta[i];
+    let end = i === routesMeta.length - 1;
+    let remainingPathname = matchedPathname === "/" ? pathname : pathname.slice(matchedPathname.length) || "/";
+    let match = router_matchPath({
+      path: meta.relativePath,
+      caseSensitive: meta.caseSensitive,
+      end
+    }, remainingPathname);
+    if (!match) return null;
+    Object.assign(matchedParams, match.params);
+    let route = meta.route;
+    matches.push({
+      // TODO: Can this as be avoided?
+      params: matchedParams,
+      pathname: router_joinPaths([matchedPathname, match.pathname]),
+      pathnameBase: normalizePathname(router_joinPaths([matchedPathname, match.pathnameBase])),
+      route
+    });
+
+    if (match.pathnameBase !== "/") {
+      matchedPathname = router_joinPaths([matchedPathname, match.pathnameBase]);
+    }
+  }
+
+  return matches;
+}
+/**
+ * Returns a path with params interpolated.
+ *
+ * @see https://reactrouter.com/utils/generate-path
+ */
+
+
+function generatePath(originalPath, params) {
+  if (params === void 0) {
+    params = {};
+  }
+
+  let path = originalPath;
+
+  if (path.endsWith("*") && path !== "*" && !path.endsWith("/*")) {
+    router_warning(false, "Route path \"" + path + "\" will be treated as if it were " + ("\"" + path.replace(/\*$/, "/*") + "\" because the `*` character must ") + "always follow a `/` in the pattern. To get rid of this warning, " + ("please change the route path to \"" + path.replace(/\*$/, "/*") + "\"."));
+    path = path.replace(/\*$/, "/*");
+  } // ensure `/` is added at the beginning if the path is absolute
+
+
+  const prefix = path.startsWith("/") ? "/" : "";
+  const segments = path.split(/\/+/).map((segment, index, array) => {
+    const isLastSegment = index === array.length - 1; // only apply the splat if it's the last segment
+
+    if (isLastSegment && segment === "*") {
+      const star = "*";
+      const starParam = params[star]; // Apply the splat
+
+      return starParam;
+    }
+
+    const keyMatch = segment.match(/^:(\w+)(\??)$/);
+
+    if (keyMatch) {
+      const [, key, optional] = keyMatch;
+      let param = params[key];
+
+      if (optional === "?") {
+        return param == null ? "" : param;
+      }
+
+      if (param == null) {
+        invariant(false, "Missing \":" + key + "\" param");
+      }
+
+      return param;
+    } // Remove any optional markers from optional static segments
+
+
+    return segment.replace(/\?$/g, "");
+  }) // Remove empty segments
+  .filter(segment => !!segment);
+  return prefix + segments.join("/");
+}
+/**
+ * Performs pattern matching on a URL pathname and returns information about
+ * the match.
+ *
+ * @see https://reactrouter.com/utils/match-path
+ */
+
+function router_matchPath(pattern, pathname) {
+  if (typeof pattern === "string") {
+    pattern = {
+      path: pattern,
+      caseSensitive: false,
+      end: true
+    };
+  }
+
+  let [matcher, paramNames] = compilePath(pattern.path, pattern.caseSensitive, pattern.end);
+  let match = pathname.match(matcher);
+  if (!match) return null;
+  let matchedPathname = match[0];
+  let pathnameBase = matchedPathname.replace(/(.)\/+$/, "$1");
+  let captureGroups = match.slice(1);
+  let params = paramNames.reduce((memo, paramName, index) => {
+    // We need to compute the pathnameBase here using the raw splat value
+    // instead of using params["*"] later because it will be decoded then
+    if (paramName === "*") {
+      let splatValue = captureGroups[index] || "";
+      pathnameBase = matchedPathname.slice(0, matchedPathname.length - splatValue.length).replace(/(.)\/+$/, "$1");
+    }
+
+    memo[paramName] = safelyDecodeURIComponent(captureGroups[index] || "", paramName);
+    return memo;
+  }, {});
+  return {
+    params,
+    pathname: matchedPathname,
+    pathnameBase,
+    pattern
+  };
+}
+
+function compilePath(path, caseSensitive, end) {
+  if (caseSensitive === void 0) {
+    caseSensitive = false;
+  }
+
+  if (end === void 0) {
+    end = true;
+  }
+
+  router_warning(path === "*" || !path.endsWith("*") || path.endsWith("/*"), "Route path \"" + path + "\" will be treated as if it were " + ("\"" + path.replace(/\*$/, "/*") + "\" because the `*` character must ") + "always follow a `/` in the pattern. To get rid of this warning, " + ("please change the route path to \"" + path.replace(/\*$/, "/*") + "\"."));
+  let paramNames = [];
+  let regexpSource = "^" + path.replace(/\/*\*?$/, "") // Ignore trailing / and /*, we'll handle it below
+  .replace(/^\/*/, "/") // Make sure it has a leading /
+  .replace(/[\\.*+^$?{}|()[\]]/g, "\\$&") // Escape special regex chars
+  .replace(/\/:(\w+)/g, (_, paramName) => {
+    paramNames.push(paramName);
+    return "/([^\\/]+)";
+  });
+
+  if (path.endsWith("*")) {
+    paramNames.push("*");
+    regexpSource += path === "*" || path === "/*" ? "(.*)$" // Already matched the initial /, just match the rest
+    : "(?:\\/(.+)|\\/*)$"; // Don't include the / in params["*"]
+  } else if (end) {
+    // When matching to the end, ignore trailing slashes
+    regexpSource += "\\/*$";
+  } else if (path !== "" && path !== "/") {
+    // If our path is non-empty and contains anything beyond an initial slash,
+    // then we have _some_ form of path in our regex so we should expect to
+    // match only if we find the end of this path segment.  Look for an optional
+    // non-captured trailing slash (to match a portion of the URL) or the end
+    // of the path (if we've matched to the end).  We used to do this with a
+    // word boundary but that gives false positives on routes like
+    // /user-preferences since `-` counts as a word boundary.
+    regexpSource += "(?:(?=\\/|$))";
+  } else ;
+
+  let matcher = new RegExp(regexpSource, caseSensitive ? undefined : "i");
+  return [matcher, paramNames];
+}
+
+function safelyDecodeURI(value) {
+  try {
+    return decodeURI(value);
+  } catch (error) {
+    router_warning(false, "The URL path \"" + value + "\" could not be decoded because it is is a " + "malformed URL segment. This is probably due to a bad percent " + ("encoding (" + error + ")."));
+    return value;
+  }
+}
+
+function safelyDecodeURIComponent(value, paramName) {
+  try {
+    return decodeURIComponent(value);
+  } catch (error) {
+    router_warning(false, "The value for the URL param \"" + paramName + "\" will not be decoded because" + (" the string \"" + value + "\" is a malformed URL segment. This is probably") + (" due to a bad percent encoding (" + error + ")."));
+    return value;
+  }
+}
+/**
+ * @private
+ */
+
+
+function router_stripBasename(pathname, basename) {
+  if (basename === "/") return pathname;
+
+  if (!pathname.toLowerCase().startsWith(basename.toLowerCase())) {
+    return null;
+  } // We want to leave trailing slash behavior in the user's control, so if they
+  // specify a basename with a trailing slash, we should support it
+
+
+  let startIndex = basename.endsWith("/") ? basename.length - 1 : basename.length;
+  let nextChar = pathname.charAt(startIndex);
+
+  if (nextChar && nextChar !== "/") {
+    // pathname does not start with basename/
+    return null;
+  }
+
+  return pathname.slice(startIndex) || "/";
+}
+/**
+ * Returns a resolved path object relative to the given pathname.
+ *
+ * @see https://reactrouter.com/utils/resolve-path
+ */
+
+function resolvePath(to, fromPathname) {
+  if (fromPathname === void 0) {
+    fromPathname = "/";
+  }
+
+  let {
+    pathname: toPathname,
+    search = "",
+    hash = ""
+  } = typeof to === "string" ? router_parsePath(to) : to;
+  let pathname = toPathname ? toPathname.startsWith("/") ? toPathname : resolvePathname(toPathname, fromPathname) : fromPathname;
+  return {
+    pathname,
+    search: normalizeSearch(search),
+    hash: normalizeHash(hash)
+  };
+}
+
+function resolvePathname(relativePath, fromPathname) {
+  let segments = fromPathname.replace(/\/+$/, "").split("/");
+  let relativeSegments = relativePath.split("/");
+  relativeSegments.forEach(segment => {
+    if (segment === "..") {
+      // Keep the root "" segment so the pathname starts at /
+      if (segments.length > 1) segments.pop();
+    } else if (segment !== ".") {
+      segments.push(segment);
+    }
+  });
+  return segments.length > 1 ? segments.join("/") : "/";
+}
+
+function getInvalidPathError(char, field, dest, path) {
+  return "Cannot include a '" + char + "' character in a manually specified " + ("`to." + field + "` field [" + JSON.stringify(path) + "].  Please separate it out to the ") + ("`to." + dest + "` field. Alternatively you may provide the full path as ") + "a string in <Link to=\"...\"> and the router will parse it for you.";
+}
+/**
+ * @private
+ *
+ * When processing relative navigation we want to ignore ancestor routes that
+ * do not contribute to the path, such that index/pathless layout routes don't
+ * interfere.
+ *
+ * For example, when moving a route element into an index route and/or a
+ * pathless layout route, relative link behavior contained within should stay
+ * the same.  Both of the following examples should link back to the root:
+ *
+ *   <Route path="/">
+ *     <Route path="accounts" element={<Link to=".."}>
+ *   </Route>
+ *
+ *   <Route path="/">
+ *     <Route path="accounts">
+ *       <Route element={<AccountsLayout />}>       // <-- Does not contribute
+ *         <Route index element={<Link to=".."} />  // <-- Does not contribute
+ *       </Route
+ *     </Route>
+ *   </Route>
+ */
+
+
+function getPathContributingMatches(matches) {
+  return matches.filter((match, index) => index === 0 || match.route.path && match.route.path.length > 0);
+}
+/**
+ * @private
+ */
+
+function router_resolveTo(toArg, routePathnames, locationPathname, isPathRelative) {
+  if (isPathRelative === void 0) {
+    isPathRelative = false;
+  }
+
+  let to;
+
+  if (typeof toArg === "string") {
+    to = router_parsePath(toArg);
+  } else {
+    to = router_extends({}, toArg);
+    invariant(!to.pathname || !to.pathname.includes("?"), getInvalidPathError("?", "pathname", "search", to));
+    invariant(!to.pathname || !to.pathname.includes("#"), getInvalidPathError("#", "pathname", "hash", to));
+    invariant(!to.search || !to.search.includes("#"), getInvalidPathError("#", "search", "hash", to));
+  }
+
+  let isEmptyPath = toArg === "" || to.pathname === "";
+  let toPathname = isEmptyPath ? "/" : to.pathname;
+  let from; // Routing is relative to the current pathname if explicitly requested.
+  //
+  // If a pathname is explicitly provided in `to`, it should be relative to the
+  // route context. This is explained in `Note on `<Link to>` values` in our
+  // migration guide from v5 as a means of disambiguation between `to` values
+  // that begin with `/` and those that do not. However, this is problematic for
+  // `to` values that do not provide a pathname. `to` can simply be a search or
+  // hash string, in which case we should assume that the navigation is relative
+  // to the current location's pathname and *not* the route pathname.
+
+  if (isPathRelative || toPathname == null) {
+    from = locationPathname;
+  } else {
+    let routePathnameIndex = routePathnames.length - 1;
+
+    if (toPathname.startsWith("..")) {
+      let toSegments = toPathname.split("/"); // Each leading .. segment means "go up one route" instead of "go up one
+      // URL segment".  This is a key difference from how <a href> works and a
+      // major reason we call this a "to" value instead of a "href".
+
+      while (toSegments[0] === "..") {
+        toSegments.shift();
+        routePathnameIndex -= 1;
+      }
+
+      to.pathname = toSegments.join("/");
+    } // If there are more ".." segments than parent routes, resolve relative to
+    // the root / URL.
+
+
+    from = routePathnameIndex >= 0 ? routePathnames[routePathnameIndex] : "/";
+  }
+
+  let path = resolvePath(to, from); // Ensure the pathname has a trailing slash if the original "to" had one
+
+  let hasExplicitTrailingSlash = toPathname && toPathname !== "/" && toPathname.endsWith("/"); // Or if this was a link to the current path which has a trailing slash
+
+  let hasCurrentTrailingSlash = (isEmptyPath || toPathname === ".") && locationPathname.endsWith("/");
+
+  if (!path.pathname.endsWith("/") && (hasExplicitTrailingSlash || hasCurrentTrailingSlash)) {
+    path.pathname += "/";
+  }
+
+  return path;
+}
+/**
+ * @private
+ */
+
+function getToPathname(to) {
+  // Empty strings should be treated the same as / paths
+  return to === "" || to.pathname === "" ? "/" : typeof to === "string" ? router_parsePath(to).pathname : to.pathname;
+}
+/**
+ * @private
+ */
+
+const router_joinPaths = paths => paths.join("/").replace(/\/\/+/g, "/");
+/**
+ * @private
+ */
+
+const normalizePathname = pathname => pathname.replace(/\/+$/, "").replace(/^\/*/, "/");
+/**
+ * @private
+ */
+
+const normalizeSearch = search => !search || search === "?" ? "" : search.startsWith("?") ? search : "?" + search;
+/**
+ * @private
+ */
+
+const normalizeHash = hash => !hash || hash === "#" ? "" : hash.startsWith("#") ? hash : "#" + hash;
+/**
+ * This is a shortcut for creating `application/json` responses. Converts `data`
+ * to JSON and sets the `Content-Type` header.
+ */
+
+const json = function json(data, init) {
+  if (init === void 0) {
+    init = {};
+  }
+
+  let responseInit = typeof init === "number" ? {
+    status: init
+  } : init;
+  let headers = new Headers(responseInit.headers);
+
+  if (!headers.has("Content-Type")) {
+    headers.set("Content-Type", "application/json; charset=utf-8");
+  }
+
+  return new Response(JSON.stringify(data), router_extends({}, responseInit, {
+    headers
+  }));
+};
+class router_AbortedDeferredError extends Error {}
+class DeferredData {
+  constructor(data, responseInit) {
+    this.pendingKeysSet = new Set();
+    this.subscribers = new Set();
+    this.deferredKeys = [];
+    invariant(data && typeof data === "object" && !Array.isArray(data), "defer() only accepts plain objects"); // Set up an AbortController + Promise we can race against to exit early
+    // cancellation
+
+    let reject;
+    this.abortPromise = new Promise((_, r) => reject = r);
+    this.controller = new AbortController();
+
+    let onAbort = () => reject(new router_AbortedDeferredError("Deferred data aborted"));
+
+    this.unlistenAbortSignal = () => this.controller.signal.removeEventListener("abort", onAbort);
+
+    this.controller.signal.addEventListener("abort", onAbort);
+    this.data = Object.entries(data).reduce((acc, _ref) => {
+      let [key, value] = _ref;
+      return Object.assign(acc, {
+        [key]: this.trackPromise(key, value)
+      });
+    }, {});
+
+    if (this.done) {
+      // All incoming values were resolved
+      this.unlistenAbortSignal();
+    }
+
+    this.init = responseInit;
+  }
+
+  trackPromise(key, value) {
+    if (!(value instanceof Promise)) {
+      return value;
+    }
+
+    this.deferredKeys.push(key);
+    this.pendingKeysSet.add(key); // We store a little wrapper promise that will be extended with
+    // _data/_error props upon resolve/reject
+
+    let promise = Promise.race([value, this.abortPromise]).then(data => this.onSettle(promise, key, null, data), error => this.onSettle(promise, key, error)); // Register rejection listeners to avoid uncaught promise rejections on
+    // errors or aborted deferred values
+
+    promise.catch(() => {});
+    Object.defineProperty(promise, "_tracked", {
+      get: () => true
+    });
+    return promise;
+  }
+
+  onSettle(promise, key, error, data) {
+    if (this.controller.signal.aborted && error instanceof router_AbortedDeferredError) {
+      this.unlistenAbortSignal();
+      Object.defineProperty(promise, "_error", {
+        get: () => error
+      });
+      return Promise.reject(error);
+    }
+
+    this.pendingKeysSet.delete(key);
+
+    if (this.done) {
+      // Nothing left to abort!
+      this.unlistenAbortSignal();
+    }
+
+    if (error) {
+      Object.defineProperty(promise, "_error", {
+        get: () => error
+      });
+      this.emit(false, key);
+      return Promise.reject(error);
+    }
+
+    Object.defineProperty(promise, "_data", {
+      get: () => data
+    });
+    this.emit(false, key);
+    return data;
+  }
+
+  emit(aborted, settledKey) {
+    this.subscribers.forEach(subscriber => subscriber(aborted, settledKey));
+  }
+
+  subscribe(fn) {
+    this.subscribers.add(fn);
+    return () => this.subscribers.delete(fn);
+  }
+
+  cancel() {
+    this.controller.abort();
+    this.pendingKeysSet.forEach((v, k) => this.pendingKeysSet.delete(k));
+    this.emit(true);
+  }
+
+  async resolveData(signal) {
+    let aborted = false;
+
+    if (!this.done) {
+      let onAbort = () => this.cancel();
+
+      signal.addEventListener("abort", onAbort);
+      aborted = await new Promise(resolve => {
+        this.subscribe(aborted => {
+          signal.removeEventListener("abort", onAbort);
+
+          if (aborted || this.done) {
+            resolve(aborted);
+          }
+        });
+      });
+    }
+
+    return aborted;
+  }
+
+  get done() {
+    return this.pendingKeysSet.size === 0;
+  }
+
+  get unwrappedData() {
+    invariant(this.data !== null && this.done, "Can only unwrap data on initialized and settled deferreds");
+    return Object.entries(this.data).reduce((acc, _ref2) => {
+      let [key, value] = _ref2;
+      return Object.assign(acc, {
+        [key]: unwrapTrackedPromise(value)
+      });
+    }, {});
+  }
+
+  get pendingKeys() {
+    return Array.from(this.pendingKeysSet);
+  }
+
+}
+
+function isTrackedPromise(value) {
+  return value instanceof Promise && value._tracked === true;
+}
+
+function unwrapTrackedPromise(value) {
+  if (!isTrackedPromise(value)) {
+    return value;
+  }
+
+  if (value._error) {
+    throw value._error;
+  }
+
+  return value._data;
+}
+
+const defer = function defer(data, init) {
+  if (init === void 0) {
+    init = {};
+  }
+
+  let responseInit = typeof init === "number" ? {
+    status: init
+  } : init;
+  return new DeferredData(data, responseInit);
+};
+/**
+ * A redirect response. Sets the status code and the `Location` header.
+ * Defaults to "302 Found".
+ */
+
+const redirect = function redirect(url, init) {
+  if (init === void 0) {
+    init = 302;
+  }
+
+  let responseInit = init;
+
+  if (typeof responseInit === "number") {
+    responseInit = {
+      status: responseInit
+    };
+  } else if (typeof responseInit.status === "undefined") {
+    responseInit.status = 302;
+  }
+
+  let headers = new Headers(responseInit.headers);
+  headers.set("Location", url);
+  return new Response(null, router_extends({}, responseInit, {
+    headers
+  }));
+};
+/**
+ * @private
+ * Utility class we use to hold auto-unwrapped 4xx/5xx Response bodies
+ */
+
+class router_ErrorResponse {
+  constructor(status, statusText, data, internal) {
+    if (internal === void 0) {
+      internal = false;
+    }
+
+    this.status = status;
+    this.statusText = statusText || "";
+    this.internal = internal;
+
+    if (data instanceof Error) {
+      this.data = data.toString();
+      this.error = data;
+    } else {
+      this.data = data;
+    }
+  }
+
+}
+/**
+ * Check if the given error is an ErrorResponse generated from a 4xx/5xx
+ * Response thrown from an action/loader
+ */
+
+function router_isRouteErrorResponse(error) {
+  return error != null && typeof error.status === "number" && typeof error.statusText === "string" && typeof error.internal === "boolean" && "data" in error;
+}
+
+const validMutationMethodsArr = ["post", "put", "patch", "delete"];
+const validMutationMethods = new Set(validMutationMethodsArr);
+const validRequestMethodsArr = ["get", ...validMutationMethodsArr];
+const validRequestMethods = new Set(validRequestMethodsArr);
+const redirectStatusCodes = new Set([301, 302, 303, 307, 308]);
+const redirectPreserveMethodStatusCodes = new Set([307, 308]);
+const IDLE_NAVIGATION = {
+  state: "idle",
+  location: undefined,
+  formMethod: undefined,
+  formAction: undefined,
+  formEncType: undefined,
+  formData: undefined
+};
+const IDLE_FETCHER = {
+  state: "idle",
+  data: undefined,
+  formMethod: undefined,
+  formAction: undefined,
+  formEncType: undefined,
+  formData: undefined
+};
+const IDLE_BLOCKER = {
+  state: "unblocked",
+  proceed: undefined,
+  reset: undefined,
+  location: undefined
+};
+const ABSOLUTE_URL_REGEX = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
+const router_isBrowser = typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined";
+const isServer = !router_isBrowser;
+
+const defaultMapRouteProperties = route => ({
+  hasErrorBoundary: Boolean(route.hasErrorBoundary)
+}); //#endregion
+////////////////////////////////////////////////////////////////////////////////
+//#region createRouter
+////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Create a router and listen to history POP navigations
+ */
+
+
+function router_createRouter(init) {
+  invariant(init.routes.length > 0, "You must provide a non-empty routes array to createRouter");
+  let mapRouteProperties;
+
+  if (init.mapRouteProperties) {
+    mapRouteProperties = init.mapRouteProperties;
+  } else if (init.detectErrorBoundary) {
+    // If they are still using the deprecated version, wrap it with the new API
+    let detectErrorBoundary = init.detectErrorBoundary;
+
+    mapRouteProperties = route => ({
+      hasErrorBoundary: detectErrorBoundary(route)
+    });
+  } else {
+    mapRouteProperties = defaultMapRouteProperties;
+  } // Routes keyed by ID
+
+
+  let manifest = {}; // Routes in tree format for matching
+
+  let dataRoutes = convertRoutesToDataRoutes(init.routes, mapRouteProperties, undefined, manifest);
+  let inFlightDataRoutes;
+  let basename = init.basename || "/"; // Config driven behavior flags
+
+  let future = router_extends({
+    v7_normalizeFormMethod: false,
+    v7_prependBasename: false
+  }, init.future); // Cleanup function for history
+
+
+  let unlistenHistory = null; // Externally-provided functions to call on all state changes
+
+  let subscribers = new Set(); // Externally-provided object to hold scroll restoration locations during routing
+
+  let savedScrollPositions = null; // Externally-provided function to get scroll restoration keys
+
+  let getScrollRestorationKey = null; // Externally-provided function to get current scroll position
+
+  let getScrollPosition = null; // One-time flag to control the initial hydration scroll restoration.  Because
+  // we don't get the saved positions from <ScrollRestoration /> until _after_
+  // the initial render, we need to manually trigger a separate updateState to
+  // send along the restoreScrollPosition
+  // Set to true if we have `hydrationData` since we assume we were SSR'd and that
+  // SSR did the initial scroll restoration.
+
+  let initialScrollRestored = init.hydrationData != null;
+  let initialMatches = router_matchRoutes(dataRoutes, init.history.location, basename);
+  let initialErrors = null;
+
+  if (initialMatches == null) {
+    // If we do not match a user-provided-route, fall back to the root
+    // to allow the error boundary to take over
+    let error = getInternalRouterError(404, {
+      pathname: init.history.location.pathname
+    });
+    let {
+      matches,
+      route
+    } = getShortCircuitMatches(dataRoutes);
+    initialMatches = matches;
+    initialErrors = {
+      [route.id]: error
+    };
+  }
+
+  let initialized = // All initialMatches need to be loaded before we're ready.  If we have lazy
+  // functions around still then we'll need to run them in initialize()
+  !initialMatches.some(m => m.route.lazy) && ( // And we have to either have no loaders or have been provided hydrationData
+  !initialMatches.some(m => m.route.loader) || init.hydrationData != null);
+  let router;
+  let state = {
+    historyAction: init.history.action,
+    location: init.history.location,
+    matches: initialMatches,
+    initialized,
+    navigation: IDLE_NAVIGATION,
+    // Don't restore on initial updateState() if we were SSR'd
+    restoreScrollPosition: init.hydrationData != null ? false : null,
+    preventScrollReset: false,
+    revalidation: "idle",
+    loaderData: init.hydrationData && init.hydrationData.loaderData || {},
+    actionData: init.hydrationData && init.hydrationData.actionData || null,
+    errors: init.hydrationData && init.hydrationData.errors || initialErrors,
+    fetchers: new Map(),
+    blockers: new Map()
+  }; // -- Stateful internal variables to manage navigations --
+  // Current navigation in progress (to be committed in completeNavigation)
+
+  let pendingAction = router_Action.Pop; // Should the current navigation prevent the scroll reset if scroll cannot
+  // be restored?
+
+  let pendingPreventScrollReset = false; // AbortController for the active navigation
+
+  let pendingNavigationController; // We use this to avoid touching history in completeNavigation if a
+  // revalidation is entirely uninterrupted
+
+  let isUninterruptedRevalidation = false; // Use this internal flag to force revalidation of all loaders:
+  //  - submissions (completed or interrupted)
+  //  - useRevalidator()
+  //  - X-Remix-Revalidate (from redirect)
+
+  let isRevalidationRequired = false; // Use this internal array to capture routes that require revalidation due
+  // to a cancelled deferred on action submission
+
+  let cancelledDeferredRoutes = []; // Use this internal array to capture fetcher loads that were cancelled by an
+  // action navigation and require revalidation
+
+  let cancelledFetcherLoads = []; // AbortControllers for any in-flight fetchers
+
+  let fetchControllers = new Map(); // Track loads based on the order in which they started
+
+  let incrementingLoadId = 0; // Track the outstanding pending navigation data load to be compared against
+  // the globally incrementing load when a fetcher load lands after a completed
+  // navigation
+
+  let pendingNavigationLoadId = -1; // Fetchers that triggered data reloads as a result of their actions
+
+  let fetchReloadIds = new Map(); // Fetchers that triggered redirect navigations
+
+  let fetchRedirectIds = new Set(); // Most recent href/match for fetcher.load calls for fetchers
+
+  let fetchLoadMatches = new Map(); // Store DeferredData instances for active route matches.  When a
+  // route loader returns defer() we stick one in here.  Then, when a nested
+  // promise resolves we update loaderData.  If a new navigation starts we
+  // cancel active deferreds for eliminated routes.
+
+  let activeDeferreds = new Map(); // Store blocker functions in a separate Map outside of router state since
+  // we don't need to update UI state if they change
+
+  let blockerFunctions = new Map(); // Flag to ignore the next history update, so we can revert the URL change on
+  // a POP navigation that was blocked by the user without touching router state
+
+  let ignoreNextHistoryUpdate = false; // Initialize the router, all side effects should be kicked off from here.
+  // Implemented as a Fluent API for ease of:
+  //   let router = createRouter(init).initialize();
+
+  function initialize() {
+    // If history informs us of a POP navigation, start the navigation but do not update
+    // state.  We'll update our own state once the navigation completes
+    unlistenHistory = init.history.listen(_ref => {
+      let {
+        action: historyAction,
+        location,
+        delta
+      } = _ref;
+
+      // Ignore this event if it was just us resetting the URL from a
+      // blocked POP navigation
+      if (ignoreNextHistoryUpdate) {
+        ignoreNextHistoryUpdate = false;
+        return;
+      }
+
+      router_warning(blockerFunctions.size === 0 || delta != null, "You are trying to use a blocker on a POP navigation to a location " + "that was not created by @remix-run/router. This will fail silently in " + "production. This can happen if you are navigating outside the router " + "via `window.history.pushState`/`window.location.hash` instead of using " + "router navigation APIs.  This can also happen if you are using " + "createHashRouter and the user manually changes the URL.");
+      let blockerKey = shouldBlockNavigation({
+        currentLocation: state.location,
+        nextLocation: location,
+        historyAction
+      });
+
+      if (blockerKey && delta != null) {
+        // Restore the URL to match the current UI, but don't update router state
+        ignoreNextHistoryUpdate = true;
+        init.history.go(delta * -1); // Put the blocker into a blocked state
+
+        updateBlocker(blockerKey, {
+          state: "blocked",
+          location,
+
+          proceed() {
+            updateBlocker(blockerKey, {
+              state: "proceeding",
+              proceed: undefined,
+              reset: undefined,
+              location
+            }); // Re-do the same POP navigation we just blocked
+
+            init.history.go(delta);
+          },
+
+          reset() {
+            deleteBlocker(blockerKey);
+            updateState({
+              blockers: new Map(router.state.blockers)
+            });
+          }
+
+        });
+        return;
+      }
+
+      return startNavigation(historyAction, location);
+    }); // Kick off initial data load if needed.  Use Pop to avoid modifying history
+    // Note we don't do any handling of lazy here.  For SPA's it'll get handled
+    // in the normal navigation flow.  For SSR it's expected that lazy modules are
+    // resolved prior to router creation since we can't go into a fallbackElement
+    // UI for SSR'd apps
+
+    if (!state.initialized) {
+      startNavigation(router_Action.Pop, state.location);
+    }
+
+    return router;
+  } // Clean up a router and it's side effects
+
+
+  function dispose() {
+    if (unlistenHistory) {
+      unlistenHistory();
+    }
+
+    subscribers.clear();
+    pendingNavigationController && pendingNavigationController.abort();
+    state.fetchers.forEach((_, key) => deleteFetcher(key));
+    state.blockers.forEach((_, key) => deleteBlocker(key));
+  } // Subscribe to state updates for the router
+
+
+  function subscribe(fn) {
+    subscribers.add(fn);
+    return () => subscribers.delete(fn);
+  } // Update our state and notify the calling context of the change
+
+
+  function updateState(newState) {
+    state = router_extends({}, state, newState);
+    subscribers.forEach(subscriber => subscriber(state));
+  } // Complete a navigation returning the state.navigation back to the IDLE_NAVIGATION
+  // and setting state.[historyAction/location/matches] to the new route.
+  // - Location is a required param
+  // - Navigation will always be set to IDLE_NAVIGATION
+  // - Can pass any other state in newState
+
+
+  function completeNavigation(location, newState) {
+    var _location$state, _location$state2;
+
+    // Deduce if we're in a loading/actionReload state:
+    // - We have committed actionData in the store
+    // - The current navigation was a mutation submission
+    // - We're past the submitting state and into the loading state
+    // - The location being loaded is not the result of a redirect
+    let isActionReload = state.actionData != null && state.navigation.formMethod != null && isMutationMethod(state.navigation.formMethod) && state.navigation.state === "loading" && ((_location$state = location.state) == null ? void 0 : _location$state._isRedirect) !== true;
+    let actionData;
+
+    if (newState.actionData) {
+      if (Object.keys(newState.actionData).length > 0) {
+        actionData = newState.actionData;
+      } else {
+        // Empty actionData -> clear prior actionData due to an action error
+        actionData = null;
+      }
+    } else if (isActionReload) {
+      // Keep the current data if we're wrapping up the action reload
+      actionData = state.actionData;
+    } else {
+      // Clear actionData on any other completed navigations
+      actionData = null;
+    } // Always preserve any existing loaderData from re-used routes
+
+
+    let loaderData = newState.loaderData ? mergeLoaderData(state.loaderData, newState.loaderData, newState.matches || [], newState.errors) : state.loaderData; // On a successful navigation we can assume we got through all blockers
+    // so we can start fresh
+
+    for (let [key] of blockerFunctions) {
+      deleteBlocker(key);
+    } // Always respect the user flag.  Otherwise don't reset on mutation
+    // submission navigations unless they redirect
+
+
+    let preventScrollReset = pendingPreventScrollReset === true || state.navigation.formMethod != null && isMutationMethod(state.navigation.formMethod) && ((_location$state2 = location.state) == null ? void 0 : _location$state2._isRedirect) !== true;
+
+    if (inFlightDataRoutes) {
+      dataRoutes = inFlightDataRoutes;
+      inFlightDataRoutes = undefined;
+    }
+
+    updateState(router_extends({}, newState, {
+      actionData,
+      loaderData,
+      historyAction: pendingAction,
+      location,
+      initialized: true,
+      navigation: IDLE_NAVIGATION,
+      revalidation: "idle",
+      restoreScrollPosition: getSavedScrollPosition(location, newState.matches || state.matches),
+      preventScrollReset,
+      blockers: new Map(state.blockers)
+    }));
+
+    if (isUninterruptedRevalidation) ; else if (pendingAction === router_Action.Pop) ; else if (pendingAction === router_Action.Push) {
+      init.history.push(location, location.state);
+    } else if (pendingAction === router_Action.Replace) {
+      init.history.replace(location, location.state);
+    } // Reset stateful navigation vars
+
+
+    pendingAction = router_Action.Pop;
+    pendingPreventScrollReset = false;
+    isUninterruptedRevalidation = false;
+    isRevalidationRequired = false;
+    cancelledDeferredRoutes = [];
+    cancelledFetcherLoads = [];
+  } // Trigger a navigation event, which can either be a numerical POP or a PUSH
+  // replace with an optional submission
+
+
+  async function navigate(to, opts) {
+    if (typeof to === "number") {
+      init.history.go(to);
+      return;
+    }
+
+    let normalizedPath = normalizeTo(state.location, state.matches, basename, future.v7_prependBasename, to, opts == null ? void 0 : opts.fromRouteId, opts == null ? void 0 : opts.relative);
+    let {
+      path,
+      submission,
+      error
+    } = normalizeNavigateOptions(future.v7_normalizeFormMethod, false, normalizedPath, opts);
+    let currentLocation = state.location;
+    let nextLocation = createLocation(state.location, path, opts && opts.state); // When using navigate as a PUSH/REPLACE we aren't reading an already-encoded
+    // URL from window.location, so we need to encode it here so the behavior
+    // remains the same as POP and non-data-router usages.  new URL() does all
+    // the same encoding we'd get from a history.pushState/window.location read
+    // without having to touch history
+
+    nextLocation = router_extends({}, nextLocation, init.history.encodeLocation(nextLocation));
+    let userReplace = opts && opts.replace != null ? opts.replace : undefined;
+    let historyAction = router_Action.Push;
+
+    if (userReplace === true) {
+      historyAction = router_Action.Replace;
+    } else if (userReplace === false) ; else if (submission != null && isMutationMethod(submission.formMethod) && submission.formAction === state.location.pathname + state.location.search) {
+      // By default on submissions to the current location we REPLACE so that
+      // users don't have to double-click the back button to get to the prior
+      // location.  If the user redirects to a different location from the
+      // action/loader this will be ignored and the redirect will be a PUSH
+      historyAction = router_Action.Replace;
+    }
+
+    let preventScrollReset = opts && "preventScrollReset" in opts ? opts.preventScrollReset === true : undefined;
+    let blockerKey = shouldBlockNavigation({
+      currentLocation,
+      nextLocation,
+      historyAction
+    });
+
+    if (blockerKey) {
+      // Put the blocker into a blocked state
+      updateBlocker(blockerKey, {
+        state: "blocked",
+        location: nextLocation,
+
+        proceed() {
+          updateBlocker(blockerKey, {
+            state: "proceeding",
+            proceed: undefined,
+            reset: undefined,
+            location: nextLocation
+          }); // Send the same navigation through
+
+          navigate(to, opts);
+        },
+
+        reset() {
+          deleteBlocker(blockerKey);
+          updateState({
+            blockers: new Map(state.blockers)
+          });
+        }
+
+      });
+      return;
+    }
+
+    return await startNavigation(historyAction, nextLocation, {
+      submission,
+      // Send through the formData serialization error if we have one so we can
+      // render at the right error boundary after we match routes
+      pendingError: error,
+      preventScrollReset,
+      replace: opts && opts.replace
+    });
+  } // Revalidate all current loaders.  If a navigation is in progress or if this
+  // is interrupted by a navigation, allow this to "succeed" by calling all
+  // loaders during the next loader round
+
+
+  function revalidate() {
+    interruptActiveLoads();
+    updateState({
+      revalidation: "loading"
+    }); // If we're currently submitting an action, we don't need to start a new
+    // navigation, we'll just let the follow up loader execution call all loaders
+
+    if (state.navigation.state === "submitting") {
+      return;
+    } // If we're currently in an idle state, start a new navigation for the current
+    // action/location and mark it as uninterrupted, which will skip the history
+    // update in completeNavigation
+
+
+    if (state.navigation.state === "idle") {
+      startNavigation(state.historyAction, state.location, {
+        startUninterruptedRevalidation: true
+      });
+      return;
+    } // Otherwise, if we're currently in a loading state, just start a new
+    // navigation to the navigation.location but do not trigger an uninterrupted
+    // revalidation so that history correctly updates once the navigation completes
+
+
+    startNavigation(pendingAction || state.historyAction, state.navigation.location, {
+      overrideNavigation: state.navigation
+    });
+  } // Start a navigation to the given action/location.  Can optionally provide a
+  // overrideNavigation which will override the normalLoad in the case of a redirect
+  // navigation
+
+
+  async function startNavigation(historyAction, location, opts) {
+    // Abort any in-progress navigations and start a new one. Unset any ongoing
+    // uninterrupted revalidations unless told otherwise, since we want this
+    // new navigation to update history normally
+    pendingNavigationController && pendingNavigationController.abort();
+    pendingNavigationController = null;
+    pendingAction = historyAction;
+    isUninterruptedRevalidation = (opts && opts.startUninterruptedRevalidation) === true; // Save the current scroll position every time we start a new navigation,
+    // and track whether we should reset scroll on completion
+
+    saveScrollPosition(state.location, state.matches);
+    pendingPreventScrollReset = (opts && opts.preventScrollReset) === true;
+    let routesToUse = inFlightDataRoutes || dataRoutes;
+    let loadingNavigation = opts && opts.overrideNavigation;
+    let matches = router_matchRoutes(routesToUse, location, basename); // Short circuit with a 404 on the root error boundary if we match nothing
+
+    if (!matches) {
+      let error = getInternalRouterError(404, {
+        pathname: location.pathname
+      });
+      let {
+        matches: notFoundMatches,
+        route
+      } = getShortCircuitMatches(routesToUse); // Cancel all pending deferred on 404s since we don't keep any routes
+
+      cancelActiveDeferreds();
+      completeNavigation(location, {
+        matches: notFoundMatches,
+        loaderData: {},
+        errors: {
+          [route.id]: error
+        }
+      });
+      return;
+    } // Short circuit if it's only a hash change and not a mutation submission.
+    // Ignore on initial page loads because since the initial load will always
+    // be "same hash".
+    // For example, on /page#hash and submit a <Form method="post"> which will
+    // default to a navigation to /page
+
+
+    if (state.initialized && isHashChangeOnly(state.location, location) && !(opts && opts.submission && isMutationMethod(opts.submission.formMethod))) {
+      completeNavigation(location, {
+        matches
+      });
+      return;
+    } // Create a controller/Request for this navigation
+
+
+    pendingNavigationController = new AbortController();
+    let request = createClientSideRequest(init.history, location, pendingNavigationController.signal, opts && opts.submission);
+    let pendingActionData;
+    let pendingError;
+
+    if (opts && opts.pendingError) {
+      // If we have a pendingError, it means the user attempted a GET submission
+      // with binary FormData so assign here and skip to handleLoaders.  That
+      // way we handle calling loaders above the boundary etc.  It's not really
+      // different from an actionError in that sense.
+      pendingError = {
+        [findNearestBoundary(matches).route.id]: opts.pendingError
+      };
+    } else if (opts && opts.submission && isMutationMethod(opts.submission.formMethod)) {
+      // Call action if we received an action submission
+      let actionOutput = await handleAction(request, location, opts.submission, matches, {
+        replace: opts.replace
+      });
+
+      if (actionOutput.shortCircuited) {
+        return;
+      }
+
+      pendingActionData = actionOutput.pendingActionData;
+      pendingError = actionOutput.pendingActionError;
+
+      let navigation = router_extends({
+        state: "loading",
+        location
+      }, opts.submission);
+
+      loadingNavigation = navigation; // Create a GET request for the loaders
+
+      request = new Request(request.url, {
+        signal: request.signal
+      });
+    } // Call loaders
+
+
+    let {
+      shortCircuited,
+      loaderData,
+      errors
+    } = await handleLoaders(request, location, matches, loadingNavigation, opts && opts.submission, opts && opts.fetcherSubmission, opts && opts.replace, pendingActionData, pendingError);
+
+    if (shortCircuited) {
+      return;
+    } // Clean up now that the action/loaders have completed.  Don't clean up if
+    // we short circuited because pendingNavigationController will have already
+    // been assigned to a new controller for the next navigation
+
+
+    pendingNavigationController = null;
+    completeNavigation(location, router_extends({
+      matches
+    }, pendingActionData ? {
+      actionData: pendingActionData
+    } : {}, {
+      loaderData,
+      errors
+    }));
+  } // Call the action matched by the leaf route for this navigation and handle
+  // redirects/errors
+
+
+  async function handleAction(request, location, submission, matches, opts) {
+    interruptActiveLoads(); // Put us in a submitting state
+
+    let navigation = router_extends({
+      state: "submitting",
+      location
+    }, submission);
+
+    updateState({
+      navigation
+    }); // Call our action and get the result
+
+    let result;
+    let actionMatch = getTargetMatch(matches, location);
+
+    if (!actionMatch.route.action && !actionMatch.route.lazy) {
+      result = {
+        type: ResultType.error,
+        error: getInternalRouterError(405, {
+          method: request.method,
+          pathname: location.pathname,
+          routeId: actionMatch.route.id
+        })
+      };
+    } else {
+      result = await callLoaderOrAction("action", request, actionMatch, matches, manifest, mapRouteProperties, basename);
+
+      if (request.signal.aborted) {
+        return {
+          shortCircuited: true
+        };
+      }
+    }
+
+    if (isRedirectResult(result)) {
+      let replace;
+
+      if (opts && opts.replace != null) {
+        replace = opts.replace;
+      } else {
+        // If the user didn't explicity indicate replace behavior, replace if
+        // we redirected to the exact same location we're currently at to avoid
+        // double back-buttons
+        replace = result.location === state.location.pathname + state.location.search;
+      }
+
+      await startRedirectNavigation(state, result, {
+        submission,
+        replace
+      });
+      return {
+        shortCircuited: true
+      };
+    }
+
+    if (isErrorResult(result)) {
+      // Store off the pending error - we use it to determine which loaders
+      // to call and will commit it when we complete the navigation
+      let boundaryMatch = findNearestBoundary(matches, actionMatch.route.id); // By default, all submissions are REPLACE navigations, but if the
+      // action threw an error that'll be rendered in an errorElement, we fall
+      // back to PUSH so that the user can use the back button to get back to
+      // the pre-submission form location to try again
+
+      if ((opts && opts.replace) !== true) {
+        pendingAction = router_Action.Push;
+      }
+
+      return {
+        // Send back an empty object we can use to clear out any prior actionData
+        pendingActionData: {},
+        pendingActionError: {
+          [boundaryMatch.route.id]: result.error
+        }
+      };
+    }
+
+    if (isDeferredResult(result)) {
+      throw getInternalRouterError(400, {
+        type: "defer-action"
+      });
+    }
+
+    return {
+      pendingActionData: {
+        [actionMatch.route.id]: result.data
+      }
+    };
+  } // Call all applicable loaders for the given matches, handling redirects,
+  // errors, etc.
+
+
+  async function handleLoaders(request, location, matches, overrideNavigation, submission, fetcherSubmission, replace, pendingActionData, pendingError) {
+    // Figure out the right navigation we want to use for data loading
+    let loadingNavigation = overrideNavigation;
+
+    if (!loadingNavigation) {
+      let navigation = router_extends({
+        state: "loading",
+        location,
+        formMethod: undefined,
+        formAction: undefined,
+        formEncType: undefined,
+        formData: undefined
+      }, submission);
+
+      loadingNavigation = navigation;
+    } // If this was a redirect from an action we don't have a "submission" but
+    // we have it on the loading navigation so use that if available
+
+
+    let activeSubmission = submission || fetcherSubmission ? submission || fetcherSubmission : loadingNavigation.formMethod && loadingNavigation.formAction && loadingNavigation.formData && loadingNavigation.formEncType ? {
+      formMethod: loadingNavigation.formMethod,
+      formAction: loadingNavigation.formAction,
+      formData: loadingNavigation.formData,
+      formEncType: loadingNavigation.formEncType
+    } : undefined;
+    let routesToUse = inFlightDataRoutes || dataRoutes;
+    let [matchesToLoad, revalidatingFetchers] = getMatchesToLoad(init.history, state, matches, activeSubmission, location, isRevalidationRequired, cancelledDeferredRoutes, cancelledFetcherLoads, fetchLoadMatches, routesToUse, basename, pendingActionData, pendingError); // Cancel pending deferreds for no-longer-matched routes or routes we're
+    // about to reload.  Note that if this is an action reload we would have
+    // already cancelled all pending deferreds so this would be a no-op
+
+    cancelActiveDeferreds(routeId => !(matches && matches.some(m => m.route.id === routeId)) || matchesToLoad && matchesToLoad.some(m => m.route.id === routeId)); // Short circuit if we have no loaders to run
+
+    if (matchesToLoad.length === 0 && revalidatingFetchers.length === 0) {
+      let updatedFetchers = markFetchRedirectsDone();
+      completeNavigation(location, router_extends({
+        matches,
+        loaderData: {},
+        // Commit pending error if we're short circuiting
+        errors: pendingError || null
+      }, pendingActionData ? {
+        actionData: pendingActionData
+      } : {}, updatedFetchers ? {
+        fetchers: new Map(state.fetchers)
+      } : {}));
+      return {
+        shortCircuited: true
+      };
+    } // If this is an uninterrupted revalidation, we remain in our current idle
+    // state.  If not, we need to switch to our loading state and load data,
+    // preserving any new action data or existing action data (in the case of
+    // a revalidation interrupting an actionReload)
+
+
+    if (!isUninterruptedRevalidation) {
+      revalidatingFetchers.forEach(rf => {
+        let fetcher = state.fetchers.get(rf.key);
+        let revalidatingFetcher = {
+          state: "loading",
+          data: fetcher && fetcher.data,
+          formMethod: undefined,
+          formAction: undefined,
+          formEncType: undefined,
+          formData: undefined,
+          " _hasFetcherDoneAnything ": true
+        };
+        state.fetchers.set(rf.key, revalidatingFetcher);
+      });
+      let actionData = pendingActionData || state.actionData;
+      updateState(router_extends({
+        navigation: loadingNavigation
+      }, actionData ? Object.keys(actionData).length === 0 ? {
+        actionData: null
+      } : {
+        actionData
+      } : {}, revalidatingFetchers.length > 0 ? {
+        fetchers: new Map(state.fetchers)
+      } : {}));
+    }
+
+    pendingNavigationLoadId = ++incrementingLoadId;
+    revalidatingFetchers.forEach(rf => {
+      if (rf.controller) {
+        // Fetchers use an independent AbortController so that aborting a fetcher
+        // (via deleteFetcher) does not abort the triggering navigation that
+        // triggered the revalidation
+        fetchControllers.set(rf.key, rf.controller);
+      }
+    }); // Proxy navigation abort through to revalidation fetchers
+
+    let abortPendingFetchRevalidations = () => revalidatingFetchers.forEach(f => abortFetcher(f.key));
+
+    if (pendingNavigationController) {
+      pendingNavigationController.signal.addEventListener("abort", abortPendingFetchRevalidations);
+    }
+
+    let {
+      results,
+      loaderResults,
+      fetcherResults
+    } = await callLoadersAndMaybeResolveData(state.matches, matches, matchesToLoad, revalidatingFetchers, request);
+
+    if (request.signal.aborted) {
+      return {
+        shortCircuited: true
+      };
+    } // Clean up _after_ loaders have completed.  Don't clean up if we short
+    // circuited because fetchControllers would have been aborted and
+    // reassigned to new controllers for the next navigation
+
+
+    if (pendingNavigationController) {
+      pendingNavigationController.signal.removeEventListener("abort", abortPendingFetchRevalidations);
+    }
+
+    revalidatingFetchers.forEach(rf => fetchControllers.delete(rf.key)); // If any loaders returned a redirect Response, start a new REPLACE navigation
+
+    let redirect = findRedirect(results);
+
+    if (redirect) {
+      await startRedirectNavigation(state, redirect, {
+        replace
+      });
+      return {
+        shortCircuited: true
+      };
+    } // Process and commit output from loaders
+
+
+    let {
+      loaderData,
+      errors
+    } = processLoaderData(state, matches, matchesToLoad, loaderResults, pendingError, revalidatingFetchers, fetcherResults, activeDeferreds); // Wire up subscribers to update loaderData as promises settle
+
+    activeDeferreds.forEach((deferredData, routeId) => {
+      deferredData.subscribe(aborted => {
+        // Note: No need to updateState here since the TrackedPromise on
+        // loaderData is stable across resolve/reject
+        // Remove this instance if we were aborted or if promises have settled
+        if (aborted || deferredData.done) {
+          activeDeferreds.delete(routeId);
+        }
+      });
+    });
+    let updatedFetchers = markFetchRedirectsDone();
+    let didAbortFetchLoads = abortStaleFetchLoads(pendingNavigationLoadId);
+    let shouldUpdateFetchers = updatedFetchers || didAbortFetchLoads || revalidatingFetchers.length > 0;
+    return router_extends({
+      loaderData,
+      errors
+    }, shouldUpdateFetchers ? {
+      fetchers: new Map(state.fetchers)
+    } : {});
+  }
+
+  function getFetcher(key) {
+    return state.fetchers.get(key) || IDLE_FETCHER;
+  } // Trigger a fetcher load/submit for the given fetcher key
+
+
+  function fetch(key, routeId, href, opts) {
+    if (isServer) {
+      throw new Error("router.fetch() was called during the server render, but it shouldn't be. " + "You are likely calling a useFetcher() method in the body of your component. " + "Try moving it to a useEffect or a callback.");
+    }
+
+    if (fetchControllers.has(key)) abortFetcher(key);
+    let routesToUse = inFlightDataRoutes || dataRoutes;
+    let normalizedPath = normalizeTo(state.location, state.matches, basename, future.v7_prependBasename, href, routeId, opts == null ? void 0 : opts.relative);
+    let matches = router_matchRoutes(routesToUse, normalizedPath, basename);
+
+    if (!matches) {
+      setFetcherError(key, routeId, getInternalRouterError(404, {
+        pathname: normalizedPath
+      }));
+      return;
+    }
+
+    let {
+      path,
+      submission
+    } = normalizeNavigateOptions(future.v7_normalizeFormMethod, true, normalizedPath, opts);
+    let match = getTargetMatch(matches, path);
+    pendingPreventScrollReset = (opts && opts.preventScrollReset) === true;
+
+    if (submission && isMutationMethod(submission.formMethod)) {
+      handleFetcherAction(key, routeId, path, match, matches, submission);
+      return;
+    } // Store off the match so we can call it's shouldRevalidate on subsequent
+    // revalidations
+
+
+    fetchLoadMatches.set(key, {
+      routeId,
+      path
+    });
+    handleFetcherLoader(key, routeId, path, match, matches, submission);
+  } // Call the action for the matched fetcher.submit(), and then handle redirects,
+  // errors, and revalidation
+
+
+  async function handleFetcherAction(key, routeId, path, match, requestMatches, submission) {
+    interruptActiveLoads();
+    fetchLoadMatches.delete(key);
+
+    if (!match.route.action && !match.route.lazy) {
+      let error = getInternalRouterError(405, {
+        method: submission.formMethod,
+        pathname: path,
+        routeId: routeId
+      });
+      setFetcherError(key, routeId, error);
+      return;
+    } // Put this fetcher into it's submitting state
+
+
+    let existingFetcher = state.fetchers.get(key);
+
+    let fetcher = router_extends({
+      state: "submitting"
+    }, submission, {
+      data: existingFetcher && existingFetcher.data,
+      " _hasFetcherDoneAnything ": true
+    });
+
+    state.fetchers.set(key, fetcher);
+    updateState({
+      fetchers: new Map(state.fetchers)
+    }); // Call the action for the fetcher
+
+    let abortController = new AbortController();
+    let fetchRequest = createClientSideRequest(init.history, path, abortController.signal, submission);
+    fetchControllers.set(key, abortController);
+    let actionResult = await callLoaderOrAction("action", fetchRequest, match, requestMatches, manifest, mapRouteProperties, basename);
+
+    if (fetchRequest.signal.aborted) {
+      // We can delete this so long as we weren't aborted by ou our own fetcher
+      // re-submit which would have put _new_ controller is in fetchControllers
+      if (fetchControllers.get(key) === abortController) {
+        fetchControllers.delete(key);
+      }
+
+      return;
+    }
+
+    if (isRedirectResult(actionResult)) {
+      fetchControllers.delete(key);
+      fetchRedirectIds.add(key);
+
+      let loadingFetcher = router_extends({
+        state: "loading"
+      }, submission, {
+        data: undefined,
+        " _hasFetcherDoneAnything ": true
+      });
+
+      state.fetchers.set(key, loadingFetcher);
+      updateState({
+        fetchers: new Map(state.fetchers)
+      });
+      return startRedirectNavigation(state, actionResult, {
+        submission,
+        isFetchActionRedirect: true
+      });
+    } // Process any non-redirect errors thrown
+
+
+    if (isErrorResult(actionResult)) {
+      setFetcherError(key, routeId, actionResult.error);
+      return;
+    }
+
+    if (isDeferredResult(actionResult)) {
+      throw getInternalRouterError(400, {
+        type: "defer-action"
+      });
+    } // Start the data load for current matches, or the next location if we're
+    // in the middle of a navigation
+
+
+    let nextLocation = state.navigation.location || state.location;
+    let revalidationRequest = createClientSideRequest(init.history, nextLocation, abortController.signal);
+    let routesToUse = inFlightDataRoutes || dataRoutes;
+    let matches = state.navigation.state !== "idle" ? router_matchRoutes(routesToUse, state.navigation.location, basename) : state.matches;
+    invariant(matches, "Didn't find any matches after fetcher action");
+    let loadId = ++incrementingLoadId;
+    fetchReloadIds.set(key, loadId);
+
+    let loadFetcher = router_extends({
+      state: "loading",
+      data: actionResult.data
+    }, submission, {
+      " _hasFetcherDoneAnything ": true
+    });
+
+    state.fetchers.set(key, loadFetcher);
+    let [matchesToLoad, revalidatingFetchers] = getMatchesToLoad(init.history, state, matches, submission, nextLocation, isRevalidationRequired, cancelledDeferredRoutes, cancelledFetcherLoads, fetchLoadMatches, routesToUse, basename, {
+      [match.route.id]: actionResult.data
+    }, undefined // No need to send through errors since we short circuit above
+    ); // Put all revalidating fetchers into the loading state, except for the
+    // current fetcher which we want to keep in it's current loading state which
+    // contains it's action submission info + action data
+
+    revalidatingFetchers.filter(rf => rf.key !== key).forEach(rf => {
+      let staleKey = rf.key;
+      let existingFetcher = state.fetchers.get(staleKey);
+      let revalidatingFetcher = {
+        state: "loading",
+        data: existingFetcher && existingFetcher.data,
+        formMethod: undefined,
+        formAction: undefined,
+        formEncType: undefined,
+        formData: undefined,
+        " _hasFetcherDoneAnything ": true
+      };
+      state.fetchers.set(staleKey, revalidatingFetcher);
+
+      if (rf.controller) {
+        fetchControllers.set(staleKey, rf.controller);
+      }
+    });
+    updateState({
+      fetchers: new Map(state.fetchers)
+    });
+
+    let abortPendingFetchRevalidations = () => revalidatingFetchers.forEach(rf => abortFetcher(rf.key));
+
+    abortController.signal.addEventListener("abort", abortPendingFetchRevalidations);
+    let {
+      results,
+      loaderResults,
+      fetcherResults
+    } = await callLoadersAndMaybeResolveData(state.matches, matches, matchesToLoad, revalidatingFetchers, revalidationRequest);
+
+    if (abortController.signal.aborted) {
+      return;
+    }
+
+    abortController.signal.removeEventListener("abort", abortPendingFetchRevalidations);
+    fetchReloadIds.delete(key);
+    fetchControllers.delete(key);
+    revalidatingFetchers.forEach(r => fetchControllers.delete(r.key));
+    let redirect = findRedirect(results);
+
+    if (redirect) {
+      return startRedirectNavigation(state, redirect);
+    } // Process and commit output from loaders
+
+
+    let {
+      loaderData,
+      errors
+    } = processLoaderData(state, state.matches, matchesToLoad, loaderResults, undefined, revalidatingFetchers, fetcherResults, activeDeferreds);
+    let doneFetcher = {
+      state: "idle",
+      data: actionResult.data,
+      formMethod: undefined,
+      formAction: undefined,
+      formEncType: undefined,
+      formData: undefined,
+      " _hasFetcherDoneAnything ": true
+    };
+    state.fetchers.set(key, doneFetcher);
+    let didAbortFetchLoads = abortStaleFetchLoads(loadId); // If we are currently in a navigation loading state and this fetcher is
+    // more recent than the navigation, we want the newer data so abort the
+    // navigation and complete it with the fetcher data
+
+    if (state.navigation.state === "loading" && loadId > pendingNavigationLoadId) {
+      invariant(pendingAction, "Expected pending action");
+      pendingNavigationController && pendingNavigationController.abort();
+      completeNavigation(state.navigation.location, {
+        matches,
+        loaderData,
+        errors,
+        fetchers: new Map(state.fetchers)
+      });
+    } else {
+      // otherwise just update with the fetcher data, preserving any existing
+      // loaderData for loaders that did not need to reload.  We have to
+      // manually merge here since we aren't going through completeNavigation
+      updateState(router_extends({
+        errors,
+        loaderData: mergeLoaderData(state.loaderData, loaderData, matches, errors)
+      }, didAbortFetchLoads ? {
+        fetchers: new Map(state.fetchers)
+      } : {}));
+      isRevalidationRequired = false;
+    }
+  } // Call the matched loader for fetcher.load(), handling redirects, errors, etc.
+
+
+  async function handleFetcherLoader(key, routeId, path, match, matches, submission) {
+    let existingFetcher = state.fetchers.get(key); // Put this fetcher into it's loading state
+
+    let loadingFetcher = router_extends({
+      state: "loading",
+      formMethod: undefined,
+      formAction: undefined,
+      formEncType: undefined,
+      formData: undefined
+    }, submission, {
+      data: existingFetcher && existingFetcher.data,
+      " _hasFetcherDoneAnything ": true
+    });
+
+    state.fetchers.set(key, loadingFetcher);
+    updateState({
+      fetchers: new Map(state.fetchers)
+    }); // Call the loader for this fetcher route match
+
+    let abortController = new AbortController();
+    let fetchRequest = createClientSideRequest(init.history, path, abortController.signal);
+    fetchControllers.set(key, abortController);
+    let result = await callLoaderOrAction("loader", fetchRequest, match, matches, manifest, mapRouteProperties, basename); // Deferred isn't supported for fetcher loads, await everything and treat it
+    // as a normal load.  resolveDeferredData will return undefined if this
+    // fetcher gets aborted, so we just leave result untouched and short circuit
+    // below if that happens
+
+    if (isDeferredResult(result)) {
+      result = (await resolveDeferredData(result, fetchRequest.signal, true)) || result;
+    } // We can delete this so long as we weren't aborted by our our own fetcher
+    // re-load which would have put _new_ controller is in fetchControllers
+
+
+    if (fetchControllers.get(key) === abortController) {
+      fetchControllers.delete(key);
+    }
+
+    if (fetchRequest.signal.aborted) {
+      return;
+    } // If the loader threw a redirect Response, start a new REPLACE navigation
+
+
+    if (isRedirectResult(result)) {
+      fetchRedirectIds.add(key);
+      await startRedirectNavigation(state, result);
+      return;
+    } // Process any non-redirect errors thrown
+
+
+    if (isErrorResult(result)) {
+      let boundaryMatch = findNearestBoundary(state.matches, routeId);
+      state.fetchers.delete(key); // TODO: In remix, this would reset to IDLE_NAVIGATION if it was a catch -
+      // do we need to behave any differently with our non-redirect errors?
+      // What if it was a non-redirect Response?
+
+      updateState({
+        fetchers: new Map(state.fetchers),
+        errors: {
+          [boundaryMatch.route.id]: result.error
+        }
+      });
+      return;
+    }
+
+    invariant(!isDeferredResult(result), "Unhandled fetcher deferred data"); // Put the fetcher back into an idle state
+
+    let doneFetcher = {
+      state: "idle",
+      data: result.data,
+      formMethod: undefined,
+      formAction: undefined,
+      formEncType: undefined,
+      formData: undefined,
+      " _hasFetcherDoneAnything ": true
+    };
+    state.fetchers.set(key, doneFetcher);
+    updateState({
+      fetchers: new Map(state.fetchers)
+    });
+  }
+  /**
+   * Utility function to handle redirects returned from an action or loader.
+   * Normally, a redirect "replaces" the navigation that triggered it.  So, for
+   * example:
+   *
+   *  - user is on /a
+   *  - user clicks a link to /b
+   *  - loader for /b redirects to /c
+   *
+   * In a non-JS app the browser would track the in-flight navigation to /b and
+   * then replace it with /c when it encountered the redirect response.  In
+   * the end it would only ever update the URL bar with /c.
+   *
+   * In client-side routing using pushState/replaceState, we aim to emulate
+   * this behavior and we also do not update history until the end of the
+   * navigation (including processed redirects).  This means that we never
+   * actually touch history until we've processed redirects, so we just use
+   * the history action from the original navigation (PUSH or REPLACE).
+   */
+
+
+  async function startRedirectNavigation(state, redirect, _temp) {
+    var _window;
+
+    let {
+      submission,
+      replace,
+      isFetchActionRedirect
+    } = _temp === void 0 ? {} : _temp;
+
+    if (redirect.revalidate) {
+      isRevalidationRequired = true;
+    }
+
+    let redirectLocation = createLocation(state.location, redirect.location, // TODO: This can be removed once we get rid of useTransition in Remix v2
+    router_extends({
+      _isRedirect: true
+    }, isFetchActionRedirect ? {
+      _isFetchActionRedirect: true
+    } : {}));
+    invariant(redirectLocation, "Expected a location on the redirect navigation"); // Check if this an absolute external redirect that goes to a new origin
+
+    if (ABSOLUTE_URL_REGEX.test(redirect.location) && router_isBrowser && typeof ((_window = window) == null ? void 0 : _window.location) !== "undefined") {
+      let url = init.history.createURL(redirect.location);
+      let isDifferentBasename = router_stripBasename(url.pathname, basename) == null;
+
+      if (window.location.origin !== url.origin || isDifferentBasename) {
+        if (replace) {
+          window.location.replace(redirect.location);
+        } else {
+          window.location.assign(redirect.location);
+        }
+
+        return;
+      }
+    } // There's no need to abort on redirects, since we don't detect the
+    // redirect until the action/loaders have settled
+
+
+    pendingNavigationController = null;
+    let redirectHistoryAction = replace === true ? router_Action.Replace : router_Action.Push; // Use the incoming submission if provided, fallback on the active one in
+    // state.navigation
+
+    let {
+      formMethod,
+      formAction,
+      formEncType,
+      formData
+    } = state.navigation;
+
+    if (!submission && formMethod && formAction && formData && formEncType) {
+      submission = {
+        formMethod,
+        formAction,
+        formEncType,
+        formData
+      };
+    } // If this was a 307/308 submission we want to preserve the HTTP method and
+    // re-submit the GET/POST/PUT/PATCH/DELETE as a submission navigation to the
+    // redirected location
+
+
+    if (redirectPreserveMethodStatusCodes.has(redirect.status) && submission && isMutationMethod(submission.formMethod)) {
+      await startNavigation(redirectHistoryAction, redirectLocation, {
+        submission: router_extends({}, submission, {
+          formAction: redirect.location
+        }),
+        // Preserve this flag across redirects
+        preventScrollReset: pendingPreventScrollReset
+      });
+    } else if (isFetchActionRedirect) {
+      // For a fetch action redirect, we kick off a new loading navigation
+      // without the fetcher submission, but we send it along for shouldRevalidate
+      await startNavigation(redirectHistoryAction, redirectLocation, {
+        overrideNavigation: {
+          state: "loading",
+          location: redirectLocation,
+          formMethod: undefined,
+          formAction: undefined,
+          formEncType: undefined,
+          formData: undefined
+        },
+        fetcherSubmission: submission,
+        // Preserve this flag across redirects
+        preventScrollReset: pendingPreventScrollReset
+      });
+    } else {
+      // Otherwise, we kick off a new loading navigation, preserving the
+      // submission info for the duration of this navigation
+      await startNavigation(redirectHistoryAction, redirectLocation, {
+        overrideNavigation: {
+          state: "loading",
+          location: redirectLocation,
+          formMethod: submission ? submission.formMethod : undefined,
+          formAction: submission ? submission.formAction : undefined,
+          formEncType: submission ? submission.formEncType : undefined,
+          formData: submission ? submission.formData : undefined
+        },
+        // Preserve this flag across redirects
+        preventScrollReset: pendingPreventScrollReset
+      });
+    }
+  }
+
+  async function callLoadersAndMaybeResolveData(currentMatches, matches, matchesToLoad, fetchersToLoad, request) {
+    // Call all navigation loaders and revalidating fetcher loaders in parallel,
+    // then slice off the results into separate arrays so we can handle them
+    // accordingly
+    let results = await Promise.all([...matchesToLoad.map(match => callLoaderOrAction("loader", request, match, matches, manifest, mapRouteProperties, basename)), ...fetchersToLoad.map(f => {
+      if (f.matches && f.match && f.controller) {
+        return callLoaderOrAction("loader", createClientSideRequest(init.history, f.path, f.controller.signal), f.match, f.matches, manifest, mapRouteProperties, basename);
+      } else {
+        let error = {
+          type: ResultType.error,
+          error: getInternalRouterError(404, {
+            pathname: f.path
+          })
+        };
+        return error;
+      }
+    })]);
+    let loaderResults = results.slice(0, matchesToLoad.length);
+    let fetcherResults = results.slice(matchesToLoad.length);
+    await Promise.all([resolveDeferredResults(currentMatches, matchesToLoad, loaderResults, loaderResults.map(() => request.signal), false, state.loaderData), resolveDeferredResults(currentMatches, fetchersToLoad.map(f => f.match), fetcherResults, fetchersToLoad.map(f => f.controller ? f.controller.signal : null), true)]);
+    return {
+      results,
+      loaderResults,
+      fetcherResults
+    };
+  }
+
+  function interruptActiveLoads() {
+    // Every interruption triggers a revalidation
+    isRevalidationRequired = true; // Cancel pending route-level deferreds and mark cancelled routes for
+    // revalidation
+
+    cancelledDeferredRoutes.push(...cancelActiveDeferreds()); // Abort in-flight fetcher loads
+
+    fetchLoadMatches.forEach((_, key) => {
+      if (fetchControllers.has(key)) {
+        cancelledFetcherLoads.push(key);
+        abortFetcher(key);
+      }
+    });
+  }
+
+  function setFetcherError(key, routeId, error) {
+    let boundaryMatch = findNearestBoundary(state.matches, routeId);
+    deleteFetcher(key);
+    updateState({
+      errors: {
+        [boundaryMatch.route.id]: error
+      },
+      fetchers: new Map(state.fetchers)
+    });
+  }
+
+  function deleteFetcher(key) {
+    if (fetchControllers.has(key)) abortFetcher(key);
+    fetchLoadMatches.delete(key);
+    fetchReloadIds.delete(key);
+    fetchRedirectIds.delete(key);
+    state.fetchers.delete(key);
+  }
+
+  function abortFetcher(key) {
+    let controller = fetchControllers.get(key);
+    invariant(controller, "Expected fetch controller: " + key);
+    controller.abort();
+    fetchControllers.delete(key);
+  }
+
+  function markFetchersDone(keys) {
+    for (let key of keys) {
+      let fetcher = getFetcher(key);
+      let doneFetcher = {
+        state: "idle",
+        data: fetcher.data,
+        formMethod: undefined,
+        formAction: undefined,
+        formEncType: undefined,
+        formData: undefined,
+        " _hasFetcherDoneAnything ": true
+      };
+      state.fetchers.set(key, doneFetcher);
+    }
+  }
+
+  function markFetchRedirectsDone() {
+    let doneKeys = [];
+    let updatedFetchers = false;
+
+    for (let key of fetchRedirectIds) {
+      let fetcher = state.fetchers.get(key);
+      invariant(fetcher, "Expected fetcher: " + key);
+
+      if (fetcher.state === "loading") {
+        fetchRedirectIds.delete(key);
+        doneKeys.push(key);
+        updatedFetchers = true;
+      }
+    }
+
+    markFetchersDone(doneKeys);
+    return updatedFetchers;
+  }
+
+  function abortStaleFetchLoads(landedId) {
+    let yeetedKeys = [];
+
+    for (let [key, id] of fetchReloadIds) {
+      if (id < landedId) {
+        let fetcher = state.fetchers.get(key);
+        invariant(fetcher, "Expected fetcher: " + key);
+
+        if (fetcher.state === "loading") {
+          abortFetcher(key);
+          fetchReloadIds.delete(key);
+          yeetedKeys.push(key);
+        }
+      }
+    }
+
+    markFetchersDone(yeetedKeys);
+    return yeetedKeys.length > 0;
+  }
+
+  function getBlocker(key, fn) {
+    let blocker = state.blockers.get(key) || IDLE_BLOCKER;
+
+    if (blockerFunctions.get(key) !== fn) {
+      blockerFunctions.set(key, fn);
+    }
+
+    return blocker;
+  }
+
+  function deleteBlocker(key) {
+    state.blockers.delete(key);
+    blockerFunctions.delete(key);
+  } // Utility function to update blockers, ensuring valid state transitions
+
+
+  function updateBlocker(key, newBlocker) {
+    let blocker = state.blockers.get(key) || IDLE_BLOCKER; // Poor mans state machine :)
+    // https://mermaid.live/edit#pako:eNqVkc9OwzAMxl8l8nnjAYrEtDIOHEBIgwvKJTReGy3_lDpIqO27k6awMG0XcrLlnz87nwdonESogKXXBuE79rq75XZO3-yHds0RJVuv70YrPlUrCEe2HfrORS3rubqZfuhtpg5C9wk5tZ4VKcRUq88q9Z8RS0-48cE1iHJkL0ugbHuFLus9L6spZy8nX9MP2CNdomVaposqu3fGayT8T8-jJQwhepo_UtpgBQaDEUom04dZhAN1aJBDlUKJBxE1ceB2Smj0Mln-IBW5AFU2dwUiktt_2Qaq2dBfaKdEup85UV7Yd-dKjlnkabl2Pvr0DTkTreM
+
+    invariant(blocker.state === "unblocked" && newBlocker.state === "blocked" || blocker.state === "blocked" && newBlocker.state === "blocked" || blocker.state === "blocked" && newBlocker.state === "proceeding" || blocker.state === "blocked" && newBlocker.state === "unblocked" || blocker.state === "proceeding" && newBlocker.state === "unblocked", "Invalid blocker state transition: " + blocker.state + " -> " + newBlocker.state);
+    state.blockers.set(key, newBlocker);
+    updateState({
+      blockers: new Map(state.blockers)
+    });
+  }
+
+  function shouldBlockNavigation(_ref2) {
+    let {
+      currentLocation,
+      nextLocation,
+      historyAction
+    } = _ref2;
+
+    if (blockerFunctions.size === 0) {
+      return;
+    } // We ony support a single active blocker at the moment since we don't have
+    // any compelling use cases for multi-blocker yet
+
+
+    if (blockerFunctions.size > 1) {
+      router_warning(false, "A router only supports one blocker at a time");
+    }
+
+    let entries = Array.from(blockerFunctions.entries());
+    let [blockerKey, blockerFunction] = entries[entries.length - 1];
+    let blocker = state.blockers.get(blockerKey);
+
+    if (blocker && blocker.state === "proceeding") {
+      // If the blocker is currently proceeding, we don't need to re-check
+      // it and can let this navigation continue
+      return;
+    } // At this point, we know we're unblocked/blocked so we need to check the
+    // user-provided blocker function
+
+
+    if (blockerFunction({
+      currentLocation,
+      nextLocation,
+      historyAction
+    })) {
+      return blockerKey;
+    }
+  }
+
+  function cancelActiveDeferreds(predicate) {
+    let cancelledRouteIds = [];
+    activeDeferreds.forEach((dfd, routeId) => {
+      if (!predicate || predicate(routeId)) {
+        // Cancel the deferred - but do not remove from activeDeferreds here -
+        // we rely on the subscribers to do that so our tests can assert proper
+        // cleanup via _internalActiveDeferreds
+        dfd.cancel();
+        cancelledRouteIds.push(routeId);
+        activeDeferreds.delete(routeId);
+      }
+    });
+    return cancelledRouteIds;
+  } // Opt in to capturing and reporting scroll positions during navigations,
+  // used by the <ScrollRestoration> component
+
+
+  function enableScrollRestoration(positions, getPosition, getKey) {
+    savedScrollPositions = positions;
+    getScrollPosition = getPosition;
+
+    getScrollRestorationKey = getKey || (location => location.key); // Perform initial hydration scroll restoration, since we miss the boat on
+    // the initial updateState() because we've not yet rendered <ScrollRestoration/>
+    // and therefore have no savedScrollPositions available
+
+
+    if (!initialScrollRestored && state.navigation === IDLE_NAVIGATION) {
+      initialScrollRestored = true;
+      let y = getSavedScrollPosition(state.location, state.matches);
+
+      if (y != null) {
+        updateState({
+          restoreScrollPosition: y
+        });
+      }
+    }
+
+    return () => {
+      savedScrollPositions = null;
+      getScrollPosition = null;
+      getScrollRestorationKey = null;
+    };
+  }
+
+  function saveScrollPosition(location, matches) {
+    if (savedScrollPositions && getScrollRestorationKey && getScrollPosition) {
+      let userMatches = matches.map(m => createUseMatchesMatch(m, state.loaderData));
+      let key = getScrollRestorationKey(location, userMatches) || location.key;
+      savedScrollPositions[key] = getScrollPosition();
+    }
+  }
+
+  function getSavedScrollPosition(location, matches) {
+    if (savedScrollPositions && getScrollRestorationKey && getScrollPosition) {
+      let userMatches = matches.map(m => createUseMatchesMatch(m, state.loaderData));
+      let key = getScrollRestorationKey(location, userMatches) || location.key;
+      let y = savedScrollPositions[key];
+
+      if (typeof y === "number") {
+        return y;
+      }
+    }
+
+    return null;
+  }
+
+  function _internalSetRoutes(newRoutes) {
+    manifest = {};
+    inFlightDataRoutes = convertRoutesToDataRoutes(newRoutes, mapRouteProperties, undefined, manifest);
+  }
+
+  router = {
+    get basename() {
+      return basename;
+    },
+
+    get state() {
+      return state;
+    },
+
+    get routes() {
+      return dataRoutes;
+    },
+
+    initialize,
+    subscribe,
+    enableScrollRestoration,
+    navigate,
+    fetch,
+    revalidate,
+    // Passthrough to history-aware createHref used by useHref so we get proper
+    // hash-aware URLs in DOM paths
+    createHref: to => init.history.createHref(to),
+    encodeLocation: to => init.history.encodeLocation(to),
+    getFetcher,
+    deleteFetcher,
+    dispose,
+    getBlocker,
+    deleteBlocker,
+    _internalFetchControllers: fetchControllers,
+    _internalActiveDeferreds: activeDeferreds,
+    // TODO: Remove setRoutes, it's temporary to avoid dealing with
+    // updating the tree while validating the update algorithm.
+    _internalSetRoutes
+  };
+  return router;
+} //#endregion
+////////////////////////////////////////////////////////////////////////////////
+//#region createStaticHandler
+////////////////////////////////////////////////////////////////////////////////
+
+const UNSAFE_DEFERRED_SYMBOL = Symbol("deferred");
+function createStaticHandler(routes, opts) {
+  invariant(routes.length > 0, "You must provide a non-empty routes array to createStaticHandler");
+  let manifest = {};
+  let basename = (opts ? opts.basename : null) || "/";
+  let mapRouteProperties;
+
+  if (opts != null && opts.mapRouteProperties) {
+    mapRouteProperties = opts.mapRouteProperties;
+  } else if (opts != null && opts.detectErrorBoundary) {
+    // If they are still using the deprecated version, wrap it with the new API
+    let detectErrorBoundary = opts.detectErrorBoundary;
+
+    mapRouteProperties = route => ({
+      hasErrorBoundary: detectErrorBoundary(route)
+    });
+  } else {
+    mapRouteProperties = defaultMapRouteProperties;
+  }
+
+  let dataRoutes = convertRoutesToDataRoutes(routes, mapRouteProperties, undefined, manifest);
+  /**
+   * The query() method is intended for document requests, in which we want to
+   * call an optional action and potentially multiple loaders for all nested
+   * routes.  It returns a StaticHandlerContext object, which is very similar
+   * to the router state (location, loaderData, actionData, errors, etc.) and
+   * also adds SSR-specific information such as the statusCode and headers
+   * from action/loaders Responses.
+   *
+   * It _should_ never throw and should report all errors through the
+   * returned context.errors object, properly associating errors to their error
+   * boundary.  Additionally, it tracks _deepestRenderedBoundaryId which can be
+   * used to emulate React error boundaries during SSr by performing a second
+   * pass only down to the boundaryId.
+   *
+   * The one exception where we do not return a StaticHandlerContext is when a
+   * redirect response is returned or thrown from any action/loader.  We
+   * propagate that out and return the raw Response so the HTTP server can
+   * return it directly.
+   */
+
+  async function query(request, _temp2) {
+    let {
+      requestContext
+    } = _temp2 === void 0 ? {} : _temp2;
+    let url = new URL(request.url);
+    let method = request.method;
+    let location = createLocation("", router_createPath(url), null, "default");
+    let matches = router_matchRoutes(dataRoutes, location, basename); // SSR supports HEAD requests while SPA doesn't
+
+    if (!isValidMethod(method) && method !== "HEAD") {
+      let error = getInternalRouterError(405, {
+        method
+      });
+      let {
+        matches: methodNotAllowedMatches,
+        route
+      } = getShortCircuitMatches(dataRoutes);
+      return {
+        basename,
+        location,
+        matches: methodNotAllowedMatches,
+        loaderData: {},
+        actionData: null,
+        errors: {
+          [route.id]: error
+        },
+        statusCode: error.status,
+        loaderHeaders: {},
+        actionHeaders: {},
+        activeDeferreds: null
+      };
+    } else if (!matches) {
+      let error = getInternalRouterError(404, {
+        pathname: location.pathname
+      });
+      let {
+        matches: notFoundMatches,
+        route
+      } = getShortCircuitMatches(dataRoutes);
+      return {
+        basename,
+        location,
+        matches: notFoundMatches,
+        loaderData: {},
+        actionData: null,
+        errors: {
+          [route.id]: error
+        },
+        statusCode: error.status,
+        loaderHeaders: {},
+        actionHeaders: {},
+        activeDeferreds: null
+      };
+    }
+
+    let result = await queryImpl(request, location, matches, requestContext);
+
+    if (isResponse(result)) {
+      return result;
+    } // When returning StaticHandlerContext, we patch back in the location here
+    // since we need it for React Context.  But this helps keep our submit and
+    // loadRouteData operating on a Request instead of a Location
+
+
+    return router_extends({
+      location,
+      basename
+    }, result);
+  }
+  /**
+   * The queryRoute() method is intended for targeted route requests, either
+   * for fetch ?_data requests or resource route requests.  In this case, we
+   * are only ever calling a single action or loader, and we are returning the
+   * returned value directly.  In most cases, this will be a Response returned
+   * from the action/loader, but it may be a primitive or other value as well -
+   * and in such cases the calling context should handle that accordingly.
+   *
+   * We do respect the throw/return differentiation, so if an action/loader
+   * throws, then this method will throw the value.  This is important so we
+   * can do proper boundary identification in Remix where a thrown Response
+   * must go to the Catch Boundary but a returned Response is happy-path.
+   *
+   * One thing to note is that any Router-initiated Errors that make sense
+   * to associate with a status code will be thrown as an ErrorResponse
+   * instance which include the raw Error, such that the calling context can
+   * serialize the error as they see fit while including the proper response
+   * code.  Examples here are 404 and 405 errors that occur prior to reaching
+   * any user-defined loaders.
+   */
+
+
+  async function queryRoute(request, _temp3) {
+    let {
+      routeId,
+      requestContext
+    } = _temp3 === void 0 ? {} : _temp3;
+    let url = new URL(request.url);
+    let method = request.method;
+    let location = createLocation("", router_createPath(url), null, "default");
+    let matches = router_matchRoutes(dataRoutes, location, basename); // SSR supports HEAD requests while SPA doesn't
+
+    if (!isValidMethod(method) && method !== "HEAD" && method !== "OPTIONS") {
+      throw getInternalRouterError(405, {
+        method
+      });
+    } else if (!matches) {
+      throw getInternalRouterError(404, {
+        pathname: location.pathname
+      });
+    }
+
+    let match = routeId ? matches.find(m => m.route.id === routeId) : getTargetMatch(matches, location);
+
+    if (routeId && !match) {
+      throw getInternalRouterError(403, {
+        pathname: location.pathname,
+        routeId
+      });
+    } else if (!match) {
+      // This should never hit I don't think?
+      throw getInternalRouterError(404, {
+        pathname: location.pathname
+      });
+    }
+
+    let result = await queryImpl(request, location, matches, requestContext, match);
+
+    if (isResponse(result)) {
+      return result;
+    }
+
+    let error = result.errors ? Object.values(result.errors)[0] : undefined;
+
+    if (error !== undefined) {
+      // If we got back result.errors, that means the loader/action threw
+      // _something_ that wasn't a Response, but it's not guaranteed/required
+      // to be an `instanceof Error` either, so we have to use throw here to
+      // preserve the "error" state outside of queryImpl.
+      throw error;
+    } // Pick off the right state value to return
+
+
+    if (result.actionData) {
+      return Object.values(result.actionData)[0];
+    }
+
+    if (result.loaderData) {
+      var _result$activeDeferre;
+
+      let data = Object.values(result.loaderData)[0];
+
+      if ((_result$activeDeferre = result.activeDeferreds) != null && _result$activeDeferre[match.route.id]) {
+        data[UNSAFE_DEFERRED_SYMBOL] = result.activeDeferreds[match.route.id];
+      }
+
+      return data;
+    }
+
+    return undefined;
+  }
+
+  async function queryImpl(request, location, matches, requestContext, routeMatch) {
+    invariant(request.signal, "query()/queryRoute() requests must contain an AbortController signal");
+
+    try {
+      if (isMutationMethod(request.method.toLowerCase())) {
+        let result = await submit(request, matches, routeMatch || getTargetMatch(matches, location), requestContext, routeMatch != null);
+        return result;
+      }
+
+      let result = await loadRouteData(request, matches, requestContext, routeMatch);
+      return isResponse(result) ? result : router_extends({}, result, {
+        actionData: null,
+        actionHeaders: {}
+      });
+    } catch (e) {
+      // If the user threw/returned a Response in callLoaderOrAction, we throw
+      // it to bail out and then return or throw here based on whether the user
+      // returned or threw
+      if (isQueryRouteResponse(e)) {
+        if (e.type === ResultType.error && !isRedirectResponse(e.response)) {
+          throw e.response;
+        }
+
+        return e.response;
+      } // Redirects are always returned since they don't propagate to catch
+      // boundaries
+
+
+      if (isRedirectResponse(e)) {
+        return e;
+      }
+
+      throw e;
+    }
+  }
+
+  async function submit(request, matches, actionMatch, requestContext, isRouteRequest) {
+    let result;
+
+    if (!actionMatch.route.action && !actionMatch.route.lazy) {
+      let error = getInternalRouterError(405, {
+        method: request.method,
+        pathname: new URL(request.url).pathname,
+        routeId: actionMatch.route.id
+      });
+
+      if (isRouteRequest) {
+        throw error;
+      }
+
+      result = {
+        type: ResultType.error,
+        error
+      };
+    } else {
+      result = await callLoaderOrAction("action", request, actionMatch, matches, manifest, mapRouteProperties, basename, true, isRouteRequest, requestContext);
+
+      if (request.signal.aborted) {
+        let method = isRouteRequest ? "queryRoute" : "query";
+        throw new Error(method + "() call aborted");
+      }
+    }
+
+    if (isRedirectResult(result)) {
+      // Uhhhh - this should never happen, we should always throw these from
+      // callLoaderOrAction, but the type narrowing here keeps TS happy and we
+      // can get back on the "throw all redirect responses" train here should
+      // this ever happen :/
+      throw new Response(null, {
+        status: result.status,
+        headers: {
+          Location: result.location
+        }
+      });
+    }
+
+    if (isDeferredResult(result)) {
+      let error = getInternalRouterError(400, {
+        type: "defer-action"
+      });
+
+      if (isRouteRequest) {
+        throw error;
+      }
+
+      result = {
+        type: ResultType.error,
+        error
+      };
+    }
+
+    if (isRouteRequest) {
+      // Note: This should only be non-Response values if we get here, since
+      // isRouteRequest should throw any Response received in callLoaderOrAction
+      if (isErrorResult(result)) {
+        throw result.error;
+      }
+
+      return {
+        matches: [actionMatch],
+        loaderData: {},
+        actionData: {
+          [actionMatch.route.id]: result.data
+        },
+        errors: null,
+        // Note: statusCode + headers are unused here since queryRoute will
+        // return the raw Response or value
+        statusCode: 200,
+        loaderHeaders: {},
+        actionHeaders: {},
+        activeDeferreds: null
+      };
+    }
+
+    if (isErrorResult(result)) {
+      // Store off the pending error - we use it to determine which loaders
+      // to call and will commit it when we complete the navigation
+      let boundaryMatch = findNearestBoundary(matches, actionMatch.route.id);
+      let context = await loadRouteData(request, matches, requestContext, undefined, {
+        [boundaryMatch.route.id]: result.error
+      }); // action status codes take precedence over loader status codes
+
+      return router_extends({}, context, {
+        statusCode: router_isRouteErrorResponse(result.error) ? result.error.status : 500,
+        actionData: null,
+        actionHeaders: router_extends({}, result.headers ? {
+          [actionMatch.route.id]: result.headers
+        } : {})
+      });
+    } // Create a GET request for the loaders
+
+
+    let loaderRequest = new Request(request.url, {
+      headers: request.headers,
+      redirect: request.redirect,
+      signal: request.signal
+    });
+    let context = await loadRouteData(loaderRequest, matches, requestContext);
+    return router_extends({}, context, result.statusCode ? {
+      statusCode: result.statusCode
+    } : {}, {
+      actionData: {
+        [actionMatch.route.id]: result.data
+      },
+      actionHeaders: router_extends({}, result.headers ? {
+        [actionMatch.route.id]: result.headers
+      } : {})
+    });
+  }
+
+  async function loadRouteData(request, matches, requestContext, routeMatch, pendingActionError) {
+    let isRouteRequest = routeMatch != null; // Short circuit if we have no loaders to run (queryRoute())
+
+    if (isRouteRequest && !(routeMatch != null && routeMatch.route.loader) && !(routeMatch != null && routeMatch.route.lazy)) {
+      throw getInternalRouterError(400, {
+        method: request.method,
+        pathname: new URL(request.url).pathname,
+        routeId: routeMatch == null ? void 0 : routeMatch.route.id
+      });
+    }
+
+    let requestMatches = routeMatch ? [routeMatch] : getLoaderMatchesUntilBoundary(matches, Object.keys(pendingActionError || {})[0]);
+    let matchesToLoad = requestMatches.filter(m => m.route.loader || m.route.lazy); // Short circuit if we have no loaders to run (query())
+
+    if (matchesToLoad.length === 0) {
+      return {
+        matches,
+        // Add a null for all matched routes for proper revalidation on the client
+        loaderData: matches.reduce((acc, m) => Object.assign(acc, {
+          [m.route.id]: null
+        }), {}),
+        errors: pendingActionError || null,
+        statusCode: 200,
+        loaderHeaders: {},
+        activeDeferreds: null
+      };
+    }
+
+    let results = await Promise.all([...matchesToLoad.map(match => callLoaderOrAction("loader", request, match, matches, manifest, mapRouteProperties, basename, true, isRouteRequest, requestContext))]);
+
+    if (request.signal.aborted) {
+      let method = isRouteRequest ? "queryRoute" : "query";
+      throw new Error(method + "() call aborted");
+    } // Process and commit output from loaders
+
+
+    let activeDeferreds = new Map();
+    let context = processRouteLoaderData(matches, matchesToLoad, results, pendingActionError, activeDeferreds); // Add a null for any non-loader matches for proper revalidation on the client
+
+    let executedLoaders = new Set(matchesToLoad.map(match => match.route.id));
+    matches.forEach(match => {
+      if (!executedLoaders.has(match.route.id)) {
+        context.loaderData[match.route.id] = null;
+      }
+    });
+    return router_extends({}, context, {
+      matches,
+      activeDeferreds: activeDeferreds.size > 0 ? Object.fromEntries(activeDeferreds.entries()) : null
+    });
+  }
+
+  return {
+    dataRoutes,
+    query,
+    queryRoute
+  };
+} //#endregion
+////////////////////////////////////////////////////////////////////////////////
+//#region Helpers
+////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Given an existing StaticHandlerContext and an error thrown at render time,
+ * provide an updated StaticHandlerContext suitable for a second SSR render
+ */
+
+function getStaticContextFromError(routes, context, error) {
+  let newContext = router_extends({}, context, {
+    statusCode: 500,
+    errors: {
+      [context._deepestRenderedBoundaryId || routes[0].id]: error
+    }
+  });
+
+  return newContext;
+}
+
+function isSubmissionNavigation(opts) {
+  return opts != null && "formData" in opts;
+}
+
+function normalizeTo(location, matches, basename, prependBasename, to, fromRouteId, relative) {
+  let contextualMatches;
+  let activeRouteMatch;
+
+  if (fromRouteId != null && relative !== "path") {
+    // Grab matches up to the calling route so our route-relative logic is
+    // relative to the correct source route.  When using relative:path,
+    // fromRouteId is ignored since that is always relative to the current
+    // location path
+    contextualMatches = [];
+
+    for (let match of matches) {
+      contextualMatches.push(match);
+
+      if (match.route.id === fromRouteId) {
+        activeRouteMatch = match;
+        break;
+      }
+    }
+  } else {
+    contextualMatches = matches;
+    activeRouteMatch = matches[matches.length - 1];
+  } // Resolve the relative path
+
+
+  let path = router_resolveTo(to ? to : ".", getPathContributingMatches(contextualMatches).map(m => m.pathnameBase), router_stripBasename(location.pathname, basename) || location.pathname, relative === "path"); // When `to` is not specified we inherit search/hash from the current
+  // location, unlike when to="." and we just inherit the path.
+  // See https://github.com/remix-run/remix/issues/927
+
+  if (to == null) {
+    path.search = location.search;
+    path.hash = location.hash;
+  } // Add an ?index param for matched index routes if we don't already have one
+
+
+  if ((to == null || to === "" || to === ".") && activeRouteMatch && activeRouteMatch.route.index && !hasNakedIndexQuery(path.search)) {
+    path.search = path.search ? path.search.replace(/^\?/, "?index&") : "?index";
+  } // If we're operating within a basename, prepend it to the pathname.  If
+  // this is a root navigation, then just use the raw basename which allows
+  // the basename to have full control over the presence of a trailing slash
+  // on root actions
+
+
+  if (prependBasename && basename !== "/") {
+    path.pathname = path.pathname === "/" ? basename : router_joinPaths([basename, path.pathname]);
+  }
+
+  return router_createPath(path);
+} // Normalize navigation options by converting formMethod=GET formData objects to
+// URLSearchParams so they behave identically to links with query params
+
+
+function normalizeNavigateOptions(normalizeFormMethod, isFetcher, path, opts) {
+  // Return location verbatim on non-submission navigations
+  if (!opts || !isSubmissionNavigation(opts)) {
+    return {
+      path
+    };
+  }
+
+  if (opts.formMethod && !isValidMethod(opts.formMethod)) {
+    return {
+      path,
+      error: getInternalRouterError(405, {
+        method: opts.formMethod
+      })
+    };
+  } // Create a Submission on non-GET navigations
+
+
+  let submission;
+
+  if (opts.formData) {
+    let formMethod = opts.formMethod || "get";
+    submission = {
+      formMethod: normalizeFormMethod ? formMethod.toUpperCase() : formMethod.toLowerCase(),
+      formAction: stripHashFromPath(path),
+      formEncType: opts && opts.formEncType || "application/x-www-form-urlencoded",
+      formData: opts.formData
+    };
+
+    if (isMutationMethod(submission.formMethod)) {
+      return {
+        path,
+        submission
+      };
+    }
+  } // Flatten submission onto URLSearchParams for GET submissions
+
+
+  let parsedPath = router_parsePath(path);
+  let searchParams = convertFormDataToSearchParams(opts.formData); // On GET navigation submissions we can drop the ?index param from the
+  // resulting location since all loaders will run.  But fetcher GET submissions
+  // only run a single loader so we need to preserve any incoming ?index params
+
+  if (isFetcher && parsedPath.search && hasNakedIndexQuery(parsedPath.search)) {
+    searchParams.append("index", "");
+  }
+
+  parsedPath.search = "?" + searchParams;
+  return {
+    path: router_createPath(parsedPath),
+    submission
+  };
+} // Filter out all routes below any caught error as they aren't going to
+// render so we don't need to load them
+
+
+function getLoaderMatchesUntilBoundary(matches, boundaryId) {
+  let boundaryMatches = matches;
+
+  if (boundaryId) {
+    let index = matches.findIndex(m => m.route.id === boundaryId);
+
+    if (index >= 0) {
+      boundaryMatches = matches.slice(0, index);
+    }
+  }
+
+  return boundaryMatches;
+}
+
+function getMatchesToLoad(history, state, matches, submission, location, isRevalidationRequired, cancelledDeferredRoutes, cancelledFetcherLoads, fetchLoadMatches, routesToUse, basename, pendingActionData, pendingError) {
+  let actionResult = pendingError ? Object.values(pendingError)[0] : pendingActionData ? Object.values(pendingActionData)[0] : undefined;
+  let currentUrl = history.createURL(state.location);
+  let nextUrl = history.createURL(location); // Pick navigation matches that are net-new or qualify for revalidation
+
+  let boundaryId = pendingError ? Object.keys(pendingError)[0] : undefined;
+  let boundaryMatches = getLoaderMatchesUntilBoundary(matches, boundaryId);
+  let navigationMatches = boundaryMatches.filter((match, index) => {
+    if (match.route.lazy) {
+      // We haven't loaded this route yet so we don't know if it's got a loader!
+      return true;
+    }
+
+    if (match.route.loader == null) {
+      return false;
+    } // Always call the loader on new route instances and pending defer cancellations
+
+
+    if (isNewLoader(state.loaderData, state.matches[index], match) || cancelledDeferredRoutes.some(id => id === match.route.id)) {
+      return true;
+    } // This is the default implementation for when we revalidate.  If the route
+    // provides it's own implementation, then we give them full control but
+    // provide this value so they can leverage it if needed after they check
+    // their own specific use cases
+
+
+    let currentRouteMatch = state.matches[index];
+    let nextRouteMatch = match;
+    return shouldRevalidateLoader(match, router_extends({
+      currentUrl,
+      currentParams: currentRouteMatch.params,
+      nextUrl,
+      nextParams: nextRouteMatch.params
+    }, submission, {
+      actionResult,
+      defaultShouldRevalidate: // Forced revalidation due to submission, useRevalidator, or X-Remix-Revalidate
+      isRevalidationRequired || // Clicked the same link, resubmitted a GET form
+      currentUrl.pathname + currentUrl.search === nextUrl.pathname + nextUrl.search || // Search params affect all loaders
+      currentUrl.search !== nextUrl.search || isNewRouteInstance(currentRouteMatch, nextRouteMatch)
+    }));
+  }); // Pick fetcher.loads that need to be revalidated
+
+  let revalidatingFetchers = [];
+  fetchLoadMatches.forEach((f, key) => {
+    // Don't revalidate if fetcher won't be present in the subsequent render
+    if (!matches.some(m => m.route.id === f.routeId)) {
+      return;
+    }
+
+    let fetcherMatches = router_matchRoutes(routesToUse, f.path, basename); // If the fetcher path no longer matches, push it in with null matches so
+    // we can trigger a 404 in callLoadersAndMaybeResolveData
+
+    if (!fetcherMatches) {
+      revalidatingFetchers.push({
+        key,
+        routeId: f.routeId,
+        path: f.path,
+        matches: null,
+        match: null,
+        controller: null
+      });
+      return;
+    }
+
+    let fetcherMatch = getTargetMatch(fetcherMatches, f.path);
+
+    if (cancelledFetcherLoads.includes(key)) {
+      revalidatingFetchers.push({
+        key,
+        routeId: f.routeId,
+        path: f.path,
+        matches: fetcherMatches,
+        match: fetcherMatch,
+        controller: new AbortController()
+      });
+      return;
+    } // Revalidating fetchers are decoupled from the route matches since they
+    // hit a static href, so they _always_ check shouldRevalidate and the
+    // default is strictly if a revalidation is explicitly required (action
+    // submissions, useRevalidator, X-Remix-Revalidate).
+
+
+    let shouldRevalidate = shouldRevalidateLoader(fetcherMatch, router_extends({
+      currentUrl,
+      currentParams: state.matches[state.matches.length - 1].params,
+      nextUrl,
+      nextParams: matches[matches.length - 1].params
+    }, submission, {
+      actionResult,
+      // Forced revalidation due to submission, useRevalidator, or X-Remix-Revalidate
+      defaultShouldRevalidate: isRevalidationRequired
+    }));
+
+    if (shouldRevalidate) {
+      revalidatingFetchers.push({
+        key,
+        routeId: f.routeId,
+        path: f.path,
+        matches: fetcherMatches,
+        match: fetcherMatch,
+        controller: new AbortController()
+      });
+    }
+  });
+  return [navigationMatches, revalidatingFetchers];
+}
+
+function isNewLoader(currentLoaderData, currentMatch, match) {
+  let isNew = // [a] -> [a, b]
+  !currentMatch || // [a, b] -> [a, c]
+  match.route.id !== currentMatch.route.id; // Handle the case that we don't have data for a re-used route, potentially
+  // from a prior error or from a cancelled pending deferred
+
+  let isMissingData = currentLoaderData[match.route.id] === undefined; // Always load if this is a net-new route or we don't yet have data
+
+  return isNew || isMissingData;
+}
+
+function isNewRouteInstance(currentMatch, match) {
+  let currentPath = currentMatch.route.path;
+  return (// param change for this match, /users/123 -> /users/456
+    currentMatch.pathname !== match.pathname || // splat param changed, which is not present in match.path
+    // e.g. /files/images/avatar.jpg -> files/finances.xls
+    currentPath != null && currentPath.endsWith("*") && currentMatch.params["*"] !== match.params["*"]
+  );
+}
+
+function shouldRevalidateLoader(loaderMatch, arg) {
+  if (loaderMatch.route.shouldRevalidate) {
+    let routeChoice = loaderMatch.route.shouldRevalidate(arg);
+
+    if (typeof routeChoice === "boolean") {
+      return routeChoice;
+    }
+  }
+
+  return arg.defaultShouldRevalidate;
+}
+/**
+ * Execute route.lazy() methods to lazily load route modules (loader, action,
+ * shouldRevalidate) and update the routeManifest in place which shares objects
+ * with dataRoutes so those get updated as well.
+ */
+
+
+async function loadLazyRouteModule(route, mapRouteProperties, manifest) {
+  if (!route.lazy) {
+    return;
+  }
+
+  let lazyRoute = await route.lazy(); // If the lazy route function was executed and removed by another parallel
+  // call then we can return - first lazy() to finish wins because the return
+  // value of lazy is expected to be static
+
+  if (!route.lazy) {
+    return;
+  }
+
+  let routeToUpdate = manifest[route.id];
+  invariant(routeToUpdate, "No route found in manifest"); // Update the route in place.  This should be safe because there's no way
+  // we could yet be sitting on this route as we can't get there without
+  // resolving lazy() first.
+  //
+  // This is different than the HMR "update" use-case where we may actively be
+  // on the route being updated.  The main concern boils down to "does this
+  // mutation affect any ongoing navigations or any current state.matches
+  // values?".  If not, it should be safe to update in place.
+
+  let routeUpdates = {};
+
+  for (let lazyRouteProperty in lazyRoute) {
+    let staticRouteValue = routeToUpdate[lazyRouteProperty];
+    let isPropertyStaticallyDefined = staticRouteValue !== undefined && // This property isn't static since it should always be updated based
+    // on the route updates
+    lazyRouteProperty !== "hasErrorBoundary";
+    router_warning(!isPropertyStaticallyDefined, "Route \"" + routeToUpdate.id + "\" has a static property \"" + lazyRouteProperty + "\" " + "defined but its lazy function is also returning a value for this property. " + ("The lazy route property \"" + lazyRouteProperty + "\" will be ignored."));
+
+    if (!isPropertyStaticallyDefined && !immutableRouteKeys.has(lazyRouteProperty)) {
+      routeUpdates[lazyRouteProperty] = lazyRoute[lazyRouteProperty];
+    }
+  } // Mutate the route with the provided updates.  Do this first so we pass
+  // the updated version to mapRouteProperties
+
+
+  Object.assign(routeToUpdate, routeUpdates); // Mutate the `hasErrorBoundary` property on the route based on the route
+  // updates and remove the `lazy` function so we don't resolve the lazy
+  // route again.
+
+  Object.assign(routeToUpdate, router_extends({}, mapRouteProperties(routeToUpdate), {
+    lazy: undefined
+  }));
+}
+
+async function callLoaderOrAction(type, request, match, matches, manifest, mapRouteProperties, basename, isStaticRequest, isRouteRequest, requestContext) {
+  if (isStaticRequest === void 0) {
+    isStaticRequest = false;
+  }
+
+  if (isRouteRequest === void 0) {
+    isRouteRequest = false;
+  }
+
+  let resultType;
+  let result;
+  let onReject;
+
+  let runHandler = handler => {
+    // Setup a promise we can race against so that abort signals short circuit
+    let reject;
+    let abortPromise = new Promise((_, r) => reject = r);
+
+    onReject = () => reject();
+
+    request.signal.addEventListener("abort", onReject);
+    return Promise.race([handler({
+      request,
+      params: match.params,
+      context: requestContext
+    }), abortPromise]);
+  };
+
+  try {
+    let handler = match.route[type];
+
+    if (match.route.lazy) {
+      if (handler) {
+        // Run statically defined handler in parallel with lazy()
+        let values = await Promise.all([runHandler(handler), loadLazyRouteModule(match.route, mapRouteProperties, manifest)]);
+        result = values[0];
+      } else {
+        // Load lazy route module, then run any returned handler
+        await loadLazyRouteModule(match.route, mapRouteProperties, manifest);
+        handler = match.route[type];
+
+        if (handler) {
+          // Handler still run even if we got interrupted to maintain consistency
+          // with un-abortable behavior of handler execution on non-lazy or
+          // previously-lazy-loaded routes
+          result = await runHandler(handler);
+        } else if (type === "action") {
+          let url = new URL(request.url);
+          let pathname = url.pathname + url.search;
+          throw getInternalRouterError(405, {
+            method: request.method,
+            pathname,
+            routeId: match.route.id
+          });
+        } else {
+          // lazy() route has no loader to run.  Short circuit here so we don't
+          // hit the invariant below that errors on returning undefined.
+          return {
+            type: ResultType.data,
+            data: undefined
+          };
+        }
+      }
+    } else if (!handler) {
+      let url = new URL(request.url);
+      let pathname = url.pathname + url.search;
+      throw getInternalRouterError(404, {
+        pathname
+      });
+    } else {
+      result = await runHandler(handler);
+    }
+
+    invariant(result !== undefined, "You defined " + (type === "action" ? "an action" : "a loader") + " for route " + ("\"" + match.route.id + "\" but didn't return anything from your `" + type + "` ") + "function. Please return a value or `null`.");
+  } catch (e) {
+    resultType = ResultType.error;
+    result = e;
+  } finally {
+    if (onReject) {
+      request.signal.removeEventListener("abort", onReject);
+    }
+  }
+
+  if (isResponse(result)) {
+    let status = result.status; // Process redirects
+
+    if (redirectStatusCodes.has(status)) {
+      let location = result.headers.get("Location");
+      invariant(location, "Redirects returned/thrown from loaders/actions must have a Location header"); // Support relative routing in internal redirects
+
+      if (!ABSOLUTE_URL_REGEX.test(location)) {
+        location = normalizeTo(new URL(request.url), matches.slice(0, matches.indexOf(match) + 1), basename, true, location);
+      } else if (!isStaticRequest) {
+        // Strip off the protocol+origin for same-origin + same-basename absolute
+        // redirects. If this is a static request, we can let it go back to the
+        // browser as-is
+        let currentUrl = new URL(request.url);
+        let url = location.startsWith("//") ? new URL(currentUrl.protocol + location) : new URL(location);
+        let isSameBasename = router_stripBasename(url.pathname, basename) != null;
+
+        if (url.origin === currentUrl.origin && isSameBasename) {
+          location = url.pathname + url.search + url.hash;
+        }
+      } // Don't process redirects in the router during static requests requests.
+      // Instead, throw the Response and let the server handle it with an HTTP
+      // redirect.  We also update the Location header in place in this flow so
+      // basename and relative routing is taken into account
+
+
+      if (isStaticRequest) {
+        result.headers.set("Location", location);
+        throw result;
+      }
+
+      return {
+        type: ResultType.redirect,
+        status,
+        location,
+        revalidate: result.headers.get("X-Remix-Revalidate") !== null
+      };
+    } // For SSR single-route requests, we want to hand Responses back directly
+    // without unwrapping.  We do this with the QueryRouteResponse wrapper
+    // interface so we can know whether it was returned or thrown
+
+
+    if (isRouteRequest) {
+      // eslint-disable-next-line no-throw-literal
+      throw {
+        type: resultType || ResultType.data,
+        response: result
+      };
+    }
+
+    let data;
+    let contentType = result.headers.get("Content-Type"); // Check between word boundaries instead of startsWith() due to the last
+    // paragraph of https://httpwg.org/specs/rfc9110.html#field.content-type
+
+    if (contentType && /\bapplication\/json\b/.test(contentType)) {
+      data = await result.json();
+    } else {
+      data = await result.text();
+    }
+
+    if (resultType === ResultType.error) {
+      return {
+        type: resultType,
+        error: new router_ErrorResponse(status, result.statusText, data),
+        headers: result.headers
+      };
+    }
+
+    return {
+      type: ResultType.data,
+      data,
+      statusCode: result.status,
+      headers: result.headers
+    };
+  }
+
+  if (resultType === ResultType.error) {
+    return {
+      type: resultType,
+      error: result
+    };
+  }
+
+  if (isDeferredData(result)) {
+    var _result$init, _result$init2;
+
+    return {
+      type: ResultType.deferred,
+      deferredData: result,
+      statusCode: (_result$init = result.init) == null ? void 0 : _result$init.status,
+      headers: ((_result$init2 = result.init) == null ? void 0 : _result$init2.headers) && new Headers(result.init.headers)
+    };
+  }
+
+  return {
+    type: ResultType.data,
+    data: result
+  };
+} // Utility method for creating the Request instances for loaders/actions during
+// client-side navigations and fetches.  During SSR we will always have a
+// Request instance from the static handler (query/queryRoute)
+
+
+function createClientSideRequest(history, location, signal, submission) {
+  let url = history.createURL(stripHashFromPath(location)).toString();
+  let init = {
+    signal
+  };
+
+  if (submission && isMutationMethod(submission.formMethod)) {
+    let {
+      formMethod,
+      formEncType,
+      formData
+    } = submission; // Didn't think we needed this but it turns out unlike other methods, patch
+    // won't be properly normalized to uppercase and results in a 405 error.
+    // See: https://fetch.spec.whatwg.org/#concept-method
+
+    init.method = formMethod.toUpperCase();
+    init.body = formEncType === "application/x-www-form-urlencoded" ? convertFormDataToSearchParams(formData) : formData;
+  } // Content-Type is inferred (https://fetch.spec.whatwg.org/#dom-request)
+
+
+  return new Request(url, init);
+}
+
+function convertFormDataToSearchParams(formData) {
+  let searchParams = new URLSearchParams();
+
+  for (let [key, value] of formData.entries()) {
+    // https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#converting-an-entry-list-to-a-list-of-name-value-pairs
+    searchParams.append(key, value instanceof File ? value.name : value);
+  }
+
+  return searchParams;
+}
+
+function processRouteLoaderData(matches, matchesToLoad, results, pendingError, activeDeferreds) {
+  // Fill in loaderData/errors from our loaders
+  let loaderData = {};
+  let errors = null;
+  let statusCode;
+  let foundError = false;
+  let loaderHeaders = {}; // Process loader results into state.loaderData/state.errors
+
+  results.forEach((result, index) => {
+    let id = matchesToLoad[index].route.id;
+    invariant(!isRedirectResult(result), "Cannot handle redirect results in processLoaderData");
+
+    if (isErrorResult(result)) {
+      // Look upwards from the matched route for the closest ancestor
+      // error boundary, defaulting to the root match
+      let boundaryMatch = findNearestBoundary(matches, id);
+      let error = result.error; // If we have a pending action error, we report it at the highest-route
+      // that throws a loader error, and then clear it out to indicate that
+      // it was consumed
+
+      if (pendingError) {
+        error = Object.values(pendingError)[0];
+        pendingError = undefined;
+      }
+
+      errors = errors || {}; // Prefer higher error values if lower errors bubble to the same boundary
+
+      if (errors[boundaryMatch.route.id] == null) {
+        errors[boundaryMatch.route.id] = error;
+      } // Clear our any prior loaderData for the throwing route
+
+
+      loaderData[id] = undefined; // Once we find our first (highest) error, we set the status code and
+      // prevent deeper status codes from overriding
+
+      if (!foundError) {
+        foundError = true;
+        statusCode = router_isRouteErrorResponse(result.error) ? result.error.status : 500;
+      }
+
+      if (result.headers) {
+        loaderHeaders[id] = result.headers;
+      }
+    } else {
+      if (isDeferredResult(result)) {
+        activeDeferreds.set(id, result.deferredData);
+        loaderData[id] = result.deferredData.data;
+      } else {
+        loaderData[id] = result.data;
+      } // Error status codes always override success status codes, but if all
+      // loaders are successful we take the deepest status code.
+
+
+      if (result.statusCode != null && result.statusCode !== 200 && !foundError) {
+        statusCode = result.statusCode;
+      }
+
+      if (result.headers) {
+        loaderHeaders[id] = result.headers;
+      }
+    }
+  }); // If we didn't consume the pending action error (i.e., all loaders
+  // resolved), then consume it here.  Also clear out any loaderData for the
+  // throwing route
+
+  if (pendingError) {
+    errors = pendingError;
+    loaderData[Object.keys(pendingError)[0]] = undefined;
+  }
+
+  return {
+    loaderData,
+    errors,
+    statusCode: statusCode || 200,
+    loaderHeaders
+  };
+}
+
+function processLoaderData(state, matches, matchesToLoad, results, pendingError, revalidatingFetchers, fetcherResults, activeDeferreds) {
+  let {
+    loaderData,
+    errors
+  } = processRouteLoaderData(matches, matchesToLoad, results, pendingError, activeDeferreds); // Process results from our revalidating fetchers
+
+  for (let index = 0; index < revalidatingFetchers.length; index++) {
+    let {
+      key,
+      match,
+      controller
+    } = revalidatingFetchers[index];
+    invariant(fetcherResults !== undefined && fetcherResults[index] !== undefined, "Did not find corresponding fetcher result");
+    let result = fetcherResults[index]; // Process fetcher non-redirect errors
+
+    if (controller && controller.signal.aborted) {
+      // Nothing to do for aborted fetchers
+      continue;
+    } else if (isErrorResult(result)) {
+      let boundaryMatch = findNearestBoundary(state.matches, match == null ? void 0 : match.route.id);
+
+      if (!(errors && errors[boundaryMatch.route.id])) {
+        errors = router_extends({}, errors, {
+          [boundaryMatch.route.id]: result.error
+        });
+      }
+
+      state.fetchers.delete(key);
+    } else if (isRedirectResult(result)) {
+      // Should never get here, redirects should get processed above, but we
+      // keep this to type narrow to a success result in the else
+      invariant(false, "Unhandled fetcher revalidation redirect");
+    } else if (isDeferredResult(result)) {
+      // Should never get here, deferred data should be awaited for fetchers
+      // in resolveDeferredResults
+      invariant(false, "Unhandled fetcher deferred data");
+    } else {
+      let doneFetcher = {
+        state: "idle",
+        data: result.data,
+        formMethod: undefined,
+        formAction: undefined,
+        formEncType: undefined,
+        formData: undefined,
+        " _hasFetcherDoneAnything ": true
+      };
+      state.fetchers.set(key, doneFetcher);
+    }
+  }
+
+  return {
+    loaderData,
+    errors
+  };
+}
+
+function mergeLoaderData(loaderData, newLoaderData, matches, errors) {
+  let mergedLoaderData = router_extends({}, newLoaderData);
+
+  for (let match of matches) {
+    let id = match.route.id;
+
+    if (newLoaderData.hasOwnProperty(id)) {
+      if (newLoaderData[id] !== undefined) {
+        mergedLoaderData[id] = newLoaderData[id];
+      }
+    } else if (loaderData[id] !== undefined && match.route.loader) {
+      // Preserve existing keys not included in newLoaderData and where a loader
+      // wasn't removed by HMR
+      mergedLoaderData[id] = loaderData[id];
+    }
+
+    if (errors && errors.hasOwnProperty(id)) {
+      // Don't keep any loader data below the boundary
+      break;
+    }
+  }
+
+  return mergedLoaderData;
+} // Find the nearest error boundary, looking upwards from the leaf route (or the
+// route specified by routeId) for the closest ancestor error boundary,
+// defaulting to the root match
+
+
+function findNearestBoundary(matches, routeId) {
+  let eligibleMatches = routeId ? matches.slice(0, matches.findIndex(m => m.route.id === routeId) + 1) : [...matches];
+  return eligibleMatches.reverse().find(m => m.route.hasErrorBoundary === true) || matches[0];
+}
+
+function getShortCircuitMatches(routes) {
+  // Prefer a root layout route if present, otherwise shim in a route object
+  let route = routes.find(r => r.index || !r.path || r.path === "/") || {
+    id: "__shim-error-route__"
+  };
+  return {
+    matches: [{
+      params: {},
+      pathname: "",
+      pathnameBase: "",
+      route
+    }],
+    route
+  };
+}
+
+function getInternalRouterError(status, _temp4) {
+  let {
+    pathname,
+    routeId,
+    method,
+    type
+  } = _temp4 === void 0 ? {} : _temp4;
+  let statusText = "Unknown Server Error";
+  let errorMessage = "Unknown @remix-run/router error";
+
+  if (status === 400) {
+    statusText = "Bad Request";
+
+    if (method && pathname && routeId) {
+      errorMessage = "You made a " + method + " request to \"" + pathname + "\" but " + ("did not provide a `loader` for route \"" + routeId + "\", ") + "so there is no way to handle the request.";
+    } else if (type === "defer-action") {
+      errorMessage = "defer() is not supported in actions";
+    }
+  } else if (status === 403) {
+    statusText = "Forbidden";
+    errorMessage = "Route \"" + routeId + "\" does not match URL \"" + pathname + "\"";
+  } else if (status === 404) {
+    statusText = "Not Found";
+    errorMessage = "No route matches URL \"" + pathname + "\"";
+  } else if (status === 405) {
+    statusText = "Method Not Allowed";
+
+    if (method && pathname && routeId) {
+      errorMessage = "You made a " + method.toUpperCase() + " request to \"" + pathname + "\" but " + ("did not provide an `action` for route \"" + routeId + "\", ") + "so there is no way to handle the request.";
+    } else if (method) {
+      errorMessage = "Invalid request method \"" + method.toUpperCase() + "\"";
+    }
+  }
+
+  return new router_ErrorResponse(status || 500, statusText, new Error(errorMessage), true);
+} // Find any returned redirect errors, starting from the lowest match
+
+
+function findRedirect(results) {
+  for (let i = results.length - 1; i >= 0; i--) {
+    let result = results[i];
+
+    if (isRedirectResult(result)) {
+      return result;
+    }
+  }
+}
+
+function stripHashFromPath(path) {
+  let parsedPath = typeof path === "string" ? router_parsePath(path) : path;
+  return router_createPath(router_extends({}, parsedPath, {
+    hash: ""
+  }));
+}
+
+function isHashChangeOnly(a, b) {
+  if (a.pathname !== b.pathname || a.search !== b.search) {
+    return false;
+  }
+
+  if (a.hash === "") {
+    // /page -> /page#hash
+    return b.hash !== "";
+  } else if (a.hash === b.hash) {
+    // /page#hash -> /page#hash
+    return true;
+  } else if (b.hash !== "") {
+    // /page#hash -> /page#other
+    return true;
+  } // If the hash is removed the browser will re-perform a request to the server
+  // /page#hash -> /page
+
+
+  return false;
+}
+
+function isDeferredResult(result) {
+  return result.type === ResultType.deferred;
+}
+
+function isErrorResult(result) {
+  return result.type === ResultType.error;
+}
+
+function isRedirectResult(result) {
+  return (result && result.type) === ResultType.redirect;
+}
+
+function isDeferredData(value) {
+  let deferred = value;
+  return deferred && typeof deferred === "object" && typeof deferred.data === "object" && typeof deferred.subscribe === "function" && typeof deferred.cancel === "function" && typeof deferred.resolveData === "function";
+}
+
+function isResponse(value) {
+  return value != null && typeof value.status === "number" && typeof value.statusText === "string" && typeof value.headers === "object" && typeof value.body !== "undefined";
+}
+
+function isRedirectResponse(result) {
+  if (!isResponse(result)) {
+    return false;
+  }
+
+  let status = result.status;
+  let location = result.headers.get("Location");
+  return status >= 300 && status <= 399 && location != null;
+}
+
+function isQueryRouteResponse(obj) {
+  return obj && isResponse(obj.response) && (obj.type === ResultType.data || ResultType.error);
+}
+
+function isValidMethod(method) {
+  return validRequestMethods.has(method.toLowerCase());
+}
+
+function isMutationMethod(method) {
+  return validMutationMethods.has(method.toLowerCase());
+}
+
+async function resolveDeferredResults(currentMatches, matchesToLoad, results, signals, isFetcher, currentLoaderData) {
+  for (let index = 0; index < results.length; index++) {
+    let result = results[index];
+    let match = matchesToLoad[index]; // If we don't have a match, then we can have a deferred result to do
+    // anything with.  This is for revalidating fetchers where the route was
+    // removed during HMR
+
+    if (!match) {
+      continue;
+    }
+
+    let currentMatch = currentMatches.find(m => m.route.id === match.route.id);
+    let isRevalidatingLoader = currentMatch != null && !isNewRouteInstance(currentMatch, match) && (currentLoaderData && currentLoaderData[match.route.id]) !== undefined;
+
+    if (isDeferredResult(result) && (isFetcher || isRevalidatingLoader)) {
+      // Note: we do not have to touch activeDeferreds here since we race them
+      // against the signal in resolveDeferredData and they'll get aborted
+      // there if needed
+      let signal = signals[index];
+      invariant(signal, "Expected an AbortSignal for revalidating fetcher deferred result");
+      await resolveDeferredData(result, signal, isFetcher).then(result => {
+        if (result) {
+          results[index] = result || results[index];
+        }
+      });
+    }
+  }
+}
+
+async function resolveDeferredData(result, signal, unwrap) {
+  if (unwrap === void 0) {
+    unwrap = false;
+  }
+
+  let aborted = await result.deferredData.resolveData(signal);
+
+  if (aborted) {
+    return;
+  }
+
+  if (unwrap) {
+    try {
+      return {
+        type: ResultType.data,
+        data: result.deferredData.unwrappedData
+      };
+    } catch (e) {
+      // Handle any TrackedPromise._error values encountered while unwrapping
+      return {
+        type: ResultType.error,
+        error: e
+      };
+    }
+  }
+
+  return {
+    type: ResultType.data,
+    data: result.deferredData.data
+  };
+}
+
+function hasNakedIndexQuery(search) {
+  return new URLSearchParams(search).getAll("index").some(v => v === "");
+} // Note: This should match the format exported by useMatches, so if you change
+// this please also change that :)  Eventually we'll DRY this up
+
+
+function createUseMatchesMatch(match, loaderData) {
+  let {
+    route,
+    pathname,
+    params
+  } = match;
+  return {
+    id: route.id,
+    pathname,
+    params,
+    data: loaderData[route.id],
+    handle: route.handle
+  };
+}
+
+function getTargetMatch(matches, location) {
+  let search = typeof location === "string" ? router_parsePath(location).search : location.search;
+
+  if (matches[matches.length - 1].route.index && hasNakedIndexQuery(search || "")) {
+    // Return the leaf index route when index is present
+    return matches[matches.length - 1];
+  } // Otherwise grab the deepest "path contributing" match (ignoring index and
+  // pathless layout routes)
+
+
+  let pathMatches = getPathContributingMatches(matches);
+  return pathMatches[pathMatches.length - 1];
+} //#endregion
+
+
+//# sourceMappingURL=router.js.map
+
+;// CONCATENATED MODULE: ./node_modules/react-router/dist/index.js
+/**
+ * React Router v6.11.2
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+
+
+
+function dist_extends() {
+  dist_extends = Object.assign ? Object.assign.bind() : function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+  return dist_extends.apply(this, arguments);
+}
+
+const DataRouterContext = /*#__PURE__*/(/* unused pure expression or super */ null && (React.createContext(null)));
+
+if (false) {}
+
+const DataRouterStateContext = /*#__PURE__*/(/* unused pure expression or super */ null && (React.createContext(null)));
+
+if (false) {}
+
+const AwaitContext = /*#__PURE__*/(/* unused pure expression or super */ null && (React.createContext(null)));
+
+if (false) {}
+
+const NavigationContext = /*#__PURE__*/external_cgpv_react_.createContext(null);
+
+if (false) {}
+
+const LocationContext = /*#__PURE__*/external_cgpv_react_.createContext(null);
+
+if (false) {}
+
+const RouteContext = /*#__PURE__*/external_cgpv_react_.createContext({
+  outlet: null,
+  matches: [],
+  isDataRoute: false
+});
+
+if (false) {}
+
+const RouteErrorContext = /*#__PURE__*/(/* unused pure expression or super */ null && (React.createContext(null)));
+
+if (false) {}
+
+/**
+ * Returns the full href for the given "to" value. This is useful for building
+ * custom links that are also accessible and preserve right-click behavior.
+ *
+ * @see https://reactrouter.com/hooks/use-href
+ */
+
+function dist_useHref(to, _temp) {
+  let {
+    relative
+  } = _temp === void 0 ? {} : _temp;
+  !useInRouterContext() ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+  let {
+    basename,
+    navigator
+  } = React.useContext(NavigationContext);
+  let {
+    hash,
+    pathname,
+    search
+  } = dist_useResolvedPath(to, {
+    relative
+  });
+  let joinedPathname = pathname; // If we're operating within a basename, prepend it to the pathname prior
+  // to creating the href.  If this is a root navigation, then just use the raw
+  // basename which allows the basename to have full control over the presence
+  // of a trailing slash on root links
+
+  if (basename !== "/") {
+    joinedPathname = pathname === "/" ? basename : joinPaths([basename, pathname]);
+  }
+
+  return navigator.createHref({
+    pathname: joinedPathname,
+    search,
+    hash
+  });
+}
+/**
+ * Returns true if this component is a descendant of a <Router>.
+ *
+ * @see https://reactrouter.com/hooks/use-in-router-context
+ */
+
+function useInRouterContext() {
+  return external_cgpv_react_.useContext(LocationContext) != null;
+}
+/**
+ * Returns the current location object, which represents the current URL in web
+ * browsers.
+ *
+ * Note: If you're using this it may mean you're doing some of your own
+ * "routing" in your app, and we'd like to know what your use case is. We may
+ * be able to provide something higher-level to better suit your needs.
+ *
+ * @see https://reactrouter.com/hooks/use-location
+ */
+
+function dist_useLocation() {
+  !useInRouterContext() ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+  return React.useContext(LocationContext).location;
+}
+/**
+ * Returns the current navigation action which describes how the router came to
+ * the current location, either by a pop, push, or replace on the history stack.
+ *
+ * @see https://reactrouter.com/hooks/use-navigation-type
+ */
+
+function useNavigationType() {
+  return React.useContext(LocationContext).navigationType;
+}
+/**
+ * Returns a PathMatch object if the given pattern matches the current URL.
+ * This is useful for components that need to know "active" state, e.g.
+ * <NavLink>.
+ *
+ * @see https://reactrouter.com/hooks/use-match
+ */
+
+function useMatch(pattern) {
+  !useInRouterContext() ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+  let {
+    pathname
+  } = dist_useLocation();
+  return React.useMemo(() => matchPath(pattern, pathname), [pathname, pattern]);
+}
+/**
+ * The interface for the navigate() function returned from useNavigate().
+ */
+
+const navigateEffectWarning = (/* unused pure expression or super */ null && ("You should call navigate() in a React.useEffect(), not when " + "your component is first rendered.")); // Mute warnings for calls to useNavigate in SSR environments
+
+function useIsomorphicLayoutEffect(cb) {
+  let isStatic = React.useContext(NavigationContext).static;
+
+  if (!isStatic) {
+    // We should be able to get rid of this once react 18.3 is released
+    // See: https://github.com/facebook/react/pull/26395
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    React.useLayoutEffect(cb);
+  }
+}
+/**
+ * Returns an imperative method for changing the location. Used by <Link>s, but
+ * may also be used by other elements to change the location.
+ *
+ * @see https://reactrouter.com/hooks/use-navigate
+ */
+
+
+function dist_useNavigate() {
+  let {
+    isDataRoute
+  } = React.useContext(RouteContext); // Conditional usage is OK here because the usage of a data router is static
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+
+  return isDataRoute ? useNavigateStable() : useNavigateUnstable();
+}
+
+function useNavigateUnstable() {
+  !useInRouterContext() ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+  let dataRouterContext = React.useContext(DataRouterContext);
+  let {
+    basename,
+    navigator
+  } = React.useContext(NavigationContext);
+  let {
+    matches
+  } = React.useContext(RouteContext);
+  let {
+    pathname: locationPathname
+  } = dist_useLocation();
+  let routePathnamesJson = JSON.stringify(UNSAFE_getPathContributingMatches(matches).map(match => match.pathnameBase));
+  let activeRef = React.useRef(false);
+  useIsomorphicLayoutEffect(() => {
+    activeRef.current = true;
+  });
+  let navigate = React.useCallback(function (to, options) {
+    if (options === void 0) {
+      options = {};
+    }
+
+     false ? 0 : void 0; // Short circuit here since if this happens on first render the navigate
+    // is useless because we haven't wired up our history listener yet
+
+    if (!activeRef.current) return;
+
+    if (typeof to === "number") {
+      navigator.go(to);
+      return;
+    }
+
+    let path = resolveTo(to, JSON.parse(routePathnamesJson), locationPathname, options.relative === "path"); // If we're operating within a basename, prepend it to the pathname prior
+    // to handing off to history (but only if we're not in a data router,
+    // otherwise it'll prepend the basename inside of the router).
+    // If this is a root navigation, then we navigate to the raw basename
+    // which allows the basename to have full control over the presence of a
+    // trailing slash on root links
+
+    if (dataRouterContext == null && basename !== "/") {
+      path.pathname = path.pathname === "/" ? basename : joinPaths([basename, path.pathname]);
+    }
+
+    (!!options.replace ? navigator.replace : navigator.push)(path, options.state, options);
+  }, [basename, navigator, routePathnamesJson, locationPathname, dataRouterContext]);
+  return navigate;
+}
+
+const OutletContext = /*#__PURE__*/(/* unused pure expression or super */ null && (React.createContext(null)));
+/**
+ * Returns the context (if provided) for the child route at this level of the route
+ * hierarchy.
+ * @see https://reactrouter.com/hooks/use-outlet-context
+ */
+
+function useOutletContext() {
+  return React.useContext(OutletContext);
+}
+/**
+ * Returns the element for the child route at this level of the route
+ * hierarchy. Used internally by <Outlet> to render child routes.
+ *
+ * @see https://reactrouter.com/hooks/use-outlet
+ */
+
+function useOutlet(context) {
+  let outlet = React.useContext(RouteContext).outlet;
+
+  if (outlet) {
+    return /*#__PURE__*/React.createElement(OutletContext.Provider, {
+      value: context
+    }, outlet);
+  }
+
+  return outlet;
+}
+/**
+ * Returns an object of key/value pairs of the dynamic params from the current
+ * URL that were matched by the route path.
+ *
+ * @see https://reactrouter.com/hooks/use-params
+ */
+
+function useParams() {
+  let {
+    matches
+  } = React.useContext(RouteContext);
+  let routeMatch = matches[matches.length - 1];
+  return routeMatch ? routeMatch.params : {};
+}
+/**
+ * Resolves the pathname of the given `to` value against the current location.
+ *
+ * @see https://reactrouter.com/hooks/use-resolved-path
+ */
+
+function dist_useResolvedPath(to, _temp2) {
+  let {
+    relative
+  } = _temp2 === void 0 ? {} : _temp2;
+  let {
+    matches
+  } = React.useContext(RouteContext);
+  let {
+    pathname: locationPathname
+  } = dist_useLocation();
+  let routePathnamesJson = JSON.stringify(UNSAFE_getPathContributingMatches(matches).map(match => match.pathnameBase));
+  return React.useMemo(() => resolveTo(to, JSON.parse(routePathnamesJson), locationPathname, relative === "path"), [to, routePathnamesJson, locationPathname, relative]);
+}
+/**
+ * Returns the element of the route that matched the current location, prepared
+ * with the correct context to render the remainder of the route tree. Route
+ * elements in the tree must render an <Outlet> to render their child route's
+ * element.
+ *
+ * @see https://reactrouter.com/hooks/use-routes
+ */
+
+function useRoutes(routes, locationArg) {
+  return useRoutesImpl(routes, locationArg);
+} // Internal implementation with accept optional param for RouterProvider usage
+
+function useRoutesImpl(routes, locationArg, dataRouterState) {
+  !useInRouterContext() ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+  let {
+    navigator
+  } = React.useContext(NavigationContext);
+  let {
+    matches: parentMatches
+  } = React.useContext(RouteContext);
+  let routeMatch = parentMatches[parentMatches.length - 1];
+  let parentParams = routeMatch ? routeMatch.params : {};
+  let parentPathname = routeMatch ? routeMatch.pathname : "/";
+  let parentPathnameBase = routeMatch ? routeMatch.pathnameBase : "/";
+  let parentRoute = routeMatch && routeMatch.route;
+
+  if (false) {}
+
+  let locationFromContext = dist_useLocation();
+  let location;
+
+  if (locationArg) {
+    var _parsedLocationArg$pa;
+
+    let parsedLocationArg = typeof locationArg === "string" ? parsePath(locationArg) : locationArg;
+    !(parentPathnameBase === "/" || ((_parsedLocationArg$pa = parsedLocationArg.pathname) == null ? void 0 : _parsedLocationArg$pa.startsWith(parentPathnameBase))) ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+    location = parsedLocationArg;
+  } else {
+    location = locationFromContext;
+  }
+
+  let pathname = location.pathname || "/";
+  let remainingPathname = parentPathnameBase === "/" ? pathname : pathname.slice(parentPathnameBase.length) || "/";
+  let matches = matchRoutes(routes, {
+    pathname: remainingPathname
+  });
+
+  if (false) {}
+
+  let renderedMatches = _renderMatches(matches && matches.map(match => Object.assign({}, match, {
+    params: Object.assign({}, parentParams, match.params),
+    pathname: joinPaths([parentPathnameBase, // Re-encode pathnames that were decoded inside matchRoutes
+    navigator.encodeLocation ? navigator.encodeLocation(match.pathname).pathname : match.pathname]),
+    pathnameBase: match.pathnameBase === "/" ? parentPathnameBase : joinPaths([parentPathnameBase, // Re-encode pathnames that were decoded inside matchRoutes
+    navigator.encodeLocation ? navigator.encodeLocation(match.pathnameBase).pathname : match.pathnameBase])
+  })), parentMatches, dataRouterState); // When a user passes in a `locationArg`, the associated routes need to
+  // be wrapped in a new `LocationContext.Provider` in order for `useLocation`
+  // to use the scoped location instead of the global location.
+
+
+  if (locationArg && renderedMatches) {
+    return /*#__PURE__*/React.createElement(LocationContext.Provider, {
+      value: {
+        location: dist_extends({
+          pathname: "/",
+          search: "",
+          hash: "",
+          state: null,
+          key: "default"
+        }, location),
+        navigationType: Action.Pop
+      }
+    }, renderedMatches);
+  }
+
+  return renderedMatches;
+}
+
+function DefaultErrorComponent() {
+  let error = useRouteError();
+  let message = isRouteErrorResponse(error) ? error.status + " " + error.statusText : error instanceof Error ? error.message : JSON.stringify(error);
+  let stack = error instanceof Error ? error.stack : null;
+  let lightgrey = "rgba(200,200,200, 0.5)";
+  let preStyles = {
+    padding: "0.5rem",
+    backgroundColor: lightgrey
+  };
+  let codeStyles = {
+    padding: "2px 4px",
+    backgroundColor: lightgrey
+  };
+  let devInfo = null;
+
+  if (false) {}
+
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h2", null, "Unexpected Application Error!"), /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontStyle: "italic"
+    }
+  }, message), stack ? /*#__PURE__*/React.createElement("pre", {
+    style: preStyles
+  }, stack) : null, devInfo);
+}
+
+const defaultErrorElement = /*#__PURE__*/(/* unused pure expression or super */ null && (React.createElement(DefaultErrorComponent, null)));
+class RenderErrorBoundary extends external_cgpv_react_.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      location: props.location,
+      revalidation: props.revalidation,
+      error: props.error
+    };
+  }
+
+  static getDerivedStateFromError(error) {
+    return {
+      error: error
+    };
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    // When we get into an error state, the user will likely click "back" to the
+    // previous page that didn't have an error. Because this wraps the entire
+    // application, that will have no effect--the error page continues to display.
+    // This gives us a mechanism to recover from the error when the location changes.
+    //
+    // Whether we're in an error state or not, we update the location in state
+    // so that when we are in an error state, it gets reset when a new location
+    // comes in and the user recovers from the error.
+    if (state.location !== props.location || state.revalidation !== "idle" && props.revalidation === "idle") {
+      return {
+        error: props.error,
+        location: props.location,
+        revalidation: props.revalidation
+      };
+    } // If we're not changing locations, preserve the location but still surface
+    // any new errors that may come through. We retain the existing error, we do
+    // this because the error provided from the app state may be cleared without
+    // the location changing.
+
+
+    return {
+      error: props.error || state.error,
+      location: state.location,
+      revalidation: props.revalidation || state.revalidation
+    };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error("React Router caught the following error during render", error, errorInfo);
+  }
+
+  render() {
+    return this.state.error ? /*#__PURE__*/React.createElement(RouteContext.Provider, {
+      value: this.props.routeContext
+    }, /*#__PURE__*/React.createElement(RouteErrorContext.Provider, {
+      value: this.state.error,
+      children: this.props.component
+    })) : this.props.children;
+  }
+
+}
+
+function RenderedRoute(_ref) {
+  let {
+    routeContext,
+    match,
+    children
+  } = _ref;
+  let dataRouterContext = React.useContext(DataRouterContext); // Track how deep we got in our render pass to emulate SSR componentDidCatch
+  // in a DataStaticRouter
+
+  if (dataRouterContext && dataRouterContext.static && dataRouterContext.staticContext && (match.route.errorElement || match.route.ErrorBoundary)) {
+    dataRouterContext.staticContext._deepestRenderedBoundaryId = match.route.id;
+  }
+
+  return /*#__PURE__*/React.createElement(RouteContext.Provider, {
+    value: routeContext
+  }, children);
+}
+
+function _renderMatches(matches, parentMatches, dataRouterState) {
+  var _dataRouterState2;
+
+  if (parentMatches === void 0) {
+    parentMatches = [];
+  }
+
+  if (dataRouterState === void 0) {
+    dataRouterState = null;
+  }
+
+  if (matches == null) {
+    var _dataRouterState;
+
+    if ((_dataRouterState = dataRouterState) != null && _dataRouterState.errors) {
+      // Don't bail if we have data router errors so we can render them in the
+      // boundary.  Use the pre-matched (or shimmed) matches
+      matches = dataRouterState.matches;
+    } else {
+      return null;
+    }
+  }
+
+  let renderedMatches = matches; // If we have data errors, trim matches to the highest error boundary
+
+  let errors = (_dataRouterState2 = dataRouterState) == null ? void 0 : _dataRouterState2.errors;
+
+  if (errors != null) {
+    let errorIndex = renderedMatches.findIndex(m => m.route.id && (errors == null ? void 0 : errors[m.route.id]));
+    !(errorIndex >= 0) ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+    renderedMatches = renderedMatches.slice(0, Math.min(renderedMatches.length, errorIndex + 1));
+  }
+
+  return renderedMatches.reduceRight((outlet, match, index) => {
+    let error = match.route.id ? errors == null ? void 0 : errors[match.route.id] : null; // Only data routers handle errors
+
+    let errorElement = null;
+
+    if (dataRouterState) {
+      errorElement = match.route.errorElement || defaultErrorElement;
+    }
+
+    let matches = parentMatches.concat(renderedMatches.slice(0, index + 1));
+
+    let getChildren = () => {
+      let children;
+
+      if (error) {
+        children = errorElement;
+      } else if (match.route.Component) {
+        // Note: This is a de-optimized path since React won't re-use the
+        // ReactElement since it's identity changes with each new
+        // React.createElement call.  We keep this so folks can use
+        // `<Route Component={...}>` in `<Routes>` but generally `Component`
+        // usage is only advised in `RouterProvider` when we can convert it to
+        // `element` ahead of time.
+        children = /*#__PURE__*/React.createElement(match.route.Component, null);
+      } else if (match.route.element) {
+        children = match.route.element;
+      } else {
+        children = outlet;
+      }
+
+      return /*#__PURE__*/React.createElement(RenderedRoute, {
+        match: match,
+        routeContext: {
+          outlet,
+          matches,
+          isDataRoute: dataRouterState != null
+        },
+        children: children
+      });
+    }; // Only wrap in an error boundary within data router usages when we have an
+    // ErrorBoundary/errorElement on this route.  Otherwise let it bubble up to
+    // an ancestor ErrorBoundary/errorElement
+
+
+    return dataRouterState && (match.route.ErrorBoundary || match.route.errorElement || index === 0) ? /*#__PURE__*/React.createElement(RenderErrorBoundary, {
+      location: dataRouterState.location,
+      revalidation: dataRouterState.revalidation,
+      component: errorElement,
+      error: error,
+      children: getChildren(),
+      routeContext: {
+        outlet: null,
+        matches,
+        isDataRoute: true
+      }
+    }) : getChildren();
+  }, null);
+}
+var DataRouterHook;
+
+(function (DataRouterHook) {
+  DataRouterHook["UseBlocker"] = "useBlocker";
+  DataRouterHook["UseRevalidator"] = "useRevalidator";
+  DataRouterHook["UseNavigateStable"] = "useNavigate";
+})(DataRouterHook || (DataRouterHook = {}));
+
+var DataRouterStateHook;
+
+(function (DataRouterStateHook) {
+  DataRouterStateHook["UseBlocker"] = "useBlocker";
+  DataRouterStateHook["UseLoaderData"] = "useLoaderData";
+  DataRouterStateHook["UseActionData"] = "useActionData";
+  DataRouterStateHook["UseRouteError"] = "useRouteError";
+  DataRouterStateHook["UseNavigation"] = "useNavigation";
+  DataRouterStateHook["UseRouteLoaderData"] = "useRouteLoaderData";
+  DataRouterStateHook["UseMatches"] = "useMatches";
+  DataRouterStateHook["UseRevalidator"] = "useRevalidator";
+  DataRouterStateHook["UseNavigateStable"] = "useNavigate";
+  DataRouterStateHook["UseRouteId"] = "useRouteId";
+})(DataRouterStateHook || (DataRouterStateHook = {}));
+
+function getDataRouterConsoleError(hookName) {
+  return hookName + " must be used within a data router.  See https://reactrouter.com/routers/picking-a-router.";
+}
+
+function useDataRouterContext(hookName) {
+  let ctx = React.useContext(DataRouterContext);
+  !ctx ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+  return ctx;
+}
+
+function useDataRouterState(hookName) {
+  let state = React.useContext(DataRouterStateContext);
+  !state ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+  return state;
+}
+
+function useRouteContext(hookName) {
+  let route = React.useContext(RouteContext);
+  !route ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+  return route;
+} // Internal version with hookName-aware debugging
+
+
+function useCurrentRouteId(hookName) {
+  let route = useRouteContext(hookName);
+  let thisRoute = route.matches[route.matches.length - 1];
+  !thisRoute.route.id ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+  return thisRoute.route.id;
+}
+/**
+ * Returns the ID for the nearest contextual route
+ */
+
+
+function useRouteId() {
+  return useCurrentRouteId(DataRouterStateHook.UseRouteId);
+}
+/**
+ * Returns the current navigation, defaulting to an "idle" navigation when
+ * no navigation is in progress
+ */
+
+function dist_useNavigation() {
+  let state = useDataRouterState(DataRouterStateHook.UseNavigation);
+  return state.navigation;
+}
+/**
+ * Returns a revalidate function for manually triggering revalidation, as well
+ * as the current state of any manual revalidations
+ */
+
+function useRevalidator() {
+  let dataRouterContext = useDataRouterContext(DataRouterHook.UseRevalidator);
+  let state = useDataRouterState(DataRouterStateHook.UseRevalidator);
+  return {
+    revalidate: dataRouterContext.router.revalidate,
+    state: state.revalidation
+  };
+}
+/**
+ * Returns the active route matches, useful for accessing loaderData for
+ * parent/child routes or the route "handle" property
+ */
+
+function dist_useMatches() {
+  let {
+    matches,
+    loaderData
+  } = useDataRouterState(DataRouterStateHook.UseMatches);
+  return React.useMemo(() => matches.map(match => {
+    let {
+      pathname,
+      params
+    } = match; // Note: This structure matches that created by createUseMatchesMatch
+    // in the @remix-run/router , so if you change this please also change
+    // that :)  Eventually we'll DRY this up
+
+    return {
+      id: match.route.id,
+      pathname,
+      params,
+      data: loaderData[match.route.id],
+      handle: match.route.handle
+    };
+  }), [matches, loaderData]);
+}
+/**
+ * Returns the loader data for the nearest ancestor Route loader
+ */
+
+function useLoaderData() {
+  let state = useDataRouterState(DataRouterStateHook.UseLoaderData);
+  let routeId = useCurrentRouteId(DataRouterStateHook.UseLoaderData);
+
+  if (state.errors && state.errors[routeId] != null) {
+    console.error("You cannot `useLoaderData` in an errorElement (routeId: " + routeId + ")");
+    return undefined;
+  }
+
+  return state.loaderData[routeId];
+}
+/**
+ * Returns the loaderData for the given routeId
+ */
+
+function useRouteLoaderData(routeId) {
+  let state = useDataRouterState(DataRouterStateHook.UseRouteLoaderData);
+  return state.loaderData[routeId];
+}
+/**
+ * Returns the action data for the nearest ancestor Route action
+ */
+
+function useActionData() {
+  let state = useDataRouterState(DataRouterStateHook.UseActionData);
+  let route = React.useContext(RouteContext);
+  !route ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+  return Object.values((state == null ? void 0 : state.actionData) || {})[0];
+}
+/**
+ * Returns the nearest ancestor Route error, which could be a loader/action
+ * error or a render error.  This is intended to be called from your
+ * ErrorBoundary/errorElement to display a proper error message.
+ */
+
+function useRouteError() {
+  var _state$errors;
+
+  let error = React.useContext(RouteErrorContext);
+  let state = useDataRouterState(DataRouterStateHook.UseRouteError);
+  let routeId = useCurrentRouteId(DataRouterStateHook.UseRouteError); // If this was a render error, we put it in a RouteError context inside
+  // of RenderErrorBoundary
+
+  if (error) {
+    return error;
+  } // Otherwise look for errors from our data router state
+
+
+  return (_state$errors = state.errors) == null ? void 0 : _state$errors[routeId];
+}
+/**
+ * Returns the happy-path data from the nearest ancestor <Await /> value
+ */
+
+function useAsyncValue() {
+  let value = React.useContext(AwaitContext);
+  return value == null ? void 0 : value._data;
+}
+/**
+ * Returns the error from the nearest ancestor <Await /> value
+ */
+
+function useAsyncError() {
+  let value = React.useContext(AwaitContext);
+  return value == null ? void 0 : value._error;
+}
+let blockerId = 0;
+/**
+ * Allow the application to block navigations within the SPA and present the
+ * user a confirmation dialog to confirm the navigation.  Mostly used to avoid
+ * using half-filled form data.  This does not handle hard-reloads or
+ * cross-origin navigations.
+ */
+
+function useBlocker(shouldBlock) {
+  let {
+    router
+  } = useDataRouterContext(DataRouterHook.UseBlocker);
+  let state = useDataRouterState(DataRouterStateHook.UseBlocker);
+  let [blockerKey] = React.useState(() => String(++blockerId));
+  let blockerFunction = React.useCallback(args => {
+    return typeof shouldBlock === "function" ? !!shouldBlock(args) : !!shouldBlock;
+  }, [shouldBlock]);
+  let blocker = router.getBlocker(blockerKey, blockerFunction); // Cleanup on unmount
+
+  React.useEffect(() => () => router.deleteBlocker(blockerKey), [router, blockerKey]); // Prefer the blocker from state since DataRouterContext is memoized so this
+  // ensures we update on blocker state updates
+
+  return state.blockers.get(blockerKey) || blocker;
+}
+/**
+ * Stable version of useNavigate that is used when we are in the context of
+ * a RouterProvider.
+ */
+
+function useNavigateStable() {
+  let {
+    router
+  } = useDataRouterContext(DataRouterHook.UseNavigateStable);
+  let id = useCurrentRouteId(DataRouterStateHook.UseNavigateStable);
+  let activeRef = React.useRef(false);
+  useIsomorphicLayoutEffect(() => {
+    activeRef.current = true;
+  });
+  let navigate = React.useCallback(function (to, options) {
+    if (options === void 0) {
+      options = {};
+    }
+
+     false ? 0 : void 0; // Short circuit here since if this happens on first render the navigate
+    // is useless because we haven't wired up our router subscriber yet
+
+    if (!activeRef.current) return;
+
+    if (typeof to === "number") {
+      router.navigate(to);
+    } else {
+      router.navigate(to, dist_extends({
+        fromRouteId: id
+      }, options));
+    }
+  }, [router, id]);
+  return navigate;
+}
+
+const alreadyWarned = {};
+
+function warningOnce(key, cond, message) {
+  if (!cond && !alreadyWarned[key]) {
+    alreadyWarned[key] = true;
+     false ? 0 : void 0;
+  }
+}
+
+/**
+ * Given a Remix Router instance, render the appropriate UI
+ */
+function RouterProvider(_ref) {
+  let {
+    fallbackElement,
+    router
+  } = _ref;
+  // Need to use a layout effect here so we are subscribed early enough to
+  // pick up on any render-driven redirects/navigations (useEffect/<Navigate>)
+  let [state, setState] = React.useState(router.state);
+  React.useLayoutEffect(() => router.subscribe(setState), [router, setState]);
+  let navigator = React.useMemo(() => {
+    return {
+      createHref: router.createHref,
+      encodeLocation: router.encodeLocation,
+      go: n => router.navigate(n),
+      push: (to, state, opts) => router.navigate(to, {
+        state,
+        preventScrollReset: opts == null ? void 0 : opts.preventScrollReset
+      }),
+      replace: (to, state, opts) => router.navigate(to, {
+        replace: true,
+        state,
+        preventScrollReset: opts == null ? void 0 : opts.preventScrollReset
+      })
+    };
+  }, [router]);
+  let basename = router.basename || "/";
+  let dataRouterContext = React.useMemo(() => ({
+    router,
+    navigator,
+    static: false,
+    basename
+  }), [router, navigator, basename]); // The fragment and {null} here are important!  We need them to keep React 18's
+  // useId happy when we are server-rendering since we may have a <script> here
+  // containing the hydrated server-side staticContext (from StaticRouterProvider).
+  // useId relies on the component tree structure to generate deterministic id's
+  // so we need to ensure it remains the same on the client even though
+  // we don't need the <script> tag
+
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(DataRouterContext.Provider, {
+    value: dataRouterContext
+  }, /*#__PURE__*/React.createElement(DataRouterStateContext.Provider, {
+    value: state
+  }, /*#__PURE__*/React.createElement(dist_Router, {
+    basename: router.basename,
+    location: router.state.location,
+    navigationType: router.state.historyAction,
+    navigator: navigator
+  }, router.state.initialized ? /*#__PURE__*/React.createElement(DataRoutes, {
+    routes: router.routes,
+    state: state
+  }) : fallbackElement))), null);
+}
+
+function DataRoutes(_ref2) {
+  let {
+    routes,
+    state
+  } = _ref2;
+  return useRoutesImpl(routes, undefined, state);
+}
+
+/**
+ * A <Router> that stores all entries in memory.
+ *
+ * @see https://reactrouter.com/router-components/memory-router
+ */
+function MemoryRouter(_ref3) {
+  let {
+    basename,
+    children,
+    initialEntries,
+    initialIndex
+  } = _ref3;
+  let historyRef = React.useRef();
+
+  if (historyRef.current == null) {
+    historyRef.current = createMemoryHistory({
+      initialEntries,
+      initialIndex,
+      v5Compat: true
+    });
+  }
+
+  let history = historyRef.current;
+  let [state, setState] = React.useState({
+    action: history.action,
+    location: history.location
+  });
+  React.useLayoutEffect(() => history.listen(setState), [history]);
+  return /*#__PURE__*/React.createElement(dist_Router, {
+    basename: basename,
+    children: children,
+    location: state.location,
+    navigationType: state.action,
+    navigator: history
+  });
+}
+
+/**
+ * Changes the current location.
+ *
+ * Note: This API is mostly useful in React.Component subclasses that are not
+ * able to use hooks. In functional components, we recommend you use the
+ * `useNavigate` hook instead.
+ *
+ * @see https://reactrouter.com/components/navigate
+ */
+function Navigate(_ref4) {
+  let {
+    to,
+    replace,
+    state,
+    relative
+  } = _ref4;
+  !useInRouterContext() ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+   false ? 0 : void 0;
+  let {
+    matches
+  } = React.useContext(RouteContext);
+  let {
+    pathname: locationPathname
+  } = dist_useLocation();
+  let navigate = dist_useNavigate(); // Resolve the path outside of the effect so that when effects run twice in
+  // StrictMode they navigate to the same place
+
+  let path = resolveTo(to, UNSAFE_getPathContributingMatches(matches).map(match => match.pathnameBase), locationPathname, relative === "path");
+  let jsonPath = JSON.stringify(path);
+  React.useEffect(() => navigate(JSON.parse(jsonPath), {
+    replace,
+    state,
+    relative
+  }), [navigate, jsonPath, relative, replace, state]);
+  return null;
+}
+
+/**
+ * Renders the child route's element, if there is one.
+ *
+ * @see https://reactrouter.com/components/outlet
+ */
+function Outlet(props) {
+  return useOutlet(props.context);
+}
+
+/**
+ * Declares an element that should be rendered at a certain URL path.
+ *
+ * @see https://reactrouter.com/components/route
+ */
+function Route(_props) {
+   false ? 0 : UNSAFE_invariant(false) ;
+}
+
+/**
+ * Provides location context for the rest of the app.
+ *
+ * Note: You usually won't render a <Router> directly. Instead, you'll render a
+ * router that is more specific to your environment such as a <BrowserRouter>
+ * in web browsers or a <StaticRouter> for server rendering.
+ *
+ * @see https://reactrouter.com/router-components/router
+ */
+function dist_Router(_ref5) {
+  let {
+    basename: basenameProp = "/",
+    children = null,
+    location: locationProp,
+    navigationType = router_Action.Pop,
+    navigator,
+    static: staticProp = false
+  } = _ref5;
+  !!useInRouterContext() ?  false ? 0 : invariant(false) : void 0; // Preserve trailing slashes on basename, so we can let the user control
+  // the enforcement of trailing slashes throughout the app
+
+  let basename = basenameProp.replace(/^\/*/, "/");
+  let navigationContext = external_cgpv_react_.useMemo(() => ({
+    basename,
+    navigator,
+    static: staticProp
+  }), [basename, navigator, staticProp]);
+
+  if (typeof locationProp === "string") {
+    locationProp = router_parsePath(locationProp);
+  }
+
+  let {
+    pathname = "/",
+    search = "",
+    hash = "",
+    state = null,
+    key = "default"
+  } = locationProp;
+  let locationContext = external_cgpv_react_.useMemo(() => {
+    let trailingPathname = router_stripBasename(pathname, basename);
+
+    if (trailingPathname == null) {
+      return null;
+    }
+
+    return {
+      location: {
+        pathname: trailingPathname,
+        search,
+        hash,
+        state,
+        key
+      },
+      navigationType
+    };
+  }, [basename, pathname, search, hash, state, key, navigationType]);
+   false ? 0 : void 0;
+
+  if (locationContext == null) {
+    return null;
+  }
+
+  return /*#__PURE__*/external_cgpv_react_.createElement(NavigationContext.Provider, {
+    value: navigationContext
+  }, /*#__PURE__*/external_cgpv_react_.createElement(LocationContext.Provider, {
+    children: children,
+    value: locationContext
+  }));
+}
+
+/**
+ * A container for a nested tree of <Route> elements that renders the branch
+ * that best matches the current location.
+ *
+ * @see https://reactrouter.com/components/routes
+ */
+function Routes(_ref6) {
+  let {
+    children,
+    location
+  } = _ref6;
+  return useRoutes(createRoutesFromChildren(children), location);
+}
+
+/**
+ * Component to use for rendering lazily loaded data from returning defer()
+ * in a loader function
+ */
+function Await(_ref7) {
+  let {
+    children,
+    errorElement,
+    resolve
+  } = _ref7;
+  return /*#__PURE__*/React.createElement(AwaitErrorBoundary, {
+    resolve: resolve,
+    errorElement: errorElement
+  }, /*#__PURE__*/React.createElement(ResolveAwait, null, children));
+}
+var AwaitRenderStatus;
+
+(function (AwaitRenderStatus) {
+  AwaitRenderStatus[AwaitRenderStatus["pending"] = 0] = "pending";
+  AwaitRenderStatus[AwaitRenderStatus["success"] = 1] = "success";
+  AwaitRenderStatus[AwaitRenderStatus["error"] = 2] = "error";
+})(AwaitRenderStatus || (AwaitRenderStatus = {}));
+
+const neverSettledPromise = new Promise(() => {});
+
+class AwaitErrorBoundary extends external_cgpv_react_.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null
+    };
+  }
+
+  static getDerivedStateFromError(error) {
+    return {
+      error
+    };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error("<Await> caught the following error during render", error, errorInfo);
+  }
+
+  render() {
+    let {
+      children,
+      errorElement,
+      resolve
+    } = this.props;
+    let promise = null;
+    let status = AwaitRenderStatus.pending;
+
+    if (!(resolve instanceof Promise)) {
+      // Didn't get a promise - provide as a resolved promise
+      status = AwaitRenderStatus.success;
+      promise = Promise.resolve();
+      Object.defineProperty(promise, "_tracked", {
+        get: () => true
+      });
+      Object.defineProperty(promise, "_data", {
+        get: () => resolve
+      });
+    } else if (this.state.error) {
+      // Caught a render error, provide it as a rejected promise
+      status = AwaitRenderStatus.error;
+      let renderError = this.state.error;
+      promise = Promise.reject().catch(() => {}); // Avoid unhandled rejection warnings
+
+      Object.defineProperty(promise, "_tracked", {
+        get: () => true
+      });
+      Object.defineProperty(promise, "_error", {
+        get: () => renderError
+      });
+    } else if (resolve._tracked) {
+      // Already tracked promise - check contents
+      promise = resolve;
+      status = promise._error !== undefined ? AwaitRenderStatus.error : promise._data !== undefined ? AwaitRenderStatus.success : AwaitRenderStatus.pending;
+    } else {
+      // Raw (untracked) promise - track it
+      status = AwaitRenderStatus.pending;
+      Object.defineProperty(resolve, "_tracked", {
+        get: () => true
+      });
+      promise = resolve.then(data => Object.defineProperty(resolve, "_data", {
+        get: () => data
+      }), error => Object.defineProperty(resolve, "_error", {
+        get: () => error
+      }));
+    }
+
+    if (status === AwaitRenderStatus.error && promise._error instanceof AbortedDeferredError) {
+      // Freeze the UI by throwing a never resolved promise
+      throw neverSettledPromise;
+    }
+
+    if (status === AwaitRenderStatus.error && !errorElement) {
+      // No errorElement, throw to the nearest route-level error boundary
+      throw promise._error;
+    }
+
+    if (status === AwaitRenderStatus.error) {
+      // Render via our errorElement
+      return /*#__PURE__*/React.createElement(AwaitContext.Provider, {
+        value: promise,
+        children: errorElement
+      });
+    }
+
+    if (status === AwaitRenderStatus.success) {
+      // Render children with resolved value
+      return /*#__PURE__*/React.createElement(AwaitContext.Provider, {
+        value: promise,
+        children: children
+      });
+    } // Throw to the suspense boundary
+
+
+    throw promise;
+  }
+
+}
+/**
+ * @private
+ * Indirection to leverage useAsyncValue for a render-prop API on <Await>
+ */
+
+
+function ResolveAwait(_ref8) {
+  let {
+    children
+  } = _ref8;
+  let data = useAsyncValue();
+  let toRender = typeof children === "function" ? children(data) : children;
+  return /*#__PURE__*/React.createElement(React.Fragment, null, toRender);
+} ///////////////////////////////////////////////////////////////////////////////
+// UTILS
+///////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Creates a route config from a React "children" object, which is usually
+ * either a `<Route>` element or an array of them. Used internally by
+ * `<Routes>` to create a route config from its children.
+ *
+ * @see https://reactrouter.com/utils/create-routes-from-children
+ */
+
+
+function createRoutesFromChildren(children, parentPath) {
+  if (parentPath === void 0) {
+    parentPath = [];
+  }
+
+  let routes = [];
+  React.Children.forEach(children, (element, index) => {
+    if (! /*#__PURE__*/React.isValidElement(element)) {
+      // Ignore non-elements. This allows people to more easily inline
+      // conditionals in their route config.
+      return;
+    }
+
+    let treePath = [...parentPath, index];
+
+    if (element.type === React.Fragment) {
+      // Transparently support React.Fragment and its children.
+      routes.push.apply(routes, createRoutesFromChildren(element.props.children, treePath));
+      return;
+    }
+
+    !(element.type === Route) ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+    !(!element.props.index || !element.props.children) ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+    let route = {
+      id: element.props.id || treePath.join("-"),
+      caseSensitive: element.props.caseSensitive,
+      element: element.props.element,
+      Component: element.props.Component,
+      index: element.props.index,
+      path: element.props.path,
+      loader: element.props.loader,
+      action: element.props.action,
+      errorElement: element.props.errorElement,
+      ErrorBoundary: element.props.ErrorBoundary,
+      hasErrorBoundary: element.props.ErrorBoundary != null || element.props.errorElement != null,
+      shouldRevalidate: element.props.shouldRevalidate,
+      handle: element.props.handle,
+      lazy: element.props.lazy
+    };
+
+    if (element.props.children) {
+      route.children = createRoutesFromChildren(element.props.children, treePath);
+    }
+
+    routes.push(route);
+  });
+  return routes;
+}
+/**
+ * Renders the result of `matchRoutes()` into a React element.
+ */
+
+function renderMatches(matches) {
+  return _renderMatches(matches);
+}
+
+function mapRouteProperties(route) {
+  let updates = {
+    // Note: this check also occurs in createRoutesFromChildren so update
+    // there if you change this -- please and thank you!
+    hasErrorBoundary: route.ErrorBoundary != null || route.errorElement != null
+  };
+
+  if (route.Component) {
+    if (false) {}
+
+    Object.assign(updates, {
+      element: /*#__PURE__*/React.createElement(route.Component),
+      Component: undefined
+    });
+  }
+
+  if (route.ErrorBoundary) {
+    if (false) {}
+
+    Object.assign(updates, {
+      errorElement: /*#__PURE__*/React.createElement(route.ErrorBoundary),
+      ErrorBoundary: undefined
+    });
+  }
+
+  return updates;
+}
+
+function createMemoryRouter(routes, opts) {
+  return createRouter({
+    basename: opts == null ? void 0 : opts.basename,
+    future: dist_extends({}, opts == null ? void 0 : opts.future, {
+      v7_prependBasename: true
+    }),
+    history: createMemoryHistory({
+      initialEntries: opts == null ? void 0 : opts.initialEntries,
+      initialIndex: opts == null ? void 0 : opts.initialIndex
+    }),
+    hydrationData: opts == null ? void 0 : opts.hydrationData,
+    routes,
+    mapRouteProperties
+  }).initialize();
+} ///////////////////////////////////////////////////////////////////////////////
+
+
+//# sourceMappingURL=index.js.map
+
+;// CONCATENATED MODULE: ./node_modules/react-router-dom/dist/index.js
+/**
+ * React Router DOM v6.11.2
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+
+
+
+
+function react_router_dom_dist_extends() {
+  react_router_dom_dist_extends = Object.assign ? Object.assign.bind() : function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+  return react_router_dom_dist_extends.apply(this, arguments);
+}
+
+function dist_objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+const defaultMethod = "get";
+const defaultEncType = "application/x-www-form-urlencoded";
+function isHtmlElement(object) {
+  return object != null && typeof object.tagName === "string";
+}
+function isButtonElement(object) {
+  return isHtmlElement(object) && object.tagName.toLowerCase() === "button";
+}
+function isFormElement(object) {
+  return isHtmlElement(object) && object.tagName.toLowerCase() === "form";
+}
+function isInputElement(object) {
+  return isHtmlElement(object) && object.tagName.toLowerCase() === "input";
+}
+
+function isModifiedEvent(event) {
+  return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
+}
+
+function shouldProcessLinkClick(event, target) {
+  return event.button === 0 && ( // Ignore everything but left clicks
+  !target || target === "_self") && // Let browser handle "target=_blank" etc.
+  !isModifiedEvent(event) // Ignore clicks with modifier keys
+  ;
+}
+/**
+ * Creates a URLSearchParams object using the given initializer.
+ *
+ * This is identical to `new URLSearchParams(init)` except it also
+ * supports arrays as values in the object form of the initializer
+ * instead of just strings. This is convenient when you need multiple
+ * values for a given key, but don't want to use an array initializer.
+ *
+ * For example, instead of:
+ *
+ *   let searchParams = new URLSearchParams([
+ *     ['sort', 'name'],
+ *     ['sort', 'price']
+ *   ]);
+ *
+ * you can do:
+ *
+ *   let searchParams = createSearchParams({
+ *     sort: ['name', 'price']
+ *   });
+ */
+
+function createSearchParams(init) {
+  if (init === void 0) {
+    init = "";
+  }
+
+  return new URLSearchParams(typeof init === "string" || Array.isArray(init) || init instanceof URLSearchParams ? init : Object.keys(init).reduce((memo, key) => {
+    let value = init[key];
+    return memo.concat(Array.isArray(value) ? value.map(v => [key, v]) : [[key, value]]);
+  }, []));
+}
+function getSearchParamsForLocation(locationSearch, defaultSearchParams) {
+  let searchParams = createSearchParams(locationSearch);
+
+  if (defaultSearchParams) {
+    for (let key of defaultSearchParams.keys()) {
+      if (!searchParams.has(key)) {
+        defaultSearchParams.getAll(key).forEach(value => {
+          searchParams.append(key, value);
+        });
+      }
+    }
+  }
+
+  return searchParams;
+}
+function getFormSubmissionInfo(target, options, basename) {
+  let method;
+  let action = null;
+  let encType;
+  let formData;
+
+  if (isFormElement(target)) {
+    let submissionTrigger = options.submissionTrigger;
+
+    if (options.action) {
+      action = options.action;
+    } else {
+      // When grabbing the action from the element, it will have had the basename
+      // prefixed to ensure non-JS scenarios work, so strip it since we'll
+      // re-prefix in the router
+      let attr = target.getAttribute("action");
+      action = attr ? stripBasename(attr, basename) : null;
+    }
+
+    method = options.method || target.getAttribute("method") || defaultMethod;
+    encType = options.encType || target.getAttribute("enctype") || defaultEncType;
+    formData = new FormData(target);
+
+    if (submissionTrigger && submissionTrigger.name) {
+      formData.append(submissionTrigger.name, submissionTrigger.value);
+    }
+  } else if (isButtonElement(target) || isInputElement(target) && (target.type === "submit" || target.type === "image")) {
+    let form = target.form;
+
+    if (form == null) {
+      throw new Error("Cannot submit a <button> or <input type=\"submit\"> without a <form>");
+    } // <button>/<input type="submit"> may override attributes of <form>
+
+
+    if (options.action) {
+      action = options.action;
+    } else {
+      // When grabbing the action from the element, it will have had the basename
+      // prefixed to ensure non-JS scenarios work, so strip it since we'll
+      // re-prefix in the router
+      let attr = target.getAttribute("formaction") || form.getAttribute("action");
+      action = attr ? stripBasename(attr, basename) : null;
+    }
+
+    method = options.method || target.getAttribute("formmethod") || form.getAttribute("method") || defaultMethod;
+    encType = options.encType || target.getAttribute("formenctype") || form.getAttribute("enctype") || defaultEncType;
+    formData = new FormData(form); // Include name + value from a <button>, appending in case the button name
+    // matches an existing input name
+
+    if (target.name) {
+      formData.append(target.name, target.value);
+    }
+  } else if (isHtmlElement(target)) {
+    throw new Error("Cannot submit element that is not <form>, <button>, or " + "<input type=\"submit|image\">");
+  } else {
+    method = options.method || defaultMethod;
+    action = options.action || null;
+    encType = options.encType || defaultEncType;
+
+    if (target instanceof FormData) {
+      formData = target;
+    } else {
+      formData = new FormData();
+
+      if (target instanceof URLSearchParams) {
+        for (let [name, value] of target) {
+          formData.append(name, value);
+        }
+      } else if (target != null) {
+        for (let name of Object.keys(target)) {
+          formData.append(name, target[name]);
+        }
+      }
+    }
+  }
+
+  return {
+    action,
+    method: method.toLowerCase(),
+    encType,
+    formData
+  };
+}
+
+const dist_excluded = (/* unused pure expression or super */ null && (["onClick", "relative", "reloadDocument", "replace", "state", "target", "to", "preventScrollReset"])),
+      _excluded2 = (/* unused pure expression or super */ null && (["aria-current", "caseSensitive", "className", "end", "style", "to", "children"])),
+      _excluded3 = (/* unused pure expression or super */ null && (["reloadDocument", "replace", "method", "action", "onSubmit", "fetcherKey", "routeId", "relative", "preventScrollReset"]));
+function createBrowserRouter(routes, opts) {
+  return createRouter({
+    basename: opts == null ? void 0 : opts.basename,
+    future: react_router_dom_dist_extends({}, opts == null ? void 0 : opts.future, {
+      v7_prependBasename: true
+    }),
+    history: createBrowserHistory({
+      window: opts == null ? void 0 : opts.window
+    }),
+    hydrationData: (opts == null ? void 0 : opts.hydrationData) || parseHydrationData(),
+    routes,
+    mapRouteProperties: UNSAFE_mapRouteProperties
+  }).initialize();
+}
+function createHashRouter(routes, opts) {
+  return createRouter({
+    basename: opts == null ? void 0 : opts.basename,
+    future: react_router_dom_dist_extends({}, opts == null ? void 0 : opts.future, {
+      v7_prependBasename: true
+    }),
+    history: createHashHistory({
+      window: opts == null ? void 0 : opts.window
+    }),
+    hydrationData: (opts == null ? void 0 : opts.hydrationData) || parseHydrationData(),
+    routes,
+    mapRouteProperties: UNSAFE_mapRouteProperties
+  }).initialize();
+}
+
+function parseHydrationData() {
+  var _window;
+
+  let state = (_window = window) == null ? void 0 : _window.__staticRouterHydrationData;
+
+  if (state && state.errors) {
+    state = react_router_dom_dist_extends({}, state, {
+      errors: deserializeErrors(state.errors)
+    });
+  }
+
+  return state;
+}
+
+function deserializeErrors(errors) {
+  if (!errors) return null;
+  let entries = Object.entries(errors);
+  let serialized = {};
+
+  for (let [key, val] of entries) {
+    // Hey you!  If you change this, please change the corresponding logic in
+    // serializeErrors in react-router-dom/server.tsx :)
+    if (val && val.__type === "RouteErrorResponse") {
+      serialized[key] = new ErrorResponse(val.status, val.statusText, val.data, val.internal === true);
+    } else if (val && val.__type === "Error") {
+      let error = new Error(val.message); // Wipe away the client-side stack trace.  Nothing to fill it in with
+      // because we don't serialize SSR stack traces for security reasons
+
+      error.stack = "";
+      serialized[key] = error;
+    } else {
+      serialized[key] = val;
+    }
+  }
+
+  return serialized;
+}
+/**
+ * A `<Router>` for use in web browsers. Provides the cleanest URLs.
+ */
+
+
+function BrowserRouter(_ref) {
+  let {
+    basename,
+    children,
+    window
+  } = _ref;
+  let historyRef = external_cgpv_react_.useRef();
+
+  if (historyRef.current == null) {
+    historyRef.current = router_createBrowserHistory({
+      window,
+      v5Compat: true
+    });
+  }
+
+  let history = historyRef.current;
+  let [state, setState] = external_cgpv_react_.useState({
+    action: history.action,
+    location: history.location
+  });
+  external_cgpv_react_.useLayoutEffect(() => history.listen(setState), [history]);
+  return /*#__PURE__*/external_cgpv_react_.createElement(dist_Router, {
+    basename: basename,
+    children: children,
+    location: state.location,
+    navigationType: state.action,
+    navigator: history
+  });
+}
+/**
+ * A `<Router>` for use in web browsers. Stores the location in the hash
+ * portion of the URL so it is not sent to the server.
+ */
+
+function HashRouter(_ref2) {
+  let {
+    basename,
+    children,
+    window
+  } = _ref2;
+  let historyRef = React.useRef();
+
+  if (historyRef.current == null) {
+    historyRef.current = createHashHistory({
+      window,
+      v5Compat: true
+    });
+  }
+
+  let history = historyRef.current;
+  let [state, setState] = React.useState({
+    action: history.action,
+    location: history.location
+  });
+  React.useLayoutEffect(() => history.listen(setState), [history]);
+  return /*#__PURE__*/React.createElement(Router, {
+    basename: basename,
+    children: children,
+    location: state.location,
+    navigationType: state.action,
+    navigator: history
+  });
+}
+/**
+ * A `<Router>` that accepts a pre-instantiated history object. It's important
+ * to note that using your own history object is highly discouraged and may add
+ * two versions of the history library to your bundles unless you use the same
+ * version of the history library that React Router uses internally.
+ */
+
+function HistoryRouter(_ref3) {
+  let {
+    basename,
+    children,
+    history
+  } = _ref3;
+  const [state, setState] = React.useState({
+    action: history.action,
+    location: history.location
+  });
+  React.useLayoutEffect(() => history.listen(setState), [history]);
+  return /*#__PURE__*/React.createElement(Router, {
+    basename: basename,
+    children: children,
+    location: state.location,
+    navigationType: state.action,
+    navigator: history
+  });
+}
+
+if (false) {}
+const dist_isBrowser = typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined";
+const dist_ABSOLUTE_URL_REGEX = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
+/**
+ * The public API for rendering a history-aware <a>.
+ */
+
+const Link = /*#__PURE__*/(/* unused pure expression or super */ null && (React.forwardRef(function LinkWithRef(_ref4, ref) {
+  let {
+    onClick,
+    relative,
+    reloadDocument,
+    replace,
+    state,
+    target,
+    to,
+    preventScrollReset
+  } = _ref4,
+      rest = dist_objectWithoutPropertiesLoose(_ref4, dist_excluded);
+
+  let {
+    basename
+  } = React.useContext(UNSAFE_NavigationContext); // Rendered into <a href> for absolute URLs
+
+  let absoluteHref;
+  let isExternal = false;
+
+  if (typeof to === "string" && dist_ABSOLUTE_URL_REGEX.test(to)) {
+    // Render the absolute href server- and client-side
+    absoluteHref = to; // Only check for external origins client-side
+
+    if (dist_isBrowser) {
+      try {
+        let currentUrl = new URL(window.location.href);
+        let targetUrl = to.startsWith("//") ? new URL(currentUrl.protocol + to) : new URL(to);
+        let path = stripBasename(targetUrl.pathname, basename);
+
+        if (targetUrl.origin === currentUrl.origin && path != null) {
+          // Strip the protocol/origin/basename for same-origin absolute URLs
+          to = path + targetUrl.search + targetUrl.hash;
+        } else {
+          isExternal = true;
+        }
+      } catch (e) {
+        // We can't do external URL detection without a valid URL
+         false ? 0 : void 0;
+      }
+    }
+  } // Rendered into <a href> for relative URLs
+
+
+  let href = useHref(to, {
+    relative
+  });
+  let internalOnClick = useLinkClickHandler(to, {
+    replace,
+    state,
+    target,
+    preventScrollReset,
+    relative
+  });
+
+  function handleClick(event) {
+    if (onClick) onClick(event);
+
+    if (!event.defaultPrevented) {
+      internalOnClick(event);
+    }
+  }
+
+  return (
+    /*#__PURE__*/
+    // eslint-disable-next-line jsx-a11y/anchor-has-content
+    React.createElement("a", react_router_dom_dist_extends({}, rest, {
+      href: absoluteHref || href,
+      onClick: isExternal || reloadDocument ? onClick : handleClick,
+      ref: ref,
+      target: target
+    }))
+  );
+})));
+
+if (false) {}
+/**
+ * A <Link> wrapper that knows if it's "active" or not.
+ */
+
+
+const NavLink = /*#__PURE__*/(/* unused pure expression or super */ null && (React.forwardRef(function NavLinkWithRef(_ref5, ref) {
+  let {
+    "aria-current": ariaCurrentProp = "page",
+    caseSensitive = false,
+    className: classNameProp = "",
+    end = false,
+    style: styleProp,
+    to,
+    children
+  } = _ref5,
+      rest = dist_objectWithoutPropertiesLoose(_ref5, _excluded2);
+
+  let path = useResolvedPath(to, {
+    relative: rest.relative
+  });
+  let location = useLocation();
+  let routerState = React.useContext(UNSAFE_DataRouterStateContext);
+  let {
+    navigator
+  } = React.useContext(UNSAFE_NavigationContext);
+  let toPathname = navigator.encodeLocation ? navigator.encodeLocation(path).pathname : path.pathname;
+  let locationPathname = location.pathname;
+  let nextLocationPathname = routerState && routerState.navigation && routerState.navigation.location ? routerState.navigation.location.pathname : null;
+
+  if (!caseSensitive) {
+    locationPathname = locationPathname.toLowerCase();
+    nextLocationPathname = nextLocationPathname ? nextLocationPathname.toLowerCase() : null;
+    toPathname = toPathname.toLowerCase();
+  }
+
+  let isActive = locationPathname === toPathname || !end && locationPathname.startsWith(toPathname) && locationPathname.charAt(toPathname.length) === "/";
+  let isPending = nextLocationPathname != null && (nextLocationPathname === toPathname || !end && nextLocationPathname.startsWith(toPathname) && nextLocationPathname.charAt(toPathname.length) === "/");
+  let ariaCurrent = isActive ? ariaCurrentProp : undefined;
+  let className;
+
+  if (typeof classNameProp === "function") {
+    className = classNameProp({
+      isActive,
+      isPending
+    });
+  } else {
+    // If the className prop is not a function, we use a default `active`
+    // class for <NavLink />s that are active. In v5 `active` was the default
+    // value for `activeClassName`, but we are removing that API and can still
+    // use the old default behavior for a cleaner upgrade path and keep the
+    // simple styling rules working as they currently do.
+    className = [classNameProp, isActive ? "active" : null, isPending ? "pending" : null].filter(Boolean).join(" ");
+  }
+
+  let style = typeof styleProp === "function" ? styleProp({
+    isActive,
+    isPending
+  }) : styleProp;
+  return /*#__PURE__*/React.createElement(Link, react_router_dom_dist_extends({}, rest, {
+    "aria-current": ariaCurrent,
+    className: className,
+    ref: ref,
+    style: style,
+    to: to
+  }), typeof children === "function" ? children({
+    isActive,
+    isPending
+  }) : children);
+})));
+
+if (false) {}
+/**
+ * A `@remix-run/router`-aware `<form>`. It behaves like a normal form except
+ * that the interaction with the server is with `fetch` instead of new document
+ * requests, allowing components to add nicer UX to the page as the form is
+ * submitted and returns with data.
+ */
+
+
+const Form = /*#__PURE__*/(/* unused pure expression or super */ null && (React.forwardRef((props, ref) => {
+  return /*#__PURE__*/React.createElement(FormImpl, react_router_dom_dist_extends({}, props, {
+    ref: ref
+  }));
+})));
+
+if (false) {}
+
+const FormImpl = /*#__PURE__*/(/* unused pure expression or super */ null && (React.forwardRef((_ref6, forwardedRef) => {
+  let {
+    reloadDocument,
+    replace,
+    method = defaultMethod,
+    action,
+    onSubmit,
+    fetcherKey,
+    routeId,
+    relative,
+    preventScrollReset
+  } = _ref6,
+      props = dist_objectWithoutPropertiesLoose(_ref6, _excluded3);
+
+  let submit = useSubmitImpl(fetcherKey, routeId);
+  let formMethod = method.toLowerCase() === "get" ? "get" : "post";
+  let formAction = useFormAction(action, {
+    relative
+  });
+
+  let submitHandler = event => {
+    onSubmit && onSubmit(event);
+    if (event.defaultPrevented) return;
+    event.preventDefault();
+    let submitter = event.nativeEvent.submitter;
+    let submitMethod = (submitter == null ? void 0 : submitter.getAttribute("formmethod")) || method;
+    submit(submitter || event.currentTarget, {
+      method: submitMethod,
+      replace,
+      relative,
+      preventScrollReset
+    });
+  };
+
+  return /*#__PURE__*/React.createElement("form", react_router_dom_dist_extends({
+    ref: forwardedRef,
+    method: formMethod,
+    action: formAction,
+    onSubmit: reloadDocument ? onSubmit : submitHandler
+  }, props));
+})));
+
+if (false) {}
+/**
+ * This component will emulate the browser's scroll restoration on location
+ * changes.
+ */
+
+
+function ScrollRestoration(_ref7) {
+  let {
+    getKey,
+    storageKey
+  } = _ref7;
+  useScrollRestoration({
+    getKey,
+    storageKey
+  });
+  return null;
+}
+
+if (false) {} //#endregion
+////////////////////////////////////////////////////////////////////////////////
+//#region Hooks
+////////////////////////////////////////////////////////////////////////////////
+
+
+var dist_DataRouterHook;
+
+(function (DataRouterHook) {
+  DataRouterHook["UseScrollRestoration"] = "useScrollRestoration";
+  DataRouterHook["UseSubmitImpl"] = "useSubmitImpl";
+  DataRouterHook["UseFetcher"] = "useFetcher";
+})(dist_DataRouterHook || (dist_DataRouterHook = {}));
+
+var dist_DataRouterStateHook;
+
+(function (DataRouterStateHook) {
+  DataRouterStateHook["UseFetchers"] = "useFetchers";
+  DataRouterStateHook["UseScrollRestoration"] = "useScrollRestoration";
+})(dist_DataRouterStateHook || (dist_DataRouterStateHook = {}));
+
+function dist_getDataRouterConsoleError(hookName) {
+  return hookName + " must be used within a data router.  See https://reactrouter.com/routers/picking-a-router.";
+}
+
+function dist_useDataRouterContext(hookName) {
+  let ctx = React.useContext(UNSAFE_DataRouterContext);
+  !ctx ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+  return ctx;
+}
+
+function dist_useDataRouterState(hookName) {
+  let state = React.useContext(UNSAFE_DataRouterStateContext);
+  !state ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+  return state;
+}
+/**
+ * Handles the click behavior for router `<Link>` components. This is useful if
+ * you need to create custom `<Link>` components with the same click behavior we
+ * use in our exported `<Link>`.
+ */
+
+
+function useLinkClickHandler(to, _temp) {
+  let {
+    target,
+    replace: replaceProp,
+    state,
+    preventScrollReset,
+    relative
+  } = _temp === void 0 ? {} : _temp;
+  let navigate = useNavigate();
+  let location = useLocation();
+  let path = useResolvedPath(to, {
+    relative
+  });
+  return React.useCallback(event => {
+    if (shouldProcessLinkClick(event, target)) {
+      event.preventDefault(); // If the URL hasn't changed, a regular <a> will do a replace instead of
+      // a push, so do the same here unless the replace prop is explicitly set
+
+      let replace = replaceProp !== undefined ? replaceProp : createPath(location) === createPath(path);
+      navigate(to, {
+        replace,
+        state,
+        preventScrollReset,
+        relative
+      });
+    }
+  }, [location, navigate, path, replaceProp, state, target, to, preventScrollReset, relative]);
+}
+/**
+ * A convenient wrapper for reading and writing search parameters via the
+ * URLSearchParams interface.
+ */
+
+function useSearchParams(defaultInit) {
+   false ? 0 : void 0;
+  let defaultSearchParamsRef = React.useRef(createSearchParams(defaultInit));
+  let hasSetSearchParamsRef = React.useRef(false);
+  let location = useLocation();
+  let searchParams = React.useMemo(() => // Only merge in the defaults if we haven't yet called setSearchParams.
+  // Once we call that we want those to take precedence, otherwise you can't
+  // remove a param with setSearchParams({}) if it has an initial value
+  getSearchParamsForLocation(location.search, hasSetSearchParamsRef.current ? null : defaultSearchParamsRef.current), [location.search]);
+  let navigate = useNavigate();
+  let setSearchParams = React.useCallback((nextInit, navigateOptions) => {
+    const newSearchParams = createSearchParams(typeof nextInit === "function" ? nextInit(searchParams) : nextInit);
+    hasSetSearchParamsRef.current = true;
+    navigate("?" + newSearchParams, navigateOptions);
+  }, [navigate, searchParams]);
+  return [searchParams, setSearchParams];
+}
+/**
+ * Returns a function that may be used to programmatically submit a form (or
+ * some arbitrary data) to the server.
+ */
+
+function useSubmit() {
+  return useSubmitImpl();
+}
+
+function useSubmitImpl(fetcherKey, fetcherRouteId) {
+  let {
+    router
+  } = dist_useDataRouterContext(dist_DataRouterHook.UseSubmitImpl);
+  let {
+    basename
+  } = React.useContext(UNSAFE_NavigationContext);
+  let currentRouteId = UNSAFE_useRouteId();
+  return React.useCallback(function (target, options) {
+    if (options === void 0) {
+      options = {};
+    }
+
+    if (typeof document === "undefined") {
+      throw new Error("You are calling submit during the server render. " + "Try calling submit within a `useEffect` or callback instead.");
+    }
+
+    let {
+      action,
+      method,
+      encType,
+      formData
+    } = getFormSubmissionInfo(target, options, basename); // Base options shared between fetch() and navigate()
+
+    let opts = {
+      preventScrollReset: options.preventScrollReset,
+      formData,
+      formMethod: method,
+      formEncType: encType
+    };
+
+    if (fetcherKey) {
+      !(fetcherRouteId != null) ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+      router.fetch(fetcherKey, fetcherRouteId, action, opts);
+    } else {
+      router.navigate(action, react_router_dom_dist_extends({}, opts, {
+        replace: options.replace,
+        fromRouteId: currentRouteId
+      }));
+    }
+  }, [router, basename, fetcherKey, fetcherRouteId, currentRouteId]);
+} // v7: Eventually we should deprecate this entirely in favor of using the
+// router method directly?
+
+
+function useFormAction(action, _temp2) {
+  let {
+    relative
+  } = _temp2 === void 0 ? {} : _temp2;
+  let {
+    basename
+  } = React.useContext(UNSAFE_NavigationContext);
+  let routeContext = React.useContext(UNSAFE_RouteContext);
+  !routeContext ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+  let [match] = routeContext.matches.slice(-1); // Shallow clone path so we can modify it below, otherwise we modify the
+  // object referenced by useMemo inside useResolvedPath
+
+  let path = react_router_dom_dist_extends({}, useResolvedPath(action ? action : ".", {
+    relative
+  })); // Previously we set the default action to ".". The problem with this is that
+  // `useResolvedPath(".")` excludes search params and the hash of the resolved
+  // URL. This is the intended behavior of when "." is specifically provided as
+  // the form action, but inconsistent w/ browsers when the action is omitted.
+  // https://github.com/remix-run/remix/issues/927
+
+
+  let location = useLocation();
+
+  if (action == null) {
+    // Safe to write to these directly here since if action was undefined, we
+    // would have called useResolvedPath(".") which will never include a search
+    // or hash
+    path.search = location.search;
+    path.hash = location.hash; // When grabbing search params from the URL, remove the automatically
+    // inserted ?index param so we match the useResolvedPath search behavior
+    // which would not include ?index
+
+    if (match.route.index) {
+      let params = new URLSearchParams(path.search);
+      params.delete("index");
+      path.search = params.toString() ? "?" + params.toString() : "";
+    }
+  }
+
+  if ((!action || action === ".") && match.route.index) {
+    path.search = path.search ? path.search.replace(/^\?/, "?index&") : "?index";
+  } // If we're operating within a basename, prepend it to the pathname prior
+  // to creating the form action.  If this is a root navigation, then just use
+  // the raw basename which allows the basename to have full control over the
+  // presence of a trailing slash on root actions
+
+
+  if (basename !== "/") {
+    path.pathname = path.pathname === "/" ? basename : joinPaths([basename, path.pathname]);
+  }
+
+  return createPath(path);
+}
+
+function createFetcherForm(fetcherKey, routeId) {
+  let FetcherForm = /*#__PURE__*/React.forwardRef((props, ref) => {
+    return /*#__PURE__*/React.createElement(FormImpl, react_router_dom_dist_extends({}, props, {
+      ref: ref,
+      fetcherKey: fetcherKey,
+      routeId: routeId
+    }));
+  });
+
+  if (false) {}
+
+  return FetcherForm;
+}
+
+let fetcherId = 0;
+/**
+ * Interacts with route loaders and actions without causing a navigation. Great
+ * for any interaction that stays on the same page.
+ */
+
+function useFetcher() {
+  var _route$matches;
+
+  let {
+    router
+  } = dist_useDataRouterContext(dist_DataRouterHook.UseFetcher);
+  let route = React.useContext(UNSAFE_RouteContext);
+  !route ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+  let routeId = (_route$matches = route.matches[route.matches.length - 1]) == null ? void 0 : _route$matches.route.id;
+  !(routeId != null) ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+  let [fetcherKey] = React.useState(() => String(++fetcherId));
+  let [Form] = React.useState(() => {
+    !routeId ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+    return createFetcherForm(fetcherKey, routeId);
+  });
+  let [load] = React.useState(() => href => {
+    !router ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+    !routeId ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+    router.fetch(fetcherKey, routeId, href);
+  });
+  let submit = useSubmitImpl(fetcherKey, routeId);
+  let fetcher = router.getFetcher(fetcherKey);
+  let fetcherWithComponents = React.useMemo(() => react_router_dom_dist_extends({
+    Form,
+    submit,
+    load
+  }, fetcher), [fetcher, Form, submit, load]);
+  React.useEffect(() => {
+    // Is this busted when the React team gets real weird and calls effects
+    // twice on mount?  We really just need to garbage collect here when this
+    // fetcher is no longer around.
+    return () => {
+      if (!router) {
+        console.warn("No router available to clean up from useFetcher()");
+        return;
+      }
+
+      router.deleteFetcher(fetcherKey);
+    };
+  }, [router, fetcherKey]);
+  return fetcherWithComponents;
+}
+/**
+ * Provides all fetchers currently on the page. Useful for layouts and parent
+ * routes that need to provide pending/optimistic UI regarding the fetch.
+ */
+
+function useFetchers() {
+  let state = dist_useDataRouterState(dist_DataRouterStateHook.UseFetchers);
+  return [...state.fetchers.values()];
+}
+const SCROLL_RESTORATION_STORAGE_KEY = "react-router-scroll-positions";
+let savedScrollPositions = {};
+/**
+ * When rendered inside a RouterProvider, will restore scroll positions on navigations
+ */
+
+function useScrollRestoration(_temp3) {
+  let {
+    getKey,
+    storageKey
+  } = _temp3 === void 0 ? {} : _temp3;
+  let {
+    router
+  } = dist_useDataRouterContext(dist_DataRouterHook.UseScrollRestoration);
+  let {
+    restoreScrollPosition,
+    preventScrollReset
+  } = dist_useDataRouterState(dist_DataRouterStateHook.UseScrollRestoration);
+  let location = useLocation();
+  let matches = useMatches();
+  let navigation = useNavigation(); // Trigger manual scroll restoration while we're active
+
+  React.useEffect(() => {
+    window.history.scrollRestoration = "manual";
+    return () => {
+      window.history.scrollRestoration = "auto";
+    };
+  }, []); // Save positions on pagehide
+
+  usePageHide(React.useCallback(() => {
+    if (navigation.state === "idle") {
+      let key = (getKey ? getKey(location, matches) : null) || location.key;
+      savedScrollPositions[key] = window.scrollY;
+    }
+
+    sessionStorage.setItem(storageKey || SCROLL_RESTORATION_STORAGE_KEY, JSON.stringify(savedScrollPositions));
+    window.history.scrollRestoration = "auto";
+  }, [storageKey, getKey, navigation.state, location, matches])); // Read in any saved scroll locations
+
+  if (typeof document !== "undefined") {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    React.useLayoutEffect(() => {
+      try {
+        let sessionPositions = sessionStorage.getItem(storageKey || SCROLL_RESTORATION_STORAGE_KEY);
+
+        if (sessionPositions) {
+          savedScrollPositions = JSON.parse(sessionPositions);
+        }
+      } catch (e) {// no-op, use default empty object
+      }
+    }, [storageKey]); // Enable scroll restoration in the router
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+
+    React.useLayoutEffect(() => {
+      let disableScrollRestoration = router == null ? void 0 : router.enableScrollRestoration(savedScrollPositions, () => window.scrollY, getKey);
+      return () => disableScrollRestoration && disableScrollRestoration();
+    }, [router, getKey]); // Restore scrolling when state.restoreScrollPosition changes
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+
+    React.useLayoutEffect(() => {
+      // Explicit false means don't do anything (used for submissions)
+      if (restoreScrollPosition === false) {
+        return;
+      } // been here before, scroll to it
+
+
+      if (typeof restoreScrollPosition === "number") {
+        window.scrollTo(0, restoreScrollPosition);
+        return;
+      } // try to scroll to the hash
+
+
+      if (location.hash) {
+        let el = document.getElementById(location.hash.slice(1));
+
+        if (el) {
+          el.scrollIntoView();
+          return;
+        }
+      } // Don't reset if this navigation opted out
+
+
+      if (preventScrollReset === true) {
+        return;
+      } // otherwise go to the top on new locations
+
+
+      window.scrollTo(0, 0);
+    }, [location, restoreScrollPosition, preventScrollReset]);
+  }
+}
+/**
+ * Setup a callback to be fired on the window's `beforeunload` event. This is
+ * useful for saving some data to `window.localStorage` just before the page
+ * refreshes.
+ *
+ * Note: The `callback` argument should be a function created with
+ * `React.useCallback()`.
+ */
+
+function useBeforeUnload(callback, options) {
+  let {
+    capture
+  } = options || {};
+  React.useEffect(() => {
+    let opts = capture != null ? {
+      capture
+    } : undefined;
+    window.addEventListener("beforeunload", callback, opts);
+    return () => {
+      window.removeEventListener("beforeunload", callback, opts);
+    };
+  }, [callback, capture]);
+}
+/**
+ * Setup a callback to be fired on the window's `pagehide` event. This is
+ * useful for saving some data to `window.localStorage` just before the page
+ * refreshes.  This event is better supported than beforeunload across browsers.
+ *
+ * Note: The `callback` argument should be a function created with
+ * `React.useCallback()`.
+ */
+
+function usePageHide(callback, options) {
+  let {
+    capture
+  } = options || {};
+  React.useEffect(() => {
+    let opts = capture != null ? {
+      capture
+    } : undefined;
+    window.addEventListener("pagehide", callback, opts);
+    return () => {
+      window.removeEventListener("pagehide", callback, opts);
+    };
+  }, [callback, capture]);
+}
+/**
+ * Wrapper around useBlocker to show a window.confirm prompt to users instead
+ * of building a custom UI with useBlocker.
+ *
+ * Warning: This has *a lot of rough edges* and behaves very differently (and
+ * very incorrectly in some cases) across browsers if user click addition
+ * back/forward navigations while the confirm is open.  Use at your own risk.
+ */
+
+
+function usePrompt(_ref8) {
+  let {
+    when,
+    message
+  } = _ref8;
+  let blocker = unstable_useBlocker(when);
+  React.useEffect(() => {
+    if (blocker.state === "blocked" && !when) {
+      blocker.reset();
+    }
+  }, [blocker, when]);
+  React.useEffect(() => {
+    if (blocker.state === "blocked") {
+      let proceed = window.confirm(message);
+
+      if (proceed) {
+        setTimeout(blocker.proceed, 0);
+      } else {
+        blocker.reset();
+      }
+    }
+  }, [blocker, message]);
+}
+ //#endregion
+
+
+//# sourceMappingURL=index.js.map
+
+;// CONCATENATED MODULE: ./src/components/geolocator-content.tsx
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+var w = window;
+var geolocator_content_cgpv = w['cgpv'];
+/**
+ * Create a new panel content
+ *
+ * @param {GeolocatorPanelContentProps} props panel content properties
+ * @returns {JSX.Element} the new create panel content
+ */
+var GeolocatorPanelContent = function (props) {
+    var buttonPanel = props.buttonPanel, mapId = props.mapId;
+    var ui = geolocator_content_cgpv.ui;
+    var _a = ui.elements, TextField = _a.TextField, Select = _a.Select, Autocomplete = _a.Autocomplete, Button = _a.Button, List = _a.List, ListItem = _a.ListItem, ListItemText = _a.ListItemText;
+    var _b = (0,external_cgpv_react_.useState)([]), layerData = _b[0], setLayerData = _b[1];
+    var _c = (0,external_cgpv_react_.useState)(''), query = _c[0], setQuery = _c[1];
+    var _d = (0,external_cgpv_react_.useState)('en'), language = _d[0], setLanguage = _d[1];
+    var _e = (0,external_cgpv_react_.useState)(''), services = _e[0], setServices = _e[1];
+    var languages = [
+        ['en', 'English'],
+        ['fr', 'French'],
+    ];
+    var serviceKeys = [
+        ['nominatim', 'nominatim'],
+        ['geonames', 'geonames'],
+        ['locate', 'locate'],
+        ['nts', 'nts'],
+    ];
+    function callGeolocator() {
+        var qConst = 'q=';
+        var langConst = '&lang=';
+        var servConst = '';
+        if (services.length > 0) {
+            servConst = '&keys=';
+        }
+        var queryString = qConst.concat(query, langConst, language, servConst, services);
+        getConvertedData(queryString).then(function (res) {
+            setLayerData(res);
+        });
+    }
+    function getConvertedData(query) {
+        return __awaiter(this, void 0, void 0, function () {
+            var url, strToFetch, response, result;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        url = 'https://znwaxif9m9.execute-api.ca-central-1.amazonaws.com/stage/geolocator?';
+                        strToFetch = url.concat(query);
+                        console.log(strToFetch);
+                        return [4 /*yield*/, fetch(strToFetch)];
+                    case 1:
+                        response = _a.sent();
+                        return [4 /*yield*/, response.json()];
+                    case 2:
+                        result = _a.sent();
+                        console.log(result);
+                        return [2 /*return*/, result];
+                }
+            });
+        });
+    }
+    function handleServices(event, newValue) {
+        setServices(newValue.map(function (x) { return x[1]; }).join(','));
+    }
+    function zoomItem(coords) {
+        console.log("lat ".concat(coords[1], ", long ").concat(coords[0]));
+        var coordsProj = geolocator_content_cgpv.api.projection.LngLatToWm([coords[0], coords[1]])[0];
+        geolocator_content_cgpv.api.maps.mapWM.getView().animate({ center: coordsProj, duration: 500, zoom: 11 });
+    }
+    return ((0,jsx_runtime.jsx)(jsx_runtime.Fragment, { children: (0,jsx_runtime.jsxs)(BrowserRouter, { children: [(0,jsx_runtime.jsx)("label", __assign({ htmlFor: "filter" }, { children: "Search filter" })), (0,jsx_runtime.jsx)(TextField, { id: "filter", type: "text", onChange: function (e) { return setQuery(e.target.value); } }), (0,jsx_runtime.jsxs)("div", __assign({ style: { display: 'grid', padding: '10px' } }, { children: [(0,jsx_runtime.jsx)("label", __assign({ htmlFor: "language" }, { children: "Language filter (optional)" })), (0,jsx_runtime.jsx)(Select, { id: "language", value: language, onChange: function (e) { return setLanguage(e.target.value); }, inputLabel: {
+                                id: 'select-variable',
+                            }, menuItems: languages.map(function (_a) {
+                                var value = _a[0], label = _a[1];
+                                return ({
+                                    key: value,
+                                    item: {
+                                        value: value,
+                                        children: label,
+                                    },
+                                });
+                            }) })] })), (0,jsx_runtime.jsx)(Autocomplete, { style: { display: 'grid', paddingBottom: '20px' }, fullWidth: true, multiple: true, disableCloseOnSelect: true, disableClearable: false, id: "service-key", options: serviceKeys, getOptionLabel: function (option) { return "".concat(option[1], " (").concat(option[0], ")"); }, renderOption: function (props, option) { return (0,jsx_runtime.jsx)("span", __assign({}, props, { children: option[1] })); }, onChange: handleServices, 
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    renderInput: function (params) { return (0,jsx_runtime.jsx)(TextField, __assign({}, params, { label: "Select Service keys" })); } }), (0,jsx_runtime.jsx)(Button, __assign({ tooltip: "Process Data", tooltipPlacement: "right", type: "text", variant: "contained", onClick: function () { return callGeolocator(); } }, { children: "Process Data" })), (0,jsx_runtime.jsx)(List, { children: layerData.map(function (layerData) {
+                        return ((0,jsx_runtime.jsx)("div", { children: (0,jsx_runtime.jsx)(ListItem, __assign({ onClick: function () { return zoomItem([layerData.lng, layerData.lat]); } }, { children: (0,jsx_runtime.jsx)(ListItemText, { primary: layerData.name, nonce: undefined }) })) }, layerData));
+                    }) })] }) }));
+};
+
+;// CONCATENATED MODULE: ./public/locales/en/translation.json
+const translation_namespaceObject = JSON.parse('{"custom":{"geolocatorPanelTitle":"Geolocator API Demo"}}');
+;// CONCATENATED MODULE: ./public/locales/fr/translation.json
+const fr_translation_namespaceObject = JSON.parse('{"custom":{"geolocatorPanelTitle":"Démo Géolocalisation API"}}');
+;// CONCATENATED MODULE: ./src/components/app.tsx
+
+
+
+
+
+
+// get reference to window object
+var app_w = window;
+// get reference to geoview apis
+var app_cgpv = app_w['cgpv'];
+/**
+ * main container and map styling
+ */
+var useStyles = makeStyles(function (theme) { return ({
+    container: {
+        height: '100vh',
+    },
+}); });
+/**
+ * Create a container containing a leaflet map using the GeoView viewer
+ *
+ * @returns {JSX.Elemet} the element that creates the container and the map
+ */
+var App = function () {
+    var classes = useStyles();
+    /**
+     * initialize the map after it has been loaded
+     */
+    (0,external_cgpv_react_.useEffect)(function () {
+        app_cgpv.init(function () {
+            var _a;
+            /**
+             * translations object to inject to the viewer translations
+             */
+            var translations = {
+                'en': translation_namespaceObject,
+                'fr': fr_translation_namespaceObject,
+            };
+            // get map instance
+            var mapInstance = app_cgpv.api.map('mapWM');
+            // add custom languages
+            mapInstance.i18nInstance.addResourceBundle('en', 'translation', translations['en'], true, false);
+            mapInstance.i18nInstance.addResourceBundle('fr', 'translation', translations['fr'], true, false);
+            // get language
+            //  const { language }: { language: 'en-CA' | 'fr-CA' } = mapInstance;
+            var language = 'en';
+            var MapIcon = app_cgpv.ui.elements.MapIcon;
+            // button props
+            var geolocatorButton = {
+                // set ID so that it can be accessed from the core viewer
+                id: 'geolocatorButtonPanel',
+                tooltip: translations[language].custom.geolocatorPanelTitle,
+                tooltipPlacement: 'right',
+                children: (0,jsx_runtime.jsx)(MapIcon, {}),
+                visible: true,
+            };
+            // panel props
+            var geolocatorPanel = {
+                title: translations[language].custom.geolocatorPanelTitle,
+                icon: (0,jsx_runtime.jsx)(MapIcon, {}),
+                width: 500,
+            };
+            // create a new button panel on the appbar
+            var geolocatorButtonPanel = app_cgpv.api
+                .map('mapWM')
+                .appBarButtons.createAppbarPanel(geolocatorButton, geolocatorPanel, null);
+            // set panel content
+            (_a = geolocatorButtonPanel === null || geolocatorButtonPanel === void 0 ? void 0 : geolocatorButtonPanel.panel) === null || _a === void 0 ? void 0 : _a.changeContent((0,jsx_runtime.jsx)(GeolocatorPanelContent, { buttonPanel: geolocatorButtonPanel, mapId: 'mapWM' }));
+        });
+    }, []);
+    return ((0,jsx_runtime.jsx)("div", { id: "mapWM", className: "llwp-map ".concat(classes.container), style: {
+            height: '100vh',
+            zIndex: 0,
+        }, "data-lang": "en", "data-config": "{\r\n        'map': {\r\n          'interaction': 'dynamic',\r\n          'viewSettings': {\r\n            'zoom': 4,\r\n            'center': [-100, 60],\r\n            'projection': 3857\r\n          },\r\n          'basemapOptions': {\r\n            'basemapId': 'transport',\r\n            'shaded': false,\r\n            'labeled': true\r\n          }\r\n        },\r\n        'theme': 'dark',\r\n        'components': ['app-bar'],\r\n        'suportedLanguages': ['en', 'fr']\r\n        }" }));
+};
+/* harmony default export */ const app = (App);
+
+;// CONCATENATED MODULE: ./src/index.tsx
+
+
+
+var container = document.getElementById('root');
+(0,external_cgpv_reactDOM_namespaceObject.render)((0,jsx_runtime.jsx)(app, {}), container);
+
+})();
+
+/******/ })()
+;
