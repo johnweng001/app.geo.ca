@@ -18322,7 +18322,7 @@ function Version() {
         return "v.".concat(0, ".").concat(1, ".").concat(0);
     }
     function getTimestamp() {
-        return new Date(1687398560967).toLocaleDateString();
+        return new Date(1687398947532).toLocaleDateString();
     }
     return ((0,jsx_runtime.jsxs)("div", { className: classes.github, children: [(0,jsx_runtime.jsx)("span", { className: "cgp-version", children: getVersion() }), (0,jsx_runtime.jsx)("span", { className: "cgp-timestamp", children: getTimestamp() })] }));
 }
@@ -18340,22 +18340,23 @@ function Version() {
 
 
 
-
+var w = window;
+var map_cgpv = w['cgpv'];
 function map_Map() {
-    var useTranslation = app_cgpv.useTranslation;
+    var useTranslation = map_cgpv.useTranslation;
     var t = useTranslation().t;
     function getRepo() {
         window.open(GITUHUB_REPO, '_blank');
     }
     (0,external_cgpv_react_.useEffect)(function () {
-        app_cgpv.init(function () {
+        map_cgpv.init(function () {
             var _a, _b;
             var translations = {
                 en: translation_namespaceObject,
                 fr: fr_CA_translation_namespaceObject,
             };
             // get map instance
-            var mapInstance = app_cgpv.api.map('mapWM');
+            var mapInstance = map_cgpv.api.map('mapWM');
             // add custom languages
             mapInstance.i18nInstance.addResourceBundle('en', 'translation', translations['en'], true, false);
             mapInstance.i18nInstance.addResourceBundle('fr', 'translation', translations['fr'], true, false);
@@ -18374,7 +18375,7 @@ function map_Map() {
                 width: 500,
             };
             // create a new button panel on the appbar
-            var searchButtonPanel = app_cgpv.api.map('mapWM').appBarButtons.createAppbarPanel(searchButton, searchPanel, null);
+            var searchButtonPanel = map_cgpv.api.map('mapWM').appBarButtons.createAppbarPanel(searchButton, searchPanel, null);
             // set panel content
             //geolocatorButtonPanel?.panel?.changeContent(<Appbar />);
             var filterButton = {
@@ -18391,7 +18392,7 @@ function map_Map() {
                 width: 500,
             };
             // create a new button panel on the appbar
-            var filterButtonPanel = app_cgpv.api.map('mapWM').appBarButtons.createAppbarPanel(filterButton, filterPanel, null);
+            var filterButtonPanel = map_cgpv.api.map('mapWM').appBarButtons.createAppbarPanel(filterButton, filterPanel, null);
             var analyticsButton = {
                 // set ID so that it can be accessed from the core viewer
                 tooltip: 'analytics',
@@ -18406,7 +18407,7 @@ function map_Map() {
                 width: 500,
             };
             // create a new button panel on the appbar
-            var analyticsButtonPanel = app_cgpv.api.map('mapWM').appBarButtons.createAppbarPanel(analyticsButton, analyticsPanel, null);
+            var analyticsButtonPanel = map_cgpv.api.map('mapWM').appBarButtons.createAppbarPanel(analyticsButton, analyticsPanel, null);
             var helpButton = {
                 // set ID so that it can be accessed from the core viewer
                 tooltip: t('appbar.howto'),
@@ -18421,7 +18422,7 @@ function map_Map() {
                 width: 500,
             };
             // create a new button panel on the appbar
-            var helpButtonPanel = app_cgpv.api.map('mapWM').appBarButtons.createAppbarPanel(helpButton, helpPanel, null);
+            var helpButtonPanel = map_cgpv.api.map('mapWM').appBarButtons.createAppbarPanel(helpButton, helpPanel, null);
             (_a = helpButtonPanel === null || helpButtonPanel === void 0 ? void 0 : helpButtonPanel.panel) === null || _a === void 0 ? void 0 : _a.changeContent((0,jsx_runtime.jsx)(HowtoPanel, {}));
             var versionButton = {
                 // set ID so that it can be accessed from the core viewer
@@ -18438,7 +18439,7 @@ function map_Map() {
                 width: 500,
             };
             // create a new button panel on the appbar
-            var versionButtonPanel = app_cgpv.api.map('mapWM').appBarButtons.createAppbarPanel(versionButton, versionPanel, null);
+            var versionButtonPanel = map_cgpv.api.map('mapWM').appBarButtons.createAppbarPanel(versionButton, versionPanel, null);
             (_b = versionButtonPanel === null || versionButtonPanel === void 0 ? void 0 : versionButtonPanel.panel) === null || _b === void 0 ? void 0 : _b.changeContent((0,jsx_runtime.jsx)(Version, {}));
         });
         console.log('map inited');
@@ -19687,8 +19688,8 @@ function Header() {
 
 
 
-var w = window;
-var app_cgpv = w['cgpv'];
+var app_w = window;
+var app_cgpv = app_w['cgpv'];
 var App = function () {
     return ((0,jsx_runtime.jsx)(jsx_runtime.Fragment, { children: (0,jsx_runtime.jsxs)(BrowserRouter, { children: [(0,jsx_runtime.jsx)(Header, {}), (0,jsx_runtime.jsx)(Routes, { children: (0,jsx_runtime.jsx)(Route, { path: "/", element: (0,jsx_runtime.jsx)(RenderMap, {}) }) })] }) }));
 };
