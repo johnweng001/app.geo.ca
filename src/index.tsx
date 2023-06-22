@@ -1,6 +1,7 @@
-import { render } from 'react-dom';
+import ReactDOM from "react-dom";
 
-import App from './components/app';
+import { App } from "./app";
+import "./assets/css/style.scss";
+import { RenderMap } from "./components/map/render-map";
 
-const container = document.getElementById('root');
-render(<App />, container);
+ReactDOM.render(<RenderMap />, document.getElementById("root"));
