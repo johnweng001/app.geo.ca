@@ -18322,7 +18322,7 @@ function Version() {
         return "v.".concat(0, ".").concat(1, ".").concat(0);
     }
     function getTimestamp() {
-        return new Date(1687398947532).toLocaleDateString();
+        return new Date(1687399434560).toLocaleDateString();
     }
     return ((0,jsx_runtime.jsxs)("div", { className: classes.github, children: [(0,jsx_runtime.jsx)("span", { className: "cgp-version", children: getVersion() }), (0,jsx_runtime.jsx)("span", { className: "cgp-timestamp", children: getTimestamp() })] }));
 }
