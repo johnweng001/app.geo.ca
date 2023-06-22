@@ -7102,13 +7102,6 @@ const Typography = /*#__PURE__*/external_cgpv_react_.forwardRef(function Typogra
 });
  false ? 0 : void 0;
 /* harmony default export */ const Typography_Typography = (Typography);
-;// CONCATENATED MODULE: ./src/components/map/render-map.tsx
-
-
-function render_map_RenderMap() {
-    return (_jsx("div", { className: "mapPage", children: _jsx("div", { className: "mapContainer", children: _jsx(Map, {}) }) }));
-}
-
 ;// CONCATENATED MODULE: ./src/common/envglobals.ts
 /* eslint-disable prettier/prettier */
 function envglobals() {
@@ -11697,7 +11690,7 @@ function Version() {
         return "v.".concat(0, ".").concat(1, ".").concat(0);
     }
     function getTimestamp() {
-        return new Date(1687399710631).toLocaleDateString();
+        return new Date(1687399811567).toLocaleDateString();
     }
     return ((0,jsx_runtime.jsxs)("div", { className: classes.github, children: [(0,jsx_runtime.jsx)("span", { className: "cgp-version", children: getVersion() }), (0,jsx_runtime.jsx)("span", { className: "cgp-timestamp", children: getTimestamp() })] }));
 }
@@ -11822,12 +11815,19 @@ function map_Map() {
     return ((0,jsx_runtime.jsx)(jsx_runtime.Fragment, { children: (0,jsx_runtime.jsx)("div", { id: "mapWM", className: "llwp-map", style: { height: 'calc(100vh - 90px)', width: '100%' }, "data-lang": "en", "data-config": "{\r\n                    'map': {\r\n                      'interaction': 'dynamic',\r\n                      'viewSettings': {\r\n                        'zoom': 4,\r\n                        'center': [-100, 60],\r\n                        'projection': 3857\r\n                      },\r\n                      'basemapOptions': {\r\n                        'basemapId': 'transport',\r\n                        'shaded': false,\r\n                        'labeled': true\r\n                      }\r\n                    },\r\n                    'theme': 'dark',\r\n                    'components': ['app-bar','nav-bar','overview-map'],\r\n                    'suportedLanguages': ['en', 'fr']\r\n                    }" }) }));
 }
 
+;// CONCATENATED MODULE: ./src/components/map/render-map.tsx
+
+
+function render_map_RenderMap() {
+    return ((0,jsx_runtime.jsx)("div", { className: "mapPage", children: (0,jsx_runtime.jsx)("div", { className: "mapContainer", children: (0,jsx_runtime.jsx)(map_Map, {}) }) }));
+}
+
 ;// CONCATENATED MODULE: ./src/index.tsx
 
 
 
 var container = document.getElementById('root');
-(0,external_cgpv_reactDOM_namespaceObject.render)((0,jsx_runtime.jsx)(map_Map, {}), container);
+(0,external_cgpv_reactDOM_namespaceObject.render)((0,jsx_runtime.jsx)(render_map_RenderMap, {}), container);
 
 })();
 
