@@ -343,11 +343,7 @@ var join = function join(value, by) {
  */
 
 
-var toCssValue = function toCssValue(value, ignoreImportant) {
-  if (ignoreImportant === void 0) {
-    ignoreImportant = false;
-  }
-
+var toCssValue = function toCssValue(value) {
   if (!Array.isArray(value)) return value;
   var cssValue = ''; // Support space separated values via `[['5px', '10px']]`.
 
@@ -360,7 +356,7 @@ var toCssValue = function toCssValue(value, ignoreImportant) {
   } else cssValue = join(value, ', '); // Add !important, because it was ignored.
 
 
-  if (!ignoreImportant && value[value.length - 1] === '!important') {
+  if (value[value.length - 1] === '!important') {
     cssValue += ' !important';
   }
 
@@ -740,7 +736,7 @@ function () {
 
   return ConditionalRule;
 }();
-var keyRegExp = /@media|@supports\s+/;
+var keyRegExp = /@container|@media|@supports\s+/;
 var pluginConditionalRule = {
   onCreateRule: function onCreateRule(key, styles, options) {
     return keyRegExp.test(key) ? new ConditionalRule(key, styles, options) : null;
@@ -1882,19 +1878,16 @@ var setProperty = function setProperty(cssRule, prop, value) {
     var cssValue = value;
 
     if (Array.isArray(value)) {
-      cssValue = toCssValue(value, true);
-
-      if (value[value.length - 1] === '!important') {
-        cssRule.style.setProperty(prop, cssValue, 'important');
-        return true;
-      }
+      cssValue = toCssValue(value);
     } // Support CSSTOM.
 
 
     if (cssRule.attributeStyleMap) {
       cssRule.attributeStyleMap.set(prop, cssValue);
     } else {
-      cssRule.style.setProperty(prop, cssValue);
+      var indexOfImportantFlag = cssValue ? cssValue.indexOf('!important') : -1;
+      var cssValueWithoutImportantFlag = indexOfImportantFlag > -1 ? cssValue.substr(0, indexOfImportantFlag - 1) : cssValue;
+      cssRule.style.setProperty(prop, cssValueWithoutImportantFlag, indexOfImportantFlag > -1 ? 'important' : '');
     }
   } catch (err) {
     // IE may throw if property is unknown.
@@ -2307,7 +2300,7 @@ var Jss =
 function () {
   function Jss(options) {
     this.id = instanceCounter++;
-    this.version = "10.9.0";
+    this.version = "10.10.0";
     this.plugins = new PluginsRegistry();
     this.options = {
       id: {
@@ -2584,18 +2577,13 @@ function mergeClasses(options = {}) {
     newClasses,
     Component
   } = options;
-
   if (!newClasses) {
     return baseClasses;
   }
-
   const nextClasses = extends_extends({}, baseClasses);
-
   if (false) {}
-
   Object.keys(newClasses).forEach(key => {
     if (false) {}
-
     if (newClasses[key]) {
       nextClasses[key] = `${baseClasses[key]} ${newClasses[key]}`;
     }
@@ -2604,15 +2592,14 @@ function mergeClasses(options = {}) {
 }
 ;// CONCATENATED MODULE: ./node_modules/@mui/styles/makeStyles/multiKeyStore.js
 // Used https://github.com/thinkloop/multi-key-cache as inspiration
+
 const multiKeyStore = {
   set: (cache, key1, key2, value) => {
     let subCache = cache.get(key1);
-
     if (!subCache) {
       subCache = new Map();
       cache.set(key1, subCache);
     }
-
     subCache.set(key2, value);
   },
   get: (cache, key1, key2) => {
@@ -2638,10 +2625,18 @@ function useTheme() {
   if (false) {}
   return theme;
 }
+;// CONCATENATED MODULE: ./node_modules/@mui/styles/useTheme/index.js
+
+function useTheme_useTheme() {
+  var _privateTheme$$$mater;
+  const privateTheme = useTheme();
+  return (_privateTheme$$$mater = privateTheme == null ? void 0 : privateTheme.$$material) != null ? _privateTheme$$$mater : privateTheme;
+}
 ;// CONCATENATED MODULE: ./node_modules/@mui/private-theming/ThemeProvider/nested.js
 const hasSymbol = typeof Symbol === 'function' && Symbol.for;
 /* harmony default export */ const nested = (hasSymbol ? Symbol.for('mui.nested') : '__THEME_NESTED__');
 ;// CONCATENATED MODULE: ./node_modules/@mui/styles/createGenerateClassName/createGenerateClassName.js
+
 
 /**
  * This is the list of the style rule name we use as drop in replacement for the built-in
@@ -2652,14 +2647,14 @@ const hasSymbol = typeof Symbol === 'function' && Symbol.for;
  * It allows them to override previously defined styles as well as
  * being untouched by simple user overrides.
  */
+const stateClasses = ['checked', 'disabled', 'error', 'focused', 'focusVisible', 'required', 'expanded', 'selected'];
 
-const stateClasses = ['checked', 'disabled', 'error', 'focused', 'focusVisible', 'required', 'expanded', 'selected']; // Returns a function which generates unique class names based on counters.
+// Returns a function which generates unique class names based on counters.
 // When new generator function is created, rule counter is reset.
 // We need to reset the rule counter for SSR for each request.
 //
 // It's inspired by
 // https://github.com/cssinjs/jss/blob/4e6a05dd3f7b6572fdd3ab216861d9e446c20331/src/utils/createGenerateClassName.js
-
 function createGenerateClassName(options = {}) {
   const {
     disableGlobal = false,
@@ -2668,43 +2663,35 @@ function createGenerateClassName(options = {}) {
   } = options;
   const seedPrefix = seed === '' ? '' : `${seed}-`;
   let ruleCounter = 0;
-
   const getNextCounterId = () => {
     ruleCounter += 1;
-
     if (false) {}
-
     return ruleCounter;
   };
-
   return (rule, styleSheet) => {
-    const name = styleSheet.options.name; // Is a global static MUI style?
+    const name = styleSheet.options.name;
 
+    // Is a global static MUI style?
     if (name && name.indexOf('Mui') === 0 && !styleSheet.options.link && !disableGlobal) {
       // We can use a shorthand class name, we never use the keys to style the components.
       if (stateClasses.indexOf(rule.key) !== -1) {
         return `Mui-${rule.key}`;
       }
-
       const prefix = `${seedPrefix}${name}-${rule.key}`;
-
       if (!styleSheet.options.theme[nested] || seed !== '') {
         return prefix;
       }
-
       return `${prefix}-${getNextCounterId()}`;
     }
-
     if (true) {
       return `${seedPrefix}${productionPrefix}${getNextCounterId()}`;
     }
+    const suffix = `${rule.key}-${getNextCounterId()}`;
 
-    const suffix = `${rule.key}-${getNextCounterId()}`; // Help with debuggability.
-
+    // Help with debuggability.
     if (styleSheet.options.classNamePrefix) {
       return `${seedPrefix}${styleSheet.options.classNamePrefix}-${suffix}`;
     }
-
     return `${seedPrefix}${suffix}`;
   };
 }
@@ -4114,11 +4101,13 @@ function jssPropsSort() {
 
 
 
- // Subset of jss-preset-default with only the plugins the MUI components are using.
 
+
+// Subset of jss-preset-default with only the plugins the MUI components are using.
 function jssPreset_jssPreset() {
   return {
-    plugins: [jss_plugin_rule_value_function_esm(), jss_plugin_global_esm(), jss_plugin_nested_esm(), jss_plugin_camel_case_esm(), jss_plugin_default_unit_esm(), // Disable the vendor prefixer server-side, it does nothing.
+    plugins: [jss_plugin_rule_value_function_esm(), jss_plugin_global_esm(), jss_plugin_nested_esm(), jss_plugin_camel_case_esm(), jss_plugin_default_unit_esm(),
+    // Disable the vendor prefixer server-side, it does nothing.
     // This way, we can get a performance boost.
     // In the documentation, we are using `autoprefixer` to solve this problem.
     typeof window === 'undefined' ? null : jss_plugin_vendor_prefixer_esm(), jss_plugin_props_sort_esm()]
@@ -4133,70 +4122,79 @@ const _excluded = (/* unused pure expression or super */ null && (["children", "
 
 
 
- // Default JSS instance.
 
 
-const jss = createJss(jssPreset_jssPreset()); // Use a singleton or the provided one by the context.
+// Default JSS instance.
+
+const defaultJSS = createJss(jssPreset_jssPreset());
+
+// Use a singleton or the provided one by the context.
 //
 // The counter-based approach doesn't tolerate any mistake.
 // It's much safer to use the same counter everywhere.
+const defaultGenerateClassName = createGenerateClassName();
+const defaultSheetsManager = new Map();
+// Exported for test purposes
 
-const generateClassName = createGenerateClassName(); // Exported for test purposes
-
-const sheetsManager = new Map();
 const defaultOptions = {
   disableGeneration: false,
-  generateClassName,
-  jss,
+  generateClassName: defaultGenerateClassName,
+  jss: defaultJSS,
   sheetsCache: null,
-  sheetsManager,
+  sheetsManager: defaultSheetsManager,
   sheetsRegistry: null
 };
 const StylesContext = /*#__PURE__*/external_cgpv_react_.createContext(defaultOptions);
-
 if (false) {}
-
 let injectFirstNode;
 function StylesProvider(props) {
   const {
-    children,
-    injectFirst = false,
-    disableGeneration = false
-  } = props,
-        localOptions = _objectWithoutPropertiesLoose(props, _excluded);
-
+      children,
+      injectFirst = false,
+      disableGeneration = false
+    } = props,
+    localOptions = _objectWithoutPropertiesLoose(props, _excluded);
   const outerOptions = React.useContext(StylesContext);
-
-  const context = _extends({}, outerOptions, {
-    disableGeneration
-  }, localOptions);
-
+  const {
+    generateClassName,
+    jss,
+    serverGenerateClassName,
+    sheetsCache,
+    sheetsManager,
+    sheetsRegistry
+  } = _extends({}, outerOptions, localOptions);
   if (false) {}
-
-  if (false) {}
-
-  if (false) {}
-
-  if (!context.jss.options.insertionPoint && injectFirst && typeof window !== 'undefined') {
-    if (!injectFirstNode) {
-      const head = document.head;
-      injectFirstNode = document.createComment('mui-inject-first');
-      head.insertBefore(injectFirstNode, head.firstChild);
+  const value = React.useMemo(() => {
+    const context = {
+      disableGeneration,
+      generateClassName,
+      jss,
+      serverGenerateClassName,
+      sheetsCache,
+      sheetsManager,
+      sheetsRegistry
+    };
+    if (false) {}
+    if (false) {}
+    if (!context.jss.options.insertionPoint && injectFirst && typeof window !== 'undefined') {
+      if (!injectFirstNode) {
+        const head = document.head;
+        injectFirstNode = document.createComment('mui-inject-first');
+        head.insertBefore(injectFirstNode, head.firstChild);
+      }
+      context.jss = create({
+        plugins: jssPreset().plugins,
+        insertionPoint: injectFirstNode
+      });
     }
-
-    context.jss = create({
-      plugins: jssPreset().plugins,
-      insertionPoint: injectFirstNode
-    });
-  }
-
+    return context;
+  }, [injectFirst, disableGeneration, generateClassName, jss, serverGenerateClassName, sheetsCache, sheetsManager, sheetsRegistry]);
   return /*#__PURE__*/_jsx(StylesContext.Provider, {
-    value: context,
+    value: value,
     children: children
   });
 }
  false ? 0 : void 0;
-
 if (false) {}
 ;// CONCATENATED MODULE: ./node_modules/@mui/styles/makeStyles/indexCounter.js
 /* eslint-disable import/prefer-default-export */
@@ -4211,9 +4209,7 @@ if (false) {}
 let indexCounter = -1e9;
 function increment() {
   indexCounter += 1;
-
   if (false) {}
-
   return indexCounter;
 }
 ;// CONCATENATED MODULE: ./node_modules/@mui/utils/esm/deepmerge.js
@@ -4290,23 +4286,20 @@ function capitalize(string) {
 
 const propsToClassKey_excluded = ["variant"];
 
-
 function isEmpty(string) {
   return string.length === 0;
 }
+
 /**
  * Generates string classKey based on the properties provided. It starts with the
  * variant if defined, and then it appends all other properties in alphabetical order.
  * @param {object} props - the properties for which the classKey should be created
  */
-
-
 function propsToClassKey(props) {
   const {
-    variant
-  } = props,
-        other = objectWithoutPropertiesLoose_objectWithoutPropertiesLoose(props, propsToClassKey_excluded);
-
+      variant
+    } = props,
+    other = objectWithoutPropertiesLoose_objectWithoutPropertiesLoose(props, propsToClassKey_excluded);
   let classKey = variant || '';
   Object.keys(other).sort().forEach(key => {
     if (key === 'color') {
@@ -4324,33 +4317,24 @@ function propsToClassKey(props) {
 
 function getStylesCreator(stylesOrCreator) {
   const themingEnabled = typeof stylesOrCreator === 'function';
-
   if (false) {}
-
   return {
     create: (theme, name) => {
       let styles;
-
       try {
         styles = themingEnabled ? stylesOrCreator(theme) : stylesOrCreator;
       } catch (err) {
         if (false) {}
-
         throw err;
       }
-
       if (!name || !theme.components || !theme.components[name] || !theme.components[name].styleOverrides && !theme.components[name].variants) {
         return styles;
       }
-
       const overrides = theme.components[name].styleOverrides || {};
       const variants = theme.components[name].variants || [];
-
       const stylesWithOverrides = extends_extends({}, styles);
-
       Object.keys(overrides).forEach(key => {
         if (false) {}
-
         stylesWithOverrides[key] = deepmerge(stylesWithOverrides[key] || {}, overrides[key]);
       });
       variants.forEach(definition => {
@@ -4379,7 +4363,6 @@ const makeStyles_excluded = ["name", "classNamePrefix", "Component", "defaultThe
 
 
 
-
 function getClasses({
   state,
   stylesOptions
@@ -4387,7 +4370,6 @@ function getClasses({
   if (stylesOptions.disableGeneration) {
     return classes || {};
   }
-
   if (!state.cacheClasses) {
     state.cacheClasses = {
       // Cache for the finalized classes value.
@@ -4397,22 +4379,19 @@ function getClasses({
       // Cache for the last used rendered classes pointer.
       lastJSS: {}
     };
-  } // Tracks if either the rendered classes or classes prop has changed,
+  }
+
+  // Tracks if either the rendered classes or classes prop has changed,
   // requiring the generation of a new finalized classes object.
-
-
   let generate = false;
-
   if (state.classes !== state.cacheClasses.lastJSS) {
     state.cacheClasses.lastJSS = state.classes;
     generate = true;
   }
-
   if (classes !== state.cacheClasses.lastProp) {
     state.cacheClasses.lastProp = classes;
     generate = true;
   }
-
   if (generate) {
     state.cacheClasses.value = mergeClasses({
       baseClasses: state.cacheClasses.lastJSS,
@@ -4420,10 +4399,8 @@ function getClasses({
       Component
     });
   }
-
   return state.cacheClasses.value;
 }
-
 function attach({
   state,
   theme,
@@ -4434,9 +4411,7 @@ function attach({
   if (stylesOptions.disableGeneration) {
     return;
   }
-
   let sheetManager = makeStyles_multiKeyStore.get(stylesOptions.sheetsManager, stylesCreator, theme);
-
   if (!sheetManager) {
     sheetManager = {
       refs: 0,
@@ -4445,43 +4420,33 @@ function attach({
     };
     makeStyles_multiKeyStore.set(stylesOptions.sheetsManager, stylesCreator, theme, sheetManager);
   }
-
   const options = extends_extends({}, stylesCreator.options, stylesOptions, {
     theme,
     flip: typeof stylesOptions.flip === 'boolean' ? stylesOptions.flip : theme.direction === 'rtl'
   });
-
   options.generateId = options.serverGenerateClassName || options.generateClassName;
   const sheetsRegistry = stylesOptions.sheetsRegistry;
-
   if (sheetManager.refs === 0) {
     let staticSheet;
-
     if (stylesOptions.sheetsCache) {
       staticSheet = makeStyles_multiKeyStore.get(stylesOptions.sheetsCache, stylesCreator, theme);
     }
-
     const styles = stylesCreator.create(theme, name);
-
     if (!staticSheet) {
       staticSheet = stylesOptions.jss.createStyleSheet(styles, extends_extends({
         link: false
       }, options));
       staticSheet.attach();
-
       if (stylesOptions.sheetsCache) {
         makeStyles_multiKeyStore.set(stylesOptions.sheetsCache, stylesCreator, theme, staticSheet);
       }
     }
-
     if (sheetsRegistry) {
       sheetsRegistry.add(staticSheet);
     }
-
     sheetManager.staticSheet = staticSheet;
     sheetManager.dynamicStyles = getDynamicStyles(styles);
   }
-
   if (sheetManager.dynamicStyles) {
     const dynamicSheet = stylesOptions.jss.createStyleSheet(sheetManager.dynamicStyles, extends_extends({
       link: true
@@ -4493,17 +4458,14 @@ function attach({
       baseClasses: sheetManager.staticSheet.classes,
       newClasses: dynamicSheet.classes
     });
-
     if (sheetsRegistry) {
       sheetsRegistry.add(dynamicSheet);
     }
   } else {
     state.classes = sheetManager.staticSheet.classes;
   }
-
   sheetManager.refs += 1;
 }
-
 function update({
   state
 }, props) {
@@ -4511,7 +4473,6 @@ function update({
     state.dynamicSheet.update(props);
   }
 }
-
 function detach({
   state,
   theme,
@@ -4521,41 +4482,35 @@ function detach({
   if (stylesOptions.disableGeneration) {
     return;
   }
-
   const sheetManager = makeStyles_multiKeyStore.get(stylesOptions.sheetsManager, stylesCreator, theme);
   sheetManager.refs -= 1;
   const sheetsRegistry = stylesOptions.sheetsRegistry;
-
   if (sheetManager.refs === 0) {
-    makeStyles_multiKeyStore["delete"](stylesOptions.sheetsManager, stylesCreator, theme);
+    makeStyles_multiKeyStore.delete(stylesOptions.sheetsManager, stylesCreator, theme);
     stylesOptions.jss.removeStyleSheet(sheetManager.staticSheet);
-
     if (sheetsRegistry) {
       sheetsRegistry.remove(sheetManager.staticSheet);
     }
   }
-
   if (state.dynamicSheet) {
     stylesOptions.jss.removeStyleSheet(state.dynamicSheet);
-
     if (sheetsRegistry) {
       sheetsRegistry.remove(state.dynamicSheet);
     }
   }
 }
-
 function useSynchronousEffect(func, values) {
   const key = external_cgpv_react_.useRef([]);
-  let output; // Store "generation" key. Just returns a new object every time
+  let output;
 
+  // Store "generation" key. Just returns a new object every time
   const currentKey = external_cgpv_react_.useMemo(() => ({}), values); // eslint-disable-line react-hooks/exhaustive-deps
-  // "the first render", or "memo dropped the value"
 
+  // "the first render", or "memo dropped the value"
   if (key.current !== currentKey) {
     key.current = currentKey;
     output = func();
   }
-
   external_cgpv_react_.useEffect(() => () => {
     if (output) {
       output();
@@ -4566,15 +4521,14 @@ function useSynchronousEffect(func, values) {
 
 function makeStyles(stylesOrCreator, options = {}) {
   const {
-    // alias for classNamePrefix, if provided will listen to theme (required for theme.components[name].styleOverrides)
-    name,
-    // Help with debuggability.
-    classNamePrefix: classNamePrefixOption,
-    Component,
-    defaultTheme = getStylesCreator_noopTheme
-  } = options,
-        stylesOptions2 = objectWithoutPropertiesLoose_objectWithoutPropertiesLoose(options, makeStyles_excluded);
-
+      // alias for classNamePrefix, if provided will listen to theme (required for theme.components[name].styleOverrides)
+      name,
+      // Help with debuggability.
+      classNamePrefix: classNamePrefixOption,
+      Component,
+      defaultTheme = getStylesCreator_noopTheme
+    } = options,
+    stylesOptions2 = objectWithoutPropertiesLoose_objectWithoutPropertiesLoose(options, makeStyles_excluded);
   const stylesCreator = getStylesCreator(stylesOrCreator);
   const classNamePrefix = name || classNamePrefixOption || 'makeStyles';
   stylesCreator.options = {
@@ -4583,12 +4537,9 @@ function makeStyles(stylesOrCreator, options = {}) {
     meta: classNamePrefix,
     classNamePrefix
   };
-
   const useStyles = (props = {}) => {
-    const theme = useTheme() || defaultTheme;
-
+    const theme = useTheme_useTheme() || defaultTheme;
     const stylesOptions = extends_extends({}, external_cgpv_react_.useContext(StylesContext), stylesOptions2);
-
     const instance = external_cgpv_react_.useRef();
     const shouldUpdate = external_cgpv_react_.useRef();
     useSynchronousEffect(() => {
@@ -4610,18 +4561,13 @@ function makeStyles(stylesOrCreator, options = {}) {
       if (shouldUpdate.current) {
         update(instance.current, props);
       }
-
       shouldUpdate.current = true;
     });
     const classes = getClasses(instance.current, props.classes, Component);
-
     if (false) {}
-
     if (false) {}
-
     return classes;
   };
-
   return useStyles;
 }
 ;// CONCATENATED MODULE: ./node_modules/@remix-run/router/dist/router.js
@@ -5788,7 +5734,7 @@ const json = function json(data, init) {
     headers
   }));
 };
-class router_AbortedDeferredError extends Error {}
+class AbortedDeferredError extends Error {}
 class DeferredData {
   constructor(data, responseInit) {
     this.pendingKeysSet = new Set();
@@ -5801,7 +5747,7 @@ class DeferredData {
     this.abortPromise = new Promise((_, r) => reject = r);
     this.controller = new AbortController();
 
-    let onAbort = () => reject(new router_AbortedDeferredError("Deferred data aborted"));
+    let onAbort = () => reject(new AbortedDeferredError("Deferred data aborted"));
 
     this.unlistenAbortSignal = () => this.controller.signal.removeEventListener("abort", onAbort);
 
@@ -5841,7 +5787,7 @@ class DeferredData {
   }
 
   onSettle(promise, key, error, data) {
-    if (this.controller.signal.aborted && error instanceof router_AbortedDeferredError) {
+    if (this.controller.signal.aborted && error instanceof AbortedDeferredError) {
       this.unlistenAbortSignal();
       Object.defineProperty(promise, "_error", {
         get: () => error
@@ -8982,7 +8928,7 @@ const DataRouterStateContext = /*#__PURE__*/(/* unused pure expression or super 
 
 if (false) {}
 
-const AwaitContext = /*#__PURE__*/(/* unused pure expression or super */ null && (React.createContext(null)));
+const AwaitContext = /*#__PURE__*/external_cgpv_react_.createContext(null);
 
 if (false) {}
 
@@ -9002,7 +8948,7 @@ const RouteContext = /*#__PURE__*/external_cgpv_react_.createContext({
 
 if (false) {}
 
-const RouteErrorContext = /*#__PURE__*/(/* unused pure expression or super */ null && (React.createContext(null)));
+const RouteErrorContext = /*#__PURE__*/external_cgpv_react_.createContext(null);
 
 if (false) {}
 
@@ -9391,9 +9337,9 @@ class RenderErrorBoundary extends external_cgpv_react_.Component {
   }
 
   render() {
-    return this.state.error ? /*#__PURE__*/React.createElement(RouteContext.Provider, {
+    return this.state.error ? /*#__PURE__*/external_cgpv_react_.createElement(RouteContext.Provider, {
       value: this.props.routeContext
-    }, /*#__PURE__*/React.createElement(RouteErrorContext.Provider, {
+    }, /*#__PURE__*/external_cgpv_react_.createElement(RouteErrorContext.Provider, {
       value: this.state.error,
       children: this.props.component
     })) : this.props.children;
@@ -10101,7 +10047,7 @@ class AwaitErrorBoundary extends external_cgpv_react_.Component {
 
     if (status === AwaitRenderStatus.error) {
       // Render via our errorElement
-      return /*#__PURE__*/React.createElement(AwaitContext.Provider, {
+      return /*#__PURE__*/external_cgpv_react_.createElement(AwaitContext.Provider, {
         value: promise,
         children: errorElement
       });
@@ -10109,7 +10055,7 @@ class AwaitErrorBoundary extends external_cgpv_react_.Component {
 
     if (status === AwaitRenderStatus.success) {
       // Render children with resolved value
-      return /*#__PURE__*/React.createElement(AwaitContext.Provider, {
+      return /*#__PURE__*/external_cgpv_react_.createElement(AwaitContext.Provider, {
         value: promise,
         children: children
       });
@@ -11322,7 +11268,7 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -11413,7 +11359,7 @@ var GeolocatorPanelContent = function (props) {
         var coordsProj = geolocator_content_cgpv.api.projection.LngLatToWm([coords[0], coords[1]])[0];
         geolocator_content_cgpv.api.maps.mapWM.getView().animate({ center: coordsProj, duration: 500, zoom: 11 });
     }
-    return ((0,jsx_runtime.jsx)(jsx_runtime.Fragment, { children: (0,jsx_runtime.jsxs)(BrowserRouter, { children: [(0,jsx_runtime.jsx)("label", __assign({ htmlFor: "filter" }, { children: "Search filter" })), (0,jsx_runtime.jsx)(TextField, { id: "filter", type: "text", onChange: function (e) { return setQuery(e.target.value); } }), (0,jsx_runtime.jsxs)("div", __assign({ style: { display: 'grid', padding: '10px' } }, { children: [(0,jsx_runtime.jsx)("label", __assign({ htmlFor: "language" }, { children: "Language filter (optional)" })), (0,jsx_runtime.jsx)(Select, { id: "language", value: language, onChange: function (e) { return setLanguage(e.target.value); }, inputLabel: {
+    return ((0,jsx_runtime.jsx)(jsx_runtime.Fragment, { children: (0,jsx_runtime.jsxs)(BrowserRouter, { children: [(0,jsx_runtime.jsx)("label", { htmlFor: "filter", children: "Search filter" }), (0,jsx_runtime.jsx)(TextField, { id: "filter", type: "text", onChange: function (e) { return setQuery(e.target.value); } }), (0,jsx_runtime.jsxs)("div", { style: { display: 'grid', padding: '10px' }, children: [(0,jsx_runtime.jsx)("label", { htmlFor: "language", children: "Language filter (optional)" }), (0,jsx_runtime.jsx)(Select, { id: "language", value: language, onChange: function (e) { return setLanguage(e.target.value); }, inputLabel: {
                                 id: 'select-variable',
                             }, menuItems: languages.map(function (_a) {
                                 var value = _a[0], label = _a[1];
@@ -11424,10 +11370,10 @@ var GeolocatorPanelContent = function (props) {
                                         children: label,
                                     },
                                 });
-                            }) })] })), (0,jsx_runtime.jsx)(Autocomplete, { style: { display: 'grid', paddingBottom: '20px' }, fullWidth: true, multiple: true, disableCloseOnSelect: true, disableClearable: false, id: "service-key", options: serviceKeys, getOptionLabel: function (option) { return "".concat(option[1], " (").concat(option[0], ")"); }, renderOption: function (props, option) { return (0,jsx_runtime.jsx)("span", __assign({}, props, { children: option[1] })); }, onChange: handleServices, 
+                            }) })] }), (0,jsx_runtime.jsx)(Autocomplete, { style: { display: 'grid', paddingBottom: '20px' }, fullWidth: true, multiple: true, disableCloseOnSelect: true, disableClearable: false, id: "service-key", options: serviceKeys, getOptionLabel: function (option) { return "".concat(option[1], " (").concat(option[0], ")"); }, renderOption: function (props, option) { return (0,jsx_runtime.jsx)("span", __assign({}, props, { children: option[1] })); }, onChange: handleServices, 
                     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    renderInput: function (params) { return (0,jsx_runtime.jsx)(TextField, __assign({}, params, { label: "Select Service keys" })); } }), (0,jsx_runtime.jsx)(Button, __assign({ tooltip: "Process Data", tooltipPlacement: "right", type: "text", variant: "contained", onClick: function () { return callGeolocator(); } }, { children: "Process Data" })), (0,jsx_runtime.jsx)(List, { children: layerData.map(function (layerData) {
-                        return ((0,jsx_runtime.jsx)("div", { children: (0,jsx_runtime.jsx)(ListItem, __assign({ onClick: function () { return zoomItem([layerData.lng, layerData.lat]); } }, { children: (0,jsx_runtime.jsx)(ListItemText, { primary: layerData.name, nonce: undefined }) })) }, layerData));
+                    renderInput: function (params) { return (0,jsx_runtime.jsx)(TextField, __assign({}, params, { label: "Select Service keys" })); } }), (0,jsx_runtime.jsx)(Button, { tooltip: "Process Data", tooltipPlacement: "right", type: "text", variant: "contained", onClick: function () { return callGeolocator(); }, children: "Process Data" }), (0,jsx_runtime.jsx)(List, { children: layerData.map(function (layerData) {
+                        return ((0,jsx_runtime.jsx)("div", { children: (0,jsx_runtime.jsx)(ListItem, { onClick: function () { return zoomItem([layerData.lng, layerData.lat]); }, children: (0,jsx_runtime.jsx)(ListItemText, { primary: layerData.name, nonce: undefined }) }) }, layerData));
                     }) })] }) }));
 };
 
