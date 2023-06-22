@@ -1,15 +1,6 @@
-import ReactDOM from "react-dom";
+import { render } from 'react-dom';
 
-import { App } from "./app";
-import { Provider } from "react-redux";
-import store from "./store";
-import { createContext } from "react";
-import "./assets/css/style.scss";
+import App from './components/app';
 
-export const AppContext = createContext({ store });
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById("root")
-);
+const container = document.getElementById('root');
+render(<App />, container);
