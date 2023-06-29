@@ -12,6 +12,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import Version from "../panels/version";
 import { GITUHUB_REPO } from "../../common/constant";
 import { cgpv } from "../../app";
+import SearchPanel from "../panels/search-panel";
 
 export function Map(): JSX.Element {
   const { useTranslation } = cgpv;
@@ -67,7 +68,7 @@ export function Map(): JSX.Element {
         .appBarButtons.createAppbarPanel(searchButton, searchPanel, null);
 
       // set panel content
-      //geolocatorButtonPanel?.panel?.changeContent(<Appbar />);
+      searchButtonPanel?.panel?.changeContent(<SearchPanel />);
       const filterButton: TypeIconButtonProps = {
         // set ID so that it can be accessed from the core viewer
         tooltip: "filters",

@@ -12,14 +12,13 @@ import { Button, Collapse } from "reactstrap";
 import { envglobals } from "../../common/envglobals";
 
 import "./header.scss";
-import { cgpv } from "../../app";
+import { useTranslation } from "react-i18next";
 
 // Reacstrap Collapse - Responsive Navbar
 
 const EnvGlobals = envglobals();
 
 export default function Header(): JSX.Element {
-  const { useTranslation } = cgpv;
   const { t } = useTranslation();
 
   const [collapse, setCollapse] = useState(false);
