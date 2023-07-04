@@ -13,8 +13,19 @@ import Version from "../panels/version";
 import { GITUHUB_REPO } from "../../common/constant";
 import { cgpv } from "../../app";
 import SearchPanel from "../panels/search-panel";
+import Header from "../header/header";
+import makeStyles from "@mui/styles/makeStyles";
 
+/**
+ * main container and map styling
+ */
+const useStyles = makeStyles((theme) => ({
+  container: {
+    height: "100vh",
+  },
+}));
 export function Map(): JSX.Element {
+  const classes = useStyles();
   const { useTranslation } = cgpv;
   const { t } = useTranslation();
   function getRepo(): void {
@@ -47,6 +58,42 @@ export function Map(): JSX.Element {
       );
 
       // button props
+      const headerButton: TypeIconButtonProps = {
+        // set ID so that it can be accessed from the core viewer
+        children: (
+          <div>
+            <img
+              style={{ width: "25px" }}
+              src="assets/img/icon-GEO-300x300.png"
+              alt={t("nav.logotext")}
+            />
+          </div>
+        ),
+        visible: true,
+      };
+
+      // panel props
+      const headerPanel: TypePanelProps = {
+        title: "",
+        icon: (
+          <div>
+            <img
+              style={{ width: "25px" }}
+              src="assets/img/icon-GEO-300x300.png"
+              alt={t("nav.logotext")}
+            />
+          </div>
+        ),
+        width: 500,
+      };
+
+      // create a new button panel on the appbar
+      const headerButtonPanel = cgpv.api
+        .map("mapWM")
+        .appBarButtons.createAppbarPanel(headerButton, headerPanel, null);
+
+      headerButtonPanel?.panel?.changeContent(<Header />);
+
       const searchButton: TypeIconButtonProps = {
         // set ID so that it can be accessed from the core viewer
         tooltip: t("appbar.search"),
@@ -159,8 +206,11 @@ export function Map(): JSX.Element {
     <>
       <div
         id="mapWM"
-        className="llwp-map"
-        style={{ height: "calc(100vh - 90px)", width: "100%" }}
+        className={`llwp-map ${classes.container}`}
+        style={{
+          height: "100vh",
+          zIndex: 0,
+        }}
         data-lang="en"
         data-config="{
                     'map': {
