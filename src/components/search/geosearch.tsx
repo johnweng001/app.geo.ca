@@ -1,35 +1,20 @@
 import axios from "axios";
 
-import React, { ChangeEvent, createRef, useEffect, useState } from "react";
+import React, { ChangeEvent, createRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useDispatch, useSelector } from "react-redux";
 import BeatLoader from "react-spinners/BeatLoader";
-import { StoreEnhancer } from "redux";
 import { envglobals } from "../../common/envglobals";
 
 import Pagination from "../pagination/pagination";
 
-import organisations from "./organisations.json";
-import Sorting, { SortingOptionInfo } from "./sorting";
-import spatemps from "./spatial-temporal.json";
-import spatials from "./spatials.json";
-import stacs from "./stac.json";
-import themes from "./themes.json";
-import types from "./types.json";
-import { useMediaQuery } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import "./geosearch.scss";
-import { cgpv } from "../../app";
-import {
-  Extent,
-  boundingExtent,
-  createEmpty,
-  extendCoordinate,
-  getBottomLeft,
-  getTopRight,
-} from "ol/extent";
+import { useMediaQuery } from "@mui/material";
 import { View } from "ol";
-import { Projection, toLonLat } from "ol/proj";
+import { Extent, createEmpty, extendCoordinate } from "ol/extent";
+import { toLonLat } from "ol/proj";
+import { cgpv } from "../../app";
+import "./geosearch.scss";
+import Sorting, { SortingOptionInfo } from "./sorting";
 const EnvGlobals = envglobals();
 const GeoSearch = (
   showing: boolean,
@@ -97,6 +82,23 @@ const GeoSearch = (
 
     setSelected(event);
     setOpen(cardOpen);
+    selectResult(result);
+  };
+
+  const selectResult = (result: SearchResult | undefined) => {
+    cgpv.api.map("mapWM").layer.vector?.setActiveGeometryGroup();
+    cgpv.api.map("mapWM").layer.vector?.deleteGeometryGroup();
+    if (result) {
+      cgpv.api
+        .map("mapWM")
+        .layer.vector?.addPolygon(JSON.parse(result.coordinates), {
+          style: {
+            strokeColor: "blue",
+            fillColor: "blue",
+            fillOpacity: 0.1,
+          },
+        });
+    }
   };
 
   const setLoadingStatus = (flag: boolean) => {
@@ -317,6 +319,32 @@ const GeoSearch = (
     console.log("sorting by", value);
     // !loading && handleSortFilter();
   };
+
+  const handleView = (
+    evt: React.MouseEvent<HTMLButtonElement>,
+    id: string,
+    title: string
+  ) => {
+    console.log(evt);
+    evt.stopPropagation();
+
+    const metadataState = {
+      lang: `${language}`,
+      id: `${encodeURI(id.trim())}`,
+      title: `${encodeURI(title.trim().toLowerCase().replaceAll(" ", "-"))}`,
+      stateKO: ksOnly,
+      stateKeyword: initKeyword,
+      statePn: pn,
+      stateBounds: initBounds,
+    };
+    localStorage.setItem("metadataState", JSON.stringify(metadataState));
+    window.open(
+      `/result?id=${encodeURI(id.trim())}&lang=${language}`,
+      "_blank",
+      "noreferrer"
+    );
+  };
+
   return (
     <div className="geoSearchContainer">
       <div

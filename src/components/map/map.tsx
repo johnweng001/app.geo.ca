@@ -11,10 +11,13 @@ import HowtoPanel from "../panels/howto-panel";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Version from "../panels/version";
 import { GITUHUB_REPO } from "../../common/constant";
-import { cgpv } from "../../app";
 import SearchPanel from "../panels/search-panel";
 import Header from "../header/header";
 import makeStyles from "@mui/styles/makeStyles";
+
+const w = window as TypeWindow;
+
+const cgpv = w["cgpv"];
 
 /**
  * main container and map styling
