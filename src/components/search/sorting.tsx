@@ -1,4 +1,4 @@
-import { FormControl, InputLabel, Select } from "@mui/material";
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -77,66 +77,30 @@ export default function Sorting(props: SortingProps): JSX.Element {
   }, []);
   return (
     <>
-      {/*
-            <label htmlFor="sortingSelectId"> {t(label)}</label>
-            <select id="sortingSelectId" onChange={onChange} className="selectpicker" value={defaultValue}>
-                <option value="0" disabled>
-                    {t('appbar.sortby.select')}
-                </option>
-                {options.map((op, index) => (
-                    <option key={index} value={op.value}>
-                        {t(op.label)}
-                    </option>
-                ))}
-            </select>
-                */}
-
       <div className={classes.divcontrol}>
-        <InputLabel
-          className={`${classes.label} ${labelClassName}`}
-          htmlFor="sortby-select"
-        >
+        <InputLabel id="demo-simple-select-standard-label">
           {t(label)}
         </InputLabel>
-        <FormControl className={classes.formControl}>
+        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
           <Select
-            native
+            labelId="demo-simple-select-standard-label"
+            id="demo-simple-select-standard"
             value={defaultValue}
             onChange={onChange}
-            className={`${classes.select} ${selectClassName}`}
-            inputProps={{
-              name: "sortby",
-              id: "sortby-select",
-              classes: {
-                icon: `${iconClassName}`,
-              },
-            }}
           >
             {options.map((op, index) =>
               op.sortDirection === undefined ? (
-                <option
-                  className={`${classes.option} ${optionClassName}`}
-                  key={index}
-                  value={op.value}
-                >
+                <MenuItem key={index} value={op.value}>
                   {t(op.label)}
-                </option>
+                </MenuItem>
               ) : op.sortDirection === "asc" ? (
-                <option
-                  className={`${classes.option} ${optionClassName}`}
-                  key={index}
-                  value={op.value}
-                >
+                <MenuItem key={index} value={op.value}>
                   {t(op.label)} &uarr;
-                </option>
+                </MenuItem>
               ) : (
-                <option
-                  className={`${classes.option} ${optionClassName}`}
-                  key={index}
-                  value={op.value}
-                >
+                <MenuItem key={index} value={op.value}>
                   {t(op.label)} &darr;
-                </option>
+                </MenuItem>
               )
             )}
           </Select>

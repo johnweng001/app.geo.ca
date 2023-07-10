@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import React, { ChangeEvent, createRef, useState } from "react";
+import React, { ChangeEvent, createRef, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import BeatLoader from "react-spinners/BeatLoader";
 import { envglobals } from "../../common/envglobals";
@@ -71,6 +71,16 @@ const GeoSearch = (
   const [ofOpen, setOfOpen] = useState(false);
   const [allkw, setKWShowing] = useState<string[]>([]);
   const [sortbyValue, setSortbyValue] = useState("title");
+
+  useEffect(() => {
+    handleSearch("", initBounds);
+  }, []);
+  useEffect(() => {
+    if (showing && !loading) {
+      handleSearch(initKeyword, initBounds);
+      setStateLoaded(true);
+    }
+  }, [showing, sortbyValue, stateLoaded]);
 
   const handleSelect = (event: string) => {
     // const {selectResult} = this.props;
