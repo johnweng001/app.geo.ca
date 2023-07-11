@@ -14,12 +14,11 @@ body.modal-open .cgp-appbar.leaflet-control {
 
 .mapPage {
   height: 100vh;
-  padding-top: 90px;
 
   #rvMap {
     display: flex;
     width: 100%;
-    height: calc(100vh - 90px);
+    height: 100vh;
   }
 }
 

@@ -99,6 +99,7 @@ export function Map(): JSX.Element {
 
       const searchButton: TypeIconButtonProps = {
         // set ID so that it can be accessed from the core viewer
+        id: "searchBtn",
         tooltip: t("appbar.search"),
         tooltipPlacement: "right",
         children: <SearchIcon />,

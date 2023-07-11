@@ -8,7 +8,7 @@ import i18n from "./assets/i18n/i18n";
 
 ReactDOM.render(
   <I18nextProvider i18n={i18n}>
-    <Map />
+    <App />
   </I18nextProvider>,
   document.getElementById("root")
 );
